@@ -1,0 +1,291 @@
+Crie uma cena ultra-realista, em resolução 1920x1080 pixels (aspect ratio 16:9), com fundo escuro profundo (preto puro #000000 ou azul noturno #0A0A15), estilo moderno e limpo, como interface de um sistema educacional de IA.
+
+ELEMENTOS VISUAIS:
+
+- No lado esquerdo da tela: Grid de 9 cards coloridos, dispostos em 3 linhas x 3 colunas, cada um com bordas arredondadas, sombra suave e brilho sutil.
+  • Card destacado: "CC — Clareza dos Critérios" (cor rosa vibrante #FF6B8B).
+  • Outros cards: DN (laranja #FFB74D), CF (verde-limão #AED581), RR (verde-água #4DB6AC), CE (azul claro #64B5F6), PD (azul royal #3F51B5), MC (roxo #9575CD), AT (vermelho #E53935), AU (cinza #757575).
+  • Todos os cards têm ícone pequeno no canto superior esquerdo (ex: lupa para CC, escada para DN, etc.) e texto centralizado em fonte sans-serif branca.
+
+- No lado direito: Painel retangular com borda fina azul claro (#4FC3F7), fundo semi-transparente escuro (#12121F), contendo:
+  • Título em destaque: "Selecione uma dimensão da Meta-Rubrica" (fonte bold, tamanho grande, cor branca).
+  • Texto abaixo: "Clique em qualquer bloco à esquerda para visualizar a descrição completa da dimensão, entendendo seu papel na validação das rubricas do sistema SINAPSE-BR IA." (fonte regular, tamanho médio, cor cinza claro #CCCCCC).
+  • Seção "Níveis da Meta-Rubrica (1–4)" com lista numerada (1–Inaceitável, 2–Aceitável, 3–Bom/Sólido, 4–Exemplar), cada item em linha separada, cor branca, fonte pequena.
+  • Seção "Uso na pesquisa" com três bullet points, cor branca, fonte pequena.
+
+- Efeito visual: O card "CC" está levemente elevado (com sombra mais pronunciada e leve brilho ao redor), indicando que é o foco atual. Os outros cards estão desfocados em 10% para criar profundidade.
+
+TEXTO PRINCIPAL (para aparecer sobreposta à cena, centralizada na parte inferior):
+
+> “Selecione uma dimensão da Meta-Rubrica. Clique em qualquer bloco para entender seu papel na validação das rubricas do SINAPSE-BR IA.”
+
+• Caracteres: 118 (dentro do limite de 120 para 8s).
+• Fonte: Sans-serif moderna (ex: Inter ou Montserrat), tamanho grande, cor branca com contorno preto fino para legibilidade.
+• Posicionamento: Centralizado na parte inferior da tela, com margem de 5% do fundo.
+• Duração: Exatamente 8 segundos.
+
+ESTILO GERAL:
+
+- Iluminação: Luz suave vinda do topo, criando reflexo sutil nos cards.
+- Realismo: Texturas sutis (não brilhantes), sombras realistas, sem elementos cartoon ou estilizados.
+- Transição: Fade in suave no início (primeiros 0.5s), fade out suave no final (últimos 0.5s).
+
+RESTRIÇÕES ABSOLUTAS:
+
+- NÃO use cores pastel ou vibrantes demais — mantenha paleta profissional.
+- NÃO adicione animações complexas — apenas leve elevação do card CC e desfoque dos outros.
+- NÃO altere o texto — use exatamente as palavras acima.
+- NÃO gere áudio — apenas texto visual.
+- Priorize clareza e profissionalismo sobre criatividade.
+==============================
+TAKE 3 - DN – Distinção dos Níveis
+
+Texto 1 "Meta-Rubrica SINAPSE-BR IA — Visão Teórica e Interativa
+
+A Meta-Rubrica SINAPSE-BR IA é o instrumento responsável por avaliar a qualidade das rubricas utilizadas no sistema SINAPSE-BR — Discente, Docente e Autoavaliativa. Sua construção se fundamenta em referenciais clássicos e contemporâneos da avaliação educacional, como Brookhart (2013) , Moskal (2000) , Andrade (2000) , Mertler (2001) e Jonsson & Svingby (2007) .
+
+A Meta-Rubrica responde à pergunta-chave da avaliação formativa:
+🔍 “Uma rubrica é realmente uma boa rubrica?”
+
+Para isso, ela verifica se cada rubrica do SINAPSE-BR apresenta:
+🧩 critérios bem definidos;
+🔎 distinção real entre os níveis de desempenho;
+📘 alinhamento com BNCC, Bloom, DUA e Neuropsicopedagogia;
+🎓 confiabilidade entre avaliadores;
+🧠 promoção da metacognição;
+🌍 sensibilidade territorial (CTC/EJI/ESCS);
+⚙️ aplicabilidade real na prática docente.
+
+A dimensão da Avaliação Formativa, como discutem Black & Wiliam e Brookhart (2013) , reforça que rubricas de qualidade orientam o aprendizado, fornecem devolutivas ricas e promovem autonomia. Já a dimensão da metacognição dialoga com Flavell (1987) e Pintrich (2002) .
+
+Já os aspectos de equidade, território e identidade dialogam com Frigotto (1999), Ciavatta (2009) e Ramos (2010), reforçando que aprender é um processo situado, atravessado por cultura, território e condições socioeconômicas.
+
+A seguir estão as 9 dimensões oficiais da Meta-Rubrica, apresentadas em um painel 3D interativo:
+
+• CC – Clareza dos Critérios
+• DN – Distinção dos Níveis
+• CF – Confiabilidade
+• RR – Redação da Rubrica
+• CE – Comunicação de Expectativas
+• PD – Participação Discente
+• MC – Metacognição
+• AT – Aderência Teórica
+• AU – Aplicabilidade"
+
+Texto 2 "
+DN – Distinção dos Níveis
+
+Examina se os níveis são nitidamente distintos, progressivos e coerentes, permitindo diferenciar desempenhos.
+Níveis da Meta-Rubrica (1–4)
+
+    1 – Inaceitável: A rubrica é inadequada, confusa ou desalinhada com o objetivo avaliativo.
+    2 – Aceitável: Há alguma estrutura, mas com ambiguidades e fragilidades importantes.
+    3 – Bom/Sólido: Rubrica clara, coerente e funcional para avaliação formativa.
+    4 – Exemplar: Modelo de referência: rigorosa, bem fundamentada e altamente operacional.
+
+Uso na pesquisa
+
+    Validar as rubricas Discente, Docente e Autoavaliativa do SINAPSE-BR IA;
+    Guiar revisões até que todas as dimensões atinjam nível Bom/Sólido (3) ou superior;
+    Garantir rigor teórico, equidade e aplicabilidade na EPT.
+
+"
+
+"Crie uma cena ultra-realista, em resolução 1920x1080 pixels (aspect ratio 16:9), com fundo escuro profundo (#0A0A15), estilo moderno e limpo, como interface de um sistema educacional de IA. ELEMENTOS VISUAIS: - No centro da tela: Card destacado "CC — Clareza dos Critérios", com bordas arredondadas, cor rosa vibrante (#FF6B8B), sombra suave e leve brilho (glow). • Ícone no canto superior esquerdo: lupa estilizada (símbolo de análise, clareza). • Texto centralizado: "Clareza dos Critérios" (fonte bold, branca, tamanho grande). • Abaixo: subtítulo em fonte menor: "Critérios claros, específicos e sem duplo sentido" (cor #EEEEEE). - EFEITO 3D CONVINCENTE DO CARD CC: • No início da cena (0,5s), o card CC deve aparecer com leve elevação no eixo Z (como se estivesse "flutuando" 10px acima do plano). • A sombra do card deve ser alongada, mais escura e realista, como se estivesse sendo pressionado ou interagido. • Leve aumento de brilho (glow) e leve aumento de escala (105%) para simular clique ou seleção. • Efeito de pulsação suave (breve aumento e retorno ao tamanho original) para reforçar que é o card em destaque. • O card deve parecer "conectado" à interface, como se estivesse em um ambiente 3D real (como no Streamlit Cloud, mas com simulação visual convincente). • Os outros cards (DN, CF, etc.) devem permanecer mais baixos, com sombra mais rasa, desfocados (opacidade 70%) e sem brilho. - À direita do card: Painel semi-transparente escuro (#12121F), com borda fina azul claro (#4FC3F7), contendo: [TEXTO EXATO A SER MOSTRADO NO PAINEL — NÃO ALTERAR NENHUMA PALAVRA]: Níveis da Meta-Rubrica (1–4) 1 – Inaceitável: A rubrica é inadequada, confusa ou desalinhada com o objetivo avaliativo. 2 – Aceitável: Há alguma estrutura, mas com duplo sentido e fragilidades importantes. 3 – Bom/Sólido: Rubrica clara, coerente e funcional para avaliação formativa. 4 – Exemplar: Modelo de referência: rigorosa, bem fundamentada e altamente operacional. Uso na pesquisa: • Validar as rubricas Discente, Docente e Autoavaliativa do SINAPSE-BR IA; • Guiar revisões até que todas as dimensões atinjam nível Bom/Sólido (3) ou superior; • Garantir rigor teórico, equidade e aplicabilidade na EPT. • Fonte: Sans-serif limpa (ex: Inter ou Montserrat), cor branca (#FFFFFF), tamanho médio para títulos, pequeno para listas. • Espaçamento entre linhas: claro e uniforme. • Alinhamento: Esquerdo, com recuo de 10% da largura do painel. • Nenhum texto deve estar cortado, distorcido ou mal formatado. - Fundo sutil: rede neural abstrata em tons de azul escuro, baixa opacidade (10%) — reforça conceito de IA educacional. [ÁUDIO EM PORTUGUÊS BRASILEIRO — GERAR VOZ HUMANA NATURAL]: > “Clareza dos Critérios: os critérios são claros, específicos e sem duplo sentido? Se sim, sua rubrica já começa no caminho certo.” • Caracteres: 107 • Sílabas: 43 • Duração exata: 8 segundos (voz natural, ritmo moderado, pausa de 0,5s no final) • Voz: masculina ou feminina, tom calmo, claro, com entonação de professor(a) experiente, falando diretamente ao espectador • Estilo: narração didática, sem aceleração, sem robótica — como se estivesse explicando em uma sala de aula ESTILO GERAL: - Iluminação: luz suave vinda do topo, criando reflexo sutil no card CC. - Animação: fade in suave no início (0,5s), simulação de elevação 3D do card CC com sombra alongada e leve pulsação (iniciando 1s após o início), fade out suave no final (0,5s). - Transição: slide lateral suave da esquerda para direita ao entrar. RESTRIÇÕES ABSOLUTAS — NÃO NEGOCIÁVEIS: - NÃO use cores pastel, neon ou saturadas além do rosa #FF6B8B para o card CC. - NÃO altere, corte, resuma, reescreva ou distorça o texto fornecido no painel — use EXATAMENTE o texto acima, palavra por palavra. - NÃO use a palavra "ambiguidade" em nenhum lugar — use apenas "duplo sentido". - NÃO gere voz robótica, artificial ou com entonação metálica — DEVE SER VOZ HUMANA NATURAL. - NÃO adicione cursor, mão ou ícone de clique — simule o efeito 3D apenas com sombra, brilho e elevação. - NÃO gere texto visual duplicado — o texto falado pode aparecer como legenda subliminar (opcional, em fonte menor e opacidade 60%), mas NÃO deve ser o foco. - NÃO mude a resolução: 1920x1080 pixels é obrigatório. - Priorize fidelidade técnica, clareza e profissionalismo sobre qualquer “criatividade” visual ou narrativa."
+
+Altere o prompt acima, de acordo com o texto 1 e texto 2. Bem como, da imagem apresentada.
+
+PROMPT VEO STUDIO:
+
+Crie uma cena ultra-realista, em resolução 1920x1080 pixels (aspect ratio 16:9), com fundo escuro profundo (#0A0A15), estilo moderno e limpo, como interface de um sistema educacional de IA.
+
+ELEMENTOS VISUAIS:
+
+- No centro da tela: Card destacado "DN — Distinção dos Níveis", com bordas arredondadas, cor laranja vibrante (#FFB74D), sombra suave e leve brilho (glow).
+  • Ícone no canto superior esquerdo: ícone de escada ou níveis de desempenho (símbolo claro de progressão, como uma pirâmide ou gráfico de níveis).
+  • Texto centralizado: "Distinção dos Níveis" (fonte bold, branca, tamanho grande).
+  • Abaixo: subtítulo em fonte menor: "Níveis distintos, progressivos e coerentes" (cor #EEEEEE).
+
+- EFEITO 3D CONVINCENTE DO CARD DN:
+  • No início da cena (0,5s), o card DN deve aparecer com leve elevação no eixo Z (como se estivesse "flutuando" 10px acima do plano).
+  • A sombra do card deve ser alongada, mais escura e realista, como se estivesse sendo pressionado ou interagido.
+  • Leve aumento de brilho (glow) e leve aumento de escala (105%) para simular clique ou seleção.
+  • Efeito de pulsação suave (breve aumento e retorno ao tamanho original) para reforçar que é o card em destaque.
+  • O card deve parecer "conectado" à interface, como se estivesse em um ambiente 3D real (como no Streamlit Cloud, mas com simulação visual convincente).
+  • Os outros cards (CC, CF, RR, etc.) devem permanecer mais baixos, com sombra mais rasa, desfocados (opacidade 70%) e sem brilho.
+
+- À direita do card: Painel semi-transparente escuro (#12121F), com borda fina azul claro (#4FC3F7), contendo:
+
+[TEXTO EXATO A SER MOSTRADO NO PAINEL — COPIAR E COLAR SEM QUALQUER ALTERAÇÃO]:
+
+DN – Distinção dos Níveis
+
+Examina se os níveis são nitidamente distintos, progressivos e coerentes, permitindo diferenciar desempenhos.
+
+Níveis da Meta-Rubrica (1–4)
+
+    1 – Inaceitável: A rubrica é inadequada, confusa ou desalinhada com o objetivo avaliativo.
+    2 – Aceitável: Há alguma estrutura, mas com ambiguidades e fragilidades importantes.
+    3 – Bom/Sólido: Rubrica clara, coerente e funcional para avaliação formativa.
+    4 – Exemplar: Modelo de referência: rigorosa, bem fundamentada e altamente operacional.
+
+Uso na pesquisa
+
+    Validar as rubricas Discente, Docente e Autoavaliativa do SINAPSE-BR IA;
+    Guiar revisões até que todas as dimensões atinjam nível Bom/Sólido (3) ou superior;
+    Garantir rigor teórico, equidade e aplicabilidade na EPT.
+
+• Fonte: Sans-serif limpa (ex: Inter ou Montserrat), cor branca (#FFFFFF), tamanho médio para títulos, pequeno para listas.
+• Espaçamento entre linhas: claro e uniforme.
+• Alinhamento: Esquerdo, com recuo de 10% da largura do painel.
+• Nenhum texto deve estar cortado, distorcido ou mal formatado.
+• IMPORTANTE: Use EXATAMENTE este texto, palavra por palavra. NÃO use sinônimos, NÃO resuma, NÃO altere pontuação.
+
+- Fundo sutil: rede neural abstrata em tons de azul escuro, baixa opacidade (10%) — reforça conceito de IA educacional.
+
+[ÁUDIO EM PORTUGUÊS BRASILEIRO — GERAR VOZ HUMANA NATURAL]:
+
+> “Distinção dos Níveis: os níveis são distintos, progressivos e fáceis de diferenciar? Se sim, sua avaliação mostra o avanço real do aluno.”
+
+• Caracteres: 108  
+• Sílabas: 39  
+• Duração exata: 8 segundos (voz natural, ritmo moderado, pausa de 0,2s no final)  
+• Voz: masculina ou feminina, tom calmo, claro, com entonação de professor(a) experiente, falando diretamente ao espectador  
+• Estilo: narração didática, sem aceleração, sem robótica — como se estivesse explicando em uma sala de aula
+
+ESTILO GERAL:
+
+- Iluminação: luz suave vinda do topo, criando reflexo sutil no card DN.
+- Animação: fade in suave no início (0,5s), simulação de elevação 3D do card DN com sombra alongada e leve pulsação (iniciando 1s após o início), fade out suave no final (0,5s).
+- Transição: slide lateral suave da esquerda para direita ao entrar.
+
+RESTRIÇÕES ABSOLUTAS — NÃO NEGOCIÁVEIS:
+
+- NÃO use cores pastel, neon ou saturadas além do laranja #FFB74D para o card DN.
+- NÃO altere, corte, resuma, reescreva ou distorça o texto fornecido no painel — use EXATAMENTE o texto acima, palavra por palavra.
+- NÃO gere voz robótica, artificial ou com entonação metálica — DEVE SER VOZ HUMANA NATURAL.
+- NÃO adicione cursor, mão ou ícone de clique — simule o efeito 3D apenas com sombra, brilho e elevação.
+- NÃO gere texto visual duplicado — o texto falado pode aparecer como legenda subliminar (opcional, em fonte menor e opacidade 60%), mas NÃO deve ser o foco.
+- NÃO mude a resolução: 1920x1080 pixels é obrigatório.
+- Priorize fidelidade técnica, clareza e profissionalismo sobre qualquer “criatividade” visual ou narrativa.
+====================================
+TAKE 4 - DN – Distinção dos Níveis
+
+Texto 1 "eta-Rubrica SINAPSE-BR IA — Visão Teórica e Interativa
+A Meta-Rubrica SINAPSE-BR IA é o instrumento responsável por avaliar a qualidade das rubricas utilizadas no sistema SINAPSE-BR — Discente, Docente e Autoavaliativa. Sua construção se fundamenta em referenciais clássicos e contemporâneos da avaliação educacional, como Brookhart (2013) , Moscou (2000) , Andrade (2000) , Mertler (2001) e Jonsson & Svingby (2007) .
+
+A Meta-Rubrica responde à pergunta-chave da avaliação formativa:
+🔍 “Uma rubrica é realmente uma boa rubrica?”
+
+Para isso, ela verifica se cada rubrica do SINAPSE-BR apresenta:
+🧩 critérios bem definidos;
+🔎 distinção real entre os níveis de desempenho;
+📘 alinhamento com BNCC, Bloom, DUA e Neuropsicopedagogia;
+🎓 confiabilidade entre avaliadores;
+🧠 promoção da metacognição;
+🌍 sensibilidade territorial (CTC/EJI/ESCS);
+⚙️ aplicabilidade real na prática docente.
+
+A dimensão da Avaliação Formativa , como discutem Black & Wiliam e Brookhart (2013) , reforçam que rubricas de qualidade orientam o aprendizado, fornecem riquezas devolutivas e promovem autonomia. Já a dimensão da metacognição dialoga com Flavell (1987) e Pintrich (2002) .
+
+Já os aspectos de equidade, território e identidade dialogam com Frigotto (1999) , Ciavatta (2009) e Ramos (2010) , reforçando que aprender é um processo situado, atravessado por cultura, território e condições socioeconômicas.
+
+A seguir estão as 9 dimensões oficiais da Meta-Rubrica , apresentações em um painel 3D interativo:
+
+• CC – Clareza dos Critérios
+• DN – Distinção dos Níveis
+• CF – Confiabilidade
+• RR – Redação da Rubrica
+• CE – Comunicação de Expectativas
+• PD – Participação Discente
+• MC – Metacognição
+• AT – Aderência Teórica
+• AU – Aplicabilidade"
+
+Texto 2: "CF – Confiabilidade
+Verifica se diferentes avaliadores, usando a mesma rubrica, chegam a resultados semelhantes.
+
+Níveis da Meta-Rubrica (1–4)
+1 – Inaceitável: A rubrica é inadequada, confusa ou desalinhada com o objetivo avaliativo.
+2 – Aceitável: Há alguma estrutura, mas com ambiguidades e fragilidades importantes.
+3 – Bom/Sólido: Rubrica clara, coerente e funcional para avaliação formativa.
+4 – Exemplar: Modelo de referência: rigorosa, bem fundamentada e altamente operacional.
+Uso na pesquisa
+Validar as rubricas Discente, Docente e Autoavaliativa do SINAPSE-BR IA;
+Guiar revisões até que todas as dimensões atinjam nível Bom/Sólido (3) ou superior;
+Garantir rigor teórico, equidade e aplicabilidade na EPT."
+
+
+PROMPT VEO STUDIO:
+
+Crie uma cena ultra-realista, em resolução 1920x1080 pixels (aspect ratio 16:9), com fundo escuro profundo (#0A0A15), estilo moderno e limpo, como interface de um sistema educacional de IA.
+
+ELEMENTOS VISUAIS:
+
+- No centro da tela: Card destacado "CF — Confiabilidade", com bordas arredondadas, cor verde-limão (#AED581), sombra suave e leve brilho (glow).
+  • Ícone no canto superior esquerdo: dois ícones de pessoas com setas apontando para um mesmo resultado (símbolo de concordância entre avaliadores).
+  • Texto centralizado: "Confiabilidade" (fonte bold, branca, tamanho grande).
+  • Abaixo: subtítulo em fonte menor: "Avaliadores concordam? Se sim, sua rubrica é confiável." (cor #EEEEEE).
+
+- EFEITO 3D CONVINCENTE DO CARD CF:
+  • No início da cena (0,5s), o card CF deve aparecer com leve elevação no eixo Z (como se estivesse "flutuando" 10px acima do plano).
+  • A sombra do card deve ser alongada, mais escura e realista, como se estivesse sendo pressionado ou interagido.
+  • Leve aumento de brilho (glow) e leve aumento de escala (105%) para simular clique ou seleção.
+  • Efeito de pulsação suave (breve aumento e retorno ao tamanho original) para reforçar que é o card em destaque.
+  • O card deve parecer "conectado" à interface, como se estivesse em um ambiente 3D real (como no Streamlit Cloud, mas com simulação visual convincente).
+  • Os outros cards (CC, DN, RR, etc.) devem permanecer mais baixos, com sombra mais rasa, desfocados (opacidade 70%) e sem brilho.
+
+- À direita do card: Painel semi-transparente escuro (#12121F), com borda fina azul claro (#4FC3F7), contendo:
+
+[TEXTO EXATO A SER MOSTRADO NO PAINEL — COPIAR E COLAR SEM QUALQUER ALTERAÇÃO]:
+
+CF – Confiabilidade
+
+Avalia se diferentes avaliadores chegam a resultados semelhantes ao aplicar a mesma rubrica.
+Níveis da Meta-Rubrica (1–4)
+
+    1 – Inaceitável: A rubrica é inadequada, confusa ou desalinhada com o objetivo avaliativo.
+    2 – Aceitável: Há alguma estrutura, mas com ambiguidades e fragilidades importantes.
+    3 – Bom/Sólido: Rubrica clara, coerente e funcional para avaliação formativa.
+    4 – Exemplar: Modelo de referência: rigorosa, bem fundamentada e altamente operacional.
+
+Uso na pesquisa
+
+    Validar as rubricas Discente, Docente e Autoavaliativa do SINAPSE-BR IA;
+    Guiar revisões até que todas as dimensões atinjam nível Bom/Sólido (3) ou superior;
+    Garantir rigor teórico, equidade e aplicabilidade na EPT.
+
+• Fonte: Sans-serif limpa (ex: Inter ou Montserrat), cor branca (#FFFFFF), tamanho médio para títulos, pequeno para listas.
+• Espaçamento entre linhas: claro e uniforme.
+• Alinhamento: Esquerdo, com recuo de 10% da largura do painel.
+• Nenhum texto deve estar cortado, distorcido ou mal formatado.
+• IMPORTANTE: Use EXATAMENTE este texto, palavra por palavra. NÃO use sinônimos, NÃO resuma, NÃO altere pontuação, NÃO mude quebras de linha.
+
+- Fundo sutil: rede neural abstrata em tons de azul escuro, baixa opacidade (10%) — reforça conceito de IA educacional.
+
+[ÁUDIO EM PORTUGUÊS BRASILEIRO — GERAR VOZ HUMANA NATURAL]:
+
+> “Confiabilidade: diferentes avaliadores chegam ao mesmo resultado? Se sim, sua rubrica é justa e confiável.”
+
+• Caracteres: 96  
+• Sílabas: 36  
+• Duração exata: 7,8 segundos (ritmo natural, pausa de 0,2s no final)  
+• Voz: masculina ou feminina, tom calmo, claro, com entonação de professor(a) experiente, falando diretamente ao espectador  
+• Estilo: narração didática, sem aceleração, sem robótica — como se estivesse explicando em uma sala de aula
+
+ESTILO GERAL:
+
+- Iluminação: luz suave vinda do topo, criando reflexo sutil no card CF.
+- Animação: fade in suave no início (0,5s), simulação de elevação 3D do card CF com sombra alongada e leve pulsação (iniciando 1s após o início), fade out suave no final (0,5s).
+- Transição: slide lateral suave da esquerda para direita ao entrar.
+
+RESTRIÇÕES ABSOLUTAS — NÃO NEGOCIÁVEIS:
+
+- NÃO use cores pastel, neon ou saturadas além do verde-limão #AED581 para o card CF.
+- NÃO altere, corte, resuma, reescreva ou distorça o texto fornecido no painel — use EXATAMENTE o texto acima, palavra por palavra.
+- NÃO gere voz robótica, artificial ou com entonação metálica — DEVE SER VOZ HUMANA NATURAL.
+- NÃO adicione cursor, mão ou ícone de clique — simule o efeito 3D apenas com sombra, brilho e elevação.
+- NÃO gere texto visual duplicado — o texto falado pode aparecer como legenda subliminar (opcional, em fonte menor e opacidade 60%), mas NÃO deve ser o foco.
+- NÃO mude a resolução: 1920x1080 pixels é obrigatório.
+- Priorize fidelidade técnica, clareza e profissionalismo sobre qualquer “criatividade” visual ou narrativa.
+

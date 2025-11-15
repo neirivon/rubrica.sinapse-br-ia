@@ -1,0 +1,68 @@
+# ===========================================
+# Rubrica SINAPSE-BR IA - .gitignore
+# ===========================================
+
+# 🐍 Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# 🔧 Ambientes virtuais
+.venv/
+venv/
+ENV/
+env/
+# (opcional) nome personalizado
+sinapsebr/
+sinapsebr-light/
+
+# 📦 Dependências locais e builds
+build/
+dist/
+.eggs/
+*.egg-info/
+*.egg
+
+# 🧾 Logs e cache
+*.log
+*.tmp
+*.bak
+*.swp
+*.DS_Store
+*.sublime-workspace
+*.sublime-project
+
+# 🧠 Arquivos de ambiente e segredos
+.env
+.env.local
+.streamlit/secrets.toml
+
+# 💾 Arquivos derivados ou grandes
+*.parquet
+*.feather
+*.zip
+*.tar.gz
+
+# 📊 Dados locais
+data/
+!data/README.md
+!data/*.csv
+!data/**/*.csv
+!data/*.json
+!data/**/*.json
+
+# 🔍 Modelos temporários ou de cache
+.cache/
+.ipynb_checkpoints/
+
+# 💻 IDEs e sistema operacional
+.vscode/
+.idea/
+Thumbs.db
+
+# ===========================================
+# Fim do arquivo .gitignore
+# ===========================================
+
