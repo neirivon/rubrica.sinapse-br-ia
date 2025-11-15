@@ -1,68 +1,113 @@
 # ===========================================
-# Rubrica SINAPSE-BR IA - .gitignore
+# Rubrica SINAPSE-BR IA - .gitignore (versão otimizada)
 # ===========================================
 
-# 🐍 Python
+#############
+# PYTHON
+#############
+
 __pycache__/
 *.py[cod]
 *.pyo
 *.pyd
 *.so
 
-# 🔧 Ambientes virtuais
+#############
+# AMBIENTES VIRTUAIS
+#############
+
 .venv/
 venv/
 ENV/
 env/
-# (opcional) nome personalizado
 sinapsebr/
 sinapsebr-light/
 
-# 📦 Dependências locais e builds
+#############
+# ARQUIVOS DE CONFIGURAÇÃO / SEGREDOS
+#############
+
+.env
+.env.local
+.streamlit/secrets.toml
+
+#############
+# LOGS E CACHE
+#############
+
+*.log
+*.tmp
+*.bak
+.cache/
+.ipynb_checkpoints/
+
+#############
+# PASTAS A SEREM IGNORADAS (NÃO ENTRAM NO STREAMLIT)
+# Estas pastas contêm arquivos que o Streamlit não deve ler.
+#############
+
+ativos/
+assets/imagens/
+documentos/
+roteiros/
+docs/
+data/
+app/
+# você pode liberar apenas algum arquivo específico com "!"
+# exemplo:
+# !docs/README.md
+
+#############
+# ARQUIVOS PESADOS (EVITAR QUEBRAR O STREAMLIT)
+#############
+
+# PDFs, imagens, vídeos, arquivos grandes
+*.pdf
+*.PNG
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.mp4
+*.mp3
+*.mkv
+
+#############
+# ARQUIVOS DE DADOS GRANDES
+#############
+
+*.csv
+*.xlsx
+*.xls
+*.parquet
+*.feather
+*.zip
+*.rar
+*.7z
+*.tar.gz
+
+#############
+# ARTEFATOS DE BUILD
+#############
+
 build/
 dist/
 .eggs/
 *.egg-info/
 *.egg
 
-# 🧾 Logs e cache
-*.log
-*.tmp
-*.bak
-*.swp
-*.DS_Store
-*.sublime-workspace
-*.sublime-project
+#############
+# EDITORES / SISTEMA OPERACIONAL
+#############
 
-# 🧠 Arquivos de ambiente e segredos
-.env
-.env.local
-.streamlit/secrets.toml
-
-# 💾 Arquivos derivados ou grandes
-*.parquet
-*.feather
-*.zip
-*.tar.gz
-
-# 📊 Dados locais
-data/
-!data/README.md
-!data/*.csv
-!data/**/*.csv
-!data/*.json
-!data/**/*.json
-
-# 🔍 Modelos temporários ou de cache
-.cache/
-.ipynb_checkpoints/
-
-# 💻 IDEs e sistema operacional
 .vscode/
 .idea/
+*.sublime-workspace
+*.sublime-project
 Thumbs.db
+.DS_Store
 
 # ===========================================
-# Fim do arquivo .gitignore
+# FIM DO ARQUIVO .gitignore
 # ===========================================
 
