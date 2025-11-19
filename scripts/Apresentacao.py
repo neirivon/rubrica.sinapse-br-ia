@@ -177,22 +177,21 @@ with col_main:
     st.markdown("---")
     
     # ---------------------------------
-    # SEÇÃO 0: TEMA, DELIMITAÇÃO e PROBLEMA (Simplificado para evitar erro no Streamlit Cloud)
+    # SEÇÃO 0: TEMA, DELIMITAÇÃO e PROBLEMA (Expander para manter a página limpa)
     # ---------------------------------
     with st.expander("📚 Núcleo da Proposta (TEMA, PROBLEMA e DELIMITAÇÃO)", expanded=False):
         st.markdown("### TEMA")
-        # --- ALTERADO: Usando st.info em vez de tag_html para estabilidade no DOM ---
-        st.info(
+        st.markdown(tag_html(
             "Desenvolvimento de uma rubrica educacional ampliada para avaliação formativa na Educação Profissional e Tecnológica (EPT), "
-            "integrando referenciais da Neuropsicopedagogia, Taxonomias Cognitivas e Desenho Universal para a Aprendizagem (DUA)."
-        )
+            "integrando referenciais da Neuropsicopedagogia, Taxonomias Cognitivas e Desenho Universal para a Aprendizagem (DUA).",
+            "box-content"
+        ), unsafe_allow_html=True)
         
         st.markdown("### PROBLEMA DE PESQUISA")
-        # --- ALTERADO: Usando st.code/st.info em vez de tag_html para estabilidade no DOM ---
-        st.code(
+        st.markdown(tag_html(
             "Como integrar princípios da Neuropsicopedagogia, das Taxonomias Cognitivas, do Desenho Universal para a Aprendizagem (DUA) e da equidade socio-territorial em uma rubrica formativa aplicável à Educação Profissional e Tecnológica?",
-            language="markdown"
-        )
+            "box-content"
+        ), unsafe_allow_html=True)
 
         st.markdown("### DELIMITAÇÃO DO TEMA")
         st.write(
@@ -243,6 +242,7 @@ with col_main:
     # ---------------------------------
     # SEÇÃO 2: FUNDAMENTAÇÃO TEÓRICA (Corrigindo o erro de digitação com &nbsp;)
     # ---------------------------------
+    # st.header("2. Fundamentação Teórica", icon="📚") # Se o st.header funcionar, use esta.
     st.markdown("## 2. Fundamentação Teórica&nbsp;📚") # SOLUÇÃO DE COMPATIBILIDADE
     st.write(
         "**Neuropsicopedagogia:** oferece base para compreender processos cognitivos, afetivos e motivacionais, "
@@ -309,6 +309,9 @@ with col_main:
     st.write("Mapeamento IBGE, normalização de cabeçalhos e valores; **nenhum dado inventado/estimado**.")
     
     st.markdown("---")
+
+    # O restante das seções (Produto Educacional, Resultados, Discussão, Considerações Finais)
+    # permanece abaixo das seções reestruturadas.
 
     st.markdown("## 4. Produto Educacional 🖥️")
     st.write(
