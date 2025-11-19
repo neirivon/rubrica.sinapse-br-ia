@@ -153,7 +153,6 @@ st.markdown(
 #  TÍTULO EXTRA (REPOSICIONADO AQUI)
 # ==================================================================
 
-# Reposicionamos o bloco do título extra AQUI, entre o texto principal e a dica 3D.
 st.markdown(
     "<h3 style='text-align: center; color: #4b5563; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.5rem;'>RUBRICA AVALIATIVA DE RUBRICAS</h3>", 
     unsafe_allow_html=True
@@ -163,7 +162,6 @@ st.markdown(
 #  DICA 3D
 # ==================================================================
 
-# A dica 3D logo abaixo do título reposicionado
 st.markdown(
     """
     <h4 style='text-align: center; margin-top: 1rem; color: #111827;'>
@@ -174,7 +172,7 @@ st.markdown(
 )
 
 # ==================================================================
-#  PAINEL 3D – HTML + CSS + JS (RESTANTE DO CÓDIGO PERMANECE O MESMO)
+#  PAINEL 3D – HTML + CSS + JS
 # ==================================================================
 
 html = dedent("""
@@ -207,7 +205,6 @@ html = dedent("""
 </div>
 
 <style>
-  /* Fundo escuro APENAS dentro do componente (não mexe nas outras páginas) */
   body {
     background: radial-gradient(circle at top, #020617, #020617);
   }
@@ -437,3 +434,33 @@ html = dedent("""
 """)
 
 st.components.v1.html(html, height=720, scrolling=False)
+
+# ==================================================================
+#  VÍDEO NO YOUTUBE – LOGO ABAIXO DO PAINEL 3D
+# ==================================================================
+
+st.markdown("---")
+
+st.markdown(
+    """
+    <h2 style="text-align:center; margin-top:1.5rem; margin-bottom:1rem;
+               font-size:2rem; font-weight:800; color:#0f172a;">
+        📘 Meta-Rubrica SINAPSE-BR IA — O Instrumento de Validação e Qualidade das Rubricas na EPT
+    </h2>
+
+    <div style="display:flex; justify-content:center; margin-bottom:2.5rem;">
+        <iframe width="900" height="505"
+            src="https://www.youtube.com/embed/L6egxk67Iuw?si=0t2N25BApftovxBP"
+            title="Rubrica Avaliativa de Rubricas – O Instrumento que Garante Qualidade, Equidade e Rigor na EPT"
+            frameborder="0"
+            style="border-radius:14px; max-width:100%;"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            loading="lazy">
+        </iframe>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
+

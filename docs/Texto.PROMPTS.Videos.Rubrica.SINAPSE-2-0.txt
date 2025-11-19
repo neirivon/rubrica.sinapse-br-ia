@@ -288,4 +288,6 @@ RESTRIÇÕES ABSOLUTAS — NÃO NEGOCIÁVEIS:
 - NÃO gere texto visual duplicado — o texto falado pode aparecer como legenda subliminar (opcional, em fonte menor e opacidade 60%), mas NÃO deve ser o foco.
 - NÃO mude a resolução: 1920x1080 pixels é obrigatório.
 - Priorize fidelidade técnica, clareza e profissionalismo sobre qualquer “criatividade” visual ou narrativa.
+=====================================
+
 

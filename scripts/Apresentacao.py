@@ -93,6 +93,7 @@ st.markdown(
       .indent { margin-left:12px; }
       .stMarkdown, p, li, span { font-size:18px; }
       .side-caption { font-size:12.5px; color:#475569; }
+      .box-content { border-left: 5px solid #2563eb; padding-left: 15px; margin-bottom: 20px; }
       /* pequenos hovers */
       img.avatar:hover { transform: scale(1.02); transition: transform .15s ease; }
     </style>
@@ -157,7 +158,7 @@ with col_main:
                 f"""
                 <div class="avatar-wrap indent">
                   <img class="avatar" src="data:image/png;base64,{b64_orient}" alt="Dra. Professora Thays Martins Vital da Silva" />
-                  <div class="name" style="text-align:center;">Dra. Professora Thays Martins Vital da Silva</div>
+                  <div class="name">Dra. Professora Thays Martins Vital da Silva</div>
                   <div class="role">Orientadora do TCC</div>
                 </div>
                 """,
@@ -171,32 +172,78 @@ with col_main:
         st.markdown("**Dica:** coloque a foto em `assets/imagens/Orientadora.png`.")
 
     # ---------------------------------
-    # Texto do TCC — seções com emojis
+    # Estrutura do TCC (Reorganizada)
     # ---------------------------------
     st.markdown("---")
+    
+    # ---------------------------------
+    # SEÇÃO 0: TEMA, DELIMITAÇÃO e PROBLEMA (Simplificado para evitar erro no Streamlit Cloud)
+    # ---------------------------------
+    with st.expander("📚 Núcleo da Proposta (TEMA, PROBLEMA e DELIMITAÇÃO)", expanded=False):
+        st.markdown("### TEMA")
+        # --- ALTERADO: Usando st.info em vez de tag_html para estabilidade no DOM ---
+        st.info(
+            "Desenvolvimento de uma rubrica educacional ampliada para avaliação formativa na Educação Profissional e Tecnológica (EPT), "
+            "integrando referenciais da Neuropsicopedagogia, Taxonomias Cognitivas e Desenho Universal para a Aprendizagem (DUA)."
+        )
+        
+        st.markdown("### PROBLEMA DE PESQUISA")
+        # --- ALTERADO: Usando st.code/st.info em vez de tag_html para estabilidade no DOM ---
+        st.code(
+            "Como integrar princípios da Neuropsicopedagogia, das Taxonomias Cognitivas, do Desenho Universal para a Aprendizagem (DUA) e da equidade socio-territorial em uma rubrica formativa aplicável à Educação Profissional e Tecnológica?",
+            language="markdown"
+        )
 
-    st.markdown("## 1. Introdução ✍️")
-    st.write(
-        "A Educação Profissional e Tecnológica (EPT) desempenha papel essencial na formação integral do cidadão e no "
-        "desenvolvimento regional sustentável. No entanto, persistem lacunas na forma como a avaliação formativa é "
-        "conduzida, sobretudo quanto à equidade territorial e à contextualização pedagógica. Após a promulgação da LGPD, "
-        "o acesso a microdados educacionais tornou-se mais restrito, dificultando análises aprofundadas por localidade, "
-        "instituição e perfil socioeconômico.\n\n"
-        "Nesse contexto, o presente TCC propõe a **Rubrica Educacional SINAPSE-BR IA**, instrumento de avaliação e "
-        "reflexão docente fundamentado em **Neuropsicopedagogia**, **Taxonomia de Bloom revisada**, **Metodologias "
-        "Ativas** e nas dimensões de **Equidade, Justiça e Inclusão (EJI)**. A rubrica é acompanhada de um **protótipo "
-        "computacional interativo** — desenvolvido em Streamlit, com base em dados públicos do SISTEC e do INEP — que "
-        "permite visualizar a **oferta real da EPT** nos municípios do **Triângulo Mineiro e Alto Paranaíba (TMAP)**, "
-        "respeitando os recortes territoriais oficiais do **IBGE de 2010 e 2017/2022**.\n\n"
-        "A proposta integra dados, fundamentos teóricos e práticas pedagógicas para apoiar **avaliação formativa** e "
-        "**análise territorial**.\n\n"
-        "**Questão central:** *Como uma rubrica neuropsicopedagógica, territorializada e orientada por dados abertos "
-        "pode fortalecer a avaliação formativa na EPT do TMAP?*\n\n"
-        "**Objetivo geral:** conceber e demonstrar a **Rubrica SINAPSE-BR IA** e o **aplicativo territorial** associado, "
-        "contribuindo para uma cultura avaliativa mais justa, contextualizada e tecnicamente fundamentada."
-    )
+        st.markdown("### DELIMITAÇÃO DO TEMA")
+        st.write(
+            "O estudo concentra-se na construção teórico-propositiva da **Rubrica SINAPSE-BR IA**, concebida para qualificar práticas avaliativas na Rede Federal de Educação Profissional e Tecnológica, com ênfase no recorte territorial do **Triângulo Mineiro e Alto Paranaíba (TMAP)**. A pesquisa utiliza documentos oficiais (BNCC, SAEB, PISA/OCDE, DCNs da EPT) e referenciais contemporâneos para fundamentar a rubrica."
+        )
 
-    st.markdown("## 2. Fundamentação Teórica 📚")
+    st.markdown("---")
+
+    # ---------------------------------
+    # SEÇÃO 1: INTRODUÇÃO (Usando Tabs para Justificativa e Objetivos)
+    # ---------------------------------
+    st.markdown("## 1. Introdução & Estratégia da Pesquisa ✍️")
+    
+    tab_justificativa, tab_objetivos, tab_sinapse_ia = st.tabs([
+        "✅ Justificativa", 
+        "🎯 Objetivos", 
+        "🧠 Visão Geral do SINAPSE-BR IA"
+    ])
+
+    with tab_justificativa:
+        st.markdown("### Por Que SINAPSE-BR IA?")
+        st.write(
+            "A avaliação na Educação Profissional e Tecnológica apresenta desafios relacionados à clareza dos critérios, à personalização das aprendizagens e à equidade territorial. As rubricas atualmente disponíveis — como BNCC, SAEB e PISA/OCDE — **não contemplam plenamente as especificidades da EPT** nem integram referenciais inclusivos como a **Neuropsicopedagogia**, o **Desenho Universal para a Aprendizagem (DUA)**, e as Taxonomias de Bloom e SOLO.\n\n"
+            "A criação da Rubrica SINAPSE-BR IA busca integrar esses fundamentos em um instrumento coerente, formativo e sensível às realidades socioeducacionais do TMAP, contribuindo para práticas avaliativas mais justas e alinhadas às demandas contemporâneas do ensino profissional."
+        )
+
+    with tab_objetivos:
+        st.markdown("### Objetivo Geral")
+        st.write(
+            "Desenvolver uma rubrica educacional ampliada — denominada **SINAPSE-BR IA** — fundamentada na Neuropsicopedagogia, no Desenho Universal para a Aprendizagem (DUA), nas Taxonomias de Bloom e SOLO e em referenciais de equidade territorial (CTC/EJI/ESCS), com vistas a aprimorar as práticas avaliativas na Educação Profissional e Tecnológica e favorecer trajetórias formativas mais justas no contexto do **Triângulo Mineiro e Alto Paranaíba (TMAP)**."
+        )
+        st.markdown("### Objetivos Específicos")
+        st.markdown("""
+            * **1.** Analisar os referenciais teóricos da Neuropsicopedagogia, do DUA, das Taxonomias de Bloom e SOLO, das Metodologias Ativas e dos modelos de avaliação utilizados no SAEB, BNCC e PISA/OCDE.
+            * **2.** Comparar estruturas de rubricas nacionais e internacionais (Andrade, Brookhart, Mullinix, Moskal) a fim de identificar critérios, fragilidades e lacunas que fundamentem a criação da Rubrica SINAPSE-BR IA.
+            * **3.** Propor a estrutura final da Rubrica SINAPSE-BR IA (dimensões, níveis e descritores), articulando fundamentos pedagógicos, neurocientíficos e socio-territoriais aplicáveis à Educação Profissional e Tecnológica.
+        """)
+        
+    with tab_sinapse_ia:
+        st.markdown("### Sobre o Protótipo SINAPSE-BR IA")
+        st.write(
+            "O presente TCC propõe a **Rubrica Educacional SINAPSE-BR IA**, instrumento de avaliação e reflexão docente fundamentado nos pilares descritos acima. A rubrica é acompanhada de um **protótipo computacional interativo** — desenvolvido em Streamlit, com base em dados públicos do SISTEC e do INEP — que permite visualizar a **oferta real da EPT** nos municípios do TMAP, respeitando os recortes territoriais oficiais do IBGE de 2010 e 2017/2022. "
+        )
+        st.markdown("**Proposta:** integrar dados, fundamentos teóricos e práticas pedagógicas para apoiar **avaliação formativa** e **análise territorial**.")
+
+    st.markdown("---")
+
+    # ---------------------------------
+    # SEÇÃO 2: FUNDAMENTAÇÃO TEÓRICA (Corrigindo o erro de digitação com &nbsp;)
+    # ---------------------------------
+    st.markdown("## 2. Fundamentação Teórica&nbsp;📚") # SOLUÇÃO DE COMPATIBILIDADE
     st.write(
         "**Neuropsicopedagogia:** oferece base para compreender processos cognitivos, afetivos e motivacionais, "
         "favorecendo práticas avaliativas humanas e formativas.\n\n"
@@ -210,28 +257,58 @@ with col_main:
         "amplia ao incorporar **variáveis territoriais e cognitivas**."
     )
 
+    st.markdown("---")
+
+    # ---------------------------------
+    # SEÇÃO 3: METODOLOGIA (Agora como Abas para as etapas)
+    # ---------------------------------
     st.markdown("## 3. Metodologia 🧪")
-    st.write(
-        "**Tipo de pesquisa:** teórico-propositiva, qualitativa e descritiva, com desenvolvimento de protótipo digital.\n\n"
-        "### 3.1 Fontes e recorte de dados\n"
-        "- **Relatório IPES Escolas (2020–2023)** — SISTEC\n"
-        "- **Sistec Cursos Técnicos Ativos (12/09/2022)**\n"
-        "- **Suplemento Cursos Técnicos 2024** — Censo Escolar/INEP\n\n"
-        "### 3.2 Tratamento dos dados\n"
-        "- Mapeamento **IBGE código → nome** do município (via suplemento 2024).\n"
-        "- Normalização de cabeçalhos e valores; **nenhum dado inventado/estimado**.\n\n"
-        "### 3.3 Protótipo (Streamlit)\n"
-        "- **TMAP 2010:** TMAP → Municípios (estrutura histórica, 1990–2017).\n"
-        "- **TMAP 2017/2022:** Municípios → Zona → Instituições EPT + **mapa Folium** e filtros.\n"
-        "- Descoberta automática de colunas UF/Município, tradução de códigos IBGE e **filtros TMAP**.\n\n"
-        "### 3.4 Rubrica SINAPSE-BR IA\n"
-        "- **8 dimensões:** Cognitiva, Afetiva, Metodológica, Neurofuncional, Avaliativa, Tecnológica, Territorial e Inclusiva.\n"
-        "- **4 níveis:** Emergente, Intermediário, Proficiente, Avançado.\n"
-        "- **Duas versões:** Rubrica do Aluno (autorregulação) e do Professor (planejamento/reflexão).\n\n"
-        "### 3.5 Validação e ética\n"
-        "- Validação de conteúdo (juízes) + índice **Kappa** e revisão qualitativa.\n"
-        "- Dados **públicos e anonimizados**, respeito à **LGPD**."
-    )
+    st.write("**Tipo de pesquisa:** teórico-propositiva, qualitativa e descritiva, com desenvolvimento de protótipo digital.")
+    
+    tab_revisao, tab_analise, tab_construcao = st.tabs([
+        "1. Revisão Sistemática", 
+        "2. Análise Documental", 
+        "3. Construção Propositiva"
+    ])
+    
+    with tab_revisao:
+        st.markdown("### 1. Revisão Bibliográfica Sistemática")
+        st.markdown("""
+        Serão estudados referenciais clássicos e contemporâneos sobre:
+        * **Neuropsicopedagogia** (Flavell, Piaget, Vigotski, Nicolelis, Seung)
+        * **Avaliação Formativa** (Bloom, Black & Wiliam, Brookhart, Hoffmann)
+        * **Rubricas e Meta-Rubricas** (Mullinix, Andrade, Moskal, Panadero & Jonsson)
+        * **Metodologias Ativas** (Bacich & Moran)
+        * **DUA** (CAST; Rose & Meyer)
+        * **EPT** (Frigotto, Ciavatta, Ramos) e documentos avaliativos (SAEB, BNCC, PISA/OCDE).
+        """)
+        st.caption("Esta etapa visa consolidar o embasamento que sustenta a proposta da Rubrica SINAPSE-BR IA.")
+
+    with tab_analise:
+        st.markdown("### 2. Análise Documental Comparativa")
+        st.markdown("""
+        Serão analisados documentos oficiais e modelos avaliativos, incluindo:
+        * BNCC, SAEB, PISA/OCDE, Diretrizes da EPT.
+        * DUA, rubricas nacionais e internacionais (Andrade; Brookhart; Mullinix; Moskal).
+        * Materiais normativos da Rede Federal.
+        """)
+        st.caption("A análise busca identificar convergências, divergências e lacunas que justifiquem a necessidade de uma rubrica integradora adequada ao contexto da Educação Profissional e Tecnológica, especialmente no TMAP.")
+
+    with tab_construcao:
+        st.markdown("### 3. Construção Propositiva da Rubrica SINAPSE-BR IA")
+        st.write(
+            "Será elaborada a versão final da rubrica (dimensões, níveis e descritores), integrando fundamentos neurocientíficos, pedagógicos e socio-territoriais. A rubrica será organizada para favorecer práticas avaliativas formativas, inclusivas e alinhadas à realidade da EPT. Serão indicadas, ainda, possibilidades de aplicação prática futura no contexto educacional da região TMAP."
+        )
+
+    st.markdown("### 3.4 Fontes de Dados do Protótipo")
+    st.markdown("""
+        * **Relatório IPES Escolas (2020–2023)** — SISTEC
+        * **Sistec Cursos Técnicos Ativos (12/09/2022)**
+        * **Suplemento Cursos Técnicos 2024** — Censo Escolar/INEP
+    """)
+    st.write("Mapeamento IBGE, normalização de cabeçalhos e valores; **nenhum dado inventado/estimado**.")
+    
+    st.markdown("---")
 
     st.markdown("## 4. Produto Educacional 🖥️")
     st.write(
@@ -243,6 +320,8 @@ with col_main:
         "- **Somente dados reais** (SISTEC/INEP)."
     )
 
+    st.markdown("---")
+
     st.markdown("## 5. Resultados Esperados 🎯")
     st.write(
         "- Visualizações confiáveis da **rede EPT** no **TMAP**.\n"
@@ -252,6 +331,8 @@ with col_main:
         "- Base para **instrumentos avaliativos personalizados**."
     )
 
+    st.markdown("---")
+
     st.markdown("## 6. Discussão 💬")
     st.write(
         "A integração entre **dados abertos**, **pedagogia** e **territorialização** fortalece políticas públicas educacionais. "
@@ -259,6 +340,8 @@ with col_main:
         "para indicadores formativos. Limitações: ausência de coordenadas geográficas em partes do SISTEC; diferenças de nomenclatura; "
         "e necessidade de atualização constante. Ainda assim, a proposta é **viável** como modelo inicial de territorialização pedagógica da EPT."
     )
+
+    st.markdown("---")
 
     st.markdown("## 7. Considerações Finais ✅")
     st.write(
@@ -279,4 +362,3 @@ st.caption(
     f"Root detectado: `{PROJECT_ROOT}` • Imagens: `{IMG_DIR}` • "
     "Caminhos relativos compatíveis com execução local e Streamlit Cloud."
 )
-
