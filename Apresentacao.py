@@ -25,6 +25,7 @@ import streamlit as st
 import io 
 
 # --- IMPORTS PARA EXPORTAÇÃO ---
+# Certifique-se de que 'python-docx' e 'fpdf' estão no requirements.txt
 from docx import Document 
 from fpdf import FPDF 
 # -------------------------------------
@@ -55,7 +56,8 @@ def find_project_root(start: Path, marker_folder: str = "assets") -> Path:
         if p.parent == p:
             break
         p = p.parent
-    return start
+    # Fallback: Se não achar, assume o diretório atual de trabalho (comum no Cloud)
+    return Path.cwd()
 
 PROJECT_ROOT = find_project_root(THIS.parent)
 ASSETS_DIR    = PROJECT_ROOT / "assets"
@@ -109,7 +111,9 @@ def safe_image(path: Path, *, width: int | None = None, caption: str | None = No
         if path.exists():
             st.image(str(path), width=width, caption=caption)
         else:
-            st.warning(f"Imagem não encontrada: `{path.as_posix()}`") 
+            # Em produção, pode-se comentar a linha abaixo para não mostrar erros visuais
+            # st.warning(f"Imagem não encontrada: `{path.as_posix()}`") 
+            pass
     except Exception as e:
         st.error(f"Erro ao carregar imagem: {e}")
 
@@ -422,6 +426,6 @@ with col_main:
                 mime="application/pdf"
             )
         except Exception as e:
-            st.error("Erro PDF (instale fpdf2)")
+            st.error("Erro PDF (instale fpdf)")
 
     st.caption(f"Sistema rodando a partir de: `{PROJECT_ROOT}`")
