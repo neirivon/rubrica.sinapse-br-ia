@@ -7,20 +7,13 @@ textColor = "#1a1a1a"
 font = "sans serif"
 
 [server]
-headless = false
-enableXsrfProtection = true
-maxUploadSize = 200
-folderWatchBlacklist = ["data"]
-# porta local opcional:
-# port = 8501
-
-[runner]
-magicEnabled = false
-fastReruns = true
+headless = true
+gatherUsageStats = false
+enableCORS = false
+enableXsrfProtection = false
+address = "0.0.0.0"
+port = 8501
 
 [client]
 toolbarMode = "minimal"
-
-[logger]
-level = "info"
 
