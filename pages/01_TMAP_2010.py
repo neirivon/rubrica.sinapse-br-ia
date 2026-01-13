@@ -14,8 +14,8 @@ st.markdown('<meta name="google" content="notranslate">', unsafe_allow_html=True
 # --- CAMINHOS ---
 THIS = Path(__file__).resolve()
 # Arquivos gerados pelo ETL Master V2
-JSON_HIST = THIS.parents[2] / "data" / "tmap_historico_comparativo.json"
-JSON_2024 = THIS.parents[2] / "data" / "tmap_2024_completo.json"
+JSON_HIST = THIS.parents[1] / "data" / "tmap_historico_comparativo.json"
+JSON_2024 = THIS.parents[1] / "data" / "tmap_2024_completo.json"
 
 # --- FUNÇÃO DE CÁLCULO GEOFILOSÓFICO (NOVA INTEGRAÇÃO) ---
 def calcular_indice_atrito(distancia_km, num_onibus):

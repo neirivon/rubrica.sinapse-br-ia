@@ -1,4 +1,4 @@
-# /home/neirivon/SINAPSE2.0/sinapsebr_rubrica/scripts/pages/02_TMAP_2017_2024.py
+# /home/neirivon/SINAPSE2.0/sinapsebr_rubrica/pages/02_TMAP_2017_2024.py
 # --------------------------------------------------------------------------------------
 # NOME DO SCRIPT: 02_TMAP_2017_2024.py
 # DESCRIÇÃO: Visualização interativa da Rede EPT no Território (TMAP) utilizando
@@ -10,7 +10,7 @@
 #   4. Indicadores de Equidade: Cores (SAEB/Qualidade) e Tamanho (INSE/Vulnerabilidade).
 # AUTOR: Neirivon Elias Cardoso (Adaptado por Gemini)
 # PROJETO: Rubrica SINAPSE-BR IA
-# DATA: 12/01/2026 (Atualizado com otimização de UX/Hover)
+# DATA: 12/01/2026 (Atualizado com otimização de UX/Hover e correção de Path)
 # --------------------------------------------------------------------------------------
 
 import streamlit as st
@@ -24,19 +24,34 @@ st.set_page_config(page_title="TMAP • Rede EPT", page_icon="🌐", layout="wid
 # Bloqueia tradução automática do Chrome
 st.markdown('<meta name="google" content="notranslate">', unsafe_allow_html=True)
 
-# --- CONFIGURAÇÃO ---
+# ----------------------------------------------------------------------
+# CORREÇÃO CRÍTICA DE CAMINHO (Aqui estava o erro)
+# ----------------------------------------------------------------------
 THIS = Path(__file__).resolve()
-JSON_DATA = THIS.parents[2] / "data" / "tmap_2024_completo.json"
 
+# Como o script agora está na pasta 'pages' (na raiz), ele sobe apenas 1 nível.
+# parents[0] = pasta 'pages'
+# parents[1] = pasta raiz do projeto ('sinapsebr_rubrica')
+ROOT_DIR = THIS.parents[1]
+JSON_FILE = ROOT_DIR / "data" / "tmap_2024_completo.json"
+
+# --- DEBUG E CARREGAMENTO ---
 @st.cache_data
 def load_data():
-    if not JSON_DATA.exists():
-        st.error(f"❌ Arquivo de dados não encontrado: {JSON_DATA}")
-        return []
-    with open(JSON_DATA, "r", encoding="utf-8") as f:
+    if not JSON_FILE.exists():
+        # Retorna None para tratar o erro fora da função cacheada
+        return None
+    with open(JSON_FILE, "r", encoding="utf-8") as f:
         return json.load(f)
 
 data = load_data()
+
+# Trava de segurança caso o arquivo não seja encontrado
+if data is None:
+    st.error("❌ ERRO CRÍTICO: Arquivo de dados não encontrado!")
+    st.markdown(f"**O sistema procurou em:** `{JSON_FILE}`")
+    st.markdown("Verifique se a pasta `data` está na raiz do projeto e se o arquivo JSON existe.")
+    st.stop()
 
 # --- FUNÇÃO DE ESTILO ---
 def get_node_style(escola):
@@ -63,6 +78,7 @@ def get_node_style(escola):
 
 # --- SIDEBAR ---
 with st.sidebar:
+    # Ajuste: Como Apresentacao.py está na raiz, o link direto funciona
     st.page_link("Apresentacao.py", label="🏠 Apresentação")
     st.divider()
     st.markdown("### 🎯 Filtros")
@@ -109,7 +125,7 @@ if data:
         rurais = sum(1 for e in muni.get('Escolas', []) if 'Rural' in str(e.get('Zona', '')))
         pct_rural = (rurais / total_escolas * 100) if total_escolas > 0 else 0
         
-        # TOOLTIP DO MUNICÍPIO (NOVO!)
+        # TOOLTIP DO MUNICÍPIO
         muni_tooltip = f"""
         <div style='padding:5px;'>
             <h3 style='margin:0; color:#f97316; font-size:16px;'>📍 {muni_name}</h3>
@@ -126,7 +142,7 @@ if data:
             "id": muni_name, "label": muni_name, 
             "color": "#f97316", "shape": "ellipse", "value": total_mat,
             "group": "city",
-            "info_html": muni_tooltip, # HTML Injetado
+            "info_html": muni_tooltip,
             "font": {"size": 16}
         })
         edges.append({"from": "ROOT", "to": muni_name, "color": "#cbd5e1"})
@@ -191,7 +207,7 @@ st.caption("Visualização baseada nos Microdados do Censo 2024, SAEB 2023 e INS
 if not nodes:
     st.warning("⚠️ Nenhum dado carregado.")
 else:
-    # Aumentei o tooltipDelay para 300 para evitar disparos acidentais
+    # Configuração do Vis.js
     options = {
         "physics": {"enabled": True, "stabilization": {"enabled": True}},
         "layout": {"improvedLayout": True},
@@ -218,7 +234,7 @@ else:
             font-family: 'Segoe UI', sans-serif;
             z-index: 1000;
             pointer-events: none;
-            transition: opacity 0.2s ease-in-out; /* Suaviza a aparição */
+            transition: opacity 0.2s ease-in-out;
         }}
       </style>
     </head>
@@ -234,10 +250,9 @@ else:
       var options = {json.dumps(options)};
       var network = new vis.Network(container, data, options);
       
-      var hideTimeout; // Variável para controlar o atraso no fechamento
+      var hideTimeout;
 
       network.on("hoverNode", function (params) {{
-          // Se houver um comando para esconder pendente, cancela ele (usuário voltou rápido)
           if (hideTimeout) {{
               clearTimeout(hideTimeout);
               hideTimeout = null;
@@ -256,12 +271,11 @@ else:
       }});
 
       network.on("blurNode", function (params) {{
-          // Aguarda 200ms antes de esconder o painel (Debounce)
           hideTimeout = setTimeout(function() {{
               panel.style.opacity = '0';
               setTimeout(function(){{ 
                   if(panel.style.opacity === '0') panel.style.display = 'none'; 
-              }}, 200); // Espera a transição CSS terminar para dar display none
+              }}, 200);
           }}, 200);
       }});
 
@@ -322,4 +336,7 @@ with st.expander("📂 Ver Tabela de Dados Brutos"):
                 r.update({"Curso": "Sem cursos técnicos", "Matrículas": 0})
                 rows.append(r)
     
-    if rows: st.dataframe(pd.DataFrame(rows), use_container_width=True)
+    if rows:
+        st.dataframe(pd.DataFrame(rows), use_container_width=True)
+    else:
+        st.info("Nenhum dado para exibir com os filtros atuais.")
