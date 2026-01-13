@@ -1,0 +1,113 @@
+# ===========================================
+# Rubrica SINAPSE-BR IA - .gitignore (versão otimizada)
+# ===========================================
+
+#############
+# PYTHON
+#############
+
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+#############
+# AMBIENTES VIRTUAIS
+#############
+
+.venv/
+venv/
+ENV/
+env/
+sinapsebr/
+sinapsebr-light/
+
+#############
+# ARQUIVOS DE CONFIGURAÇÃO / SEGREDOS
+#############
+
+.env
+.env.local
+.streamlit/secrets.toml
+
+#############
+# LOGS E CACHE
+#############
+
+*.log
+*.tmp
+*.bak
+.cache/
+.ipynb_checkpoints/
+
+#############
+# PASTAS A SEREM IGNORADAS (NÃO ENTRAM NO STREAMLIT)
+# Estas pastas contêm arquivos que o Streamlit não deve ler.
+#############
+
+ativos/
+assets/imagens/
+documentos/
+roteiros/
+docs/
+data/
+app/
+# você pode liberar apenas algum arquivo específico com "!"
+# exemplo:
+# !docs/README.md
+
+#############
+# ARQUIVOS PESADOS (EVITAR QUEBRAR O STREAMLIT)
+#############
+
+# PDFs, imagens, vídeos, arquivos grandes
+*.pdf
+*.PNG
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.mp4
+*.mp3
+*.mkv
+
+#############
+# ARQUIVOS DE DADOS GRANDES
+#############
+
+*.csv
+*.xlsx
+*.xls
+*.parquet
+*.feather
+*.zip
+*.rar
+*.7z
+*.tar.gz
+
+#############
+# ARTEFATOS DE BUILD
+#############
+
+build/
+dist/
+.eggs/
+*.egg-info/
+*.egg
+
+#############
+# EDITORES / SISTEMA OPERACIONAL
+#############
+
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+Thumbs.db
+.DS_Store
+
+# ===========================================
+# FIM DO ARQUIVO .gitignore
+# ===========================================
+

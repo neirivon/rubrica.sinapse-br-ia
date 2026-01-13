@@ -1,0 +1,26 @@
+[theme]
+base = "light"
+primaryColor = "#0f766e"
+backgroundColor = "#fdfdfd"
+secondaryBackgroundColor = "#f5f5f5"
+textColor = "#1a1a1a"
+font = "sans serif"
+
+[server]
+headless = false
+enableXsrfProtection = true
+maxUploadSize = 200
+folderWatchBlacklist = ["data"]
+# porta local opcional:
+# port = 8501
+
+[runner]
+magicEnabled = false
+fastReruns = true
+
+[client]
+toolbarMode = "minimal"
+
+[logger]
+level = "info"
+

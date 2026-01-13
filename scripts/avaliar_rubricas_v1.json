@@ -1,0 +1,102 @@
+[
+  {
+    "dimensao": "Clareza e Objetividade",
+    "descricao": "Avalia se os critérios da rubrica são redigidos de forma clara, compreensível e objetiva.",
+    "versao": "v1",
+    "autor": "Professor Dr. Bruno Pereira Garcês",
+    "timestamp_versao": "2025-05-21T15:09:01.008242",
+    "niveis": [
+      {
+        "nivel": "1",
+        "descricao": "Critérios confusos, subjetivos ou vagos."
+      },
+      {
+        "nivel": "2",
+        "descricao": "Critérios parcialmente compreensíveis ou com termos genéricos."
+      },
+      {
+        "nivel": "3",
+        "descricao": "Critérios claros, mas com possibilidade de múltiplas interpretações."
+      },
+      {
+        "nivel": "4",
+        "descricao": "Critérios totalmente claros, objetivos e bem definidos."
+      }
+    ]
+  },
+  {
+    "dimensao": "Coerência Pedagógica",
+    "descricao": "Verifica se os critérios e os níveis da rubrica estão alinhados com os objetivos de aprendizagem.",
+    "versao": "v1",
+    "autor": "Professor Dr. Bruno Pereira Garcês",
+    "timestamp_versao": "2025-05-21T15:09:01.008250",
+    "niveis": [
+      {
+        "nivel": "1",
+        "descricao": "Critérios desconectados dos objetivos de aprendizagem."
+      },
+      {
+        "nivel": "2",
+        "descricao": "Parcialmente coerente com os objetivos propostos."
+      },
+      {
+        "nivel": "3",
+        "descricao": "Critérios coerentes com os objetivos educacionais."
+      },
+      {
+        "nivel": "4",
+        "descricao": "Totalmente alinhada com os objetivos pedagógicos e metodológicos."
+      }
+    ]
+  },
+  {
+    "dimensao": "Aplicabilidade Prática",
+    "descricao": "Considera se a rubrica pode ser facilmente aplicada por diferentes professores em diferentes contextos.",
+    "versao": "v1",
+    "autor": "Professor Dr. Bruno Pereira Garcês",
+    "timestamp_versao": "2025-05-21T15:09:01.008256",
+    "niveis": [
+      {
+        "nivel": "1",
+        "descricao": "De difícil aplicação, com critérios abstratos ou inconsistentes."
+      },
+      {
+        "nivel": "2",
+        "descricao": "Aplicação parcial, com exemplos insuficientes ou genéricos."
+      },
+      {
+        "nivel": "3",
+        "descricao": "Aplicável com apoio, exemplos ou formação prévia."
+      },
+      {
+        "nivel": "4",
+        "descricao": "Aplicação fácil, imediata e adaptável."
+      }
+    ]
+  },
+  {
+    "dimensao": "Abrangência e Equidade",
+    "descricao": "Avalia se a rubrica contempla diferentes estilos de aprendizagem, níveis cognitivos e inclusão.",
+    "versao": "v1",
+    "autor": "Professor Dr. Bruno Pereira Garcês",
+    "timestamp_versao": "2025-05-21T15:09:01.008258",
+    "niveis": [
+      {
+        "nivel": "1",
+        "descricao": "Excludente ou limitada a um perfil específico de aluno."
+      },
+      {
+        "nivel": "2",
+        "descricao": "Abrangente apenas em alguns aspectos (ex: cognitivo, mas não afetivo)."
+      },
+      {
+        "nivel": "3",
+        "descricao": "Contempla diversidade de estilos e ritmos com ressalvas."
+      },
+      {
+        "nivel": "4",
+        "descricao": "Abrangente, equitativa e promotora de inclusão."
+      }
+    ]
+  }
+]

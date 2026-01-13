@@ -1,0 +1,153 @@
+.
+├── app
+├── assets
+│   ├── comparacao_divisoes_ibge.png
+│   ├── imagens
+│   │   ├── grafico_protocolo_pisa_2022.png
+│   │   ├── neirivon.png
+│   │   ├── nuvem_palavras_protocolo.png
+│   │   ├── Orientadora.png
+│   │   └── sinapse-br-qr-code.png
+│   ├── logos
+│   │   ├── IFTM_360.png
+│   │   └── sinapse.png
+│   └── thumbs
+│       └── Thumbnail.Youtube.SINAPSE-2-0.png
+├── consultar-olinda-bi.json
+├── data
+│   ├── INSE_2021
+│   │   ├── INSE_2021__brasil.xlsx
+│   │   ├── INSE_2021_escolas.xlsx
+│   │   ├── INSE_2021_estados.xlsx
+│   │   └── INSE_2021_municipios.xlsx
+│   ├── microdados_censo_escolar_2024
+│   │   ├── Anexos
+│   │   │   ├── ANEXO I - Dicionário de Dados
+│   │   │   │   ├── ~$dicionário_dados_educação_básica.xlsx
+│   │   │   │   ├── ~$Dicionário de Dados da Educação Básica.xlsx
+│   │   │   │   └── dicionário_dados_educação_básica.xlsx
+│   │   │   └── ANEXO II -  Questionários do Censo da Educação Basica
+│   │   │       ├── Aluno 2024.pdf
+│   │   │       ├── Escola 2024.pdf
+│   │   │       ├── Escola Nova 2024.pdf
+│   │   │       ├── Gestor Escolar 2024.pdf
+│   │   │       ├── Profissional Escolar 2024.pdf
+│   │   │       └── Turma 2024.pdf
+│   │   ├── dados
+│   │   │   ├── md5_microdados_ed_basica_2024.txt
+│   │   │   ├── microdados_ed_basica_2024.csv
+│   │   │   └── suplemento_cursos_tecnicos_2024.csv
+│   │   └── leia-me
+│   │       └── Leia-me.pdf
+│   ├── MICRODADOS_SAEB_2023
+│   │   ├── DADOS
+│   │   │   ├── TS_ALUNO_2EF.csv
+│   │   │   ├── TS_ALUNO_34EM.csv
+│   │   │   ├── TS_ALUNO_5EF.csv
+│   │   │   ├── TS_ALUNO_9EF.csv
+│   │   │   ├── TS_DIRETOR.csv
+│   │   │   ├── TS_ESCOLA.csv
+│   │   │   ├── TS_ITEM.csv
+│   │   │   ├── TS_PROFESSOR.csv
+│   │   │   └── TS_SECRETARIO_MUNICIPAL.csv
+│   │   ├── DICIONÁRIO
+│   │   │   ├── ~$Dicionario_ANEB_Prova_Brasil_2017.xlsx
+│   │   │   ├── Dicionario_Saeb_2023.ods
+│   │   │   └── Dicionario_Saeb_2023.xlsx
+│   │   ├── ESCALAS DE PROFICIÊNCIA
+│   │   │   ├── Escalas de Proficiência do Saeb - BNCC.pdf
+│   │   │   ├── Escalas de Proficiência do Saeb.pdf
+│   │   │   └── Thumbs.db
+│   │   ├── INPUTS
+│   │   │   ├── INPUT_R_TS_ALUNO_2EF.R
+│   │   │   ├── INPUT_R_TS_ALUNO_34EM.R
+│   │   │   ├── INPUT_R_TS_ALUNO_5EF.R
+│   │   │   ├── INPUT_R_TS_ALUNO_9EF.R
+│   │   │   ├── INPUT_R_TS_DIRETOR.R
+│   │   │   ├── INPUT_R_TS_ESCOLA.R
+│   │   │   ├── INPUT_R_TS_ITEM.R
+│   │   │   ├── INPUT_R_TS_PROFESSOR.R
+│   │   │   ├── INPUT_R_TS_SECRETARIO_MUNICIPAL.R
+│   │   │   ├── INPUT_SAS_TS_ALUNO_2EF.sas
+│   │   │   ├── INPUT_SAS_TS_ALUNO_34EM.sas
+│   │   │   ├── INPUT_SAS_TS_ALUNO_5EF.sas
+│   │   │   ├── INPUT_SAS_TS_ALUNO_9EF.sas
+│   │   │   ├── INPUT_SAS_TS_DIRETOR.sas
+│   │   │   ├── INPUT_SAS_TS_ESCOLA.SAS
+│   │   │   ├── INPUT_SAS_TS_ITEM.sas
+│   │   │   ├── INPUT_SAS_TS_PROFESSOR.sas
+│   │   │   ├── INPUT_SAS_TS_SECRETARIO_MUNICIPAL.sas
+│   │   │   ├── INPUT_SPSS_TS_ALUNO_2EF.sps
+│   │   │   ├── INPUT_SPSS_TS_ALUNO_34EM.sps
+│   │   │   ├── INPUT_SPSS_TS_ALUNO_5EF.sps
+│   │   │   ├── INPUT_SPSS_TS_ALUNO_9EF.sps
+│   │   │   ├── INPUT_SPSS_TS_DIRETOR.sps
+│   │   │   ├── INPUT_SPSS_TS_ESCOLA.sps
+│   │   │   ├── INPUT_SPSS_TS_ITEM.sps
+│   │   │   ├── INPUT_SPSS_TS_PROFESSOR.sps
+│   │   │   └── INPUT_SPSS_TS_SECRETARIO_MUNICIPAL.sps
+│   │   ├── LEIA-ME E DOCUMENTOS TÉCNICOS
+│   │   │   ├── Leia-Me_Microdados_Saeb_2023.pdf
+│   │   │   ├── Nota Técnica - Detalhamento da população e resultados do SAEB 2023.pdf
+│   │   │   ├── PORTARIA Nº 267, DE 21 DE JUNHO DE 2023.pdf
+│   │   │   └── Relatorio_de_Amostragem_SAEB_2023.pdf
+│   │   └── MATRIZES DE REFERÊNCIA
+│   │       ├── Matriz de Referência de Ciências da Natureza.pdf
+│   │       ├── Matriz de Referência de Ciências Humanas.pdf
+│   │       ├── Matriz de Referência de Língua Portuguesa e Matemática do Saeb - 2º Ano do Ensino Fundamental.pdf
+│   │       ├── Matriz de Referência de Língua Portuguesa e Matemática do Saeb.pdf
+│   │       └── Thumbs.db
+│   ├── Relatorio_IPES_Escolas.csv
+│   └── Sistec_Cursos_Tecnicos_ativos_120922.csv
+├── docs
+│   ├── a-formac3a7c3a3o-social-da-mente.pdf
+│   ├── a-psicologia-da-crianca-jean-piaget_compress.pdf
+│   ├── “Artificial.Intelligence.and.neuroeducation:.The.future.of.personalized.teaching-2024.pdf
+│   ├── Artigo-Educação,.Neurociência.e.Tecnologia:.Uma.Revisão.de.Modelos.Aplicados.pdf
+│   ├── Avaliar.para.promover\012As.setas.do.caminho.Jussara.Hoffmann.2025.pdf
+│   ├── cast-diretrizes-do-desenho-universal-para-a-aprendizagem.docx
+│   ├── Diretrizes.do.Design.Universal.para.Aprendizagem.pdf
+│   ├── Esqueleto_TCC_SINAPSE_BR_IA_ABNT.docx
+│   ├── LIVRO.VYGOTSKY.FORMACAO.MENTE.pdf
+│   ├── Metodologias.Ativas.para.uma.Educação.Inovadora.Uma.Abordagem.Teórico-Prática.by.Lilian.Bacich..José.Moran.[Bacich,.Lilian].CAPÍTULOS.SELECIONADOS.pdf
+│   ├── neuroeducacao-final.pdf
+│   ├── O+nascimento+da+inteligência+na+criança.pdf
+│   ├── o-tempo-de-uma-aula-a-neuroeducacao-e-a-inovacao.pdf
+│   ├── Paulo-Freire-Educação-como-prática-da-liberdade.pdf
+│   ├── referencias.ABNT.txt
+│   ├── rubric_for_rubrics_bie_2011.pdf
+│   ├── rubric_for_rubrics_bie_2011.png
+│   ├── SINTESE.DE.INTEGRACAO.NA.RUBRICA.SINAPSE-BR.IA.png
+│   ├── TCC.Dirceu.Nogueira.de.Sales.Duarte.JuniorO.MOODLE.COMO.FERRAMENTA.DA.PRÁTICA.DOCENTE:.TECNOLOGIAS\012DIGITAIS.DE.INFORMAÇÃO.E.COMUNICAÇÃO.COMO.POSSIBILIDADE.AO.DOCENTE.DA.EDUCAÇÃO.BÁSICA.pdf
+│   ├── Texto.PROMPTS.Videos.Rubrica.SINAPSE-2-0.txt
+│   └── VIGOTSKI-Lev-Semenovitch-Linguagem-Desenvolvimento-e-Aprendizagem.pdf
+├── heads_dados.txt
+├── LICENSE
+├── meta_rubrica_3d_v2.py
+├── meta_rubrica_app.py
+├── meta_rubrica_neon.py
+├── orientadora_objetivos.geral.e.específico.e.justificativa.txt
+├── README.md
+├── requirements.txt
+├── scripts
+│   ├── Apresentacao-bkp-21-11-2025.py
+│   ├── Apresentacao.py
+│   ├── avaliar_rubricas_referenciais.py
+│   ├── avaliar_rubricas_v1.csv
+│   ├── avaliar_rubricas_v1.json
+│   ├── gerar_rubricas_avaliar_rubricas_v1_json_csv.py
+│   ├── inserir_avaliar_rubricas_v1.py
+│   ├── pages
+│   │   ├── 01_TMAP_2010.py
+│   │   ├── 02_TMAP_2017_2022.py
+│   │   ├── 03_Mapa_Rubrica_PyVis.py
+│   │   ├── 03_Mapa_Rubrica_SINAPSE_BR_IA.py
+│   │   ├── 04_Mapa_Fundamentacao_Teorica_PyVis.py
+│   │   ├── 04_Mapa_Fundamentacao_Teorica_visnetwork.py
+│   │   ├── 05_Meta_Rubrica_3D.py
+│   │   ├── 06_Rubrica_Docente_3D.py
+│   │   └── 07_Rubrica_Autoavaliativa_3D.py
+│   └── peek_ept_heads.py
+└── sinapsebr_rubrica.txt
+
+23 directories, 127 files
