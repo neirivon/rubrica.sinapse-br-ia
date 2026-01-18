@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="VHSTVRIPPERS Route Exporter">
+  <trk>
+    <name>Rota IFTM - VHSTVRIPPERS04</name>
+    <trkseg>
+      <trkpt lat="-18.9579529" lon="-48.2299539">
+        <name>Casa</name>
+      </trkpt>
+      <trkpt lat="-18.9586936" lon="-48.2315737">
+        <name>Abelardo_Pena_291</name>
+      </trkpt>
+      <trkpt lat="-18.9375088" lon="-48.2299736">
+        <name>Terminal_Santa_Luzia</name>
+      </trkpt>
+      <trkpt lat="-18.8850513" lon="-48.2540238">
+        <name>Terminal_Umuarama</name>
+      </trkpt>
+      <trkpt lat="-18.7645467" lon="-48.2886511">
+        <name>IFTM_Fazenda_Sobradinho</name>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

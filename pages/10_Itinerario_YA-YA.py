@@ -11,7 +11,7 @@
 #
 # AUTOR: Neirivon Elias Cardoso
 # DATA: 16/01/2026
-# VERSÃO: 7.3 (Correção Lógica Temporal + Sincronia 1s=1min)
+# VERSÃO: 7.5 (Sincronia Força Bruta: HTML Component + Compensação de Lag)
 # --------------------------------------------------------------------------------------
 
 import streamlit as st
@@ -31,50 +31,42 @@ st.markdown("""
 <style>
     div[data-testid="metric-container"] { background-color: #f8f9fa; border-radius: 8px; padding: 8px; border-left: 4px solid #4338ca; box-shadow: 1px 1px 3px rgba(0,0,0,0.1); min-height: 110px; }
     .status-box { padding: 10px; border-radius: 8px; font-weight: bold; text-align: center; margin-bottom: 5px; font-size: 1.1em; color: white; text-transform: uppercase; font-family: 'Arial', sans-serif; }
-    .video-wrapper { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; margin-bottom: 10px; }
-    .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-    .video-blocker { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: transparent; z-index: 10; cursor: not-allowed; }
     .fase-verde { background-color: #166534; } .fase-vermelho { background-color: #b91c1c; } .fase-laranja { background-color: #ea580c; } 
     .fase-amarelo { background-color: #d97706; } .fase-azul { background-color: #1e3a8a; } .fase-roxa { background-color: #6b21a8; } .fase-noturna { background-color: #312e81; } 
 </style>
 """, unsafe_allow_html=True)
 
 # --- 1. GERENCIAMENTO DE IMAGENS (LOCAL + FALLBACK WEB) ---
-# Se o arquivo local falhar, usa estes links que JÁ SÃO VERDES/VERMELHOS
-FALLBACK_VERDE = "https://img.icons8.com/plasticine/100/bus.png" # Um ônibus colorido padrão
-FALLBACK_VERMELHO = "https://img.icons8.com/color/96/double-decker-bus.png" # Vermelho (Estilo Londres)
+FALLBACK_VERDE = "https://img.icons8.com/plasticine/100/bus.png"
+FALLBACK_VERMELHO = "https://img.icons8.com/color/96/double-decker-bus.png"
 FALLBACK_PADRAO = "https://img.icons8.com/color/96/bus.png"
 
 @st.cache_data
 def carregar_imagem_local(caminho_absoluto, fallback_url):
-    """Lê arquivo local e converte para Base64. Se der erro, retorna URL web."""
     if os.path.exists(caminho_absoluto):
         try:
             with open(caminho_absoluto, "rb") as image_file:
                 encoded = base64.b64encode(image_file.read()).decode()
-            return f"data:image/png;base64,{encoded}", True # True = carregou local
+            return f"data:image/png;base64,{encoded}", True 
         except Exception as e:
             return fallback_url, False
     return fallback_url, False
 
-# Caminhos exatos fornecidos
 PATH_VERDE = "/home/neirivon/SINAPSE2.0/sinapsebr_rubrica/assets/logos/Onibus_Verde_Google_Maps.png"
 PATH_VERMELHO = "/home/neirivon/SINAPSE2.0/sinapsebr_rubrica/assets/logos/Onibus_Vermelho_Google_Maps.png"
 
-# Carregamento
 URL_BUS_VERDE, status_verde = carregar_imagem_local(PATH_VERDE, FALLBACK_VERDE)
 URL_BUS_VERMELHO, status_vermelho = carregar_imagem_local(PATH_VERMELHO, FALLBACK_VERMELHO)
 
 # --- 2. DADOS DA ROTA (JSON) ---
 @st.cache_data
 def carregar_rota_unica():
-    # Tenta achar o JSON na pasta do script
     path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "rota_detalhada_google.json")
     if os.path.exists(path):
         try:
             with open(path, "r") as f:
                 raw = json.load(f)
-                return [[p[1], p[0]] for p in raw] # Inverte Lat/Lon -> Lon/Lat
+                return [[p[1], p[0]] for p in raw] 
         except: return None
     return None
 
@@ -88,27 +80,26 @@ def get_slice(start_ratio, end_ratio):
         return full_route_points[s:e]
     return [[-48.229, -18.957], [-48.288, -18.764]]
 
-# Trechos (Fatiamento Geográfico)
+# Trechos
 path_caminhada = get_slice(0.00, 0.02)
 path_a339 = get_slice(0.02, 0.15)
 path_i323 = get_slice(0.15, 0.40)
 path_d281 = get_slice(0.40, 0.98)
 path_interno = get_slice(0.98, 1.00)
 
-# Pontos Chave
 pt_tsl, pt_tu = path_a339[-1], path_i323[-1]
 pt_iftm, pt_casa = path_d281[-1], path_caminhada[0]
 
 # --- 3. CONFIGURAÇÃO VISUAL (LAYERS) ---
 BACKGROUND_LAYERS_DATA = [
-    {"path": path_caminhada, "color": [255, 140, 0]}, # Laranja
-    {"path": path_a339,      "color": [0, 128, 0]},   # Verde
-    {"path": path_i323,      "color": [200, 0, 0]},   # Vermelho
-    {"path": path_d281,      "color": [34, 139, 34]}, # Verde Floresta
-    {"path": path_interno,   "color": [0, 0, 139]}    # Azul
+    {"path": path_caminhada, "color": [255, 140, 0]}, 
+    {"path": path_a339,      "color": [0, 128, 0]},   
+    {"path": path_i323,      "color": [200, 0, 0]},   
+    {"path": path_d281,      "color": [34, 139, 34]}, 
+    {"path": path_interno,   "color": [0, 0, 139]}    
 ]
 
-# ROTEIRO: RELÓGIO CONGELA NA FASE 7, MAS AS FASES CONTINUAM ATÉ A 10
+# ROTEIRO: RELÓGIO CONGELA NA FASE 7 (07:37), MAS AS FASES CONTINUAM ATÉ A 10
 ROTEIRO = [
     { "id": 1, "horario": "05:40", "titulo": "🚶 SAINDO DE CASA", "desc": "Caminhada urbana.", "path": path_caminhada, "icon": "person", "css": "fase-laranja", "zoom": 16, "atrito": "Rugosidade", "mov": True },
     { "id": 2, "horario": "05:55", "titulo": "🚌 LINHA A-339", "desc": "Rumo ao T. Santa Luzia.", "path": path_a339, "icon": "green_bus", "css": "fase-verde", "zoom": 15, "atrito": "Vibração", "mov": True },
@@ -122,7 +113,6 @@ ROTEIRO = [
     { "id": 10,"horario": "07:37", "titulo": "😴 FIM", "desc": "Ciclo Encerrado.", "path": [pt_casa]*2, "icon": "home", "css": "fase-noturna", "zoom": 13, "atrito": "Repouso", "mov": False }
 ]
 
-# MAPA DE ÍCONES
 ICONS_DATA = {
     "green_bus": {"url": URL_BUS_VERDE, "width": 128, "height": 128, "anchorY": 128},
     "red_bus":   {"url": URL_BUS_VERMELHO, "width": 128, "height": 128, "anchorY": 128},
@@ -146,7 +136,7 @@ c1, c2 = st.columns([1, 1])
 with c1: st.markdown("""<div class="intro-box"><strong>🗺️ Conceitos:</strong><br>Simulação com geometria real e colorida para demonstrar os diferentes fluxos (Bairro, Corredor, Rural).</div>""", unsafe_allow_html=True)
 with c2: st.markdown("""<div class="history-box"><strong>⏳ História:</strong><br>O trajeto desenha no asfalto a narrativa da sucessão geracional na EPT.</div>""", unsafe_allow_html=True)
 
-# DEBUG DE IMAGENS E MAPA REAL
+# DEBUG
 with st.expander("📍 Mapa Real & Status dos Ícones (Debug)", expanded=True):
     d1, d2 = st.columns(2)
     with d1:
@@ -164,39 +154,63 @@ with st.expander("📍 Mapa Real & Status dos Ícones (Debug)", expanded=True):
 
 st.divider()
 
-if 'simulacao_ativa' not in st.session_state: st.session_state.simulacao_ativa = False
-def start(): st.session_state.simulacao_ativa = True
+# --- SOLUÇÃO DE SINCRONIA: "GATILHO HÍBRIDO" (FORÇA BRUTA) ---
+# Substituímos a lógica antiga por colunas de controle robusto
 
-if not st.session_state.simulacao_ativa:
-    st.button("▶️ INICIAR SIMULAÇÃO REAL (Todas as Fases)", on_click=start, type="primary", use_container_width=True)
-    # Preview
-    view = pdk.ViewState(latitude=-18.90, longitude=-48.25, zoom=10)
-    prev_layer = pdk.Layer("PathLayer", data=BACKGROUND_LAYERS_DATA, get_path="path", get_color="color", get_width=30)
-    st.pydeck_chart(pdk.Deck(layers=[prev_layer], initial_view_state=view, map_style="mapbox://styles/mapbox/light-v10"))
+col_controles, col_video, col_mapa = st.columns([1, 2, 2])
 
-if st.session_state.simulacao_ativa:
-    c_video, c_mapa = st.columns([1, 1.4])
-    with c_video:
-        st.markdown("**🎥 Registro Visual**")
-        st.markdown("""<div class="video-wrapper"><iframe src="https://www.youtube.com/embed/AzGyshHLN3k?autoplay=1&mute=0&controls=0&start=0" frameborder="0" allow="autoplay; encrypted-media"></iframe><div class="video-blocker"></div></div>""", unsafe_allow_html=True)
-        status_ph = st.empty(); desc_ph = st.empty()
-    with c_mapa:
-        st.markdown("**📡 GPS em Tempo Real**")
-        mapa_ph = st.empty()
-        
-    st.markdown("---")
+with col_controles:
+    st.info("1. Aguarde o Player aparecer.\n2. Ajuste o Lag se necessário.\n3. INICIAR.")
+    # Slider para compensar internet lenta no IFTM
+    delay_rede = st.slider("Compensação de Lag (s)", 0.0, 5.0, 1.5, help="Tempo extra para o vídeo carregar antes do mapa andar.")
+    # Botão mestre que inicia tudo
+    iniciar = st.button("▶️ INICIAR VIAGEM", type="primary", use_container_width=True)
+
+# COMPONENTE HTML COM API DO YOUTUBE (AutoPlay via Script)
+with col_video:
+    video_id = "AzGyshHLN3k"
+    # Se o botão foi clicado, enviamos o comando de play automático (1), senão (0)
+    autoplay_param = "1" if iniciar else "0"
+    
+    # Injetamos o iframe diretamente
+    video_html = f"""
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px;">
+        <iframe 
+            src="https://www.youtube.com/embed/{video_id}?autoplay={autoplay_param}&controls=0&rel=0&modestbranding=1&enablejsapi=1&origin=https://streamlit.io"
+            frameborder="0" 
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+            allow="autoplay; encrypted-media">
+        </iframe>
+    </div>
+    """
+    components.html(video_html, height=300)
+    
+    status_ph = st.empty()
+    desc_ph = st.empty()
+
+with col_mapa:
+    st.markdown("**📡 GPS da Narrativa**")
+    mapa_ph = st.empty()
+
+st.markdown("---")
+
+# --- LÓGICA DE EXECUÇÃO SINCRONIZADA ---
+if iniciar:
+    # 1. O Python espera a "Compensação de Lag" (tempo para o YouTube acordar no navegador)
+    time.sleep(delay_rede)
+    
+    # 2. Inicializa as variáveis de tempo e métricas
     m1, m2, m3, m4 = st.columns(4)
     box_relogio, box_fase, box_dist, box_atrito = m1.empty(), m2.empty(), m3.empty(), m4.empty()
     
-    time.sleep(1)
-    
-    # --- CONFIGURAÇÃO DA ANIMAÇÃO ---
+    # Configuração da Animação
     NUM_FASES = len(ROTEIRO) # 10 Fases
     STEP_TIME = 8.0          # Tempo de cada fase
     TOTAL_TIME = NUM_FASES * STEP_TIME 
     
     start_t = time.time()
     
+    # 3. Entra no Loop (Agora sincronizado com o vídeo que já recebeu o comando de play)
     while True:
         elapsed = time.time() - start_t
         if elapsed > TOTAL_TIME: break
@@ -206,17 +220,16 @@ if st.session_state.simulacao_ativa:
         step = ROTEIRO[idx]
         progress = (elapsed % STEP_TIME) / STEP_TIME
         
+        # Atualiza Status e Descrição
         status_ph.markdown(f"""<div class="status-box {step['css']}">{step['titulo']}</div>""", unsafe_allow_html=True)
         desc_ph.info(step['desc'])
         
-        # O RELÓGIO SEGUE O DADO DO ROTEIRO
-        # Nas fases 8, 9 e 10, ele mostra "07:37" fixo, conforme configurado na lista ROTEIRO
+        # MÉTRICAS (Relógio congela conforme definido no ROTEIRO)
         box_relogio.metric("⏰ Horário", step['horario'])
-        
         box_fase.metric("Fase", f"{step['id']}/10")
         box_atrito.metric("⚡ Atrito", step['atrito'], delta_color="inverse")
         
-        # GPS Logic
+        # Lógica do Mapa (GPS)
         path_len = len(step['path'])
         if step['mov'] and path_len > 1:
             curr_idx = int(progress * (path_len - 1))
@@ -224,13 +237,13 @@ if st.session_state.simulacao_ativa:
             lon = step['path'][curr_idx][0]
             lat = step['path'][curr_idx][1]
         else:
-            # Para fases estáticas (como Refeitório e Banda), mantemos a posição fixa
+            # Posição estática para fases sem movimento
             lon = step['path'][0][0]
             lat = step['path'][0][1]
             
         view = pdk.ViewState(latitude=lat, longitude=lon, zoom=step['zoom'], pitch=50)
         
-        # Layers
+        # Layers do Mapa
         layer_road = pdk.Layer("PathLayer", data=BACKGROUND_LAYERS_DATA, get_path="path", get_color="color", get_width=40, opacity=0.7)
         
         current_icon = ICONS_DATA.get(step['icon'], ICONS_DATA['bus'])
@@ -246,9 +259,10 @@ if st.session_state.simulacao_ativa:
         
         deck = pdk.Deck(layers=[layer_road, layer_icon], initial_view_state=view, map_style="mapbox://styles/mapbox/light-v10", tooltip={"text": step['desc']})
         mapa_ph.pydeck_chart(deck)
+        
+        # Pequena pausa para não travar o processador
         time.sleep(0.1)
 
     st.success("🏁 Fim do Itinerário.")
     time.sleep(3)
-    st.session_state.simulacao_ativa = False
     st.rerun()
