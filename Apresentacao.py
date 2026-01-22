@@ -41,13 +41,13 @@ st.set_page_config(
 )
 
 # ---------------------------------
-# Localizador robusto de assets
+# Localizador robusto de assets (ATUALIZADO PARA 'ativos/logotipos')
 # ---------------------------------
 THIS = Path(__file__).resolve()
 
-def find_project_root(start: Path, marker_folder: str = "assets") -> Path:
+def find_project_root(start: Path, marker_folder: str = "ativos") -> Path:
     """
-    Sobe diretórios até encontrar uma pasta 'assets' (marcador do projeto).
+    Sobe diretórios até encontrar uma pasta 'ativos' (marcador do projeto).
     Isso evita erros se o arquivo estiver na raiz ou em 'scripts'.
     """
     p = start
@@ -60,17 +60,16 @@ def find_project_root(start: Path, marker_folder: str = "assets") -> Path:
     # Fallback: Se não achar, assume o diretório atual de trabalho
     return Path.cwd()
 
-# Define a raiz e os caminhos baseados no código fornecido
-PROJECT_ROOT = find_project_root(THIS.parent, marker_folder="assets")
-ASSETS_DIR    = PROJECT_ROOT / "assets"
-IMG_DIR       = ASSETS_DIR / "imagens"
-LOGO_DIR      = ASSETS_DIR / "logos"
+# Define a raiz e os caminhos baseados na nova estrutura do GitHub
+PROJECT_ROOT = find_project_root(THIS.parent, marker_folder="ativos")
+ATIVOS_DIR    = PROJECT_ROOT / "ativos"
+LOGOTIPOS_DIR = ATIVOS_DIR / "logotipos" # Pasta unificada para imagens
 
-# Caminhos específicos dos arquivos
-NEIRIVON_IMG      = IMG_DIR / "neirivon.png"
-ORIENTADORA_IMG   = IMG_DIR / "Orientadora.png"
-LOGO_IFTM         = LOGO_DIR / "IFTM_360.png"
-LOGO_SINAPSE      = LOGO_DIR / "sinapse.png"
+# Caminhos específicos dos arquivos (Todos apontam para logotipos agora)
+NEIRIVON_IMG      = LOGOTIPOS_DIR / "neirivon.png"
+ORIENTADORA_IMG   = LOGOTIPOS_DIR / "Orientadora.png"
+LOGO_IFTM         = LOGOTIPOS_DIR / "IFTM_360.png"
+LOGO_SINAPSE      = LOGOTIPOS_DIR / "sinapse.png"
 
 # ---------------------------------
 # Utilitários de imagem / HTML
@@ -94,7 +93,6 @@ def img_circular_b64(path: Path) -> str:
         base64_img = base64.b64encode(output_buffer.read()).decode()
         return f"data:image/png;base64,{base64_img}"
     except Exception as e:
-        # Em debug pode ser útil printar o erro: print(e)
         return ""
 
 def tag_html_profile_content(base64_img: str, name: str, caption: str):
@@ -151,7 +149,6 @@ def get_apresentacao_content():
     content.append("`Como integrar princípios da Neuropsicopedagogia, das Taxonomias Cognitivas (Bloom/SOLO), do Desenho Universal para a Aprendizagem (DUA) e da equidade socioterritorial em uma rubrica formativa aplicável à Educação Profissional e Tecnológica?`")
     
     content.append("### DELIMITAÇÃO")
-    # Texto atualizado para incluir a memória institucional nos documentos gerados
     content.append("Construção teórico-propositiva da **Rubrica SINAPSE-BR IA** para a Rede Federal, com recorte territorial e analítico no **Triângulo Mineiro e Alto Paranaíba (TMAP)**, utilizando dados do SISTEC, Censo Escolar e o **resgate da memória institucional**.")
     content.append("---")
     
