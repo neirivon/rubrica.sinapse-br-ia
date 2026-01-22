@@ -17,18 +17,19 @@
 # --------------------------------------------------------------------------------------
 
 import os
+import io
+import base64
 from pathlib import Path
 from io import BytesIO
-import base64
 from PIL import Image, ImageDraw
 import streamlit as st
-import io 
 
 # --- IMPORTS PARA EXPORTAÇÃO ---
-# Certifique-se de que 'python-docx' e 'fpdf' estão no requirements.txt
-from docx import Document 
-from fpdf import FPDF 
-# -------------------------------------
+try:
+    from docx import Document
+    from fpdf import FPDF
+except ImportError:
+    st.error("Bibliotecas 'python-docx' ou 'fpdf' não instaladas. As funções de exportação não funcionarão.")
 
 # ---------------------------------
 # Config da página
@@ -56,14 +57,16 @@ def find_project_root(start: Path, marker_folder: str = "assets") -> Path:
         if p.parent == p:
             break
         p = p.parent
-    # Fallback: Se não achar, assume o diretório atual de trabalho (comum no Cloud)
+    # Fallback: Se não achar, assume o diretório atual de trabalho
     return Path.cwd()
 
-PROJECT_ROOT = find_project_root(THIS.parent)
+# Define a raiz e os caminhos baseados no código fornecido
+PROJECT_ROOT = find_project_root(THIS.parent, marker_folder="assets")
 ASSETS_DIR    = PROJECT_ROOT / "assets"
 IMG_DIR       = ASSETS_DIR / "imagens"
 LOGO_DIR      = ASSETS_DIR / "logos"
 
+# Caminhos específicos dos arquivos
 NEIRIVON_IMG      = IMG_DIR / "neirivon.png"
 ORIENTADORA_IMG   = IMG_DIR / "Orientadora.png"
 LOGO_IFTM         = LOGO_DIR / "IFTM_360.png"
@@ -91,6 +94,7 @@ def img_circular_b64(path: Path) -> str:
         base64_img = base64.b64encode(output_buffer.read()).decode()
         return f"data:image/png;base64,{base64_img}"
     except Exception as e:
+        # Em debug pode ser útil printar o erro: print(e)
         return ""
 
 def tag_html_profile_content(base64_img: str, name: str, caption: str):
@@ -111,8 +115,7 @@ def safe_image(path: Path, *, width: int | None = None, caption: str | None = No
         if path.exists():
             st.image(str(path), width=width, caption=caption)
         else:
-            # Em produção, pode-se comentar a linha abaixo para não mostrar erros visuais
-            # st.warning(f"Imagem não encontrada: `{path.as_posix()}`") 
+            # Silencioso em produção para não quebrar layout
             pass
     except Exception as e:
         st.error(f"Erro ao carregar imagem: {e}")
@@ -261,6 +264,7 @@ def generate_pdf(content_markdown: str) -> BytesIO:
             font_size = 14 if level == 1 else 12
             pdf.set_font('Arial', 'B', font_size)
             pdf.set_text_color(0, 0, 0)
+            # Encode/Decode para lidar com caracteres latinos básicos
             pdf.multi_cell(0, 8, text.encode('latin-1', 'replace').decode('latin-1'))
             pdf.ln(2)
         elif line.startswith('>'):
@@ -388,7 +392,7 @@ with col_main:
         st.write("Pesquisa **Qualitativa, Teórico-Propositiva**.")
         st.markdown("""
         1. **Levantamento Bibliográfico:** Bases SciELO, Repositórios.
-        2. **Análise Documental:** DCNs, SAEB, Relatórios SISTEC.
+        2. **Análise Documental:** DCNs, BNCC, Matrizes do SAEB e Relatórios SISTEC.
         3. **Engenharia Didática:** Construção do artefato em Python (Streamlit).
         """)
 

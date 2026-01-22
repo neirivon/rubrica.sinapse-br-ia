@@ -2,196 +2,159 @@
 # --------------------------------------------------------------------------------------
 # NOME DO SCRIPT: 08_Transparencia_Avaliativa.py
 # DESCRIÇÃO: Página de Meta-Avaliação do artefato SINAPSE-BR IA.
-#            Utiliza um gráfico de radar para contrastar o rigor técnico (Mullinix)
-#            com o compromisso ético-social (Geofilosofia/Hospitalidade).
+#            Utiliza a metodologia HÍBRIDA de Mullinix (2003): Quali (Descritores) + Quanti (Scoring).
 # FUNCIONALIDADES:
-#   1. Sliders de calibragem para autoavaliação do instrumento pelo usuário.
-#   2. Cálculo de Índice Híbrido (Técnico + Social).
-#   3. Visualização em Radar Chart (Plotly) para identificar desequilíbrios.
-#   4. Interpretação qualitativa baseada na tensão Hospitalidade vs. Hostilidade (Paulo Irineu).
-# AUTOR: Neirivon Elias Cardoso (Adaptado por Gemini)
-# PROJETO: Rubrica SINAPSE-BR IA
-# DATA: 04/01/2026
+#   1. Sliders baseados nos 5 critérios de Mullinix + 1 Critério Ético (Hospitalidade).
+#   2. Cálculo de Score Total (Soma) como na ferramenta original de Mullinix.
+#   3. Diagnóstico Automático (Needs Improvement -> Exemplary).
+# AUTOR: Neirivon Elias Cardoso
+# DATA: 20/01/2026
 # --------------------------------------------------------------------------------------
 
 import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
-import numpy as np
 
 st.set_page_config(
-    page_title="Transparência Avaliativa (Híbrida)",
-    page_icon="🐆",
+    page_title="Meta-Avaliação (Mullinix)",
+    page_icon="⚖️",
     layout="wide"
 )
 
-# Bloqueia tradução automática
-st.markdown('<meta name="google" content="notranslate">', unsafe_allow_html=True)
-
-# --- TÍTULO E CONCEITO (ATUALIZADO: GEOFILOSOFIA) ---
-st.title("🐆 Transparência Avaliativa: A Ética da Hospitalidade")
-
+# --- CABEÇALHO ---
+st.title("⚖️ Meta-Avaliação do Sistema SINAPSE")
 st.markdown("""
-Esta página materializa o princípio da **Meta-Avaliação Geofilosófica**.
-Inspirado na tese de **Paulo Irineu**, este painel investiga a natureza do instrumento avaliativo:
-ele opera como um mecanismo de **hostilidade** (frio, excludente e puramente técnico) ou
-se constitui como um território de **hospitalidade** (acolhedor, situado e ético)?
-
-Aqui, submetemos a Rubrica SINAPSE-BR IA a um duplo escrutínio:
-* **A Precisão Técnica (Mullinix):** Clareza e confiabilidade dos critérios.
-* **O Compromisso Ético (Geofilosofia):** Sensibilidade ao território e à interseccionalidade.
-
-**Objetivo:** Garantir que a avaliação seja um **ponto de encontro**, não de exclusão.
+Esta ferramenta realiza a **validação técnica** da própria rubrica, seguindo rigorosamente 
+o instrumento *'Rubric for Assessing Rubrics'* da **Dra. Bonnie B. Mullinix (2003)**.
 """)
 
-st.divider()
+st.info("ℹ️ **Metodologia Híbrida:** Assim como na obra original, atribuímos pesos (1-4) para gerar um diagnóstico final de qualidade.")
 
-# --- FORMULÁRIO DE AVALIAÇÃO (LATERAL) ---
-with st.sidebar:
-    st.header("🎚️ Painel de Calibragem")
-    st.caption("Avalie o Artefato SINAPSE nas seguintes dimensões (Escala 1-4):")
+# --- COLUNAS DE AVALIAÇÃO (CRITÉRIOS DE MULLINIX) ---
+c1, c2 = st.columns([1, 1])
+
+with c1:
+    st.subheader("1. Critérios Técnicos (Mullinix)")
     
-    st.subheader("1. Dimensão Técnica (Mullinix)")
-    tec_clareza = st.slider("Clareza dos Critérios", 1, 4, 3, help="Os critérios são inequívocos? (Base: Mullinix)")
-    tec_confiabilidade = st.slider("Confiabilidade", 1, 4, 3, help="Diferentes avaliadores chegariam à mesma nota?")
-    tec_metacognicao = st.slider("Apoio à Metacognição", 1, 4, 4, help="Estimula o aluno a pensar sobre o aprender?")
-    
-    st.subheader("2. Dimensão Ética (Geofilosofia)")
-    soc_territorio = st.slider("Sensibilidade Territorial", 1, 4, 4, help="Considera as disparidades do TMAP (Rural/Urbano)?")
-    soc_interseccional = st.slider("Interseccionalidade", 1, 4, 4, help="Cruza Classe (INSE) com Acesso e Identidade?")
-    soc_equidade = st.slider("Hospitalidade/Acolhimento", 1, 4, 4, help="A ferramenta acolhe a diversidade ou impõe barreiras?")
-
-# --- CÁLCULO HÍBRIDO ---
-# Médias
-media_tec = np.mean([tec_clareza, tec_confiabilidade, tec_metacognicao])
-media_soc = np.mean([soc_territorio, soc_interseccional, soc_equidade])
-media_global = (media_tec + media_soc) / 2
-
-# Lógica Qualitativa (Conceito)
-if media_global >= 3.8:
-    conceito = "Nível 4: Referência (Hospitalidade Plena)"
-    cor_conceito = "#22c55e" # Verde
-    msg = "A rubrica atinge o estado da arte, unindo rigor técnico e compromisso ético profundo."
-elif media_global >= 3.0:
-    conceito = "Nível 3: Consolidado"
-    cor_conceito = "#3b82f6" # Azul
-    msg = "A rubrica é sólida e clara, cumprindo seu papel formativo com segurança."
-elif media_global >= 2.0:
-    conceito = "Nível 2: Em Desenvolvimento"
-    cor_conceito = "#facc15" # Amarelo
-    msg = "Atenção: A ferramenta pode estar pendendo para a hostilidade técnica ou fragilidade teórica."
-else:
-    conceito = "Nível 1: Em Reestruturação"
-    cor_conceito = "#ef4444" # Vermelho
-    msg = "Crítico: O instrumento necessita revisão profunda para não gerar exclusão."
-
-# --- EXIBIÇÃO DOS RESULTADOS (COLUNAS) ---
-col_grafico, col_parecer = st.columns([1.5, 1])
-
-with col_grafico:
-    st.subheader("📊 Radar da Sinergia Educacional")
-    
-    categories = [
-        'Clareza (Téc)', 'Confiabilidade (Téc)', 'Metacognição (Téc)',
-        'Território (Ética)', 'Interseccionalidade (Ética)', 'Hospitalidade (Ética)'
-    ]
-    values = [
-        tec_clareza, tec_confiabilidade, tec_metacognicao,
-        soc_territorio, soc_interseccional, soc_equidade
-    ]
-    
-    # Fechar o ciclo do gráfico
-    values += values[:1]
-    categories += categories[:1]
-
-    fig = go.Figure()
-    fig.add_trace(go.Scatterpolar(
-        r=values,
-        theta=categories,
-        fill='toself',
-        name='SINAPSE-BR IA',
-        line_color='#ea580c'
-    ))
-
-    # Adiciona uma linha de "Referência Ideal" (Nível 4)
-    fig.add_trace(go.Scatterpolar(
-        r=[4]*7,
-        theta=categories,
-        name='Ideal (Mullinix/Irineu)',
-        line_color='#94a3b8',
-        line_dash='dot',
-        hoverinfo='none'
-    ))
-
-    fig.update_layout(
-        polar=dict(
-            radialaxis=dict(visible=True, range=[0, 4.5], tickvals=[1,2,3,4])
-        ),
-        showlegend=True,
-        height=500,
-        margin=dict(l=40, r=40, t=20, b=20)
+    clareza = st.slider(
+        "1. Clareza dos Critérios", 
+        1, 4, 3, 
+        help="1=Confuso | 4=Critérios distintos, claros e apropriados."
     )
     
+    distincao = st.slider(
+        "2. Distinção entre Níveis", 
+        1, 4, 4, 
+        help="1=Sem distinção | 4=Progressão clara e lógica entre níveis."
+    )
+    
+    confiabilidade = st.slider(
+        "3. Confiabilidade (Reliability)", 
+        1, 4, 3, 
+        help="1=Inconsistente | 4=Diferentes avaliadores chegam à mesma nota."
+    )
+
+with c2:
+    st.subheader("2. Impacto Pedagógico & Ético")
+    
+    metacognicao = st.slider(
+        "4. Apoio à Metacognição", 
+        1, 4, 4, 
+        help="1=Não ajuda | 4=Ajuda o aluno a entender COMO aprende."
+    )
+    
+    engajamento = st.slider(
+        "5. Envolvimento do Aluno", 
+        1, 4, 3, 
+        help="1=Passivo | 4=Aluno co-constrói ou usa para autoavaliação."
+    )
+    
+    # Critério Extra: Geofilosofia (O diferencial do seu TCC)
+    hospitalidade = st.slider(
+        "6. Ética da Hospitalidade (Fernandes)", 
+        1, 4, 4, 
+        help="1=Excludente | 4=Território de acolhimento e equidade."
+    )
+
+# --- CÁLCULO DO SCORE (LÓGICA MULLINIX) ---
+# Mullinix usa soma simples. Como temos 6 critérios (ela usa 5 ou 6 dependendo da versão),
+# o máximo é 24 pontos.
+total_score = clareza + distincao + confiabilidade + metacognicao + engajamento + hospitalidade
+
+# Definição das Faixas de Diagnóstico (Baseado na imagem enviada)
+# 0-10: Needs Improvement
+# 11-15: Workable
+# 16-20: Solid/Good
+# 21-24: Exemplary
+
+diagnostico = ""
+cor_diag = ""
+icone = ""
+
+if total_score <= 10:
+    diagnostico = "NEEDS IMPROVEMENT (Precisa Melhorar)"
+    cor_diag = "inverse" # Vermelho/Preto
+    icone = "🚨"
+elif total_score <= 15:
+    diagnostico = "WORKABLE (Funcional/Aceitável)"
+    cor_diag = "off" # Cinza/Amarelo
+    icone = "⚠️"
+elif total_score <= 20:
+    diagnostico = "SOLID / GOOD (Sólido/Bom)"
+    cor_diag = "normal" # Verde claro
+    icone = "✅"
+else:
+    diagnostico = "EXEMPLARY (Exemplar/Estado da Arte)"
+    cor_diag = "normal" # Verde forte (no toast/sucesso usamos success)
+    icone = "🏆"
+
+# --- EXIBIÇÃO DO RESULTADO ---
+st.divider()
+c_res1, c_res2 = st.columns([2, 3])
+
+with c_res1:
+    st.metric(label="SCORE TOTAL (Mullinix)", value=f"{total_score} / 24")
+    
+    if total_score > 20:
+        st.success(f"### {icone} {diagnostico}")
+        st.caption("A rubrica atinge o nível máximo de qualidade psicométrica e pedagógica.")
+    elif total_score > 15:
+        st.info(f"### {icone} {diagnostico}")
+    else:
+        st.warning(f"### {icone} {diagnostico}")
+
+with c_res2:
+    # Gráfico de Radar para visualizar o equilíbrio
+    categories = ['Clareza', 'Distinção', 'Confiabilidade', 'Metacognição', 'Engajamento', 'Hospitalidade']
+    
+    fig = go.Figure()
+    fig.add_trace(go.Scatterpolar(
+        r=[clareza, distincao, confiabilidade, metacognicao, engajamento, hospitalidade],
+        theta=categories,
+        fill='toself',
+        name='SINAPSE-BR IA'
+    ))
+    
+    fig.update_layout(
+        polar=dict(
+            radialaxis=dict(visible=True, range=[0, 4])
+        ),
+        showlegend=False,
+        height=350,
+        margin=dict(l=40, r=40, t=20, b=20)
+    )
     st.plotly_chart(fig, use_container_width=True)
 
-with col_parecer:
-    st.subheader("📝 Parecer Meta-Avaliativo")
-    
-    # Card do Conceito
-    st.markdown(f"""
-    <div style="background-color: #f8fafc; border-left: 6px solid {cor_conceito}; padding: 20px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1);">
-        <h2 style="margin:0; color: {cor_conceito};">{media_global:.2f} / 4.0</h2>
-        <h3 style="margin:5px 0; color: #334155;">{conceito}</h3>
-        <p style="margin-top:10px; font-style: italic; color: #475569;">"{msg}"</p>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    st.divider()
-    
-    # Detalhamento
-    st.markdown("### 🔎 Diagnóstico por Eixo")
-    
-    # Eixo Técnico
-    delta_tec = media_tec - 3.0
-    st.metric("Maturidade Técnica (Mullinix)", f"{media_tec:.2f}", delta=f"{delta_tec:.2f}", 
-              help="Média dos critérios de engenharia pedagógica.")
-    
-    # Eixo Social
-    delta_soc = media_soc - 3.0
-    st.metric("Índice de Hospitalidade (Geofilosofia)", f"{media_soc:.2f}", delta=f"{delta_soc:.2f}",
-              help="Média dos critérios de ética, território e acolhimento.")
-    
-    # Interpretação Geofilosófica (CORRIGIDA)
-    st.info("""
-    **Interpretação Geofilosófica:**
-    
-    O SINAPSE busca um "polígono cheio" e equilibrado.
-    
-    Se houver desequilíbrio (ex: muita técnica, pouca ética), a ferramenta **perde sua "hospitalidade" e recai na hostilidade sistêmica** (Paulo Irineu).
-    
-    O objetivo não é apenas medir, mas garantir que a avaliação seja um **território de acolhimento** (Praxis).
-    """)
-
-# --- RODAPÉ DIDÁTICO ---
+# --- RODAPÉ COM A FONTE EXATA ---
 st.markdown("---")
-with st.expander("🧠 Fundamentação deste Instrumento"):
+with st.expander("📚 Fonte de Validação"):
     st.markdown("""
-    Esta página aplica o conceito de **Meta-Avaliação** (avaliar a avaliação).
-    * **Escala 1-4:** Baseada em **Mullinix (2003)** para rubricas de qualidade.
-    * **Dimensões Éticas:** Baseadas na **Geofilosofia (Paulo Irineu)** e **Interseccionalidade (Crenshaw)**.
-    * **Visualização:** O gráfico de radar permite identificar se o artefato pende para o tecnicismo (hostilidade) ou para a práxis social (hospitalidade).
+    **Referência Base:**
+    * **Autora:** Dr. Bonnie B. Mullinix (Monmouth University, 2003).
+    * **Instrumento:** *Rubric for Assessing Rubrics*.
+    * **Lógica de Scoring:**
+        * 0 - 10 = Needs Improvement
+        * 11 - 15 = Workable
+        * 16 - 20 = Solid/Good
+        * **21 - 24 = Exemplary** (Meta do SINAPSE)
     """)
-
-# --- SIDEBAR GLOBAL ---
-with st.sidebar:
-    st.divider()
-    st.page_link("Apresentacao.py", label="🏠 Apresentação")
-    st.page_link("pages/01_TMAP_2010.py", label="⏳ TMAP Histórico")
-    st.page_link("pages/02_TMAP_2017_2024.py", label="🌐 TMAP 2024 (Equidade)")
-    st.page_link("pages/03_Mapa_Geral_Rubrica.py", label="🧠 Mapa da Rubrica")
-    st.page_link("pages/04_Mapa_Fundamentacao_Teorica.py", label="📚 Fundamentação")
-    st.page_link("pages/05_Meta_Rubrica_3D.py", label="🌌 Meta-Rubrica 3D")
-    st.page_link("pages/06_Rubrica_Docente_3D.py", label="👩‍🏫 Rubrica Docente 3D")
-    st.page_link("pages/07_Rubrica_Autoavaliativa_3D.py", label="🎓 Autoavaliação 3D")
-    st.page_link("pages/08_Transparencia_Avaliativa.py", label="🐆 Transparência (Avaliação)")
-    st.page_link("pages/99_Referencias.py", label="📚 Referências")

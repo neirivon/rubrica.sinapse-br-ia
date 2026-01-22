@@ -2,15 +2,16 @@
 # --------------------------------------------------------------------------------------
 # NOME DO SCRIPT: 11_Simulador_Geofilosofico.py
 # DESCRIÇÃO: Simulador interativo baseado na metáfora ferroviária da Geofilosofia,
-#            integrando os eixos da Rubrica SINAPSE-BR IA (Cognitivo, Territorial, Práxis).
+#            integrando os eixos da Rubrica SINAPSE-BR IA com a ética da Hospitalidade
+#            (Fernandes, 2023) e a equidade territorial.
 # FUNCIONALIDADES:
-#   1. Visualização dos 3 Motores (Eixos) e seus status na "Locomotiva Tridimensional".
-#   2. Simulação do "Vagão Híbrido" (Poltrona Tech vs. Praça Maker) com DUA.
-#   3. Painel de Controle Docente (CCO) com métricas de "Ping" (Latência) e "Jitter".
-#   4. Transposição didática visual para defesa da Dissertação e conceituação do sistema.
-# AUTOR: Neirivon Elias Cardoso (Adaptado por Gemini)
+#   1. Visualização dos 3 Motores: Cognitivo, Territorial (Hospitalidade) e Práxis.
+#   2. Simulação do "Vagão Híbrido" (Poltrona Tech vs. Praça Maker/Terra de Todos).
+#   3. Painel de Controle Docente (CCO) com métricas de Latência e Acolhimento.
+#   4. Transposição didática visual para defesa da Dissertação.
+# AUTOR: Neirivon Elias Cardoso
 # PROJETO: Rubrica SINAPSE-BR IA
-# DATA: 18/01/2026
+# DATA: 20/01/2026
 # --------------------------------------------------------------------------------------
 
 import streamlit as st
@@ -26,7 +27,7 @@ st.set_page_config(
     page_icon="🚂"
 )
 
-# CSS para Estética "Jedi/Profissional"
+# CSS para Estética "Jedi/Profissional" e Acessibilidade (Alto Contraste)
 st.markdown("""
 <style>
     .stMetric {
@@ -44,6 +45,10 @@ st.markdown("""
     h1, h2, h3 {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
+    .big-font {
+        font-size:18px !important;
+        color: #31333F;
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -52,9 +57,12 @@ st.markdown("""
 # ──────────────────────────────────────────────────────────────────────────────
 st.title("🚂 O Trem da Educação: Modelagem Geofilosófica")
 st.markdown("""
-**Transposição Didática:** Esta interface traduz a complexidade da **Rubrica SINAPSE-BR IA** em uma metáfora ferroviária funcional.
-Aqui, a educação não é estática; é um movimento através do território (**Geofilosofia**), impulsionado por motores potentes (**Politecnia/Neurociência**) e monitorado por redes neurais (**Tecnologia**).
-""")
+<div class='big-font'>
+<b>Transposição Didática:</b> Esta interface traduz a <b>Rubrica SINAPSE-BR IA</b> em uma metáfora ferroviária.
+Aqui, o território (TMAP) não é apenas um mapa, mas uma <i>"Terra de (e para) todos"</i> (FERNANDES, 2023),
+onde a tecnologia serve à <b>Hospitalidade</b> e ao acolhimento da diversidade cognitiva.
+</div>
+""", unsafe_allow_html=True)
 
 st.divider()
 
@@ -64,7 +72,7 @@ st.divider()
 tab1, tab2, tab3 = st.tabs([
     "⚙️ 1. Os Motores (Eixos)", 
     "🚃 2. O Vagão Híbrido (Ambiente)", 
-    "📡 3. Painel CCO (Ping/Jitter)"
+    "📡 3. Painel CCO (Diagnóstico)"
 ])
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -79,32 +87,32 @@ with tab1:
     with col1:
         st.info("🧠 **Motor Frontal (TRAÇÃO)**")
         st.markdown("### Eixo COGNITIVO")
-        st.write("**Função:** Visão, Planejamento e Metacognição.")
-        st.write("*É o 'Farol' da IA que prevê o caminho e ilumina os trilhos.*")
-        st.metric(label="Status da IA", value="Online", delta="Rota Calculada")
+        st.write("**Função:** Metacognição e Neuropsicopedagogia.")
+        st.write("*O 'Farol' da IA que respeita o ritmo neural de cada aluno.*")
+        st.metric(label="Status da IA", value="Online", delta="Rota Personalizada")
 
     with col2:
         st.warning("🌍 **Motor Central (ESTABILIDADE)**")
         st.markdown("### Eixo TERRITORIAL")
-        st.write("**Função:** Identidade, Ética e 'Chão'.")
-        st.write("*O coração que impede o descarrilamento nas curvas da vida.*")
-        st.metric(label="Aderência ao Chão", value="100%", delta="Estável")
+        st.write("**Função:** Geofilosofia e Hospitalidade.")
+        st.write("*A ética que garante que o trem seja uma 'Terra para Todos'.*")
+        st.metric(label="Índice de Hospitalidade", value="100%", delta="Acolhedor")
 
     with col3:
         st.error("🛠️ **Motor Traseiro (IMPULSO)**")
         st.markdown("### Eixo PRÁXIS")
-        st.write("**Função:** Politecnia e Realização.")
-        st.write("*Vence a inércia e sobe a ladeira do trabalho real.*")
-        st.metric(label="Torque Técnico", value="Alto", delta="Empurrando")
+        st.write("**Função:** Politecnia e Mundo do Trabalho.")
+        st.write("*Vence a inércia, transformando teoria em produto real.*")
+        st.metric(label="Torque Técnico", value="Alto", delta="Transformador")
 
 # ──────────────────────────────────────────────────────────────────────────────
 # ABA 2: O VAGÃO HÍBRIDO (SALA DE AULA INVERTIDA/DUA)
 # ──────────────────────────────────────────────────────────────────────────────
 with tab2:
-    st.header("O Vagão SINAPSE (Ambiente de Aprendizagem)")
+    st.header("O Vagão SINAPSE: Um Território de Acolhimento")
     st.markdown("""
-    Superando a sala de aula tradicional, o vagão é dividido em dois momentos pedagógicos distintos, 
-    respeitando o tempo do indivíduo (DUA) e a força do coletivo (Geofilosofia).
+    Superando a sala de aula tradicional, o vagão é um espaço de **Hospitalidade Técnica**. 
+    Ele permite o isolamento necessário para a reflexão (Poltrona) e a comunhão necessária para a cidadania (Praça).
     """)
     
     st.markdown("---")
@@ -112,33 +120,31 @@ with tab2:
     col_poltrona, col_praca = st.columns([1, 1])
     
     with col_poltrona:
-        st.subheader("💺 A Poltrona Tech (O Casulo)")
-        # Simulação visual de ícone
-        st.markdown("🟦 **Foco: Individual (Cognitivo)**")
+        st.subheader("💺 A Poltrona Tech (O Eu)")
+        st.markdown("🟦 **Foco: Neuropsicopedagógico (Individual)**")
         st.markdown("""
-        * **Interface:** Tela Touch com IA e Fones.
-        * **Ação:** O aluno estuda a teoria, revê o mapa e preenche sua **Autoavaliação (Script 07)**.
-        * **Privacidade:** Espaço seguro para errar sem julgamento público.
+        * **Conceito:** O refúgio seguro. Onde o aluno encontra seu ritmo (DUA).
+        * **Ação:** Autoavaliação sem exposição. O erro é tratado como dado, não como falha.
+        * **Tecnologia:** IA adaptativa que dialoga com a singularidade do sujeito.
         """)
         
-        if st.button("Simular: Aluno acessando conteúdo na Poltrona"):
+        if st.button("Simular: Acolhimento Individual na Poltrona"):
              with st.chat_message("assistant"):
-                 st.write("Olá! Percebi que você tem interesse em Neurociência. Recomendei 3 vídeos novos na sua trilha.")
+                 st.write("Olá! Notei que você prefere explicações visuais. Preparei um infográfico sobre o TMAP especialmente para você.")
              with st.chat_message("user"):
-                 st.write("Obrigado! Vou assistir antes de ir para a Praça Maker.")
+                 st.write("Isso ajuda muito. Sinto-me mais seguro para ir à Praça agora.")
 
     with col_praca:
-        st.subheader("🏗️ A Praça Maker (O Chão)")
-        # Simulação visual de ícone
-        st.markdown("🟧 **Foco: Coletivo (Territorial/Práxis)**")
+        st.subheader("🏗️ A Praça Maker (O Nós)")
+        st.markdown("🟧 **Foco: Geofilosófico (Coletivo)**")
         st.markdown("""
-        * **Interface:** Bancadas, Ferramentas, Janelas amplas para a Cidade.
-        * **Ação:** Onde o "Eu" vira "Nós". Construção de projetos reais.
-        * **Geofilosofia:** Olhar pela janela e conectar o projeto à comunidade local.
+        * **Conceito:** *"Uma terra de (e para) todos"*. Onde a diversidade se encontra.
+        * **Ação:** Projetos que resolvem problemas reais do Triângulo Mineiro.
+        * **Meta:** A construção do território existencial através do trabalho colaborativo.
         """)
         
-        if st.button("Simular: Grupo apresentando projeto na Praça"):
-            st.success("🔨 Grupo 'Vagão Criativo' está prototipando uma solução para a antiga estação ferroviária!")
+        if st.button("Simular: Dinâmica de Grupo na Praça"):
+            st.success("🔨 Grupo 'Vagão Criativo' está desenvolvendo uma solução sustentável para a comunidade local, integrando saberes.")
 
 # ──────────────────────────────────────────────────────────────────────────────
 # ABA 3: MONITORAMENTO (DIAGNÓSTICO TÉCNICO-PEDAGÓGICO)
@@ -146,14 +152,14 @@ with tab2:
 with tab3:
     st.header("📡 CCO: Centro de Controle Operacional")
     st.markdown("""
-    Nesta visão, o docente atua como **Engenheiro de Redes**, monitorando não apenas a nota final, 
-    mas a **qualidade da conexão** cognitiva e emocional do estudante durante a viagem.
+    Nesta visão, o docente atua como um **Gestor de Hospitalidade**, monitorando não apenas notas, 
+    mas a **qualidade da conexão humana** e os sinais de exclusão territorial.
     """)
     
     st.info("""
-    **Conceito Técnico:**
-    * **Ping (Latência):** Tempo de resposta do aluno ao estímulo. (Ping Alto = Travamento/Dificuldade).
-    * **Jitter (Variação):** Instabilidade emocional/cognitiva. (Jitter Alto = Oscilação de humor/atenção).
+    **Glossário do Sistema SINAPSE:**
+    * **Ping (Latência):** Tempo de resposta. (Alto = Dificuldade cognitiva ou técnica).
+    * **Jitter (Variação):** Instabilidade emocional. (Alto = Ansiedade/Necessidade de Acolhimento).
     """)
     
     st.markdown("---")
@@ -166,19 +172,23 @@ with tab3:
         st.success("##### 🟢 Aluno: João (Fluxo)")
         st.metric(label="Latência (Ping)", value="15ms", delta="- Rápido")
         st.progress(95)
-        st.caption("✅ **Diagnóstico:** Sinapse fluida. O aluno responde aos estímulos imediatamente. Estado de Flow.")
+        st.caption("✅ **Diagnóstico:** Sinapse fluida. O aluno sente-se pertencente ao território de aprendizagem.")
     
-    # Aluno 2: Dificuldade Técnica
+    # Aluno 2: Dificuldade Técnica (Exclusão?)
     with col_b:
         st.warning("##### 🟡 Aluna: Maria (Bloqueio)")
         st.metric(label="Latência (Ping)", value="850ms", delta="Alto (Travado)", delta_color="inverse")
         st.progress(25)
-        st.caption("⚠️ **Diagnóstico:** Alta latência no Eixo Práxis. O aluno parou na mesma tela há 20min.")
+        st.caption("⚠️ **Diagnóstico:** Alta latência na Práxis. Possível barreira de acessibilidade. O DUA precisa ser ativado.")
         
-        if st.button("Enviar 'Ping' de Ajuda para Maria"):
-            with st.spinner('Enviando suporte discreto via tela da poltrona...'):
+        # --- ATUALIZAÇÃO IMPORTANTE AQUI (DUA/HOSPITALIDADE) ---
+        if st.button("Ativar Protocolo de Hospitalidade (Maria)"):
+            with st.spinner('Analisando perfil cognitivo de Maria...'):
                 time.sleep(1.5)
-            st.toast('Suporte enviado! O professor interveio sem expor a aluna.', icon='✅')
+            
+            # MUDANÇA: Exibe o sucesso e, logo abaixo, a informação detalhada fixa (sem desaparecer)
+            st.success("✅ **Intervenção:** Rota de aprendizagem ajustada para o perfil neurocognitivo da aluna.")
+            st.info("💙 **Ação do Sistema:** O conteúdo textual foi convertido automaticamente para **VÍDEO INTERATIVO** (Detecção de Perfil Visual).")
 
     # Aluno 3: Instabilidade Emocional (Jitter)
     with col_c:
@@ -187,7 +197,7 @@ with tab3:
         jitter_val = random.choice(["20ms", "400ms", "120ms", "900ms"])
         st.metric(label="Jitter (Variação)", value=jitter_val, delta="Instável", delta_color="inverse")
         st.progress(50)
-        st.caption("🛑 **Diagnóstico:** Alto Jitter (Oscilação). Indica instabilidade emocional ou fadiga. Requer acolhimento antes de conteúdo.")
+        st.caption("🛑 **Diagnóstico:** Alto Jitter. Indica ansiedade ou desconforto. Requer intervenção humana e ética do acolhimento.")
 
 # ──────────────────────────────────────────────────────────────────────────────
 # RODAPÉ E REFERÊNCIAS RÁPIDAS
@@ -196,6 +206,6 @@ st.markdown("---")
 st.markdown("""
 <div style="text-align: center; color: grey;">
     <b>Sistema SINAPSE-BR IA</b> | <i>Dissertação de Neirivon Elias Cardoso</i> | IFTM 2026<br>
-    Baseado na Geofilosofia de Paulo Irineu & Pedagogia de Paulo Freire
+    Fundamentação: Geofilosofia (FERNANDES, 2023) & Pedagogia da Autonomia (FREIRE, 1996)
 </div>
 """, unsafe_allow_html=True)
