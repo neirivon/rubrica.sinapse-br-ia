@@ -6,14 +6,14 @@
 #
 # FUNCIONALIDADES:
 #   1. Resumo Expandido: Problema, Objetivos, Metodologia e Resultados.
-#   2. Perfis: Cards visuais do Orientando e Orientadora.
+#   2. Perfis: Cards visuais do Orientando e Orientadora (Agora com Efeito Mouseover).
 #   3. Exportação: Geração dinâmica de DOCX e PDF com o conteúdo atualizado.
 #   4. Navegação: Ponto de partida para as ferramentas (Rubrica, Timeline, Dados).
 #
 # AUTOR: Neirivon Elias Cardoso
 # PROJETO: Rubrica SINAPSE-BR IA — Sistema Integrado Neuropsicopedagógico
 # TCC: Pós-Graduação em Docência para a EPT (IFTM)
-# DATA: 22/01/2026 (Fix: Caminho definitivo assets/imagens)
+# DATA: 22/01/2026 (Update: Efeito Visual Mouseover)
 # --------------------------------------------------------------------------------------
 
 import os
@@ -311,18 +311,29 @@ col_side, col_main = st.columns([0.25, 0.75])
 
 with col_main:
     
-    # CSS Injetado
+    # CSS Injetado (AGORA COM EFEITOS DE MOUSEOVER)
     st.markdown("""
     <style>
         .profile-container {
             display: flex; align-items: center; padding: 15px;
             background-color: #f8f9fa; border-radius: 10px;
             margin-bottom: 15px; border: 1px solid #e0e0e0;
+            transition: all 0.3s ease; /* Transição suave para o container */
+        }
+        .profile-container:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-color: #b0bec5;
         }
         .profile-image {
             width: 120px; height: 120px; border-radius: 50%;
             object-fit: cover; margin-right: 20px;
             border: 3px solid #4CAF50;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação da imagem */
+        }
+        .profile-image:hover {
+            transform: scale(1.1); /* Zoom de 10% */
+            box-shadow: 0 0 15px rgba(76, 175, 80, 0.6); /* Brilho verde */
+            cursor: pointer;
         }
         .profile-details h3 { margin: 0 0 5px 0; color: #2c3e50; font-size: 1.3em;}
         .profile-details p { margin: 0; color: #7f8c8d; font-size: 0.95em;}
