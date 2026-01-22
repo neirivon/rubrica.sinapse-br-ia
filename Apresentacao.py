@@ -13,7 +13,7 @@
 # AUTOR: Neirivon Elias Cardoso
 # PROJETO: Rubrica SINAPSE-BR IA — Sistema Integrado Neuropsicopedagógico
 # TCC: Pós-Graduação em Docência para a EPT (IFTM)
-# DATA: 12/01/2026 (Atualizado conforme versão final do TCC)
+# DATA: 22/01/2026 (Fix: Caminho definitivo assets/imagens)
 # --------------------------------------------------------------------------------------
 
 import os
@@ -41,7 +41,7 @@ st.set_page_config(
 )
 
 # ---------------------------------
-# Localizador robusto de assets (CORRIGIDO PARA ESTRUTURA REAL)
+# Localizador robusto (CORRIGIDO PARA assets/imagens)
 # ---------------------------------
 THIS = Path(__file__).resolve()
 
@@ -62,14 +62,14 @@ def find_project_root(start: Path) -> Path:
 # Define a raiz baseada na existência da pasta 'assets'
 PROJECT_ROOT = find_project_root(THIS.parent)
 
-# CAMINHO EXATO: sinapsebr_rubrica/assets/ativos/logotipos
-LOGOTIPOS_DIR = PROJECT_ROOT / "assets" / "ativos" / "logotipos"
+# CAMINHO EXATO: assets/imagens (Onde os arquivos estão agora)
+IMAGENS_DIR = PROJECT_ROOT / "assets" / "imagens"
 
 # Caminhos específicos dos arquivos
-NEIRIVON_IMG      = LOGOTIPOS_DIR / "neirivon.png"
-ORIENTADORA_IMG   = LOGOTIPOS_DIR / "Orientadora.png"
-LOGO_IFTM         = LOGOTIPOS_DIR / "IFTM_360.png"
-LOGO_SINAPSE      = LOGOTIPOS_DIR / "sinapse.png"
+NEIRIVON_IMG      = IMAGENS_DIR / "neirivon.png"
+ORIENTADORA_IMG   = IMAGENS_DIR / "Orientadora.png"
+LOGO_IFTM         = IMAGENS_DIR / "IFTM_360.png"
+LOGO_SINAPSE      = IMAGENS_DIR / "sinapse.png"
 
 # ---------------------------------
 # Utilitários de imagem / HTML
