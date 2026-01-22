@@ -1,4 +1,4 @@
-# /home/neirivon/SINAPSE2.0/sinapsebr_rubrica/scripts/Apresentacao.py
+# /home/neirivon/SINAPSE2.0/sinapsebr_rubrica/Apresentacao.py
 # --------------------------------------------------------------------------------------
 # NOME DO SCRIPT: Apresentacao.py
 # DESCRIÇÃO: Página inicial (Home) do protótipo SINAPSE-BR IA.
@@ -41,31 +41,31 @@ st.set_page_config(
 )
 
 # ---------------------------------
-# Localizador robusto de assets (ATUALIZADO PARA 'ativos/logotipos')
+# Localizador robusto de assets (CORRIGIDO PARA ESTRUTURA REAL)
 # ---------------------------------
 THIS = Path(__file__).resolve()
 
-def find_project_root(start: Path, marker_folder: str = "ativos") -> Path:
+def find_project_root(start: Path) -> Path:
     """
-    Sobe diretórios até encontrar uma pasta 'ativos' (marcador do projeto).
-    Isso evita erros se o arquivo estiver na raiz ou em 'scripts'.
+    Sobe diretórios até encontrar a pasta 'assets' (marcador da raiz).
     """
     p = start
     for _ in range(6): 
-        if (p / marker_folder).exists():
+        if (p / "assets").exists():
             return p
         if p.parent == p:
             break
         p = p.parent
-    # Fallback: Se não achar, assume o diretório atual de trabalho
+    # Fallback
     return Path.cwd()
 
-# Define a raiz e os caminhos baseados na nova estrutura do GitHub
-PROJECT_ROOT = find_project_root(THIS.parent, marker_folder="ativos")
-ATIVOS_DIR    = PROJECT_ROOT / "ativos"
-LOGOTIPOS_DIR = ATIVOS_DIR / "logotipos" # Pasta unificada para imagens
+# Define a raiz baseada na existência da pasta 'assets'
+PROJECT_ROOT = find_project_root(THIS.parent)
 
-# Caminhos específicos dos arquivos (Todos apontam para logotipos agora)
+# CAMINHO EXATO: sinapsebr_rubrica/assets/ativos/logotipos
+LOGOTIPOS_DIR = PROJECT_ROOT / "assets" / "ativos" / "logotipos"
+
+# Caminhos específicos dos arquivos
 NEIRIVON_IMG      = LOGOTIPOS_DIR / "neirivon.png"
 ORIENTADORA_IMG   = LOGOTIPOS_DIR / "Orientadora.png"
 LOGO_IFTM         = LOGOTIPOS_DIR / "IFTM_360.png"
@@ -113,7 +113,6 @@ def safe_image(path: Path, *, width: int | None = None, caption: str | None = No
         if path.exists():
             st.image(str(path), width=width, caption=caption)
         else:
-            # Silencioso em produção para não quebrar layout
             pass
     except Exception as e:
         st.error(f"Erro ao carregar imagem: {e}")
