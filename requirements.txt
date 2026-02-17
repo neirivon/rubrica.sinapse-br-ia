@@ -5,3 +5,6 @@ python-docx
 fpdf2
 Pillow
 openpyxl
+openpyxl
+numpy
+python-pptx
