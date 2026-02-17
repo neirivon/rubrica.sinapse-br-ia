@@ -8,3 +8,4 @@ openpyxl
 openpyxl
 numpy
 python-pptx
+graphviz
