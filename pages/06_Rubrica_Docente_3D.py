@@ -2,15 +2,15 @@
 # --------------------------------------------------------------------------------------
 # NOME DO SCRIPT: 06_Rubrica_Docente_3D.py
 # DESCRIÇÃO: Implementação da Rubrica Docente SINAPSE-BR IA com visualização 3D
-#            interativa.
+#            interativa e Paleta de Cores Sólidas (Definitiva).
 # FUNCIONALIDADES:
-#   1. Cards didáticos explicativos sobre o foco e fundamentação da rubrica docente.
-#   2. Painel 3D interativo com as 8 dimensões da prática pedagógica.
-#   3. Exibição dinâmica de descritores ao clicar nos blocos 3D.
-#   4. CSS aprimorado para estética visual profissional ("Jedi").
+#    1. Cards didáticos explicativos sobre o foco e fundamentação da rubrica docente.
+#    2. Painel 3D interativo com as 8 dimensões da prática pedagógica.
+#    3. Exibição dinâmica de descritores ao clicar nos blocos 3D.
+#    4. CSS aprimorado para estética visual profissional ("Jedi").
 # AUTOR: Neirivon Elias Cardoso (Adaptado por Gemini)
 # PROJETO: Rubrica SINAPSE-BR IA
-# DATA: 04/01/2026
+# DATA: 22/01/2026
 # --------------------------------------------------------------------------------------
 
 import streamlit as st
@@ -89,6 +89,29 @@ st.markdown(
         .tt { position: relative; color: inherit; cursor: pointer; font-weight: 700; text-decoration: underline; text-decoration-style: dotted;}
         .tt .tt-text { visibility: hidden; width: 350px; background: #333; color: #fff; text-align: left; padding: 10px; border-radius: 8px; position: absolute; z-index: 10; top: 120%; left: 0; font-size: 0.85rem; font-weight: 400; opacity: 0; transition: opacity 0.3s;}
         .tt:hover .tt-text { visibility: visible; opacity: 1; }
+
+        /* ESTILOS ADICIONAIS PARA WORKSPACE NOTEBOOKLM */
+        .workspace-content {
+            font-size: 1.15rem !important;
+            line-height: 1.65;
+            color: #1e293b;
+            background-color: #ffffff;
+            padding: 35px;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 12px 20px -4px rgba(0, 0, 0, 0.08);
+            font-family: 'Charter', 'Georgia', serif;
+            margin-top: 30px;
+            text-align: justify;
+        }
+        .workspace-content p {
+            margin: 1.1em 0 !important;
+            hyphens: auto;
+        }
+        .workspace-content h2 { color: #1e40af; font-size: 2.2rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-top: 30px; }
+        .workspace-content h3 { color: #0369a1; font-size: 1.6rem; margin-top: 25px; }
+        .highlight-blue { color: #1e40af; font-weight: 700; }
+        .highlight-purple { color: #6d28d9; font-weight: 700; }
     </style>
     """,
     unsafe_allow_html=True,
@@ -110,11 +133,11 @@ with c1:
             <div class="card-title">📝 Instrumento e Foco</div>
             A <strong>Rubrica Docente SINAPSE-BR IA</strong> organiza as evidências do trabalho pedagógico.
             <br><br>
-            Enquanto a rubrica discente foca o produto e o processo de aprendizagem, esta rubrica destaca:
+            Quanto a rubrica discente foca o produto e o processo de aprendizagem, esta rubrica destaca:
             <ul>
                 <li>A mediação pedagógica e o planejamento.</li>
                 <li>As devolutivas formativas (feedback acionável).</li>
-                <li>O compromisso com a **equidade** e o **cuidado** com a turma.</li>
+                <li>O compromisso com a <strong>equidade</strong> e o <strong>cuidado</strong> com a turma.</li>
             </ul>
         </div>
         """,
@@ -141,7 +164,7 @@ with c2:
 st.markdown("""
 <div class="didactic-card card-question">
     🧭 A Pergunta Norteadora da Avaliação Docente:<br>
-    <em>“O trabalho docente, tal como se materializa no curso, favorece aprendizagens profundas, equitativas e significativas?”</em>
+    <em>"O trabalho docente, tal como se materializa no curso, favorece aprendizagens profundas, equitativas e significativas?"</em>
 </div>
 """, unsafe_allow_html=True)
 
@@ -150,7 +173,7 @@ st.markdown("---")
 st.markdown(
     """
     <h3 style='text-align: center; color: #4b5563; margin-bottom: 1rem;'>
-    AS 8 DIMENSÕES DA PRÁTICA DOCENTE
+    AS 8 DIMENSÕES DA PRÁTICA DOCENTE (PALETA DEFINITIVA)
     </h3>
     <p style='text-align: center; color: #64748b; margin-bottom: 2rem;'>
     Passe o mouse sobre os blocos 3D abaixo para explorar cada dimensão da prática docente.
@@ -160,7 +183,7 @@ st.markdown(
 )
 
 # ==================================================================
-#  PAINEL 3D – RUBRICA DOCENTE (COM SIGLAS ATUALIZADAS)
+#  PAINEL 3D – RUBRICA DOCENTE (COM CORES SÓLIDAS)
 # ==================================================================
 
 html = dedent("""
@@ -181,7 +204,7 @@ html = dedent("""
       <li><strong>2 – Básico:</strong> Há esforços de planejamento e acompanhamento, mas com lacunas na explicitação de critérios e devolutivas.</li>
       <li><strong>3 – Desenvolvido:</strong> A docência é consistente, com critérios claros, feedbacks regulares e uso adequado de metodologias.</li>
       <li><strong>4 – Avançado:</strong> O professor integra avaliação formativa, equidade e metodologias ativas de maneira sistemática.</li>
-      <li><strong>5 – Referência:</strong> A prática docente torna-se modelo de excelência, inspirando pares e favorecendo aprendizagens profundas e equitativas.</li>
+      <li><strong>5 – Referência:</strong> A prática docente torna-se modelo de excellence, inspirando pares e favorecendo aprendizagens profundas e equitativas.</li>
     </ul>
   </div>
 </div>
@@ -205,11 +228,11 @@ html = dedent("""
     padding-top: 20px;
   }
 
-  /* O Bloco (Card) - AGORA EXPANSIVO E COM ALTURA MÍNIMA */
+  /* O Bloco (Card) - CORES SÓLIDAS */
   .rd-block {
     width: 100%;
-    min-height: 150px; /* Altura mínima para caber a sigla e o título */
-    height: auto;      /* PERMITE QUE O CARD CRESÇA SE O TEXTO FOR MAIOR */
+    min-height: 150px;
+    height: auto;
     padding: 15px;
     border-radius: 15px;
     display: flex;
@@ -243,7 +266,7 @@ html = dedent("""
   .rd-sigla {
     font-size: 2.2rem;
     font-weight: 900;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    text-shadow: 0 2px 6px rgba(0,0,0,0.4);
     margin-bottom: 8px;
     line-height: 1;
   }
@@ -252,22 +275,21 @@ html = dedent("""
     font-size: 0.95rem; 
     font-weight: 600;
     line-height: 1.3;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+    text-shadow: 0 1px 4px rgba(0,0,0,0.4);
     word-wrap: break-word; 
   }
 
-  /* Painel de Detalhes (Direita) - CORREÇÃO DE ALTURA CRÍTICA */
+  /* Painel de Detalhes (Direita) */
   .rd-panel {
     background: rgba(5, 10, 25, 0.94);
     border-radius: 1.2rem;
     padding: 2rem;
-    min-height: 520px; /* GARANTE QUE A LISTA COMPLETA CAIBA SEM CORTAR */
+    min-height: 520px;
     box-shadow: 0 18px 48px rgba(0,0,0,0.8);
     color: #e5e7eb;
     overflow: hidden; 
   }
   
-  /* Lista de Níveis - Aumentando margem para melhor visualização */
   #rd-levels li {
     margin-bottom: 0.6rem; 
     font-size: 1.05rem;
@@ -285,68 +307,18 @@ html = dedent("""
 </style>
 
 <script>
-  // ESTRUTURA DE DADOS COMPLETA
   const rdDimensoes = [
-    {
-      id: 0,
-      sigla: "PP",
-      titulo: "Planejamento e Propósito Avaliativo",
-      desc: "Observa se o professor planeja de forma intencional, explicita objetivos, critérios e vínculos com o projeto pedagógico do curso."
-    },
-    {
-      id: 1,
-      sigla: "FA",
-      titulo: "Foco na Aprendizagem e Feedback",
-      desc: "Analisa se o docente utiliza a avaliação como episódio de aprendizagem (Brookhart), oferecendo devolutivas claras, específicas e orientadas para a melhoria."
-    },
-    {
-      id: 2,
-      sigla: "EC", // ALTERADO DE EQ PARA EC
-      titulo: "Equidade e Cuidado com a Turma",
-      desc: "Verifica se há atenção à diversidade e interseccionalidade. O professor adapta a mediação para atender às diferentes condições de vida dos estudantes, promovendo inclusão ativa."
-    },
-    {
-      id: 3,
-      sigla: "DI",
-      titulo: "Diversificação de Instrumentos",
-      desc: "Avalia o uso de diferentes instrumentos e metodologias (projetos, portfólios, rubricas, coavaliação) de modo coerente com os objetivos."
-    },
-    {
-      id: 4,
-      sigla: "IC", // ALTERADO DE IN PARA IC
-      titulo: "Integração Curricular e BNCC/EPT",
-      desc: "Examina se o professor articula saberes da EPT com a formação geral, alinhando-se aos eixos do Catálogo Nacional de Cursos Técnicos (CNCT)."
-    },
-    {
-      id: 5,
-      sigla: "TE",
-      titulo: "Tecnologias Educacionais",
-      desc: "Verifica o uso pedagógico e intencional de TDICs (como o SINAPSE-BR IA) para acessibilidade, engajamento e aprofundamento conceitual."
-    },
-    {
-      id: 6,
-      sigla: "DR", // ALTERADO DE DV PARA DR
-      titulo: "Devolutivas e Registro",
-      desc: "Analisa a qualidade dos registros avaliativos (rubricas, relatórios) e das devolutivas, bem como sua utilização para replanejar o ensino."
-    },
-    {
-      id: 7,
-      sigla: "RD", // ALTERADO DE RF PARA RD
-      titulo: "Reflexão Docente",
-      desc: "Observa se o professor analisa criticamente a própria prática, identifica pontos de melhoria e busca formação continuada (Meta-avaliação da prática)."
-    }
+    { id: 0, sigla: "PP", titulo: "Planejamento e Propósito Avaliativo", desc: "Observa se o professor planeja de forma intencional, explicita objetivos, critérios e vínculos com o projeto pedagógico do curso." },
+    { id: 1, sigla: "FA", titulo: "Foco na Aprendizagem e Feedback", desc: "Analisa se o docente utiliza a avaliação como episódio de aprendizagem (Brookhart), oferecendo devolutivas claras, específicas e orientadas para a melhoria." },
+    { id: 2, sigla: "EC", titulo: "Equidade e Cuidado com a Turma", desc: "Verifica se há atenção à diversidade e interseccionalidade. O professor adapta a mediação para atender às diferentes condições de vida dos estudantes, promovendo inclusão ativa." },
+    { id: 3, sigla: "DI", titulo: "Diversificação de Instrumentos", desc: "Avalia o uso de diferentes instrumentos e metodologias (projetos, portfólios, rubricas, coavaliação) de modo coerente com os objetivos." },
+    { id: 4, sigla: "IC", titulo: "Integração Curricular e BNCC/EPT", desc: "Examina se o professor articula saberes da EPT com a formação geral, alinhando-se aos eixos do Catálogo Nacional de Cursos Técnicos (CNCT)." },
+    { id: 5, sigla: "TE", titulo: "Tecnologias Educacionais", desc: "Verifica o uso pedagógico e intencional de TDICs (como o SINAPSE-BR IA) para acessibilidade, engajamento e aprofundamento conceitual." },
+    { id: 6, sigla: "DR", titulo: "Devolutivas e Registro", desc: "Analisa a qualidade dos registros avaliativos (rubricas, relatórios) e das devolutivas, bem como sua utilização para replanejar o ensino." },
+    { id: 7, sigla: "RD", titulo: "Reflexão Docente", desc: "Observa se o professor analisa criticamente a própria prática, identifica pontos de melhoria e busca formação continuada (Meta-avaliação da prática)." }
   ];
 
-  const rdCores = [
-    "linear-gradient(135deg, #f97373, #ec4899)",  // PP
-    "linear-gradient(135deg, #fb923c, #facc15)",  // FA
-    "linear-gradient(135deg, #22c55e, #16a34a)",  // EC (antigo EQ)
-    "linear-gradient(135deg, #06b6d4, #3b82f6)",  // DI
-    "linear-gradient(135deg, #6366f1, #8b5cf6)",  // IC (antigo IN)
-    "linear-gradient(135deg, #0ea5e9, #22c55e)",  // TE
-    "linear-gradient(135deg, #a855f7, #e879f9)",  // DR (antigo DV)
-    "linear-gradient(135deg, #64748b, #475569)"   // RD (antigo RF)
-  ];
+  const rdCores = ["#2F5597", "#2F5597", "#2F5597", "#ED7D31", "#ED7D31", "#548235", "#548235", "#548235"];
 
   const rdGrid = document.querySelector(".rd-grid");
 
@@ -354,7 +326,7 @@ html = dedent("""
     rdDimensoes.forEach((dim, idx) => {
       const div = document.createElement("div");
       div.className = "rd-block";
-      div.style.backgroundImage = rdCores[idx] || rdCores[0];
+      div.style.backgroundColor = rdCores[idx] || rdCores[0];
       div.dataset.id = dim.id;
 
       const sigla = document.createElement("span");
@@ -369,21 +341,16 @@ html = dedent("""
       div.appendChild(titulo);
 
       div.addEventListener("click", () => {
-        document.querySelectorAll(".rd-block").forEach(b =>
-          b.classList.remove("rd-selected")
-        );
+        document.querySelectorAll(".rd-block").forEach(b => b.classList.remove("rd-selected"));
         div.classList.add("rd-selected");
-
         const titleEl = document.getElementById("rd-dim-title");
         const descEl  = document.getElementById("rd-dim-desc");
-
         if (titleEl && descEl) {
           titleEl.textContent = dim.sigla + " – " + dim.titulo;
-          titleEl.style.color = '#5eead4'; // Destaque visual no título
+          titleEl.style.color = rdCores[idx]; 
           descEl.innerHTML  = dim.desc;
         }
       });
-
       rdGrid.appendChild(div);
     });
   }
@@ -392,3 +359,60 @@ html = dedent("""
 
 components.html(html, height=750, scrolling=False)
 st.caption("Baseado em Brookhart (2013) e adaptado para a EPT.")
+
+# ==================================================================
+#  ADIÇÃO: VÍDEO E WORKSPACE DE CONTEÚDO EXTENSIVO (SEM SUPRESSÕES)
+# ==================================================================
+
+# ==================================================================
+#  PITCH DE DEFESA E RODAPÉ (LÓGICA REPLICADA DA PAG 06)
+# ==================================================================
+st.markdown("---")
+st.markdown("<h2 style='text-align: center;'>🎥 Pitch de Defesa: SINAPSE-BR IA</h2>", unsafe_allow_html=True)
+
+# Centralizando o iFrame do vídeo (Replicando a lógica funcional da Página 06)
+_, col_video_center, _ = st.columns([1, 2, 1])
+with col_video_center:
+    st.markdown(
+        """
+        <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Hqk4f4xNxng" 
+            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+            encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen style="border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.2);"></iframe>
+        </div>
+        """, 
+        unsafe_allow_html=True
+    )
+
+# Texto Didático com a estilização "Workspace" (Replicando a estética da Página 06)
+st.markdown(
+    """
+    <div style="font-size: 1.15rem !important; line-height: 1.65; color: #1e293b; background-color: #ffffff; 
+                padding: 35px; border-radius: 16px; border: 1px solid #e2e8f0; 
+                box-shadow: 0 12px 20px -4px rgba(0, 0, 0, 0.08); font-family: sans-serif; margin-top: 10px;">
+        <h2 style="color: #1e40af; font-size: 1.8rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">🎯 Guia Estratégico da Defesa</h2>
+        <p>Este vídeo sintetiza a jornada do TCC <strong>SINAPSE-BR IA</strong>. Abaixo, os marcos temporais para facilitar sua navegação:</p>
+        <ul style="margin-left: 20px; color: #334155;">
+            <li style="margin-bottom: 10px;"><strong>0:45 - 1:45:</strong> Exposição do Problema e a necessidade de equidade socio-territorial no Triângulo Mineiro (TMAP).</li>
+            <li style="margin-bottom: 10px;"><strong>2:45 - 4:45:</strong> Fundamentação Teórica: O encontro entre Neuropsicopedagogia, DUA e Territorialização.</li>
+            <li style="margin-bottom: 10px;"><strong>6:00 - 8:30:</strong> Demonstração Prática: Navegação pelas rubricas docente e autoavaliativa 3D.</li>
+            <li style="margin-bottom: 10px;"><strong>9:30 - 11:00:</strong> Relevância Social e o futuro da avaliação na Educação Profissional.</li>
+        </ul>
+        <p style="text-align: center; font-style: italic; margin-top: 30px; color: #1e40af; font-weight: 600;">
+            "A tecnologia no SINAPSE não substitui o docente; ela atua como um amplificador da percepção humana sobre o aprender."
+        </p>
+    </div>
+    """, 
+    unsafe_allow_html=True
+)
+
+st.warning("💡 **Dica Final:** Utilize este guia para revisitar os pontos chave da fundamentação pedagógica do seu projeto.")
+
+# SIDEBAR (Mantendo a funcionalidade original)
+with st.sidebar:
+    st.page_link("Apresentacao.py", label="🏠 Início")
+    st.page_link("pages/03_Mapa_Geral_Rubrica.py", label="🧠 Mapa Geral")
+    st.page_link("pages/07_Rubrica_Autoavaliativa_3D.py", label="🎓 Autoavaliação")
+    st.markdown("---")
+    st.caption("SINAPSE-BR IA v2.0")

@@ -1,4 +1,17 @@
-# /home/neirivon/SINAPSE2.0/sinapsebr_rubrica/scripts/pages/04_Mapa_Fundamentacao_Teorica.py
+# /home/neirivon/SINAPSE2.0/sinapsebr_rubrica/scripts/pages/05_Meta_Rubrica_3D.py
+# --------------------------------------------------------------------------------------
+# NOME DO SCRIPT: 05_Meta_Rubrica_3D.py
+# LOCALIZAÇÃO:    /pages/
+# DESCRIÇÃO:      Visualização da META-RUBRICA (O instrumento de validação).
+#                 Baseado em Mullinix (2003) - "Rubric for Rubrics".
+#                 Permite ao usuário entender como a própria qualidade da rubrica é medida.
+# FUNCIONALIDADES:
+#   1. Grafo de Rede focado nos CRITÉRIOS DE QUALIDADE (Validade, Confiabilidade, etc.).
+#   2. Painel lateral com definições acadêmicas de cada critério.
+#   3. Distinção visual entre Dimensões (Nós Grandes) e Indicadores (Nós Pequenos).
+# AUTOR:          Neirivon Elias Cardoso
+# DATA:           24/01/2026
+# --------------------------------------------------------------------------------------
 from __future__ import annotations
 
 import json
@@ -9,357 +22,204 @@ from streamlit.components.v1 import html as st_html
 # CONFIG DA PÁGINA
 # ──────────────────────────────────────────────────────────────────────────────
 st.set_page_config(
-    page_title="Fundamentação Teórica — SINAPSE-BR",
-    page_icon="📚",
+    page_title="Meta-Rubrica 3D — SINAPSE-BR",
+    page_icon="🌌",
     layout="wide",
 )
 
-st.title("📚 Mapa de Fundamento Teórico da Rubrica")
-st.caption(
-    "Clique em um nó para ver o texto explicativo. "
-    "O painel à direita exibe o resumo fundamentado para uso no TCC."
-)
+st.title("🌌 Meta-Rubrica: A Avaliação da Avaliação")
+st.markdown("""
+Esta página apresenta a **Meta-Rubrica SINAPSE**, um instrumento recursivo utilizado para auditar a qualidade das rubricas pedagógicas geradas.
+Baseia-se nos princípios de **Mullinix (2003)** e **Brookhart (2013)**.
+""")
 
-physics = st.toggle("Ativar Física (Animação)", value=False)
+physics = st.toggle("Ativar Simulação Física (Gravidade)", value=True)
 
 # ──────────────────────────────────────────────────────────────────────────────
-# ESTRUTURA LÓGICA DO GRAFO (DIMENSÕES → TÓPICOS)
+# ESTRUTURA LÓGICA DO GRAFO (DIMENSÕES DE QUALIDADE)
 # ──────────────────────────────────────────────────────────────────────────────
+# As dimensões aqui não são os eixos da rubrica final, mas os critérios de QUALIDADE da rubrica.
+
 dims = [
-    "Eixo Cognitivo", "Eixo Afetivo", "Eixo Metodologico", "Eixo Neurofuncional",
-    "Eixo Avaliativo", "Eixo Tecnologico", "Eixo Territorial", "Eixo Inclusivo"
+    "Clareza dos Criterios", 
+    "Validade de Conteudo", 
+    "Confiabilidade", 
+    "Equidade e DUA", 
+    "Potencial Educativo"
 ]
 
 links = {
-    "Eixo Cognitivo": ["Taxonomia de Bloom Revisada", "Taxonomia SOLO", "Metacognicao (Flavell)", "Psicologia cognitiva"],
-    "Eixo Afetivo": ["Autorregulacao", "Engajamento e Motivacao", "Neuropsicopedagogia", "Teorias da motivacao"],
-    "Eixo Metodologico": ["Metodologias ativas", "Aprendizagem baseada em projetos", "Gamificacao"],
-    "Eixo Neurofuncional": ["Educacao baseada no cerebro MBE", "Plasticidade Cerebral (Cosenza)", "Memoria e Atencao"],
-    "Eixo Avaliativo": ["Avaliacao Formativa (Brookhart)", "Meta-Rubrica (Mullinix)", "Feedback de qualidade"],
-    "Eixo Tecnologico": ["Agentes Inteligentes (Russell & Norvig)", "Cultura de Dados", "Moodle e Bloom (Duarte Jr.)"],
-    "Eixo Territorial": ["Equidade Socio-territorial", "Critica do territorio CTC", "Indicadores INEP/SAEB"],
-    "Eixo Inclusivo": ["Desenho Universal (DUA)", "Acessibilidade", "Materiais multiformato"]
+    "Clareza dos Criterios": ["Linguagem Univoca", "Descritores Observaveis", "Distincao entre Niveis"],
+    "Validade de Conteudo": ["Alinhamento a Bloom", "Cobertura do Objetivo", "Relevancia Pratica"],
+    "Confiabilidade": ["Consistencia Inter-avaliadores", "Escala Equilibrada", "Objetividade"],
+    "Equidade e DUA": ["Ausencia de Vies Cultural", "Multiformato (Permite Audio/Video)", "Acessibilidade Linguistica"],
+    "Potencial Educativo": ["Feedback Orientador", "Promocao da Autoregulacao", "Foco no Processo"]
 }
 
 # ──────────────────────────────────────────────────────────────────────────────
-# DICIONÁRIO DE CONTEÚDO RICO (FUNDAMENTADO NOS PDFS E TCCs)
+# CONTEÚDO RICO (BASEADO EM MULLINIX E BROOKHART)
 # ──────────────────────────────────────────────────────────────────────────────
 details = {
-    "Rubrica SINAPSE BR IA": {
-        "color": "#ea580c",
+    "Meta-Rubrica SINAPSE": {
+        "color": "#7c3aed", # Roxo vibrante
         "content": (
-            "### 🧩 O Artefato: Rubrica SINAPSE-BR IA\n\n"
-            "O sistema transcende a avaliação classificatória, atuando como um **Agente Racional** (Russell & Norvig) "
-            "que mede o desempenho do aluno (Bloom) dentro de seu contexto social e territorial (INEP).\n\n"
-            "**Foco:** Medir a qualidade da aprendizagem e não a conclusão da tarefa."
+            "### 🌌 O que é a Meta-Rubrica?\n\n"
+            "É o **'Rotor'** do sistema SINAPSE. Uma ferramenta metacognitiva que avalia se a rubrica criada pelo professor "
+            "é justa, técnica e útil.\n\n"
+            "**Referência Central:** Mullinix, B. B. (2003). *A Rubric for Rubrics*.\n"
+            "O objetivo não é apenas dar uma nota, mas garantir que a ferramenta de avaliação seja um instrumento de aprendizagem."
         )
     },
     
-    # --- EIXO COGNITIVO ---
-    "Eixo Cognitivo": {
+    # --- CLAREZA ---
+    "Clareza dos Criterios": {
         "color": "#3b82f6",
         "content": (
-            "### 🧠 Eixo Cognitivo\n"
-            "Avalia a complexidade do pensamento mobilizado. Não basta 'saber'; é preciso 'saber como e por que'.\n\n"
-            "**Fundamentação:**\n"
-            "- **Bloom Revisada (Anderson et al., 2001):** Hierarquia dos processos cognitivos.\n"
-            "- **Taxonomia SOLO (Biggs & Collis):** Avalia a profundidade do entendimento.\n"
+            "### 🔎 Clareza e Transparência\n"
+            "Os critérios devem ser compreensíveis tanto para o especialista (professor) quanto para o aprendiz.\n\n"
+            "**Pergunta-chave:** O aluno consegue ler a rubrica e entender exatamente o que se espera dele sem precisar perguntar ao professor?"
         )
     },
-    "Taxonomia de Bloom Revisada": {
+    "Linguagem Univoca": {
         "color": "#3b82f6",
-        "content": (
-            "**Referência:** ANDERSON, L. W. et al. (2001).\n\n"
-            "Utilizada para garantir que a rubrica não estacione na memorização. Conforme Duarte Jr. (2021), "
-            "no ambiente digital (Moodle), verbos como **'Analisar'** e **'Criar'** são operacionalizados através "
-            "de fóruns, wikis e produção de artefatos digitais, superando a passividade."
-        )
+        "content": "**Definição:** Uso de termos precisos, evitando adjetivos vagos como 'bom', 'adequado' ou 'interessante' sem qualificadores técnicos."
     },
-    "Taxonomia SOLO": {
+    "Descritores Observaveis": {
         "color": "#3b82f6",
-        "content": (
-            "**Conceito:** Structuring of Observed Learning Outcomes (Estrutura dos Resultados de Aprendizagem Observados).\n\n"
-            "Avalia a **qualidade** da resposta do aluno em profundidade: de respostas irrelevantes (Unistrutural) a generalizações complexas (Relacional e Abstrato Estendido)."
-        )
+        "content": "**Definição:** O critério descreve uma evidência tangível (ação, produto, comportamento) e não um estado mental invisível."
     },
-    "Metacognicao (Flavell)": {
+    "Distincao entre Niveis": {
         "color": "#3b82f6",
-        "content": (
-            "**Referência:** FLAVELL, J. H. (1979).\n\n"
-            "A capacidade do aluno de 'pensar sobre o próprio pensamento'. "
-            "A rubrica Autoavaliativa (Pág. 07) ativa esse processo, permitindo que o estudante monitore suas estratégias e regule seu esforço."
-        )
-    },
-    "Psicologia cognitiva": {
-        "color": "#3b82f6",
-        "content": (
-            "**Conceito:** O estudo de como o cérebro processa informações.\n\n"
-            "No contexto do SINAPSE, sustenta o design de tarefas que não gerem sobrecarga de Memória de Trabalho e o uso de Feedback como reforço cognitivo."
-        )
-    },
-    
-    # --- EIXO AFETIVO ---
-    "Eixo Afetivo": {
-        "color": "#ef4444",
-        "content": (
-            "### ❤️ Eixo Afetivo\n"
-            "Avalia a **vontade** e a **postura** do estudante frente ao desafio.\n\n"
-            "**Fundamentação:**\n"
-            "- **Neuropsicopedagogia:** Engajamento, motivação e perseverança (resiliência).\n"
-            "- **Autorregulação da Aprendizagem:** A capacidade do aluno de gerenciar emoções e recursos para atingir metas."
-        )
-    },
-    "Autorregulacao": {
-        "color": "#ef4444",
-        "content": (
-            "**Conceito:** O processo de monitorar e ajustar o próprio comportamento, cognição e motivação. É a base da autonomia discente."
-        )
-    },
-    "Engajamento e Motivacao": {
-        "color": "#ef4444",
-        "content": (
-            "**Conceito:** Avalia a persistência do aluno. O feedback da rubrica é desenhado para ser motivacional (não punitivo) e intrínseco (focado no aprendizado)."
-        )
-    },
-    "Neuropsicopedagogia": {
-        "color": "#ef4444",
-        "content": (
-            "**Campo Transdisciplinar:** Conecta Neurociência e Pedagogia. Atua no desenvolvimento das Funções Executivas e na intervenção em dificuldades de aprendizagem."
-        )
-    },
-    "Teorias da motivacao": {
-        "color": "#ef4444",
-        "content": (
-            "**Conceito:** Estuda o porquê da ação humana. No SINAPSE, sustenta o design de tarefas que valorizam o processo (rubrica autoavaliativa) para gerar motivação intrínseca."
-        )
+        "content": "**Definição:** A diferença entre o nível 3 (Esperado) e o nível 4 (Avançado) é qualitativa e clara, não apenas quantitativa."
     },
 
-    # --- EIXO METODOLÓGICO ---
-    "Eixo Metodologico": {
+    # --- VALIDADE ---
+    "Validade de Conteudo": {
         "color": "#10b981",
         "content": (
-            "### 🛠️ Eixo Metodológico\n"
-            "Avalia como a aprendizagem é construída, privilegiando a **Práxis** da EPT.\n\n"
-            "**Foco:** Superar aulas expositivas. As rubricas Docente e Discente valorizam a atividade, o projeto e a autonomia."
+            "### 🎯 Validade (Construct Validity)\n"
+            "A rubrica mede realmente o que ela diz medir? Ela está alinhada aos objetivos de aprendizagem propostos?\n\n"
+            "**Fundamento:** Se a aula foi sobre 'Pensamento Crítico', a rubrica não pode avaliar apenas 'Formatação do Texto'."
         )
     },
-    "Metodologias ativas": {
+    "Alinhamento a Bloom": {
         "color": "#10b981",
-        "content": (
-            "**Conceito:** Envolve o aluno como protagonista (Ensino Híbrido). No SINAPSE, valoriza-se a autoavaliação (co-avaliação) e o design de tarefas que exijam ação e criação (Projeto/PBL)."
-        )
+        "content": "**Aplicação:** Verifica se o verbo cognitivo exigido na rubrica (ex: Analisar) corresponde ao nível da atividade proposta."
     },
-    "Aprendizagem baseada em projetos": {
+    "Cobertura do Objetivo": {
         "color": "#10b981",
-        "content": (
-            "**PBL ABP:** Promove a integração de saberes e a resolução de problemas complexos e contextualizados. O critério de **Aplicabilidade** (Meta-Rubrica) exige que a tarefa seja autêntica (PBL)."
-        )
-    },
-    "Gamificacao": {
-        "color": "#10b981",
-        "content": (
-            "**Conceito:** Uso de elementos de jogos (pontos, feedback, desafios) em contextos de não-jogo (avaliação). Fundamentado por **Duarte Jr. (2021)**, que mapeia atividades digitais para Bloom."
-        )
+        "content": "**Definição:** A rubrica cobre todas as dimensões essenciais da habilidade, sem deixar lacunas importantes."
     },
 
-    # --- EIXO NEUROFUNCIONAL ---
-    "Eixo Neurofuncional": {
-        "color": "#8b5cf6",
-        "content": (
-            "### 🧬 Eixo Neurofuncional\n"
-            "Baseado na **Neurociência da Aprendizagem**, considera a arquitetura biológica do cérebro para otimizar o ensino.\n\n"
-            "**Referência:** COSENZA & GUERRA (2011)."
-        )
-    },
-    "Educacao baseada no cerebro MBE": {
-        "color": "#8b5cf6",
-        "content": (
-            "**Conceito:** *Mind, Brain, and Education (MBE)*. Uso de evidências neurocientíficas para informar e aprimorar a prática pedagógica."
-        )
-    },
-    "Memoria e Atencao": {
-        "color": "#8b5cf6",
-        "content": (
-            "**Funções Cruciais:** O design da rubrica e do feedback respeita os limites da **Memória de Trabalho** e os ciclos de **Atenção** (Cosenza), evitando a sobrecarga cognitiva (Dehaene)."
-        )
-    },
-    "Plasticidade Cerebral (Cosenza)": {
-        "color": "#8b5cf6",
-        "content": (
-            "**Conceito:** O cérebro muda fisicamente com a experiência (Neuroplasticidade).\n\n"
-            "A avaliação é um processo de reforço sináptico: o erro é uma **pista** para o ajuste, não um veredito final."
-        )
-    },
-
-    # --- EIXO AVALIATIVO ---
-    "Eixo Avaliativo": {
+    # --- CONFIABILIDADE ---
+    "Confiabilidade": {
         "color": "#f59e0b",
         "content": (
-            "### 📏 Eixo Avaliativo\n"
-            "Define a avaliação como processo contínuo e transparente. Foco na **Meta-Avaliação** (avaliação da qualidade da própria rubrica).\n\n"
-            "**Referência:** Brookhart (2013) e Mullinix (2003)."
+            "### ⚖️ Confiabilidade (Reliability)\n"
+            "A capacidade da rubrica de gerar resultados consistentes.\n\n"
+            "**Teste:** Se dois professores diferentes usarem esta rubrica para avaliar o mesmo trabalho, eles chegarão à mesma nota?"
         )
     },
-    "Avaliacao Formativa (Brookhart)": {
+    "Consistencia Inter-avaliadores": {
         "color": "#f59e0b",
-        "content": (
-            "**Citação:** 'A avaliação formativa não é um teste, é um episódio de aprendizagem.' (Brookhart, 2013).\n\n"
-            "A rubrica é um guia (mapa) que clarifica o objetivo e fornece **Feedback Descritivo**, essencial para a regulação."
-        )
+        "content": "**Definição:** Redução da subjetividade individual através de critérios ancorados em evidências."
     },
-    "Meta-Rubrica (Mullinix)": {
+    "Objetividade": {
         "color": "#f59e0b",
-        "content": (
-            "**Ferramenta:** *Rubric for Assessing Rubrics* (Mullinix, 2003).\n\n"
-            "A régua para medir a qualidade das rubricas do SINAPSE (Pág. 05) em 4 níveis (Clareza, Confiabilidade, Metacognição)."
-        )
-    },
-    "Feedback de qualidade": {
-        "color": "#f59e0b",
-        "content": (
-            "**Princípio:** Devolutivas que são **Acionáveis** (o aluno sabe o que fazer a seguir), **Específicas** e **Timely** (na hora certa). Fundamental para a regulação."
-        )
+        "content": "**Definição:** Foco nos fatos apresentados no trabalho, minimizando a influência de preferências pessoais do avaliador."
     },
 
-    # --- EIXO TECNOLÓGICO ---
-    "Eixo Tecnologico": {
-        "color": "#64748b",
+    # --- EQUIDADE ---
+    "Equidade e DUA": {
+        "color": "#ec4899",
         "content": (
-            "### 💻 Eixo Tecnológico (IA)\n"
-            "A tecnologia como estruturante da análise de dados educacionais (Cultura de Dados).\n\n"
-            "**Agente Racional (Russell & Norvig):** O sistema percebe o ambiente (dados) e age (sugere intervenções)."
+            "### ♿ Equidade e Inclusão (DUA)\n"
+            "Garante que a avaliação não penalize alunos por barreiras que não fazem parte do construto avaliado.\n\n"
+            "**Base:** Desenho Universal para a Aprendizagem (CAST)."
         )
     },
-    "Cultura de Dados": {
-        "color": "#64748b",
-        "content": (
-            "**Conceito:** A coleta e análise sistemática de dados educacionais (Censo, SAEB) para embasar a tomada de decisão do professor e do gestor."
-        )
+    "Ausencia de Vies Cultural": {
+        "color": "#ec4899",
+        "content": "**Definição:** Os exemplos e temas da rubrica consideram a diversidade territorial e cultural do TMAP, evitando elitismos."
     },
-    "Moodle e Bloom (Duarte Jr.)": {
-        "color": "#64748b",
-        "content": (
-            "**Referência:** DUARTE JUNIOR, D. N. S. (2021).\n\n"
-            "Fundamenta a operacionalização da Taxonomia de Bloom em Ambientes Virtuais de Aprendizagem (Moodle), ligando atividades digitais a níveis cognitivos específicos."
-        )
-    },
-    "Agentes Inteligentes (Russell & Norvig)": {
-        "color": "#64748b",
-        "content": (
-            "**Conceito:** IA é o estudo de agentes que recebem percepções do ambiente e realizam ações.\n\n"
-            "No contexto do TCC, o 'Agente' é o algoritmo que processa os microdados do Censo/SAEB "
-            "para identificar padrões de desigualdade e sugerir intervenções pedagógicas precisas."
-        )
+    "Multiformato (Permite Audio/Video)": {
+        "color": "#ec4899",
+        "content": "**Aplicação:** A rubrica permite que o aluno demonstre competência por diferentes meios (texto, áudio, vídeo), conforme princípios do DUA."
     },
 
-    # --- EIXO TERRITORIAL ---
-    "Eixo Territorial": {
-        "color": "#14b8a6",
+    # --- POTENCIAL EDUCATIVO ---
+    "Potencial Educativo": {
+        "color": "#ef4444",
         "content": (
-            "### 🗺️ Eixo Territorial\n"
-            "A avaliação é situada: ela considera a **Interseccionalidade Geográfica** (TMAP vs. Noroeste de Minas) e **Socioeconômica** (INSE).\n\n"
-            "**Exemplo:** *'Uma escola rural em Veríssimo tem desafios diferentes de um campus urbano em Uberlândia.'*"
+            "### 🚀 Potencial Educativo (Instructional Impact)\n"
+            "A rubrica serve para ensinar ou apenas para julgar?\n\n"
+            "**Meta:** A rubrica deve funcionar como um roteiro de estudos para o aluno, antecipando o sucesso."
         )
     },
-    "Equidade Socio-territorial": {
-        "color": "#14b8a6",
-        "content": (
-            "**Aplicação:** O sistema usa INSE (Nível Socioeconômico) e Zona (Rural/Urbana) para ponderar os resultados. Combate a **invisibilidade** de escolas rurais e de baixo INSE."
-        )
+    "Feedback Orientador": {
+        "color": "#ef4444",
+        "content": "**Definição:** Os descritores de níveis inferiores explicam o que falta para chegar ao próximo nível (Feedforward)."
     },
-    "Critica do territorio CTC": {
-        "color": "#14b8a6",
-        "content": (
-            "**Conceito:** Critérios de Territorialidade, Contexto e Cultura. Garante que o conteúdo da EPT se ligue ao Arranjo Produtivo Local (Frigotto/Ciavatta)."
-        )
-    },
-    "Indicadores INEP/SAEB": {
-        "color": "#14b8a6",
-        "content": (
-            "**Fonte de Dados:** INEP/SISTEC, SAEB (nota), INSE (Nível Socioeconômico). Os dados são a matéria-prima do Agente Racional."
-        )
-    },
-
-    # --- EIXO INCLUSIVO ---
-    "Eixo Inclusivo": {
-        "color": "#ec4899",
-        "content": (
-            "### ♿ Eixo Inclusivo (DUA)\n"
-            "Garante que o processo de avaliação seja acessível a todos.\n\n"
-            "**Base:** Desenho Universal para a Aprendizagem (CAST).\n"
-        )
-    },
-    "Desenho Universal (DUA)": {
-        "color": "#ec4899",
-        "content": (
-            "**Conceito:** Eliminar barreiras antes que apareçam. A rubrica deve oferecer múltiplos meios de **Expressão** e **Representação** do conhecimento."
-        )
-    },
-    "Acessibilidade": {
-        "color": "#ec4899",
-        "content": (
-            "**Infraestrutura e Design:** O mapa TMAP destaca acessibilidade física (rampas, banheiros PNE) e digital (Internet/Lab) como fatores de equidade."
-        )
-    },
-    "Materiais multiformato": {
-        "color": "#ec4899",
-        "content": (
-            "**DUA na Prática:** O sistema incentiva o professor a receber trabalhos em texto, áudio, vídeo, e outros formatos, respeitando a diversidade neurofuncional."
-        )
+    "Promocao da Autoregulacao": {
+        "color": "#ef4444",
+        "content": "**Definição:** A linguagem convida o aluno a usar a rubrica para se autoavaliar antes da entrega final."
     }
 }
 
 # ──────────────────────────────────────────────────────────────────────────────
-# GARANTIR QUE TODOS OS NÓS TENHAM CONTEÚDO
+# POPULAR NÓS VAZIOS
 # ──────────────────────────────────────────────────────────────────────────────
 for parent, topics in links.items():
     for topic in topics:
         if topic not in details:
             details[topic] = {
                 "color": details[parent]["color"],
-                "content": f"### {topic}\n\n**Resumo do Eixo Pai:** {details[parent]['content'].replace(f'### {parent}', '').replace('###', '').strip()}"
+                "content": f"### {topic}\n\n**Indicador de Qualidade:** Subcomponente da dimensão **{parent}**."
             }
 
 # ──────────────────────────────────────────────────────────────────────────────
-# CONSTRUÇÃO DOS NODES/EDGES
+# CONSTRUÇÃO DO GRAFO
 # ──────────────────────────────────────────────────────────────────────────────
 nodes, edges = [], []
 
-# Nó Raiz Central
+# Nó Central
 nodes.append({
-    "id": "Rubrica SINAPSE BR IA",
-    "label": "SINAPSE-BR IA\n(Artefato)",
-    "color": "#ea580c",
-    "shape": "circle",
-    "size": 35,
-    "font": {"size": 20, "color": "white", "face": "Inter"}
+    "id": "Meta-Rubrica SINAPSE",
+    "label": "Meta-Rubrica\n(Mullinix)",
+    "color": "#7c3aed",
+    "shape": "diamond",
+    "size": 45,
+    "font": {"size": 22, "color": "white", "face": "Inter"}
 })
 
-# Cores para cada eixo
-colors = {
-    "Eixo Cognitivo": "#3b82f6",
-    "Eixo Afetivo": "#ef4444",
-    "Eixo Metodologico": "#10b981",
-    "Eixo Neurofuncional": "#8b5cf6",
-    "Eixo Avaliativo": "#f59e0b",
-    "Eixo Tecnologico": "#64748b",
-    "Eixo Territorial": "#14b8a6",
-    "Eixo Inclusivo": "#ec4899"
-}
-
-# Adiciona Eixos e Tópicos
+# Nós e Arestas
 topic_added = set()
 
 for d in dims:
-    c = colors.get(d, "#60a5fa")
-    nodes.append({"id": d, "label": d, "color": c, "shape": "box", "font": {"color": "white"}})
-    edges.append({"from": "Rubrica SINAPSE BR IA", "to": d, "color": c, "width": 2})
+    c = details[d]["color"]
+    # Nó da Dimensão
+    nodes.append({
+        "id": d, 
+        "label": d, 
+        "color": c, 
+        "shape": "dot", 
+        "size": 25,
+        "font": {"color": "white", "size": 16}
+    })
+    edges.append({"from": "Meta-Rubrica SINAPSE", "to": d, "color": c, "width": 3})
     
+    # Nós dos Indicadores
     for t in links[d]:
         if t not in topic_added:
-            nodes.append({"id": t, "label": t, "color": "#e2e8f0", "shape": "ellipse", "font": {"size": 14, "color": "#333"}})
+            nodes.append({
+                "id": t, 
+                "label": t, 
+                "color": "#e2e8f0", 
+                "shape": "ellipse", 
+                "font": {"size": 12, "color": "#475569"}
+            })
             topic_added.add(t)
-        edges.append({"from": d, "to": t, "color": "#cbd5e1", "width": 1})
+        edges.append({"from": d, "to": t, "color": c, "width": 1, "dashes": True})
 
 # Opções Vis.js
 options = {
@@ -367,16 +227,20 @@ options = {
         "enabled": bool(physics),
         "stabilization": {"enabled": True},
         "solver": "forceAtlas2Based",
-        "forceAtlas2Based": {"gravitationalConstant": -80, "springLength": 100}
+        "forceAtlas2Based": {
+            "gravitationalConstant": -100, 
+            "springLength": 120,
+            "damping": 0.4
+        }
     },
-    "interaction": {"hover": True, "tooltipDelay": 100},
-    "edges": {"smooth": {"type": "continuous"}},
-    "nodes": {"borderWidth": 1, "shadow": True},
+    "interaction": {"hover": True},
+    "edges": {"smooth": {"type": "dynamic"}},
+    "nodes": {"borderWidth": 2, "shadow": True},
     "layout": {"improvedLayout": True}
 }
 
 # ──────────────────────────────────────────────────────────────────────────────
-# HTML/JS INJETADO (RENDERIZAÇÃO COM PAINEL RICO)
+# HTML/JS (Mantido idêntico ao padrão funcional da Pag 04)
 # ──────────────────────────────────────────────────────────────────────────────
 html_code = f'''
 <!doctype html>
@@ -385,131 +249,56 @@ html_code = f'''
   <meta charset="utf-8" />
   <script src="https://cdn.jsdelivr.net/npm/vis-network@9.1.6/dist/vis-network.min.js"></script>
   <style>
-    body {{ margin:0; font-family: "Segoe UI", system-ui, sans-serif; background-color: #ffffff; }}
+    body {{ margin:0; font-family: "Segoe UI", sans-serif; background-color: #ffffff; }}
     .wrap {{ display:flex; height:760px; }}
     #net {{ flex:1; height:100%; background: #ffffff; }}
     #panel {{ 
-        width: 400px; 
-        padding: 0;
+        width: 380px; 
         background: #f8fafc; 
         border-left: 1px solid #e2e8f0; 
         overflow-y: auto; 
-        box-shadow: -2px 0 12px rgba(0,0,0,0.08);
+        box-shadow: -4px 0 15px rgba(0,0,0,0.05);
     }}
-    .panel-header {{ 
+    .header {{ 
         padding: 20px; 
-        background: linear-gradient(135deg, #1e40af, #3b82f6); 
+        background: linear-gradient(135deg, #7c3aed, #8b5cf6); 
         color: white; 
-        margin-bottom: 0;
     }}
-    .panel-header h3 {{ margin:0; font-size: 18px; display:flex; align-items:center; gap:8px; }}
-    .panel-header p {{ margin:8px 0 0 0; opacity:0.9; font-size:13px; }}
+    .header h2 {{ margin:0; font-size: 20px; }}
+    .content {{ padding: 20px; }}
     
-    .content-container {{ padding: 20px; }}
-    
-    /* Card Estilizado */
-    .theory-card {{
+    .card {{
         background: white;
-        border-radius: 12px;
         padding: 20px;
-        margin-bottom: 20px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        border-left: 6px solid #3b82f6;
-        transition: transform 0.2s, box-shadow 0.2s;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        border-left: 5px solid #7c3aed;
     }}
-    .theory-card:hover {{
-        transform: translateY(-2px);
-        box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-    }}
+    .card h3 {{ margin-top:0; color: #4c1d95; }}
+    .card p {{ line-height: 1.6; color: #334155; font-size: 14px; }}
+    .card strong {{ color: #1e293b; }}
     
-    .theory-card h3 {{
-        color: #1e40af;
-        margin-top: 0;
-        margin-bottom: 12px;
-        font-size: 18px;
-        border-bottom: 2px solid #e2e8f0;
-        padding-bottom: 8px;
+    .hint {{ 
+        text-align: center; 
+        color: #94a3b8; 
+        margin-top: 50px; 
+        font-style: italic;
     }}
-    
-    .theory-card .content {{
-        font-size: 14px;
-        line-height: 1.7;
-        color: #334155;
-    }}
-    
-    .theory-card .content strong {{
-        color: #0f172a;
-        font-weight: 600;
-    }}
-    
-    .theory-card .content ul {{
-        padding-left: 20px;
-        margin: 10px 0;
-    }}
-    
-    .theory-card .content li {{
-        margin-bottom: 6px;
-    }}
-    
-    .tag {{
-        display: inline-block;
-        background: #eff6ff;
-        color: #1d4ed8;
-        padding: 4px 10px;
-        border-radius: 20px;
-        font-size: 12px;
-        font-weight: 600;
-        margin-bottom: 12px;
-    }}
-    
-    /* Botão de copiar */
-    .copy-btn {{
-        margin-top: 15px;
-        padding: 10px 16px;
-        background-color: #3b82f6;
-        color: white;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        font-size: 13px;
-        font-weight: 600;
-        transition: all 0.2s;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        width: 100%;
-    }}
-    .copy-btn:hover {{ background-color: #2563eb; }}
-    .copy-btn:active {{ transform: translateY(1px); }}
-    
-    .empty-state {{
-        text-align: center;
-        padding: 40px 20px;
-        color: #64748b;
-    }}
-    .empty-state h4 {{ color: #475569; margin-bottom: 8px; }}
-    .empty-state p {{ font-size: 14px; }}
   </style>
 </head>
 <body>
   <div class="wrap">
     <div id="net"></div>
     <aside id="panel">
-      <div class="panel-header">
-        <h3>📘 Fundamentação Teórica</h3>
-        <p>Clique em um nó para visualizar o resumo teórico, referências e aplicação no TCC.</p>
+      <div class="header">
+        <h2>🛠️ Detalhes da Validação</h2>
       </div>
-      <div class="content-container">
-        <div id="content">
-          <div class="empty-state">
-            <h4>Selecione um conceito</h4>
-            <p>Clique em qualquer nó do mapa para começar a explorar a fundamentação teórica da Rubrica SINAPSE-BR IA.</p>
-          </div>
+      <div class="content">
+        <div id="info">
+            <div class="hint">
+                <p>Clique nos nós do grafo para entender<br>os critérios de qualidade.</p>
+            </div>
         </div>
-        <button class="copy-btn" onclick="copyText()">
-          <span>📋</span> Copiar Texto para o TCC
-        </button>
       </div>
     </aside>
   </div>
@@ -519,72 +308,34 @@ html_code = f'''
     const edges = new vis.DataSet({json.dumps(edges, ensure_ascii=False)});
     const options = {json.dumps(options, ensure_ascii=False)};
     
-    const network = new vis.Network(document.getElementById('net'), {{nodes, edges}}, options);
+    const container = document.getElementById('net');
+    const data = {{nodes, edges}};
+    const network = new vis.Network(container, data, options);
     
-    // Dicionário de Detalhes
     const details = {json.dumps({k: v["content"] for k, v in details.items()}, ensure_ascii=False)};
     const colors = {json.dumps({k: v["color"] for k, v in details.items()}, ensure_ascii=False)};
 
-    // Função para converter markdown para HTML
     function parseMarkdown(text) {{
-        if (!text) return "<em>Selecione um tópico.</em>";
+        if (!text) return "";
         return text
             .replace(/^### (.*$)/gim, '<h3>$1</h3>')
             .replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>')
-            .replace(/- (.*$)/gim, '<li>$1</li>')
             .replace(/\\n/g, '<br>');
-    }}
-
-    // Função para criar o card estilizado
-    function createTheoryCard(title, content, color) {{
-        return `
-        <div class="theory-card" style="border-left-color: ${{color}};">
-            <div class="tag" style="background-color: ${{color}}20; color: ${{color}};">
-                ${{title.split(' ')[0]}}
-            </div>
-            <div class="content">
-                ${{parseMarkdown(content)}}
-            </div>
-        </div>
-        `;
     }}
 
     network.on('selectNode', function(params) {{
         if (params.nodes.length > 0) {{
-            const nodeId = params.nodes[0];
-            const rawText = details[nodeId] || "<em>Texto não encontrado para este nó.</em>";
-            const nodeColor = colors[nodeId] || "#3b82f6";
+            const id = params.nodes[0];
+            const text = details[id] || "Sem descrição disponível.";
+            const color = colors[id] || "#7c3aed";
             
-            const cardHTML = createTheoryCard(nodeId, rawText, nodeColor);
-            document.getElementById('content').innerHTML = cardHTML;
-            document.getElementById('content').setAttribute('data-raw', rawText);
+            const html = `
+                <div class="card" style="border-left-color: ${{(color)}}">
+                    ${{parseMarkdown(text)}}
+                </div>
+            `;
+            document.getElementById('info').innerHTML = html;
         }}
-    }});
-
-    function copyText() {{
-        const text = document.getElementById('content').innerText;
-        navigator.clipboard.writeText(text).then(() => {{
-            const btn = document.querySelector('.copy-btn');
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '<span>✅</span> Copiado para área de transferência!';
-            btn.style.backgroundColor = '#10b981';
-            
-            setTimeout(() => {{
-                btn.innerHTML = originalText;
-                btn.style.backgroundColor = '#3b82f6';
-            }}, 2000);
-        }});
-    }}
-    
-    // Exibir card inicial
-    document.addEventListener('DOMContentLoaded', function() {{
-        const initialCard = createTheoryCard(
-            "Rubrica SINAPSE BR IA", 
-            details["Rubrica SINAPSE BR IA"], 
-            colors["Rubrica SINAPSE BR IA"]
-        );
-        document.getElementById('content').innerHTML = initialCard;
-        document.getElementById('content').setAttribute('data-raw', details["Rubrica SINAPSE BR IA"]);
     }});
   </script>
 </body>
@@ -593,7 +344,63 @@ html_code = f'''
 
 st_html(html_code, height=800, scrolling=False)
 
-# --- SIDEBAR ---
+# ──────────────────────────────────────────────────────────────────────────────
+# VÍDEO E JORNADA CONCEITUAL (INSERÇÃO ADITIVA - UI/UX DESIGN)
+# ──────────────────────────────────────────────────────────────────────────────
+st.divider()
+st.subheader("🎬 Audiovisual: O Rotor de Auditoria SINAPSE")
+
+# Embed Responsivo do YouTube
+st.video("https://www.youtube.com/watch?v=Mj2a9K5Tb4U")
+
+# Variável HTML isolada para proteger o restante do script de erros de aspas
+jornada_meta_html = """
+<div style="background: white; border-radius: 18px; padding: 32px; box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08); border: 1px solid #e2e8f0; margin: 15px 0 45px; position: relative; overflow: hidden; max-width: 100%;">
+    <div style="position: absolute; top: 0; left: 0; width: 6px; height: 100%; background: linear-gradient(to bottom, #7c3aed, #4c1d95);"></div>
+    <h3 style="color: #0f172a; margin-top: 0; font-size: 1.55rem; display: flex; align-items: center; gap: 12px; font-weight: 700;">
+        <span style="background: #f3e8ff; color: #7c3aed; width: 36px; height: 36px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;">💎</span>
+        O Rotor da Meta-Rubrica: Auditando a Inteligência
+    </h3>
+    <div style="margin: 28px 0 20px; padding-left: 8px;">
+        <div style="display: flex; align-items: flex-start; gap: 20px; margin: 22px 0; border-left: 3px solid #3b82f6; padding-left: 12px; padding-bottom: 8px;">
+            <span style="font-size: 1.7rem; flex-shrink: 0;">🎯</span>
+            <div>
+                <strong style="color: #0f172a; font-size: 1.2rem; display: block; margin-bottom: 4px;">Clareza e Validade</strong>
+                <span style="color: #475569; line-height: 1.6; font-size: 1rem;">O Rotor verifica se a linguagem é exata e se os objetivos seguem rigorosamente a Taxonomia de Bloom.</span>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 20px; margin: 22px 0; border-left: 3px solid #f59e0b; padding-left: 12px; padding-bottom: 8px;">
+            <span style="font-size: 1.7rem; flex-shrink: 0;">⚖️</span>
+            <div>
+                <strong style="color: #0f172a; font-size: 1.2rem; display: block; margin-bottom: 4px;">Confiabilidade</strong>
+                <span style="color: #475569; line-height: 1.6; font-size: 1rem;">Auditamos a estabilidade da régua. A nota deve se manter justa e estável, independentemente do avaliador.</span>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 20px; margin: 22px 0; border-left: 3px solid #ec4899; padding-left: 12px; padding-bottom: 8px;">
+            <span style="font-size: 1.7rem; flex-shrink: 0;">🌿</span>
+            <div>
+                <strong style="color: #0f172a; font-size: 1.2rem; display: block; margin-bottom: 4px;">Equidade (DUA)</strong>
+                <span style="color: #475569; line-height: 1.6; font-size: 1rem;">A rubrica é validada por aceitar múltiplos formatos (áudio/vídeo/texto), respeitando a diversidade.</span>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 20px; margin: 22px 0; border-left: 3px solid #ef4444; padding-left: 12px; padding-bottom: 8px;">
+            <span style="font-size: 1.7rem; flex-shrink: 0;">🚀</span>
+            <div>
+                <strong style="color: #0f172a; font-size: 1.2rem; display: block; margin-bottom: 4px;">Potencial Educativo</strong>
+                <span style="color: #475569; line-height: 1.6; font-size: 1rem;">A avaliação não apenas julga, ela ensina e aponta o caminho para a autonomia do aprendiz.</span>
+            </div>
+        </div>
+    </div>
+    <div style="background: #f8fafc; border-radius: 14px; padding: 24px; border: 1px solid #e2e8f0;">
+        <div style="font-style: italic; color: #1e40af; border-left: 4px solid #7c3aed; padding-left: 18px; font-weight: 500;">
+            "SINAPSE-BR IA: Inteligência Pedagógica que audita a si mesma para garantir ética e técnica na EPT."
+        </div>
+    </div>
+</div>
+"""
+st.markdown(jornada_meta_html, unsafe_allow_html=True)
+
+# --- SIDEBAR (NAVEGAÇÃO) ---
 with st.sidebar:
     st.page_link("Apresentacao.py", label="🏠 Apresentação")
     st.markdown("---")
@@ -601,8 +408,8 @@ with st.sidebar:
     st.page_link("pages/02_TMAP_2017_2024.py", label="🌐 TMAP 2024 (Equidade)")
     st.page_link("pages/03_Mapa_Geral_Rubrica.py", label="🧠 Mapa da Rubrica")
     st.page_link("pages/04_Mapa_Fundamentacao_Teorica.py", label="📚 Fundamentação")
-    st.markdown("---")
     st.page_link("pages/05_Meta_Rubrica_3D.py", label="🌌 Meta-Rubrica 3D")
+    st.markdown("---")
     st.page_link("pages/06_Rubrica_Docente_3D.py", label="👩‍🏫 Rubrica Docente 3D")
     st.page_link("pages/07_Rubrica_Autoavaliativa_3D.py", label="🎓 Autoavaliação 3D")
     st.page_link("pages/08_Transparencia_Avaliativa.py", label="🐆 Transparência (Avaliação)")

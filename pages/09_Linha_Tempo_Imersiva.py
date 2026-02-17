@@ -29,20 +29,44 @@ st.markdown('<meta name="google" content="notranslate">', unsafe_allow_html=True
 
 # --- TÍTULO E CONTEXTUALIZAÇÃO ---
 st.markdown("""
-    <h1 style='text-align: center; color: #1e3a8a;'>⏳ A Espiral do Tempo: Da EPT à RUBRICA SINAPSE</h1>
-    <p style='text-align: center; font-size: 1.2em; color: #64748b;'>
-        Uma jornada interativa pela história da EPT, o CAU no território de Uberlândia e a trajetória formativa.<br>
-        <span style='font-size: 0.8em;'>👆 <b>Passe o mouse</b> para ver o contexto e <b>clique nos cards</b> para mergulhar nos documentos.</span>
+    <h1 style='text-align: center; color: #1e3a8a;'>🌀 A Espiral do Tempo: Da Gênese à SINAPSE-BR IA</h1>
+    <p style='text-align: center; font-size: 1.2em; color: #4b5563;'>
+        Uma jornada cronotópica pela evolução da avaliação e da Educação Profissional no Brasil.
     </p>
-    <br>
+""", unsafe_allow_html=True)
+
+# --- LEGENDA SEMÂNTICA (Ajustada com as cores exatas) ---
+st.markdown("""
+    <div style="display: flex; justify-content: center; gap: 30px; margin-bottom: 30px; flex-wrap: wrap; background-color: #f8fafc; padding: 15px; border-radius: 10px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="background-color: #ef4444; width: 22px; height: 22px; border-radius: 50%; display: inline-block; border: 2px solid #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"></span>
+            <span style="font-size: 0.95em; color: #1e293b;"><b>Nível Macro (Vermelho):</b> Políticas, Leis e Tensões Nacionais</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="background-color: #10b981; width: 22px; height: 22px; border-radius: 50%; display: inline-block; border: 2px solid #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"></span>
+            <span style="font-size: 0.95em; color: #1e293b;"><b>Nível Local e Pessoal (Verde):</b> IFTM, Território e Trajetória do Autor</span>
+        </div>
+    </div>
 """, unsafe_allow_html=True)
 
 # --------------------------------------------------------------------------------------
-# 1. DADOS DA LINHA DO TEMPO (CAMADA DE DADOS ATUALIZADA)
+# 1. DADOS DA LINHA DO TEMPO (SEQUÊNCIA CORRIGIDA 0-9)
 # --------------------------------------------------------------------------------------
-# Categorias: 'macro' (Nacional/Leis), 'micro' (Local/Institucional), 'pessoal' (Memorial)
-
 eventos_timeline = [
+    {
+        "id": 0,
+        "ano": "1809",
+        "titulo": "🌀 O Embrião: Colégio de Fábricas",
+        "categoria": "macro",
+        "resumo": "D. João VI e a origem da dualidade assistencialista.",
+        "detalhe": """
+            <h3>A Pré-História da EPT no Brasil</h3>
+            <p><b>Contexto:</b> Criado por D. João VI logo após a chegada da Corte ao Rio de Janeiro.</p>
+            <p>Primeira tentativa oficial de ensino de ofícios, com viés assistencialista para 'órfãos e expostos'.</p>
+            <hr>
+            <p>🔍 <b>Importância:</b> Explica a raiz da <b>Dualidade Estrutural</b>: trabalho manual como caridade ou punição, não como direito educativo.</p>
+        """
+    },
     {
         "id": 1,
         "ano": "1909",
@@ -52,25 +76,22 @@ eventos_timeline = [
         "detalhe": """
             <h3>O Marco Zero: Amparar os Desvalidos</h3>
             <p><b>Marco Jurídico:</b> Decreto nº 7.566 (Nilo Peçanha).</p>
-            <p>O início da EPT no Brasil não visa à formação intelectual, mas sim "amparar os desvalidos da sorte". É uma educação para pobres, focada no ofício manual para evitar o vício e a criminalidade.</p>
+            <p>A Rede Federal nasce para "amparar os desvalidos da sorte", focando no ofício manual para evitar o vício.</p>
             <hr>
-            <p>🔍 <b>Modelo Avaliativo Inferido:</b> <i>Disciplinar e Corretivo</i>. Avaliava-se a conduta moral e a aptidão manual, não o intelecto.</p>
-            <p><i>Contexto:</i> Estabelecimento da "dualidade estrutural" (Moura/Ciavatta): escola de elite (pensar) vs. escola de trabalhadores (fazer).</p>
+            <p>🔍 <b>Modelo Avaliativo:</b> <i>Disciplinar e Corretivo</i>. Avaliava-se a conduta moral em vez do intelecto.</p>
         """
     },
     {
         "id": 2,
-        "ano": "1942",
-        "titulo": "Consolidação Industrial (Era Vargas)",
+        "ano": "1937 - 1942",
+        "titulo": "Liceus Industriais e Era Vargas",
         "categoria": "macro",
-        "resumo": "Leis Orgânicas e Criação do SENAI.",
+        "resumo": "Reforma Capanema e Consolidação Industrial.",
         "detalhe": """
             <h3>A Serviço da Industrialização</h3>
-            <p><b>Marco Jurídico:</b> Decreto-Lei nº 4.073.</p>
-            <p>Criação do SENAI. A formação é estritamente técnica, atendendo à demanda da industrialização nascente. O ensino técnico não dava acesso ao ensino superior.</p>
+            <p><b>Contexto:</b> Transição do modelo artesanal para o industrial. O ensino técnico torna-se estratégico para a economia.</p>
             <hr>
-            <p>🔍 <b>Modelo Avaliativo Inferido:</b> <i>Psicométrico e Tecnicista</i>. Testes de aptidão para selecionar "o homem certo para o lugar certo".</p>
-            <p><i>Crítica (Saviani):</i> Rigidez na separação entre trabalho intelectual e manual.</p>
+            <p>🔍 <b>Modelo Avaliativo:</b> <i>Psicométrico</i>. Testes para selecionar "o homem certo para o lugar certo" (Taylorismo escolar).</p>
         """
     },
     {
@@ -81,83 +102,61 @@ eventos_timeline = [
         "resumo": "Lei nº 3.383: Criação do Colégio Agrícola na Fazenda Sobradinho.",
         "detalhe": """
             <h3>A Vocação Rural e o Internato</h3>
-            <p><b>Marco Jurídico:</b> Lei nº 3.383 (Criação) / Instalação efetiva em 1959.</p>
-            <p>Nasce a instituição mãe do atual IFTM Campus Uberlândia. A escola funcionava em regime de <b>internato rígido</b>, onde a disciplina era tão importante quanto o ensino.</p>
+            <p>Nasce a instituição mãe do IFTM Uberlândia. Funcionava em regime de <b>internato rígido</b>.</p>
             <hr>
-            <p>🔍 <b>Modelo Avaliativo Documentado:</b> <i>Comportamental e Moral</i>. Segundo Garcia (2011), o "Inspetor de Alunos" exercia controle total sobre os corpos e condutas. A avaliação punia desvios de comportamento.</p>
-            <p><i>Fonte:</i> Dissertação de Daniele da Costa Garcia.</p>
-        """
-    },
-    {
-        "id": 35,
-        "ano": "1972",
-        "titulo": "A Primeira Safra de Técnicos",
-        "categoria": "micro",
-        "resumo": "Formatura da 1ª Turma de Técnicos em Agropecuária.",
-        "detalhe": """
-            <h3>Do Projeto à Realidade Territorial</h3>
-            <p><b>Marco Histórico:</b> Conclusão da primeira turma (iniciada em 1969).</p>
-            <p>Após anos de construção e estruturação na Fazenda Sobradinho, o Colégio Agrícola de Uberlândia forma seus primeiros Técnicos. O ensino era focado na modernização agrícola (Revolução Verde).</p>
-            <hr>
-            <p>🔍 <b>Modelo Avaliativo:</b> <i>Pragmático-Produtivista</i>. O aluno precisava demonstrar competência prática na lida do campo para ser aprovado. A escola servia como modelo de difusão técnica para a região.</p>
-            <p><i>Fonte:</i> "História do Colégio Agrícola... (1957-1972)", Daniele Garcia.</p>
+            <p>🔍 <b>Modelo Avaliativo:</b> <i>Comportamental</i>. O controle sobre os corpos era total, punindo desvios de conduta (Garcia, 2011).</p>
         """
     },
     {
         "id": 4,
-        "ano": "1971 – 1988",
-        "titulo": "O Rural em Desacordo com o Urbano",
-        "categoria": "micro",
-        "resumo": "Expansão urbana desordenada e tecnicismo.",
+        "ano": "1971",
+        "titulo": "Lei 5.692/71: Tecnicismo Compulsório",
+        "categoria": "macro",
+        "resumo": "Ensino Técnico Obrigatório no 2º Grau.",
         "detalhe": """
-            <h3>Tensões Territoriais</h3>
-            <p><b>Marco Jurídico:</b> Lei 5.692/71 (Profissionalização Compulsória).</p>
-            <p>Período de forte tecnicismo na Ditadura Militar. A escola rural sofre com a precarização e a imposição de modelos urbanos, além das tensões raciais e de gênero.</p>
-            <p><i>Fonte:</i> Tese de Gelda Gonçalves Costa.</p>
+            <h3>O Auge do Capital Humano</h3>
+            <p><b>Contexto:</b> Ditadura Militar. Profissionalização obrigatória para conter a demanda pelo ensino superior.</p>
+            <hr>
+            <p>🔍 <b>Crítica:</b> Fracassou por falta de estrutura e rejeição social, sendo revogada em 1982.</p>
         """
     },
     {
         "id": 5,
-        "ano": "1979",
-        "titulo": "Gestão Centralizada (COAGRI)",
+        "ano": "1972",
+        "titulo": "A 1ª Safra de Técnicos (CAU)",
         "categoria": "micro",
-        "resumo": "Projetos Agropecuários e Produtivismo.",
+        "resumo": "Formatura da 1ª Turma de Técnicos em Agropecuária.",
         "detalhe": """
-            <h3>A Escola-Fazenda</h3>
-            <p><b>Contexto:</b> Supervisão da Coordenação Nacional do Ensino Agropecuário.</p>
-            <p>Gestão focada em "projetos agropecuários" (suinocultura, olericultura) visando lucro e autossustentabilidade. A produção muitas vezes se sobrepunha à pedagogia.</p>
+            <h3>Modernização Agrícola no Cerrado</h3>
+            <p>O CAU forma seus primeiros técnicos sob a égide da Revolução Verde e modernização do campo.</p>
             <hr>
-            <p>🔍 <b>Modelo Avaliativo Inferido:</b> <i>Por Produção/Resultados</i>. O aluno era avaliado pela eficiência na lida do campo e lucro gerado.</p>
-            <p><i>Fonte:</i> Relatório de Gestão COAGRI 1979.</p>
+            <p>🔍 <b>Modelo Avaliativo:</b> <i>Pragmático-Produtivista</i>. Foco total no "saber fazer" técnico/operacional.</p>
         """
     },
     {
         "id": 6,
-        "ano": "1990 – 1992",
-        "titulo": "Minha Formação Técnica (SENAC)",
-        "categoria": "pessoal",
-        "resumo": "Curso Profissionalizante: Informática e Computação (630h).",
+        "ano": "1960 - 1980",
+        "titulo": "Sistema Escola-Fazenda",
+        "categoria": "micro",
+        "resumo": "Gestão COAGRI e o Lema 'Aprender a Fazer'.",
         "detalhe": """
-            <h3>O Elo Pessoal (Anexo C)</h3>
-            <p>Realização do curso unificado de TI no SENAC Uberlândia. Este ponto conecta a "grande história" à trajetória do autor: fruto da formação profissionalizante do Sistema S.</p>
-            <ul>
-                <li>Carga Horária: 630 horas.</li>
-                <li>Contexto: Pós-Constituição de 88, mas ainda sob influência tecnicista.</li>
-            </ul>
+            <h3>A Escola como Empresa Rural</h3>
+            <p><b>Princípio:</b> "Aprender a fazer e fazer para aprender". Busca por autossustentabilidade financeira.</p>
             <hr>
-            <p>🔍 <b>Modelo Avaliativo Vivenciado:</b> <i>Competência Técnica (Saber Fazer)</i>. Foco na habilidade de programação e lógica.</p>
+            <p>🔍 <b>Crítica:</b> Aluno como mão de obra barata para manutenção do internato (Vargas e Gatti).</p>
         """
     },
     {
         "id": 7,
-        "ano": "1997",
-        "titulo": "O Retrocesso da Dualidade",
+        "ano": "1990 – 1997",
+        "titulo": "Retrocesso e Fragmentação",
         "categoria": "macro",
-        "resumo": "Decreto nº 2.208/97: Proibição da Integração.",
+        "resumo": "Decreto nº 2.208/97 e a hegemonia neoliberal.",
         "detalhe": """
-            <h3>A Fragmentação do Ensino</h3>
-            <p>O decreto proíbe o Ensino Médio Integrado. O aluno teria que fazer o Ensino Médio em uma escola e o Técnico em outra.</p>
-            <p>É o ápice da "subsunção aos interesses do mercado" (Moura). A formação geral é separada da formação para o trabalho.</p>
+            <h3>A Separação Compulsória</h3>
+            <p>Governo FHC proíbe o Ensino Médio Integrado. Separação entre formação geral e técnica.</p>
+            <hr>
+            <p>🔍 <b>Elo Pessoal:</b> Minha formação técnica em TI no SENAC ocorreu neste cenário de fragmentação.</p>
         """
     },
     {
@@ -167,33 +166,26 @@ eventos_timeline = [
         "categoria": "macro",
         "resumo": "Lei 11.892: A Revolução da Rede Federal.",
         "detalhe": """
-            <h3>Omnilateralidade e Verticalização</h3>
-            <p>Lula sanciona a lei que cria a Rede Federal. A antiga Escola Agrotécnica (EAFU) se funde ao CEFET e nasce o <b>IFTM</b>.</p>
-            <p>A EPT passa a assumir o compromisso com a formação humana integral, integrando trabalho, ciência e cultura.</p>
-            <p><i>Este marco legal é a base teórica que sustenta a necessidade de uma nova rubrica.</i></p>
+            <h3>Omnilateralidade e Formação Integral</h3>
+            <p>Criação do IFTM. Retomada do Ensino Médio Integrado (Trabalho, Ciência e Cultura).</p>
+            <hr>
+            <p>🔍 <b>Novo Paradigma:</b> Base teórica para a necessidade de avaliações formativas e humanas.</p>
         """
     },
     {
         "id": 9,
         "ano": "2026 (O Agora)",
-        "titulo": "A Espiral do Tempo (Minha Trajetória)",
+        "titulo": "🌀 A Síntese: Rubrica Sinapse-BR IA",
         "categoria": "pessoal",
-        "resumo": "A prova empírica da espiral: EMS/EAFU → SENAC → IFTM (Graduação) → IFTM (Pós/Mestrado).",
+        "resumo": "Avaliação Diagnóstica e Formativa mediada por IA.",
         "detalhe": """
-            <h3>A Vivência Recursiva no Território</h3>
-            <p>Este exemplo prova a <b>Espiral do Tempo</b> na EPT. Cada vez que passei pelo espaço do IFTM, tive novos aprendizados e outra visão das vivências anteriores:</p>
-            <ul>
-                <li><b>1. Início (EMS/EAFU):</b> Estudei na EMS, anexo da Escola Agrotécnica Federal de Uberlândia, através do convênio COAGRI (1º ano).</li>
-                <li><b>2. O Giro (Forças Armadas e Sistema S):</b> Saí para as Forças Armadas. Na EPT, fui para o SENAC, onde terminei o ensino médio e a formação técnica.</li>
-                <li><b>3. O Retorno (Graduação):</b> Voltei para o IFTM para cursar Tecnologia em Sistemas para Internet.</li>
-                <li><b>4. A Síntese (Pós e Mestrado):</b> Estou no IFTM novamente, agora na Pós em Docência e tendo cursado disciplinas do Mestrado.</li>
-            </ul>
+            <h3>A Vivência Recursiva</h3>
+            <p>Resultado da espiral histórica vivida no corpo (EAFU → SENAC → IFTM).</p>
             <hr>
-            <p><b>Conclusão:</b> A Rubrica SINAPSE é o resultado dessa soma de visões, construída por quem viveu a evolução da EPT no próprio corpo.</p>
+            <p><b>A Proposta:</b> Usar IA para garantir a avaliação formativa que a EPT crítica sempre defendeu.</p>
         """
     }
 ]
-
 # Converter dados para JSON seguro para injetar no JS
 dados_json = json.dumps(eventos_timeline)
 
