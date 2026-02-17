@@ -1,0 +1,4433 @@
+[
+  {
+    "Municipio": "Araguari",
+    "INSE_Medio_Municipal": 5.19,
+    "Total_Matriculas": 1062.0,
+    "Escolas": [
+      {
+        "Nome": "CONSERVATORIO ESTADUAL MUSICA E CENTRO INTERESCOLAR ARTES RAUL BELEM",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": false,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Instrumento Musical (nome do instrumento)",
+            "Matriculas": 46
+          }
+        ]
+      },
+      {
+        "Nome": "EE MADRE MARIA BLANDINA",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.1,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Marketing",
+            "Matriculas": 26
+          },
+          {
+            "Nome": "Transações Imobiliárias",
+            "Matriculas": 9
+          }
+        ]
+      },
+      {
+        "Nome": "EE PROFESSOR ANTONIO MARQUES",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.31,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Informática para Internet",
+            "Matriculas": 9
+          }
+        ]
+      },
+      {
+        "Nome": "EE RAUL SOARES",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.37,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Administração",
+            "Matriculas": 52
+          },
+          {
+            "Nome": "Agronegócio",
+            "Matriculas": 16
+          }
+        ]
+      },
+      {
+        "Nome": "EE SAO JUDAS TADEU",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível IV",
+        "INSE_Media": 4.86,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 73
+          }
+        ]
+      },
+      {
+        "Nome": "EE JOSE CARNEIRO DA CUNHA",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível IV",
+        "INSE_Media": 4.69,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Agronegócio",
+            "Matriculas": 49
+          }
+        ]
+      },
+      {
+        "Nome": "SENAI ARAGUARI CFP MARIO ABDALLA",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Eletroeletrônica",
+            "Matriculas": 29
+          },
+          {
+            "Nome": "Eletrônica",
+            "Matriculas": 35
+          },
+          {
+            "Nome": "Mecânica",
+            "Matriculas": 30
+          },
+          {
+            "Nome": "Fabricação Mecânica",
+            "Matriculas": 35
+          },
+          {
+            "Nome": "Administração",
+            "Matriculas": 39
+          },
+          {
+            "Nome": "Logística",
+            "Matriculas": 35
+          },
+          {
+            "Nome": "Edificações",
+            "Matriculas": 18
+          },
+          {
+            "Nome": "Celulose e Papel",
+            "Matriculas": 61
+          }
+        ]
+      },
+      {
+        "Nome": "ESCOLA EDUCARE",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 250
+          },
+          {
+            "Nome": "Estética",
+            "Matriculas": 78
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 47
+          }
+        ]
+      },
+      {
+        "Nome": "ESCOLA EDUCARE - UNIDADE II",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Farmácia",
+            "Matriculas": 29
+          },
+          {
+            "Nome": "Administração",
+            "Matriculas": 66
+          },
+          {
+            "Nome": "Zootecnia",
+            "Matriculas": 30
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Municipio": "Araxá",
+    "INSE_Medio_Municipal": 4.98,
+    "Total_Matriculas": 2446.0,
+    "Escolas": [
+      {
+        "Nome": "CEFET-MG - UNED ARAXA",
+        "Rede": "Federal",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível VI",
+        "INSE_Media": 5.75,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Eletrônica",
+            "Matriculas": 122
+          },
+          {
+            "Nome": "Mecânica",
+            "Matriculas": 125
+          },
+          {
+            "Nome": "Edificações",
+            "Matriculas": 125
+          },
+          {
+            "Nome": "Mineração",
+            "Matriculas": 127
+          }
+        ]
+      },
+      {
+        "Nome": "SENAI ARAXA CFP PROFESSOR DJALMA GUIMARAES",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Eletromecânica",
+            "Matriculas": 43
+          },
+          {
+            "Nome": "Eletrotécnica",
+            "Matriculas": 57
+          },
+          {
+            "Nome": "Administração",
+            "Matriculas": 105
+          },
+          {
+            "Nome": "Logística",
+            "Matriculas": 34
+          },
+          {
+            "Nome": "Informática para Internet",
+            "Matriculas": 67
+          },
+          {
+            "Nome": "Agrimensura",
+            "Matriculas": 27
+          },
+          {
+            "Nome": "Edificações",
+            "Matriculas": 30
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 45
+          }
+        ]
+      },
+      {
+        "Nome": "SENAC - UNIDADE DE ENSINO TECNICO DO CEP ARAXA",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 64
+          },
+          {
+            "Nome": "Estética",
+            "Matriculas": 21
+          },
+          {
+            "Nome": "Administração",
+            "Matriculas": 1
+          },
+          {
+            "Nome": "Contabilidade",
+            "Matriculas": 14
+          },
+          {
+            "Nome": "Marketing",
+            "Matriculas": 2
+          },
+          {
+            "Nome": "Recursos Humanos",
+            "Matriculas": 8
+          },
+          {
+            "Nome": "Informática",
+            "Matriculas": 35
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 26
+          }
+        ]
+      },
+      {
+        "Nome": "ESCOLA TECNICA SANTA EDWIGES",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 85
+          },
+          {
+            "Nome": "Radiologia",
+            "Matriculas": 4
+          },
+          {
+            "Nome": "Eletromecânica",
+            "Matriculas": 50
+          },
+          {
+            "Nome": "Administração",
+            "Matriculas": 15
+          },
+          {
+            "Nome": "Química",
+            "Matriculas": 29
+          },
+          {
+            "Nome": "Agropecuária",
+            "Matriculas": 110
+          },
+          {
+            "Nome": "Mineração",
+            "Matriculas": 37
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 25
+          }
+        ]
+      },
+      {
+        "Nome": "C DE EDUC PROFIS BIT COMPANY ARAXA",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Outros - Eixo Ambiente e Saúde",
+            "Matriculas": 67
+          },
+          {
+            "Nome": "Outros - Eixo Gestão e Negócios",
+            "Matriculas": 90
+          },
+          {
+            "Nome": "Outros - Eixo Informação e Comunicação",
+            "Matriculas": 132
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 28
+          }
+        ]
+      },
+      {
+        "Nome": "ESCOLA POLITECNICA DO ALTO PARANAIBA",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 182
+          },
+          {
+            "Nome": "Farmácia",
+            "Matriculas": 15
+          },
+          {
+            "Nome": "Gerência de Saúde",
+            "Matriculas": 4
+          },
+          {
+            "Nome": "Química",
+            "Matriculas": 158
+          },
+          {
+            "Nome": "Mineração",
+            "Matriculas": 147
+          }
+        ]
+      },
+      {
+        "Nome": "ESCOLA POLITECNICA DO PLANALTO DE ARAXA",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Administração",
+            "Matriculas": 27
+          },
+          {
+            "Nome": "Transações Imobiliárias",
+            "Matriculas": 2
+          },
+          {
+            "Nome": "Serviços Jurídicos",
+            "Matriculas": 44
+          },
+          {
+            "Nome": "Agronegócio",
+            "Matriculas": 18
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 73
+          }
+        ]
+      },
+      {
+        "Nome": "SENAT SERVICO NACIONAL DE APRENDIZAGEM DO TRANSPORTE - ARAXA",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Logística",
+            "Matriculas": 26
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Municipio": "Campina Verde",
+    "INSE_Medio_Municipal": 4.72,
+    "Total_Matriculas": 341.0,
+    "Escolas": [
+      {
+        "Nome": "IFTM - CAMPUS AVANCADO CAMPINA VERDE",
+        "Rede": "Federal",
+        "Zona": "Rural",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": false,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Administração",
+            "Matriculas": 42
+          },
+          {
+            "Nome": "Informática",
+            "Matriculas": 44
+          },
+          {
+            "Nome": "Agropecuária",
+            "Matriculas": 94
+          }
+        ]
+      },
+      {
+        "Nome": "PROTON - ESCOLA TECNICA E PROFISSIONALIZANTE - UNIDADE II",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 103
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 58
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Municipio": "Canápolis",
+    "INSE_Medio_Municipal": 0.0,
+    "Total_Matriculas": 74.0,
+    "Escolas": [
+      {
+        "Nome": "EE SAO FRANCISCO DE ASSIS",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.12,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Informática",
+            "Matriculas": 12
+          },
+          {
+            "Nome": "Agropecuária",
+            "Matriculas": 62
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Municipio": "Capinópolis",
+    "INSE_Medio_Municipal": 0.0,
+    "Total_Matriculas": 210.0,
+    "Escolas": [
+      {
+        "Nome": "INSTITUTO AXIOMA - UNIDADE II",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 100
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 110
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Municipio": "Carmo do Paranaíba",
+    "INSE_Medio_Municipal": 0.0,
+    "Total_Matriculas": 191.0,
+    "Escolas": [
+      {
+        "Nome": "EE ANTONIO ATANASIO",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.14,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Agronegócio",
+            "Matriculas": 30
+          }
+        ]
+      },
+      {
+        "Nome": "COLEGIO POLIS",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 1
+          },
+          {
+            "Nome": "Agronegócio",
+            "Matriculas": 159
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Municipio": "Centralina",
+    "INSE_Medio_Municipal": 0.0,
+    "Total_Matriculas": 41.0,
+    "Escolas": [
+      {
+        "Nome": "EE WILSON DE MELO",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.13,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Agente Comunitário de Saúde",
+            "Matriculas": 15
+          },
+          {
+            "Nome": "Agropecuária",
+            "Matriculas": 26
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Municipio": "Conceição das Alagoas",
+    "INSE_Medio_Municipal": 0.0,
+    "Total_Matriculas": 111.0,
+    "Escolas": [
+      {
+        "Nome": "EE JOSE ALEXANDRE MIZIARA",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.07,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Administração",
+            "Matriculas": 42
+          },
+          {
+            "Nome": "Recursos Humanos",
+            "Matriculas": 25
+          }
+        ]
+      },
+      {
+        "Nome": "EE HERCULEGIO ANTONIO BORGES",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível IV",
+        "INSE_Media": 4.93,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": false,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Informática",
+            "Matriculas": 44
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Municipio": "Coromandel",
+    "INSE_Medio_Municipal": 4.93,
+    "Total_Matriculas": 60.0,
+    "Escolas": [
+      {
+        "Nome": "SENAC - UNIDADE DE ENSINO TECNICO DO CEP DE COROMANDEL",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 34
+          },
+          {
+            "Nome": "Outros - Eixo Ambiente e Saúde",
+            "Matriculas": 26
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Municipio": "Cruzeiro da Fortaleza",
+    "INSE_Medio_Municipal": 0.0,
+    "Total_Matriculas": 15.0,
+    "Escolas": [
+      {
+        "Nome": "EE CANDIDA CORTES CORREA",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.16,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Administração",
+            "Matriculas": 7
+          },
+          {
+            "Nome": "Agronegócio",
+            "Matriculas": 8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Municipio": "Delta",
+    "INSE_Medio_Municipal": 0.0,
+    "Total_Matriculas": 71.0,
+    "Escolas": [
+      {
+        "Nome": "EE IVAN MATTAR SOUKEF",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.08,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Recursos Humanos",
+            "Matriculas": 21
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 50
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Municipio": "Estrela do Sul",
+    "INSE_Medio_Municipal": 0.0,
+    "Total_Matriculas": 49.0,
+    "Escolas": [
+      {
+        "Nome": "EE ROBERT KENNEDY",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.21,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Administração",
+            "Matriculas": 49
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Municipio": "Frutal",
+    "INSE_Medio_Municipal": 4.97,
+    "Total_Matriculas": 102.0,
+    "Escolas": [
+      {
+        "Nome": "EE LAURISTON SOUZA",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.31,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Logística",
+            "Matriculas": 52
+          },
+          {
+            "Nome": "Informática para Internet",
+            "Matriculas": 15
+          }
+        ]
+      },
+      {
+        "Nome": "EE VICENTE MACEDO",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível IV",
+        "INSE_Media": 4.92,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Administração",
+            "Matriculas": 35
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Municipio": "Guimarânia",
+    "INSE_Medio_Municipal": 0.0,
+    "Total_Matriculas": 43.0,
+    "Escolas": [
+      {
+        "Nome": "EE IRMAOS GUIMARAES",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.14,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Agronegócio",
+            "Matriculas": 43
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Municipio": "Ituiutaba",
+    "INSE_Medio_Municipal": 0.0,
+    "Total_Matriculas": 2195.0,
+    "Escolas": [
+      {
+        "Nome": "EE CORONEL TONICO FRANCO",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.1,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Logística",
+            "Matriculas": 53
+          },
+          {
+            "Nome": "Agronegócio",
+            "Matriculas": 125
+          }
+        ]
+      },
+      {
+        "Nome": "EE DOUTOR FERNANDO ALEXANDRE",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível IV",
+        "INSE_Media": 4.8,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Tradução e Interpretação de Libras",
+            "Matriculas": 10
+          },
+          {
+            "Nome": "Mecânica",
+            "Matriculas": 31
+          },
+          {
+            "Nome": "Cooperativismo",
+            "Matriculas": 26
+          },
+          {
+            "Nome": "Agropecuária",
+            "Matriculas": 33
+          }
+        ]
+      },
+      {
+        "Nome": "EE GOVERNADOR BIAS FORTES",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível IV",
+        "INSE_Media": 4.7,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Informática",
+            "Matriculas": 23
+          }
+        ]
+      },
+      {
+        "Nome": "EE ARTHUR JUNQUEIRA DE ALMEIDA",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível IV",
+        "INSE_Media": 4.88,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Eletrônica",
+            "Matriculas": 47
+          }
+        ]
+      },
+      {
+        "Nome": "EE PROFESSORA MARIA DE BARROS",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível IV",
+        "INSE_Media": 4.52,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Agente Comunitário de Saúde",
+            "Matriculas": 13
+          },
+          {
+            "Nome": "Recursos Humanos",
+            "Matriculas": 44
+          },
+          {
+            "Nome": "Transações Imobiliárias",
+            "Matriculas": 7
+          }
+        ]
+      },
+      {
+        "Nome": "CONSERVATORIO ESTADUAL DE MUSICA DOUTOR JOSE ZOCCOLI DE ANDRADE",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Instrumento Musical (nome do instrumento)",
+            "Matriculas": 48
+          }
+        ]
+      },
+      {
+        "Nome": "EE PROFESSOR ALVARO BRANDAO DE ANDRADE",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Desenvolvimento de Sistemas",
+            "Matriculas": 44
+          }
+        ]
+      },
+      {
+        "Nome": "EE ROTARY",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.07,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Informática",
+            "Matriculas": 32
+          }
+        ]
+      },
+      {
+        "Nome": "SENAI ITUIUTABA CFP BEBE MARTINS",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Eletrotécnica",
+            "Matriculas": 56
+          },
+          {
+            "Nome": "Manutenção de Máquinas Industriais",
+            "Matriculas": 57
+          },
+          {
+            "Nome": "Administração",
+            "Matriculas": 28
+          },
+          {
+            "Nome": "Biocombustíveis",
+            "Matriculas": 57
+          },
+          {
+            "Nome": "Planejamento e Controle da Produção",
+            "Matriculas": 32
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 108
+          }
+        ]
+      },
+      {
+        "Nome": "SENAC - UNIDADE DE ENSINO TECNICO DO CEP ITUIUTABA",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 75
+          },
+          {
+            "Nome": "Administração",
+            "Matriculas": 28
+          },
+          {
+            "Nome": "Informática",
+            "Matriculas": 25
+          }
+        ]
+      },
+      {
+        "Nome": "IFTM - CAMPUS ITUIUTABA",
+        "Rede": "Federal",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Eletrotécnica",
+            "Matriculas": 143
+          },
+          {
+            "Nome": "Administração",
+            "Matriculas": 29
+          },
+          {
+            "Nome": "Informática",
+            "Matriculas": 102
+          },
+          {
+            "Nome": "Agroindústria",
+            "Matriculas": 91
+          },
+          {
+            "Nome": "Química",
+            "Matriculas": 96
+          },
+          {
+            "Nome": "Agricultura",
+            "Matriculas": 103
+          }
+        ]
+      },
+      {
+        "Nome": "INSTITUTO AXIOMA",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 78
+          },
+          {
+            "Nome": "Estética",
+            "Matriculas": 56
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 171
+          }
+        ]
+      },
+      {
+        "Nome": "INSTITUTO AXIOMA - UNIDADE IV",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Contabilidade",
+            "Matriculas": 127
+          },
+          {
+            "Nome": "Informática",
+            "Matriculas": 197
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Municipio": "Iturama",
+    "INSE_Medio_Municipal": 0.0,
+    "Total_Matriculas": 381.0,
+    "Escolas": [
+      {
+        "Nome": "EM AGRICOLA ALIPIO SOARES BARBOSA",
+        "Rede": "Municipal",
+        "Zona": "Rural",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": false,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Agricultura",
+            "Matriculas": 26
+          }
+        ]
+      },
+      {
+        "Nome": "INSTITUTO EDUCACIONAL PROFISSIONALIZANTE DE ITURAMA",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 235
+          }
+        ]
+      },
+      {
+        "Nome": "FAMA TEC CURSOS TECNICOS",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Agrimensura",
+            "Matriculas": 120
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Municipio": "João Pinheiro",
+    "INSE_Medio_Municipal": 4.66,
+    "Total_Matriculas": 682.0,
+    "Escolas": [
+      {
+        "Nome": "CENTRO EDUCACIONAL VISAO",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 50
+          },
+          {
+            "Nome": "Cuidados de Idosos",
+            "Matriculas": 53
+          },
+          {
+            "Nome": "Administração",
+            "Matriculas": 65
+          },
+          {
+            "Nome": "Informática",
+            "Matriculas": 70
+          },
+          {
+            "Nome": "Açúcar e Álcool",
+            "Matriculas": 48
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 30
+          }
+        ]
+      },
+      {
+        "Nome": "CENTRO DE ENSINO BALUARTE",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Análises clínicas",
+            "Matriculas": 39
+          },
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 30
+          },
+          {
+            "Nome": "Estética",
+            "Matriculas": 87
+          },
+          {
+            "Nome": "Farmácia",
+            "Matriculas": 81
+          },
+          {
+            "Nome": "Administração",
+            "Matriculas": 8
+          },
+          {
+            "Nome": "Contabilidade",
+            "Matriculas": 74
+          },
+          {
+            "Nome": "Agronegócio",
+            "Matriculas": 23
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 24
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Municipio": "Lagoa Formosa",
+    "INSE_Medio_Municipal": 0.0,
+    "Total_Matriculas": 99.0,
+    "Escolas": [
+      {
+        "Nome": "EE NOSSA SENHORA DA PIEDADE",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.36,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Administração",
+            "Matriculas": 30
+          },
+          {
+            "Nome": "Agronegócio",
+            "Matriculas": 69
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Municipio": "Monte Alegre de Minas",
+    "INSE_Medio_Municipal": 4.93,
+    "Total_Matriculas": 126.0,
+    "Escolas": [
+      {
+        "Nome": "EE MONTE ALEGRE DE MINAS",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.15,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Administração",
+            "Matriculas": 66
+          },
+          {
+            "Nome": "Outros - Eixo Gestão e Negócios",
+            "Matriculas": 11
+          },
+          {
+            "Nome": "Outros - Eixo Recursos Naturais",
+            "Matriculas": 49
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Municipio": "Monte Carmelo",
+    "INSE_Medio_Municipal": 4.78,
+    "Total_Matriculas": 398.0,
+    "Escolas": [
+      {
+        "Nome": "EE CLARA CHAVES",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível IV",
+        "INSE_Media": 4.72,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Agropecuária",
+            "Matriculas": 8
+          }
+        ]
+      },
+      {
+        "Nome": "EE GREGORIANO CANEDO",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.12,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Agente Comunitário de Saúde",
+            "Matriculas": 21
+          },
+          {
+            "Nome": "Administração",
+            "Matriculas": 49
+          },
+          {
+            "Nome": "Marketing",
+            "Matriculas": 13
+          },
+          {
+            "Nome": "Recursos Humanos",
+            "Matriculas": 23
+          },
+          {
+            "Nome": "Agronegócio",
+            "Matriculas": 13
+          }
+        ]
+      },
+      {
+        "Nome": "CENTRO DE EDUCACAO PROFISSIONAL ALPHA LTDA",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 84
+          }
+        ]
+      },
+      {
+        "Nome": "COLEGIO FUCAMP",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Estética",
+            "Matriculas": 62
+          },
+          {
+            "Nome": "Cuidados de Idosos",
+            "Matriculas": 26
+          },
+          {
+            "Nome": "Eletrotécnica",
+            "Matriculas": 34
+          },
+          {
+            "Nome": "Manutenção de Máquinas Pesadas",
+            "Matriculas": 26
+          },
+          {
+            "Nome": "Manutenção e Suporte em Informática",
+            "Matriculas": 39
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Municipio": "Paracatu",
+    "INSE_Medio_Municipal": 5.05,
+    "Total_Matriculas": 2866.0,
+    "Escolas": [
+      {
+        "Nome": "EE AFFONSO ROQUETTE",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível IV",
+        "INSE_Media": 4.87,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Agronegócio",
+            "Matriculas": 3
+          }
+        ]
+      },
+      {
+        "Nome": "EE DOUTOR VIRGILIO DE MELO FRANCO",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.09,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Agente Comunitário de Saúde",
+            "Matriculas": 6
+          }
+        ]
+      },
+      {
+        "Nome": "EE ANTONIO CARLOS",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.2,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Informática",
+            "Matriculas": 32
+          }
+        ]
+      },
+      {
+        "Nome": "EE ALTINA DE PAULA GUIMARAES",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.19,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": false,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Agente Comunitário de Saúde",
+            "Matriculas": 5
+          }
+        ]
+      },
+      {
+        "Nome": "EE OLINDINA LOUREIRO",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível IV",
+        "INSE_Media": 4.77,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Informática",
+            "Matriculas": 33
+          }
+        ]
+      },
+      {
+        "Nome": "EE DELANO BROCHADO ADJUTO",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível IV",
+        "INSE_Media": 4.71,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Cooperativismo",
+            "Matriculas": 9
+          },
+          {
+            "Nome": "Agropecuária",
+            "Matriculas": 92
+          }
+        ]
+      },
+      {
+        "Nome": "ESCOLA TECNICA DE PARACATU",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": false,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 59
+          },
+          {
+            "Nome": "Meio Ambiente",
+            "Matriculas": 39
+          },
+          {
+            "Nome": "Radiologia",
+            "Matriculas": 69
+          },
+          {
+            "Nome": "Automação Industrial",
+            "Matriculas": 39
+          },
+          {
+            "Nome": "Eletromecânica",
+            "Matriculas": 72
+          },
+          {
+            "Nome": "Mecatrônica",
+            "Matriculas": 32
+          },
+          {
+            "Nome": "Edificações",
+            "Matriculas": 30
+          },
+          {
+            "Nome": "Química",
+            "Matriculas": 37
+          },
+          {
+            "Nome": "Mineração",
+            "Matriculas": 32
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 32
+          }
+        ]
+      },
+      {
+        "Nome": "ESCOLA MULTI-TECH CURSOS E INFORMATICA",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 17
+          },
+          {
+            "Nome": "Outros - Eixo Ambiente e Saúde",
+            "Matriculas": 126
+          },
+          {
+            "Nome": "Logística",
+            "Matriculas": 52
+          },
+          {
+            "Nome": "Outros - Eixo Informação e Comunicação",
+            "Matriculas": 70
+          },
+          {
+            "Nome": "Agronegócio",
+            "Matriculas": 143
+          },
+          {
+            "Nome": "Mineração",
+            "Matriculas": 9
+          },
+          {
+            "Nome": "Outros - Eixo Recursos Naturais",
+            "Matriculas": 67
+          },
+          {
+            "Nome": "Outros - Eixo Segurança",
+            "Matriculas": 66
+          }
+        ]
+      },
+      {
+        "Nome": "COLEGIO IMPERIO EDUCACIONAL DE ENSINO FUNDAMENTAL E ENSINO MEDIO",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Estética",
+            "Matriculas": 63
+          },
+          {
+            "Nome": "Eletroeletrônica",
+            "Matriculas": 28
+          },
+          {
+            "Nome": "Sistemas de Energia Renovável",
+            "Matriculas": 55
+          },
+          {
+            "Nome": "Agropecuária",
+            "Matriculas": 103
+          },
+          {
+            "Nome": "Zootecnia",
+            "Matriculas": 56
+          }
+        ]
+      },
+      {
+        "Nome": "SENAI PARACATU CFP EPITACIO CARDOSO NAVES",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Eletrotécnica",
+            "Matriculas": 66
+          },
+          {
+            "Nome": "Administração",
+            "Matriculas": 38
+          },
+          {
+            "Nome": "Planejamento e Controle da Produção",
+            "Matriculas": 34
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 46
+          }
+        ]
+      },
+      {
+        "Nome": "IFTM - CAMPUS PARACATU",
+        "Rede": "Federal",
+        "Zona": "Rural",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.41,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Eletroeletrônica",
+            "Matriculas": 135
+          },
+          {
+            "Nome": "Eletrônica",
+            "Matriculas": 64
+          },
+          {
+            "Nome": "Administração",
+            "Matriculas": 204
+          },
+          {
+            "Nome": "Informática",
+            "Matriculas": 64
+          },
+          {
+            "Nome": "Informática para Internet",
+            "Matriculas": 63
+          },
+          {
+            "Nome": "Manutenção e Suporte em Informática",
+            "Matriculas": 70
+          }
+        ]
+      },
+      {
+        "Nome": "EE NEUSA PIMENTEL BARBOSA",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.16,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Logística",
+            "Matriculas": 45
+          },
+          {
+            "Nome": "Desenvolvimento de Sistemas",
+            "Matriculas": 31
+          },
+          {
+            "Nome": "Agropecuária",
+            "Matriculas": 101
+          }
+        ]
+      },
+      {
+        "Nome": "ESCOLA POLITENICA DE PARACATU",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Análises clínicas",
+            "Matriculas": 28
+          },
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 89
+          },
+          {
+            "Nome": "Saúde Bucal",
+            "Matriculas": 27
+          },
+          {
+            "Nome": "Tradução e Interpretação de Libras",
+            "Matriculas": 39
+          },
+          {
+            "Nome": "Mecânica",
+            "Matriculas": 50
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 26
+          }
+        ]
+      },
+      {
+        "Nome": "COLEGIO IMPERIO WIN",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Finanças",
+            "Matriculas": 97
+          },
+          {
+            "Nome": "Agricultura",
+            "Matriculas": 73
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Municipio": "Patos de Minas",
+    "INSE_Medio_Municipal": 5.36,
+    "Total_Matriculas": 3203.0,
+    "Escolas": [
+      {
+        "Nome": "IFTM - CAMPUS PATOS DE MINAS",
+        "Rede": "Federal",
+        "Zona": "Rural",
+        "INSE_Class": "Nível VI",
+        "INSE_Media": 5.7,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Eletrotécnica",
+            "Matriculas": 102
+          },
+          {
+            "Nome": "Logística",
+            "Matriculas": 100
+          },
+          {
+            "Nome": "Agroecologia",
+            "Matriculas": 103
+          },
+          {
+            "Nome": "Mineração",
+            "Matriculas": 101
+          }
+        ]
+      },
+      {
+        "Nome": "EE PROFESSOR ANTONIO DIAS MACIEL",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível VI",
+        "INSE_Media": 5.63,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Marketing",
+            "Matriculas": 9
+          }
+        ]
+      },
+      {
+        "Nome": "EE PROFESSOR ZAMA MACIEL",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.25,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Eletroeletrônica",
+            "Matriculas": 115
+          }
+        ]
+      },
+      {
+        "Nome": "EE AGROTECNICA AFONSO QUEIROZ",
+        "Rede": "Estadual",
+        "Zona": "Rural",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.45,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Agropecuária",
+            "Matriculas": 280
+          }
+        ]
+      },
+      {
+        "Nome": "C POLITECNICO TREI ENS E PESQUISA",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Análises clínicas",
+            "Matriculas": 23
+          },
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 27
+          },
+          {
+            "Nome": "Saúde Bucal",
+            "Matriculas": 46
+          },
+          {
+            "Nome": "Radiologia",
+            "Matriculas": 62
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 25
+          }
+        ]
+      },
+      {
+        "Nome": "EE PROFESSOR MANOEL LOPES NOGUEIRA",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Recursos Humanos",
+            "Matriculas": 24
+          }
+        ]
+      },
+      {
+        "Nome": "SENAI PATOS DE MINAS CFP ANAVIO BRAZ DE QUEIROZ",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Eletromecânica",
+            "Matriculas": 23
+          },
+          {
+            "Nome": "Eletrotécnica",
+            "Matriculas": 94
+          },
+          {
+            "Nome": "Mecânica",
+            "Matriculas": 12
+          },
+          {
+            "Nome": "Manutenção de Máquinas Industriais",
+            "Matriculas": 27
+          },
+          {
+            "Nome": "Administração",
+            "Matriculas": 49
+          },
+          {
+            "Nome": "Planejamento e Controle da Produção",
+            "Matriculas": 33
+          },
+          {
+            "Nome": "Outros - Eixo Produção Industrial",
+            "Matriculas": 11
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 41
+          }
+        ]
+      },
+      {
+        "Nome": "SENAC - UNIDADE DE ENSINO TECNICO DO CEP PATOS DE MINAS",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 142
+          },
+          {
+            "Nome": "Estética",
+            "Matriculas": 27
+          },
+          {
+            "Nome": "Administração",
+            "Matriculas": 30
+          },
+          {
+            "Nome": "Recursos Humanos",
+            "Matriculas": 21
+          },
+          {
+            "Nome": "Informática",
+            "Matriculas": 51
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 32
+          }
+        ]
+      },
+      {
+        "Nome": "NUCLEO INTEGRAL FORMACAO E PESQUISA TECNICO PROFISSIONAL",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 123
+          },
+          {
+            "Nome": "Estética",
+            "Matriculas": 97
+          },
+          {
+            "Nome": "Saúde Bucal",
+            "Matriculas": 68
+          },
+          {
+            "Nome": "Radiologia",
+            "Matriculas": 223
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 57
+          }
+        ]
+      },
+      {
+        "Nome": "EE PROFESSOR RENE DE DEUS VIEIRA",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.5,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Desenvolvimento de Sistemas",
+            "Matriculas": 28
+          }
+        ]
+      },
+      {
+        "Nome": "ESCOLA TECNICA DE PATOS DE MINAS",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Química",
+            "Matriculas": 40
+          }
+        ]
+      },
+      {
+        "Nome": "COLEGIO UNIVERSITARIO",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 133
+          },
+          {
+            "Nome": "Farmácia",
+            "Matriculas": 110
+          },
+          {
+            "Nome": "Eletrotécnica",
+            "Matriculas": 62
+          },
+          {
+            "Nome": "Soldagem",
+            "Matriculas": 40
+          },
+          {
+            "Nome": "Administração",
+            "Matriculas": 167
+          },
+          {
+            "Nome": "Informática",
+            "Matriculas": 325
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 120
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Municipio": "Patrocínio",
+    "INSE_Medio_Municipal": 4.88,
+    "Total_Matriculas": 1054.0,
+    "Escolas": [
+      {
+        "Nome": "IFTM - CAMPUS PATROCINIO",
+        "Rede": "Federal",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível VI",
+        "INSE_Media": 5.74,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Eletrônica",
+            "Matriculas": 89
+          },
+          {
+            "Nome": "Administração",
+            "Matriculas": 131
+          },
+          {
+            "Nome": "Contabilidade",
+            "Matriculas": 87
+          },
+          {
+            "Nome": "Informática",
+            "Matriculas": 84
+          },
+          {
+            "Nome": "Agronegócio",
+            "Matriculas": 97
+          },
+          {
+            "Nome": "Agropecuária",
+            "Matriculas": 73
+          }
+        ]
+      },
+      {
+        "Nome": "EE DOM LUSTOSA",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.18,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Administração",
+            "Matriculas": 14
+          }
+        ]
+      },
+      {
+        "Nome": "EE ODILON BEHRENS",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.15,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Informática",
+            "Matriculas": 8
+          }
+        ]
+      },
+      {
+        "Nome": "COL BERLAAR NOSSA SENHORA DO PATROCINIO",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 10
+          }
+        ]
+      },
+      {
+        "Nome": "ESCOLA AGROTECNICA SERGIO DE FREITAS PACHECO",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Agropecuária",
+            "Matriculas": 116
+          }
+        ]
+      },
+      {
+        "Nome": "COLEGIO PRISMA",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Radiologia",
+            "Matriculas": 55
+          }
+        ]
+      },
+      {
+        "Nome": "EE PROFESSORA ORMY ARAUJO AMARAL",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível IV",
+        "INSE_Media": 4.99,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Administração",
+            "Matriculas": 14
+          },
+          {
+            "Nome": "Informática",
+            "Matriculas": 12
+          }
+        ]
+      },
+      {
+        "Nome": "SENAC - UNIDADE DE ENSINO TECNICO DO CEP SENAC PATROCINIO",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 48
+          }
+        ]
+      },
+      {
+        "Nome": "PEOPLE FORMACAO COMPLETA",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 84
+          },
+          {
+            "Nome": "Administração",
+            "Matriculas": 32
+          },
+          {
+            "Nome": "Informática",
+            "Matriculas": 100
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Municipio": "Prata",
+    "INSE_Medio_Municipal": 4.95,
+    "Total_Matriculas": 232.0,
+    "Escolas": [
+      {
+        "Nome": "PROTON ESCOLA TECNICA E PROFISSIONALIZANTE",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 39
+          },
+          {
+            "Nome": "Informática",
+            "Matriculas": 80
+          },
+          {
+            "Nome": "Agronegócio",
+            "Matriculas": 34
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 79
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Municipio": "Presidente Olegário",
+    "INSE_Medio_Municipal": 0.0,
+    "Total_Matriculas": 169.0,
+    "Escolas": [
+      {
+        "Nome": "EE PADRE JOSE ANDRE CALDEIRA COIMBRA",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.13,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Desenvolvimento de Sistemas",
+            "Matriculas": 132
+          },
+          {
+            "Nome": "Agronegócio",
+            "Matriculas": 9
+          },
+          {
+            "Nome": "Agropecuária",
+            "Matriculas": 28
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Municipio": "Sacramento",
+    "INSE_Medio_Municipal": 5.41,
+    "Total_Matriculas": 686.0,
+    "Escolas": [
+      {
+        "Nome": "EE ESCRITORA CAROLINA MARIA DE JESUS",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Agente Comunitário de Saúde",
+            "Matriculas": 31
+          },
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 122
+          },
+          {
+            "Nome": "Eletroeletrônica",
+            "Matriculas": 70
+          },
+          {
+            "Nome": "Mecânica",
+            "Matriculas": 7
+          },
+          {
+            "Nome": "Administração",
+            "Matriculas": 110
+          },
+          {
+            "Nome": "Logística",
+            "Matriculas": 6
+          },
+          {
+            "Nome": "Informática",
+            "Matriculas": 146
+          },
+          {
+            "Nome": "Açúcar e Álcool",
+            "Matriculas": 7
+          },
+          {
+            "Nome": "Química",
+            "Matriculas": 27
+          },
+          {
+            "Nome": "Agronegócio",
+            "Matriculas": 74
+          },
+          {
+            "Nome": "Agropecuária",
+            "Matriculas": 86
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Municipio": "Santa Vitória",
+    "INSE_Medio_Municipal": 5.18,
+    "Total_Matriculas": 51.0,
+    "Escolas": [
+      {
+        "Nome": "EE PREFEITO JOSE FRANCO DE GOUVEIA",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.04,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Recursos Humanos",
+            "Matriculas": 15
+          },
+          {
+            "Nome": "Agronegócio",
+            "Matriculas": 36
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Municipio": "Serra do Salitre",
+    "INSE_Medio_Municipal": 0.0,
+    "Total_Matriculas": 38.0,
+    "Escolas": [
+      {
+        "Nome": "EE SERRA DO SALITRE",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.07,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Administração",
+            "Matriculas": 25
+          },
+          {
+            "Nome": "Informática",
+            "Matriculas": 13
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Municipio": "Tapira",
+    "INSE_Medio_Municipal": 0.0,
+    "Total_Matriculas": 23.0,
+    "Escolas": [
+      {
+        "Nome": "EE PROFESSORA CECILIA MARIA DE REZENDE NEVES",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.19,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": false,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Agronegócio",
+            "Matriculas": 23
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Municipio": "Uberaba",
+    "INSE_Medio_Municipal": 5.01,
+    "Total_Matriculas": 4741.0,
+    "Escolas": [
+      {
+        "Nome": "IFTM - CAMPUS AVANCADO UBERABA PARQUE TECNOLOGICO",
+        "Rede": "Federal",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível VI",
+        "INSE_Media": 5.69,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Eletrônica",
+            "Matriculas": 99
+          },
+          {
+            "Nome": "Computação Gráfica",
+            "Matriculas": 125
+          },
+          {
+            "Nome": "Desenvolvimento de Sistemas",
+            "Matriculas": 67
+          }
+        ]
+      },
+      {
+        "Nome": "IFTM - CAMPUS UBERABA",
+        "Rede": "Federal",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível VI",
+        "INSE_Media": 5.6,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Meio Ambiente",
+            "Matriculas": 122
+          },
+          {
+            "Nome": "Administração",
+            "Matriculas": 180
+          },
+          {
+            "Nome": "Alimentos",
+            "Matriculas": 178
+          },
+          {
+            "Nome": "Química",
+            "Matriculas": 182
+          },
+          {
+            "Nome": "Agropecuária",
+            "Matriculas": 264
+          }
+        ]
+      },
+      {
+        "Nome": "EE MARECHAL HUMBERTO ALENCAR CASTELO BRANCO",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.45,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Desenvolvimento de Sistemas",
+            "Matriculas": 118
+          }
+        ]
+      },
+      {
+        "Nome": "EE BERNARDO VASCONCELOS",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.15,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Transações Imobiliárias",
+            "Matriculas": 25
+          }
+        ]
+      },
+      {
+        "Nome": "EE BOULANGER PUCCI",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.21,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Logística",
+            "Matriculas": 42
+          },
+          {
+            "Nome": "Agropecuária",
+            "Matriculas": 64
+          }
+        ]
+      },
+      {
+        "Nome": "CONSERVATORIO ESTADUAL DE MUSICA RENATO FRATESCHI",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": false,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Instrumento Musical (nome do instrumento)",
+            "Matriculas": 46
+          }
+        ]
+      },
+      {
+        "Nome": "EE PROFESSORA CORINA DE OLIVEIRA",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível VI",
+        "INSE_Media": 5.51,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Administração",
+            "Matriculas": 18
+          },
+          {
+            "Nome": "Logística",
+            "Matriculas": 42
+          }
+        ]
+      },
+      {
+        "Nome": "EE GABRIEL TOTI",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível IV",
+        "INSE_Media": 4.89,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Açúcar e Álcool",
+            "Matriculas": 22
+          }
+        ]
+      },
+      {
+        "Nome": "EE HENRIQUE KRUGER",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.01,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Informática",
+            "Matriculas": 33
+          }
+        ]
+      },
+      {
+        "Nome": "EE GERALDINO RODRIGUES CUNHA",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível IV",
+        "INSE_Media": 4.79,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Informática",
+            "Matriculas": 3
+          }
+        ]
+      },
+      {
+        "Nome": "ASSEIJ - COLEGIO NOSSA SENHORA DAS DORES",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Administração",
+            "Matriculas": 87
+          }
+        ]
+      },
+      {
+        "Nome": "UFTM - CENTRO DE FORMACAO ESPECIAL EM SAUDE",
+        "Rede": "Federal",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Análises clínicas",
+            "Matriculas": 40
+          },
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 23
+          },
+          {
+            "Nome": "Farmácia",
+            "Matriculas": 30
+          },
+          {
+            "Nome": "Saúde Bucal",
+            "Matriculas": 26
+          },
+          {
+            "Nome": "Radiologia",
+            "Matriculas": 39
+          },
+          {
+            "Nome": "Informática",
+            "Matriculas": 33
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 46
+          }
+        ]
+      },
+      {
+        "Nome": "SENAI UBERABA-CENTRO DE FORMACAO PROFISSIONAL FIDELIS REIS",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Automação Industrial",
+            "Matriculas": 63
+          },
+          {
+            "Nome": "Eletromecânica",
+            "Matriculas": 26
+          },
+          {
+            "Nome": "Eletrotécnica",
+            "Matriculas": 95
+          },
+          {
+            "Nome": "Manutenção Automotiva",
+            "Matriculas": 114
+          },
+          {
+            "Nome": "Mecânica",
+            "Matriculas": 64
+          },
+          {
+            "Nome": "Mecatrônica",
+            "Matriculas": 38
+          },
+          {
+            "Nome": "Soldagem",
+            "Matriculas": 26
+          },
+          {
+            "Nome": "Manutenção de Máquinas Industriais",
+            "Matriculas": 79
+          },
+          {
+            "Nome": "Instrumentação Industrial",
+            "Matriculas": 42
+          },
+          {
+            "Nome": "Fabricação Mecânica",
+            "Matriculas": 68
+          },
+          {
+            "Nome": "Administração",
+            "Matriculas": 26
+          },
+          {
+            "Nome": "Logística",
+            "Matriculas": 81
+          },
+          {
+            "Nome": "Informática para Internet",
+            "Matriculas": 81
+          },
+          {
+            "Nome": "Desenvolvimento de Sistemas",
+            "Matriculas": 29
+          },
+          {
+            "Nome": "Edificações",
+            "Matriculas": 39
+          },
+          {
+            "Nome": "Açúcar e Álcool",
+            "Matriculas": 41
+          },
+          {
+            "Nome": "Móveis",
+            "Matriculas": 25
+          },
+          {
+            "Nome": "Química",
+            "Matriculas": 102
+          },
+          {
+            "Nome": "Planejamento e Controle da Produção",
+            "Matriculas": 43
+          }
+        ]
+      },
+      {
+        "Nome": "ESCOLA TECNICA DE FORMACAO PROFISSIONAL DE MINAS GERAIS",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 194
+          },
+          {
+            "Nome": "Estética",
+            "Matriculas": 38
+          },
+          {
+            "Nome": "Radiologia",
+            "Matriculas": 106
+          },
+          {
+            "Nome": "Agricultura",
+            "Matriculas": 106
+          },
+          {
+            "Nome": "Zootecnia",
+            "Matriculas": 55
+          }
+        ]
+      },
+      {
+        "Nome": "SENAC - UNIDADE DE ENSINO TECNICO DO CEP UBERABA",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 426
+          },
+          {
+            "Nome": "Estética",
+            "Matriculas": 24
+          },
+          {
+            "Nome": "Administração",
+            "Matriculas": 38
+          },
+          {
+            "Nome": "Logística",
+            "Matriculas": 11
+          },
+          {
+            "Nome": "Outros - Eixo Gestão e Negócios",
+            "Matriculas": 25
+          },
+          {
+            "Nome": "Outros - Eixo Informação e Comunicação",
+            "Matriculas": 49
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 58
+          }
+        ]
+      },
+      {
+        "Nome": "VITORIA FORMACAO PROFISSIONAL",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 22
+          }
+        ]
+      },
+      {
+        "Nome": "CENTRO DE ENSINO GRAU TECNICO UBERABA",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 199
+          },
+          {
+            "Nome": "Radiologia",
+            "Matriculas": 60
+          },
+          {
+            "Nome": "Eletrotécnica",
+            "Matriculas": 31
+          },
+          {
+            "Nome": "Administração",
+            "Matriculas": 20
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 69
+          }
+        ]
+      },
+      {
+        "Nome": "ESCOLA DE ENSINO TECNICO PROFISSIONALIZANTE PROFESSOR FRANCISCO SALES JERONIMO - CHICAO",
+        "Rede": "Municipal",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Outros - Eixo Gestão e Negócios",
+            "Matriculas": 57
+          }
+        ]
+      },
+      {
+        "Nome": "CENTRO TECNICO PROFISSIONAL DE UBERABA",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Análises clínicas",
+            "Matriculas": 71
+          },
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 41
+          }
+        ]
+      },
+      {
+        "Nome": "CENTRO DE ENSINO TECNICO FAHRENHEIT - CETEF",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 1
+          },
+          {
+            "Nome": "Meio Ambiente",
+            "Matriculas": 1
+          },
+          {
+            "Nome": "Química",
+            "Matriculas": 2
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Municipio": "Uberlândia",
+    "INSE_Medio_Municipal": 5.14,
+    "Total_Matriculas": 6360.0,
+    "Escolas": [
+      {
+        "Nome": "IFTM - CAMPUS UBERLANDIA CENTRO",
+        "Rede": "Federal",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível VI",
+        "INSE_Media": 5.93,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Comércio",
+            "Matriculas": 134
+          },
+          {
+            "Nome": "Programação de Jogos Digitais",
+            "Matriculas": 83
+          },
+          {
+            "Nome": "Redes de Computadores",
+            "Matriculas": 76
+          },
+          {
+            "Nome": "Desenvolvimento de Sistemas",
+            "Matriculas": 133
+          }
+        ]
+      },
+      {
+        "Nome": "IFTM - CAMPUS UBERLANDIA",
+        "Rede": "Federal",
+        "Zona": "Rural",
+        "INSE_Class": "Nível VI",
+        "INSE_Media": 5.57,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Meio Ambiente",
+            "Matriculas": 96
+          },
+          {
+            "Nome": "Informática para Internet",
+            "Matriculas": 98
+          },
+          {
+            "Nome": "Alimentos",
+            "Matriculas": 186
+          },
+          {
+            "Nome": "Agropecuária",
+            "Matriculas": 294
+          }
+        ]
+      },
+      {
+        "Nome": "UFU - ESCOLA TECNICA DE SAUDE",
+        "Rede": "Federal",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": false,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Análises clínicas",
+            "Matriculas": 66
+          },
+          {
+            "Nome": "Controle Ambiental",
+            "Matriculas": 16
+          },
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 107
+          },
+          {
+            "Nome": "Saúde Bucal",
+            "Matriculas": 36
+          },
+          {
+            "Nome": "Meio Ambiente",
+            "Matriculas": 3
+          },
+          {
+            "Nome": "Prótese Dentária",
+            "Matriculas": 27
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 31
+          }
+        ]
+      },
+      {
+        "Nome": "EE PROFESSORA JUVENILIA FERREIRA DOS SANTOS",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.39,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Outros - Eixo Gestão e Negócios",
+            "Matriculas": 14
+          }
+        ]
+      },
+      {
+        "Nome": "CONSERVATORIO EST MUSICA CORA PAVAN CAPPARELLI",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Canto",
+            "Matriculas": 8
+          },
+          {
+            "Nome": "Instrumento Musical (nome do instrumento)",
+            "Matriculas": 107
+          }
+        ]
+      },
+      {
+        "Nome": "EE BUENO BRANDAO",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.14,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": false,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Desenvolvimento de Sistemas",
+            "Matriculas": 152
+          }
+        ]
+      },
+      {
+        "Nome": "EE DA CIDADE INDUSTRIAL",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.12,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Informática",
+            "Matriculas": 49
+          }
+        ]
+      },
+      {
+        "Nome": "EE TEOTONIO VILELA",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.06,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Transações Imobiliárias",
+            "Matriculas": 16
+          },
+          {
+            "Nome": "Informática",
+            "Matriculas": 63
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 31
+          }
+        ]
+      },
+      {
+        "Nome": "COLEGIO PROFISSIONAL",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 424
+          },
+          {
+            "Nome": "Farmácia",
+            "Matriculas": 128
+          },
+          {
+            "Nome": "Nutrição e Dietética",
+            "Matriculas": 50
+          },
+          {
+            "Nome": "Transações Imobiliárias",
+            "Matriculas": 17
+          },
+          {
+            "Nome": "Alimentos",
+            "Matriculas": 36
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 69
+          }
+        ]
+      },
+      {
+        "Nome": "SENAC - UNIDADE DE ENSINO TECNICO DO CEP UBERLANDIA",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 165
+          },
+          {
+            "Nome": "Estética",
+            "Matriculas": 80
+          },
+          {
+            "Nome": "Administração",
+            "Matriculas": 39
+          },
+          {
+            "Nome": "Informática",
+            "Matriculas": 19
+          },
+          {
+            "Nome": "Desenvolvimento de Sistemas",
+            "Matriculas": 59
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 24
+          }
+        ]
+      },
+      {
+        "Nome": "COLEGIO DO TRABALHO",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Análises clínicas",
+            "Matriculas": 94
+          },
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 181
+          },
+          {
+            "Nome": "Prótese Dentária",
+            "Matriculas": 12
+          },
+          {
+            "Nome": "Radiologia",
+            "Matriculas": 62
+          }
+        ]
+      },
+      {
+        "Nome": "COL DO TRABALHO UNID II",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 87
+          }
+        ]
+      },
+      {
+        "Nome": "COLEGIO PROFISSIONAL - UNIDADE II",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Meio Ambiente",
+            "Matriculas": 47
+          },
+          {
+            "Nome": "Eletroeletrônica",
+            "Matriculas": 35
+          },
+          {
+            "Nome": "Administração",
+            "Matriculas": 20
+          }
+        ]
+      },
+      {
+        "Nome": "CASTELA INSTITUTO DE ENSINO",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": false,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Agrimensura",
+            "Matriculas": 26
+          }
+        ]
+      },
+      {
+        "Nome": "COLEGIO ENGETEC",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Mecatrônica",
+            "Matriculas": 10
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 26
+          }
+        ]
+      },
+      {
+        "Nome": "SENAI UBERLANDIA CENTRO DE FORMACAO PROFISSIONAL DOUTOR CELSO CHARURI",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Meio Ambiente",
+            "Matriculas": 42
+          },
+          {
+            "Nome": "Automação Industrial",
+            "Matriculas": 105
+          },
+          {
+            "Nome": "Eletromecânica",
+            "Matriculas": 58
+          },
+          {
+            "Nome": "Eletrônica",
+            "Matriculas": 38
+          },
+          {
+            "Nome": "Eletrotécnica",
+            "Matriculas": 296
+          },
+          {
+            "Nome": "Mecânica",
+            "Matriculas": 91
+          },
+          {
+            "Nome": "Soldagem",
+            "Matriculas": 77
+          },
+          {
+            "Nome": "Logística",
+            "Matriculas": 89
+          },
+          {
+            "Nome": "Informática para Internet",
+            "Matriculas": 85
+          },
+          {
+            "Nome": "Desenvolvimento de Sistemas",
+            "Matriculas": 77
+          },
+          {
+            "Nome": "Planejamento e Controle da Produção",
+            "Matriculas": 174
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 82
+          }
+        ]
+      },
+      {
+        "Nome": "INSTITUTO PROPE",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Podologia",
+            "Matriculas": 48
+          }
+        ]
+      },
+      {
+        "Nome": "CENTRO DE ENSINO GRAU TECNICO UBERLANDIA",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 376
+          },
+          {
+            "Nome": "Radiologia",
+            "Matriculas": 82
+          },
+          {
+            "Nome": "Eletrotécnica",
+            "Matriculas": 73
+          },
+          {
+            "Nome": "Administração",
+            "Matriculas": 29
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 80
+          }
+        ]
+      },
+      {
+        "Nome": "PROZ - UNIDADE UBERLANDIA",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 387
+          },
+          {
+            "Nome": "Radiologia",
+            "Matriculas": 16
+          },
+          {
+            "Nome": "Administração",
+            "Matriculas": 98
+          },
+          {
+            "Nome": "Recursos Humanos",
+            "Matriculas": 97
+          },
+          {
+            "Nome": "Desenvolvimento de Sistemas",
+            "Matriculas": 324
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Municipio": "Unaí",
+    "INSE_Medio_Municipal": 4.93,
+    "Total_Matriculas": 917.0,
+    "Escolas": [
+      {
+        "Nome": "EE DOM ELISEU",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.09,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Informática",
+            "Matriculas": 10
+          }
+        ]
+      },
+      {
+        "Nome": "EE VIRGILIO DE MELO FRANCO",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível IV",
+        "INSE_Media": 4.91,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Agente Comunitário de Saúde",
+            "Matriculas": 21
+          },
+          {
+            "Nome": "Química",
+            "Matriculas": 16
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 50
+          }
+        ]
+      },
+      {
+        "Nome": "EE MARIA ASSUNES GONCALVES",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível IV",
+        "INSE_Media": 4.82,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Administração",
+            "Matriculas": 20
+          },
+          {
+            "Nome": "Informática",
+            "Matriculas": 39
+          }
+        ]
+      },
+      {
+        "Nome": "EE TANCREDO DE ALMEIDA NEVES",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível IV",
+        "INSE_Media": 4.91,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Agronegócio",
+            "Matriculas": 36
+          }
+        ]
+      },
+      {
+        "Nome": "COLEGIO CENECISTA NOSSA SENHORA DO CARMO",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Marketing",
+            "Matriculas": 59
+          },
+          {
+            "Nome": "Desenvolvimento de Sistemas",
+            "Matriculas": 45
+          }
+        ]
+      },
+      {
+        "Nome": "EE JUVENCIO MARTINS FERREIRA",
+        "Rede": "Estadual",
+        "Zona": "Rural",
+        "INSE_Class": "Nível IV",
+        "INSE_Media": 4.88,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Agropecuária",
+            "Matriculas": 180
+          }
+        ]
+      },
+      {
+        "Nome": "ESCOLA TECNICA DE UNAI",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 256
+          },
+          {
+            "Nome": "Radiologia",
+            "Matriculas": 78
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 87
+          }
+        ]
+      },
+      {
+        "Nome": "EE ELISA DE OLIVEIRA CAMPOS",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível IV",
+        "INSE_Media": 4.52,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Agronegócio",
+            "Matriculas": 20
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Municipio": "Vazante",
+    "INSE_Medio_Municipal": 5.13,
+    "Total_Matriculas": 387.0,
+    "Escolas": [
+      {
+        "Nome": "EE PEDRO PEREIRA GUIMARAES",
+        "Rede": "Estadual",
+        "Zona": "Urbana",
+        "INSE_Class": "Nível V",
+        "INSE_Media": 5.05,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": true
+        },
+        "Cursos": [
+          {
+            "Nome": "Desenvolvimento de Sistemas",
+            "Matriculas": 33
+          },
+          {
+            "Nome": "Segurança do Trabalho",
+            "Matriculas": 35
+          }
+        ]
+      },
+      {
+        "Nome": "SENAI VAZANTE - CENTRO DE FORMACAO PROFISSIONAL MARCELO IANHEZ",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Eletrotécnica",
+            "Matriculas": 33
+          },
+          {
+            "Nome": "Mecânica",
+            "Matriculas": 74
+          },
+          {
+            "Nome": "Administração",
+            "Matriculas": 18
+          },
+          {
+            "Nome": "Planejamento e Controle da Produção",
+            "Matriculas": 32
+          }
+        ]
+      },
+      {
+        "Nome": "ESCOLA TECNICA DE VAZANTE",
+        "Rede": "Privada",
+        "Zona": "Urbana",
+        "INSE_Class": NaN,
+        "INSE_Media": NaN,
+        "SAEB": null,
+        "Infra": {
+          "Internet": true,
+          "Lab_Info": true,
+          "Acessibilidade": true,
+          "Alimentacao": false
+        },
+        "Cursos": [
+          {
+            "Nome": "Enfermagem",
+            "Matriculas": 36
+          },
+          {
+            "Nome": "Recursos Humanos",
+            "Matriculas": 63
+          },
+          {
+            "Nome": "Agropecuária",
+            "Matriculas": 23
+          },
+          {
+            "Nome": "Mineração",
+            "Matriculas": 20
+          },
+          {
+            "Nome": "Outros - Eixo Segurança",
+            "Matriculas": 20
+          }
+        ]
+      }
+    ]
+  }
+]
