@@ -1,0 +1,124 @@
+{
+    "metadados": {
+        "titulo": "RUBRICA SINAPSE-BR IA",
+        "versao": "Platinum (Simétrica 3x8)",
+        "contexto": "EPT / IFTM / TMAP",
+        "data_geracao": "21/01/2026",
+        "status": "Finalizada e Equalizada",
+        "ultima_atualizacao": "21/01/2026 - Equalização TMAP"
+    },
+    "eixos": [
+        {
+            "id": "E1",
+            "nome": "Eixo Cognitivo",
+            "foco": "Taxonomia de Bloom e Complexidade do Pensamento",
+            "niveis": {
+                "1": "Memorização/Reprodução (Baixa Ordem)",
+                "4": "Criação/Análise Crítica (Alta Ordem)"
+            },
+            "exemplos_tmap": [
+                "Uberlândia: Alunos criam novos algoritmos baseados em dados climáticos (Criação).",
+                "Ituiutaba: Estudantes analisam a composição química da água local (Análise).",
+                "Patrocínio: Estudantes sintetizam dados da cafeicultura para criar um manual de boas práticas (Síntese/Criação)."
+            ]
+        },
+        {
+            "id": "E2",
+            "nome": "Eixo Afetivo",
+            "foco": "Engajamento, Motivação e Inteligência Emocional",
+            "niveis": {
+                "1": "Participação passiva ou resistente.",
+                "4": "Liderança empática e engajamento profundo."
+            },
+            "exemplos_tmap": [
+                "Nova Ponte: Alunos lideram campanhas solidárias com autonomia emocional.",
+                "Conceição das Alagoas: Trabalho voluntário técnico em asilos (Empatia).",
+                "Ibiá: Desenvolvimento de resiliência e orgulho local através da valorização do Queijo Minas Artesanal."
+            ]
+        },
+        {
+            "id": "E3",
+            "nome": "Eixo Metodologico",
+            "foco": "Raciocínio Lógico, Resolução de Problemas e Processos",
+            "niveis": {
+                "1": "Execução mecânica de passos.",
+                "4": "Cria e valida estratégias metodológicas inéditas (ex: novos algoritmos/processos) para resolver desafios complexos do arranjo produtivo local."
+            },
+            "exemplos_tmap": [
+                "Monte Carmelo: Alunos utilizam 'Design Thinking' para criar novos padrões de queima na cerâmica local.",
+                "Coromandel: Aplicação de 'Aprendizagem Baseada em Projetos' (PBL) para resolver a logística do leite.",
+                "Patos de Minas: Uso de 'Sala de Aula Invertida' para debater genética do milho com produtores."
+            ]
+        },
+        {
+            "id": "E4",
+            "nome": "Eixo Neurofuncional",
+            "foco": "Funções Executivas (Planejamento, Inibição, Memória)",
+            "niveis": {
+                "1": "Dependência total de regulação externa.",
+                "4": "Autorregulação plena e gestão do foco."
+            },
+            "exemplos_tmap": [
+                "Frutal: Gestão autônoma do tempo de estudo durante a safra agrícola.",
+                "Sacramento: Organização de grupos de estudo sem tutela docente.",
+                "Uberlândia (Campus Rural): Alunos utilizam técnicas de 'atenção plena' para manter o foco durante longos experimentos de campo."
+            ]
+        },
+        {
+            "id": "E5",
+            "nome": "Eixo Avaliativo",
+            "foco": "Metacognição e Capacidade de Autoavaliação",
+            "niveis": {
+                "1": "Foco apenas na nota final.",
+                "4": "Monitoramento contínuo do próprio aprendizado (Aprender a Aprender)."
+            },
+            "exemplos_tmap": [
+                "Canápolis: Uso de diários de bordo para monitorar estratégias de erro/acerto.",
+                "Patrocínio: Alunos criam seus próprios critérios de qualidade para projetos.",
+                "Araxá: Implementação de 'avaliação por pares' cega para analisar projetos de mineração sustentável."
+            ]
+        },
+        {
+            "id": "E6",
+            "nome": "Eixo Tecnologico",
+            "foco": "Letramento Digital e Uso Ético de IA",
+            "niveis": {
+                "1": "Consumidor passivo de tecnologia.",
+                "4": "Atua como produtor crítico de tecnologia, desenvolvendo soluções éticas (IA/IoT) que respondem a demandas específicas do território."
+            },
+            "exemplos_tmap": [
+                "Uberaba (Parque Tec): Prototipagem de sensores IoT de baixo custo para monitoramento de enchentes.",
+                "Iturama: Uso de Drones e IA para mapeamento de áreas de preservação permanente (APP).",
+                "Campina Verde: Desenvolvimento de redes Mesh offline para levar comunicação a assentamentos."
+            ]
+        },
+        {
+            "id": "E7",
+            "nome": "Eixo Territorial",
+            "foco": "Pertencimento, Identidade e Contexto Local (Geofilosofia)",
+            "niveis": {
+                "1": "Desconexão com a realidade local.",
+                "4": "Intervenção transformadora no território."
+            },
+            "exemplos_tmap": [
+                "Gurinhatã: Mapeamento histórico de comunidades tradicionais.",
+                "Iturama: Projetos de memória ribeirinha e impacto ambiental local.",
+                "Tupaciguara: Resgate da memória das antigas rotas de tropeiros como elemento de identidade turística local."
+            ]
+        },
+        {
+            "id": "E8",
+            "nome": "Eixo Inclusivo",
+            "foco": "Desenho Universal para Aprendizagem (DUA) e Acessibilidade",
+            "niveis": {
+                "1": "Padronização excludente.",
+                "4": "Desenha soluções universais (DUA) que eliminam barreiras arquitetônicas, digitais e atitudinais, garantindo equidade plena."
+            },
+            "exemplos_tmap": [
+                "Araguari: Adaptação sensorial de materiais didáticos para alunos com TEA filhos de trabalhadores rurais.",
+                "Prata: Criação de interfaces de voz em apps agrícolas para produtores idosos com baixa literacia.",
+                "Uberlândia: Projeto de acessibilidade arquitetônica no transporte público focado na periferia."
+            ]
+        }
+    ]
+}
