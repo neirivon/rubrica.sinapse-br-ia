@@ -106,6 +106,10 @@ dist/
 *.sublime-project
 Thumbs.db
 .DS_Store
+#############
+# Ignorar scripts de engenharia de dados (uso local)
+#############
+scripts_offline/
 
 # ===========================================
 # FIM DO ARQUIVO .gitignore
