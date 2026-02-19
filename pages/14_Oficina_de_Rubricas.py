@@ -198,7 +198,7 @@ with st.form("form_auditoria"):
     
     st.markdown("### Seu Rascunho")
     texto_rascunho = st.text_area(
-        "Descreva o critério atual (O que você quer avaliar?):",
+        "Rascunho do Descritor (Como você descreveria a expectativa de aprendizagem para esta atividade?):",
         height=120,
         placeholder="Ex: O aluno precisa entregar o relatório formatado corretamente e sem erros de português."
     )
