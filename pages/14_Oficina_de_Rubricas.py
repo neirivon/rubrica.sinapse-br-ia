@@ -49,6 +49,15 @@ st.markdown("""
         font-size: 3rem;
         color: #9ca3af;
     }
+    .nota-explicativa {
+        background-color: #f8fafc;
+        border-left: 4px solid #94a3b8;
+        padding: 15px;
+        font-size: 0.95rem;
+        color: #475569;
+        margin-top: 15px;
+        border-radius: 4px;
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -89,7 +98,6 @@ def plot_salto_sinaptico(coord_antes, coord_depois):
     fig = go.Figure()
 
     # --- 1. O PONTO FINAL (A "Jóia" da Competência) ---
-    # Este continua sendo a mistura das cores, representando o todo
     def get_mix_color(x, y, z):
         r = min(int((y / 6.0) * 255), 255)
         g = min(int((x / 6.0) * 255), 255)
@@ -114,7 +122,6 @@ def plot_salto_sinaptico(coord_antes, coord_depois):
     ))
 
     # --- 3. HASTES DE PROJEÇÃO (Solução de Componentes Puros) ---
-    # Haste Eixo X (Território) -> VERDE PURO
     fig.add_trace(go.Scatter3d(
         x=[0, xf], y=[yf, yf], z=[zf, zf],
         mode='lines',
@@ -122,7 +129,6 @@ def plot_salto_sinaptico(coord_antes, coord_depois):
         name='Ganho em Território'
     ))
     
-    # Haste Eixo Y (Práxis) -> LARANJA PURO
     fig.add_trace(go.Scatter3d(
         x=[xf, xf], y=[0, yf], z=[zf, zf],
         mode='lines',
@@ -130,7 +136,6 @@ def plot_salto_sinaptico(coord_antes, coord_depois):
         name='Ganho em Práxis'
     ))
 
-    # Haste Eixo Z (Cognitivo) -> AZUL PURO
     fig.add_trace(go.Scatter3d(
         x=[xf, xf], y=[yf, yf], z=[0, zf],
         mode='lines',
@@ -194,9 +199,22 @@ with st.form("form_auditoria"):
         )
     
     with col2:
-        tema = st.text_input("📝 Atividade Específica:", placeholder="Ex: Poda de Café, Soldagem MIG, Algoritmo 3D...")
+        tema = st.text_input("📝 Atividade Específica:", placeholder="Ex: Poda de Café, Soldagem MIG, Algoritmo...")
     
     st.markdown("### Seu Rascunho")
+    
+    # --- Guia Didático para o Professor ---
+    with st.expander("💡 Não sabe como começar? Veja como rascunhar um Descritor"):
+        st.markdown("""
+        O **Descritor** é o texto que define exatamente o que o aluno precisa fazer para atingir a competência. 
+        Para criar um bom rascunho, junte três elementos básicos:
+        1. **Ação:** O que o aluno vai fazer? *(Ex: Elaborar um relatório)*
+        2. **Condição:** Como ele vai fazer? *(Ex: utilizando as regras de formatação da ABNT)*
+        3. **Critério de Qualidade:** O que torna o trabalho excelente? *(Ex: sem erros ortográficos e com argumentação clara)*
+        
+        *Escreva do seu jeito. O ecossistema SINAPSE vai auditar seu rascunho e injetar a Teoria, a Técnica e o Território adequados!*
+        """)
+    
     texto_rascunho = st.text_area(
         "Rascunho do Descritor (Como você descreveria a expectativa de aprendizagem para esta atividade?):",
         height=120,
@@ -206,7 +224,7 @@ with st.form("form_auditoria"):
     btn_auditar = st.form_submit_button("🚀 Auditar e Gerar Descritor", use_container_width=True)
 
 # ==============================================================================
-# 4. LÓGICA DE PROCESSAMENTO (TEXTO PURO - SEM JSON)
+# 4. LÓGICA DE PROCESSAMENTO (TEXTO PURO - BLINDADO)
 # ==============================================================================
 if btn_auditar:
     erros = []
@@ -226,7 +244,6 @@ if btn_auditar:
                 try:
                     client = Groq(api_key=api_key)
 
-                    # PROMPT: A FÓRMULA DO PARÁGRAFO ÚNICO (PRAGMÁTICO)
                     prompt_sistema = f"""
                     Você é um Especialista Sênior em Rubricas Técnicas.
                     
@@ -237,40 +254,44 @@ if btn_auditar:
                     - Rascunho Original (Ruim/Tarefa): "{texto_rascunho}"
                     
                     REGRA DE OURO (FÓRMULA DE ESCRITA):
-                    O texto deve ser UM ÚNICO PARÁGRAFO seguindo esta estrutura lógica:
+                    O TEXTO DA NOVA RUBRICA deve ser obrigatoriamente UM ÚNICO PARÁGRAFO CORRIDO seguindo esta estrutura lógica:
                     [O ALUNO EXECUTA A TÉCNICA X] + [BASEADO NO CONHECIMENTO TÉCNICO Y] + [PARA GARANTIR O IMPACTO Z NO CONTEXTO REAL].
                     
-                    PROIBIDO:
-                    - Não use listas ou bullet points.
-                    - Não escreva rótulos como "Cognitivo:", "Práxis:" ou "Território:".
-                    - Não dê explicações pedagógicas. Apenas entregue o texto final pronto para uso.
+                    RESTRIÇÕES ABSOLUTAS:
+                    1. NÃO use listas, bullet points ou quebras de linha.
+                    2. NÃO escreva rótulos como "Cognitivo:", "Práxis:" ou "Território:".
+                    3. NÃO seja conversacional (Não diga "Aqui está" ou "Entendido").
                     
-                    FORMATO OBRIGATÓRIO DE RESPOSTA (Separado por '|||'):
-                    DIAGNOSTICO CURTO (O que faltou no rascunho)|||TEXTO DA NOVA RUBRICA (Parágrafo Único)|||JUSTIFICATIVA DO GANHO (1 frase)
+                    FORMATO OBRIGATÓRIO DE RESPOSTA (EM UMA ÚNICA LINHA):
+                    DIAGNOSTICO CURTO (O que faltou no rascunho)|||TEXTO DA NOVA RUBRICA (O parágrafo fundido)|||JUSTIFICATIVA DO GANHO (1 frase)
                     """
 
                     chat_completion = client.chat.completions.create(
                         messages=[
                             {"role": "user", "content": prompt_sistema}
                         ],
-                        # Llama 3.3 70B Versatile
                         model="llama-3.3-70b-versatile",
-                        temperature=0.5, # Temperatura controlada
+                        temperature=0.3, # Reduzido para focar na obediência ao formato
                         max_tokens=800,
                     )
                     
-                    # Processamento da resposta crua
-                    resposta_raw = chat_completion.choices[0].message.content
+                    # Limpeza extra para evitar quebras de linha acidentais geradas pela IA
+                    resposta_raw = chat_completion.choices[0].message.content.strip()
+                    resposta_raw = resposta_raw.replace('\n', ' ') 
+                    
                     try:
                         partes = resposta_raw.split("|||")
-                        diagnostico = partes[0].strip()
-                        nova_rubrica = partes[1].strip()
-                        motivo = partes[2].strip() if len(partes) > 2 else "Integração das dimensões SINAPSE."
-                    except:
-                        # Fallback seguro
+                        if len(partes) >= 3:
+                            diagnostico = partes[0].strip()
+                            nova_rubrica = partes[1].strip()
+                            motivo = partes[2].strip()
+                        else:
+                            raise ValueError("A IA não retornou os separadores corretamente.")
+                    except Exception as parse_err:
+                        # Fallback de segurança atualizado
                         diagnostico = "Rascunho focado em tarefa."
-                        nova_rubrica = resposta_raw
-                        motivo = "Expansão de competência."
+                        nova_rubrica = resposta_raw.replace('|||', '') # Exibe o texto limpo caso algo dê muito errado
+                        motivo = "Expansão de competência via IA."
 
                     # ==========================================================
                     # VISUALIZAÇÃO
@@ -290,11 +311,9 @@ if btn_auditar:
                         
                         with col_depois:
                             st.markdown("#### ✅ Rubrica (Competência)")
-                            # Texto pronto para copiar
                             st.success(f'"{nova_rubrica}"')
                             st.caption(f"✨ **Ganho:** {motivo}")
                             
-                            # --- O SEGREDO DO SINAPSE (Raio-X Didático) ---
                             st.markdown("""
                             <small>
                             <span style='color:blue'><b>[Cognitivo]</b></span> Justificativa &nbsp;|&nbsp; 
@@ -310,9 +329,17 @@ if btn_auditar:
                     with col_3d_center:
                         st.subheader("🧊 Visualização Volumétrica Decomposta")
                         st.caption("Expansão tridimensional do aprendizado (Hastes = Projeção nos Eixos).")
-                        # Coordenadas fixas para demonstração do salto (De 1.5 para 5.5)
+                        # Coordenadas fixas para demonstração do salto
                         fig_3d = plot_salto_sinaptico((1.5, 1.5, 1.0), (5.5, 5.0, 5.5))
                         st.plotly_chart(fig_3d, use_container_width=True)
+                        
+                        # --- Nota Explicativa da Escala 0 a 6 ---
+                        st.markdown("<hr style='margin: 10px 0px; border-top: 1px solid #e2e8f0;'>", unsafe_allow_html=True)
+                        st.markdown("""
+                        <div class='nota-explicativa'>
+                            <strong>📌 Nota Explicativa (Escala de 0 a 6):</strong> A arquitetura espacial mapeia os níveis de <strong>1 a 6</strong> estritamente na progressão da Taxonomia de Bloom revisada (Lembrar a Criar). O <strong>nível 0</strong> não representa um processo cognitivo, mas sim o <em>Ponto de Inércia (Omissão)</em>. Na Educação Profissional e Tecnológica (EPT), é comum uma tarefa atingir alto nível Cognitivo, mas apresentar nível 0 no eixo Territorial, refletindo a desconexão com a realidade e a geofilosofia do aluno. O sistema diagnostica essa nulidade e projeta o descritor para um nível operante.
+                        </div>
+                        """, unsafe_allow_html=True)
 
                 except Exception as e:
                     st.error(f"Erro técnico: {e}")
