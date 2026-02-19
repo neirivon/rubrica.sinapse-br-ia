@@ -3,24 +3,23 @@
 # NOME DO SCRIPT: 14_Oficina_de_Rubricas.py
 #
 # DESCRIÇÃO: Laboratório de Auditoria Pedagógica e Criação de Rubricas EPT.
-#            Utiliza IA Generativa (Llama 3.3 via Groq) alimentada por RAG Estático
-#            (Retrieval-Augmented Generation) baseado na obra de Susan Brookhart (2013).
+#            Utiliza IA Generativa (Llama 3.3 via Groq) com Estratégia de "Texto Integrado".
+#            Foca na fusão das dimensões (Cognitivo/Práxis/Território) em um único descritor.
 #
 # FUNCIONALIDADES:
-#   1. Injeção de Contexto Teórico (OCR processado de PDF).
-#   2. Auditoria de "Critério vs Tarefa" (Lógica Brookhart).
-#   3. Visualização Volumétrica da Competência (Gráfico 3D Voxel).
-#   4. Feedback Formativo para o Docente.
+#   1. Injeção de Contexto Otimizado (Resumo Técnico).
+#   2. Engenharia de Prompt "Fórmula de Fusão" (Sem JSON para evitar erros).
+#   3. Visualização Comparativa (Antes vs Depois) com setas direcionais.
+#   4. Visualização Volumétrica Decomposta (Hastes de Projeção Coloridas).
 #
 # AUTOR: Neirivon Elias Cardoso
 # PROJETO: Rubrica SINAPSE-BR IA
-# DATA: 18/02/2026 (Versão Final de Produção - Modelo Llama 3.3)
+# DATA: 18/02/2026 (Versão Final Cloud - Texto Integrado & Projeção 3D)
 # --------------------------------------------------------------------------------------
 
 import streamlit as st
 import plotly.graph_objects as go
 from groq import Groq
-import time
 import os
 
 # Configuração da Página
@@ -38,90 +37,130 @@ st.markdown("""
         padding: 20px; border-radius: 10px;
         background-color: #f8f9fa; border-left: 5px solid #7c3aed;
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 1.1rem;
+        line-height: 1.6;
     }
-    .metric-container {
-        background-color: #ffffff; border: 1px solid #e5e7eb;
-        border-radius: 8px; padding: 15px; text-align: center;
+    .arrow-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        font-size: 3rem;
+        color: #9ca3af;
     }
 </style>
 """, unsafe_allow_html=True)
 
 # ==============================================================================
-# 1. CARREGAMENTO DO CÉREBRO TEÓRICO (RAG ESTÁTICO OTIMIZADO)
+# 1. CARREGAMENTO DO CÉREBRO TEÓRICO (Resumo de Alta Densidade)
 # ==============================================================================
 @st.cache_data
-def carregar_teoria_otimizada():
+def carregar_teoria_final():
     """
-    Carrega o arquivo processado via OCR e prepara para o Context Window do Llama 3.3.
-    Caminho relativo: data/teoria_brookhart_blindada.txt
+    Carrega o Resumo Técnico Denso de Susan Brookhart.
+    Arquivo: data/teoria_brookhart_RESUMO.txt
     """
-    caminho = os.path.join("data", "teoria_brookhart_blindada.txt")
+    caminho = os.path.join("data", "teoria_brookhart_RESUMO.txt")
     
     if os.path.exists(caminho):
         try:
             with open(caminho, "r", encoding="utf-8") as f:
-                texto_completo = f.read()
-                
-                # OTIMIZAÇÃO DE MEMÓRIA E VELOCIDADE:
-                # O modelo Llama 3.3 suporta contextos grandes, mas para a defesa
-                # queremos resposta RÁPIDA (baixa latência).
-                # Manteremos os primeiros 35.000 caracteres (aumentei um pouco pois o modelo aguenta).
-                texto_otimizado = texto_completo[:35000]
-                
-                return texto_otimizado
-                
+                return f.read()
         except Exception as e:
-            return f"Erro de Leitura: {e}"
+            st.error(f"Erro de Leitura do Cérebro: {e}")
+            return ""
     else:
-        return """
-        AVISO DE FALLBACK: Arquivo de teoria não encontrado.
-        A IA utilizará conhecimento pré-treinado sobre Susan Brookhart.
-        """
+        st.warning("⚠️ Arquivo de resumo não encontrado. Usando conhecimento base.")
+        return "Rubricas devem avaliar a qualidade da aprendizagem, não a contagem de tarefas."
 
-# Carrega a teoria na memória RAM
-TEORIA_BROOKHART = carregar_teoria_otimizada()
+TEORIA_BROOKHART = carregar_teoria_final()
 
 # ==============================================================================
-# 2. FUNÇÃO DE VISUALIZAÇÃO 3D (O SALTO SINÁPTICO)
+# 2. FUNÇÃO DE VISUALIZAÇÃO 3D (COM HASTES DE PROJEÇÃO PURAS)
 # ==============================================================================
 def plot_salto_sinaptico(coord_antes, coord_depois):
-    x_vals = [coord_antes[0], coord_depois[0]] # Território
-    y_vals = [coord_antes[1], coord_depois[1]] # Práxis
-    z_vals = [coord_antes[2], coord_depois[2]] # Cognitivo
+    # Coordenadas Finais
+    xf, yf, zf = coord_depois[0], coord_depois[1], coord_depois[2]
+    
+    # Coordenadas Iniciais
+    xi, yi, zi = coord_antes[0], coord_antes[1], coord_antes[2]
 
     fig = go.Figure()
 
-    # 1. Ponto de Partida (Original)
+    # --- 1. O PONTO FINAL (A "Jóia" da Competência) ---
+    # Este continua sendo a mistura das cores, representando o todo
+    def get_mix_color(x, y, z):
+        r = min(int((y / 6.0) * 255), 255)
+        g = min(int((x / 6.0) * 255), 255)
+        b = min(int((z / 6.0) * 255), 255)
+        return f'rgb({r}, {g}, {b})'
+    
+    cor_final = get_mix_color(xf, yf, zf)
+
     fig.add_trace(go.Scatter3d(
-        x=[x_vals[0]], y=[y_vals[0]], z=[z_vals[0]],
-        mode='markers', marker=dict(size=12, color='gray', opacity=0.6),
+        x=[xf], y=[yf], z=[zf],
+        mode='markers',
+        marker=dict(size=30, color=cor_final, symbol='diamond', opacity=1.0, line=dict(width=2, color='white')),
+        name='Competência Final'
+    ))
+
+    # --- 2. PONTO INICIAL (Fantasma) ---
+    fig.add_trace(go.Scatter3d(
+        x=[xi], y=[yi], z=[zi],
+        mode='markers',
+        marker=dict(size=10, color='gray', opacity=0.5),
         name='Rascunho Inicial'
     ))
 
-    # 2. Ponto de Chegada (SINAPSE)
+    # --- 3. HASTES DE PROJEÇÃO (Solução de Componentes Puros) ---
+    # Haste Eixo X (Território) -> VERDE PURO
     fig.add_trace(go.Scatter3d(
-        x=[x_vals[1]], y=[y_vals[1]], z=[z_vals[1]],
-        mode='markers', marker=dict(size=35, color='#7c3aed', symbol='diamond', opacity=0.9),
-        name='Rubrica SINAPSE'
+        x=[0, xf], y=[yf, yf], z=[zf, zf],
+        mode='lines',
+        line=dict(color='#22c55e', width=5), # Verde
+        name='Ganho em Território'
+    ))
+    
+    # Haste Eixo Y (Práxis) -> LARANJA PURO
+    fig.add_trace(go.Scatter3d(
+        x=[xf, xf], y=[0, yf], z=[zf, zf],
+        mode='lines',
+        line=dict(color='#f97316', width=5), # Laranja
+        name='Ganho em Práxis'
     ))
 
-    # 3. Vetor de Evolução
+    # Haste Eixo Z (Cognitivo) -> AZUL PURO
     fig.add_trace(go.Scatter3d(
-        x=x_vals, y=y_vals, z=z_vals,
-        mode='lines', line=dict(color='#10b981', width=8),
-        name='Ganho Pedagógico'
+        x=[xf, xf], y=[yf, yf], z=[0, zf],
+        mode='lines',
+        line=dict(color='#3b82f6', width=5), # Azul
+        name='Ganho Cognitivo'
     ))
 
+    # Configuração do Ambiente 3D
     fig.update_layout(
         scene=dict(
-            xaxis=dict(title='TERRITÓRIO (Verde)', range=[0, 6], backgroundcolor='#f0fdf4'),
-            yaxis=dict(title='PRÁXIS (Laranja)', range=[0, 6], backgroundcolor='#fff7ed'),
-            zaxis=dict(title='COGNITIVO (Azul)', range=[0, 6], backgroundcolor='#eff6ff'),
+            xaxis=dict(
+                title='TERRITÓRIO (Verde)', range=[0, 6], 
+                backgroundcolor='#f0fdf4', color='green', 
+                gridcolor='green', showbackground=True
+            ),
+            yaxis=dict(
+                title='PRÁXIS (Laranja)', range=[0, 6], 
+                backgroundcolor='#fff7ed', color='#d97706', 
+                gridcolor='#d97706', showbackground=True
+            ),
+            zaxis=dict(
+                title='COGNITIVO (Azul)', range=[0, 6], 
+                backgroundcolor='#eff6ff', color='blue', 
+                gridcolor='blue', showbackground=True
+            ),
         ),
         margin=dict(l=0, r=0, b=0, t=30),
-        height=450,
-        title="Volumetria da Competência (Voxel)",
-        showlegend=True
+        height=500,
+        title="Volumetria Decomposta (Eixos Puros)",
+        showlegend=False
     )
     return fig
 
@@ -133,7 +172,7 @@ with c_logo:
     st.image("https://img.icons8.com/fluency/96/artificial-intelligence.png", width=70)
 with c_title:
     st.title("Oficina de Rubricas SINAPSE")
-    st.caption("Motor: Groq Llama 3.3 (70B Versatile) | Base Teórica: Susan Brookhart (OCR)")
+    st.caption("Motor: Groq Llama 3.3 | Estratégia: Texto Integrado (Fórmula da Fusão)")
 
 st.markdown("---")
 
@@ -164,12 +203,10 @@ with st.form("form_auditoria"):
         placeholder="Ex: O aluno precisa entregar o relatório formatado corretamente e sem erros de português."
     )
     
-    mostrar_teoria = st.checkbox("🔍 Debug: Ver Contexto Injetado")
-
-    btn_auditar = st.form_submit_button("🚀 Auditar e Gerar Volumetria", use_container_width=True)
+    btn_auditar = st.form_submit_button("🚀 Auditar e Gerar Descritor", use_container_width=True)
 
 # ==============================================================================
-# 4. LÓGICA DE PROCESSAMENTO
+# 4. LÓGICA DE PROCESSAMENTO (TEXTO PURO - SEM JSON)
 # ==============================================================================
 if btn_auditar:
     erros = []
@@ -185,67 +222,100 @@ if btn_auditar:
         if not api_key:
             st.error("🔒 ERRO: Chave GROQ_API_KEY não configurada nos Segredos.")
         else:
-            with st.spinner("🤖 Llama 3.3 está lendo Brookhart (2013) e auditando..."):
+            with st.spinner("🔄 A IA está fundindo Técnica, Teoria e Impacto..."):
                 try:
                     client = Groq(api_key=api_key)
-                    
+
+                    # PROMPT: A FÓRMULA DO PARÁGRAFO ÚNICO (PRAGMÁTICO)
                     prompt_sistema = f"""
-                    ATUE COMO UM CONSULTOR PEDAGÓGICO SÊNIOR (Especialista em EPT).
+                    Você é um Especialista Sênior em Rubricas Técnicas.
                     
-                    === BASE DE CONHECIMENTO (BROOKHART - TEXTO OCR) ===
-                    {TEORIA_BROOKHART}
-                    ====================================================
-                    
-                    SUA MISSÃO:
-                    Analise o rascunho do professor. Aplique rigorosamente a distinção entre TAREFA (Checklist) e QUALIDADE (Rubrica).
+                    TAREFA: Converta o rascunho do professor em um DESCRITOR DE RUBRICA INTEGRADO (Nível Proficiente).
                     
                     DADOS:
-                    - Contexto: {contexto_ept}
-                    - Atividade: {tema}
-                    - Rascunho: "{texto_rascunho}"
+                    - Atividade: {tema} ({contexto_ept})
+                    - Rascunho Original (Ruim/Tarefa): "{texto_rascunho}"
                     
-                    SAÍDA (Responda em Português do Brasil, Markdown):
-                    1. DIAGNÓSTICO CRÍTICO: Identifique se há foco em contagem/tarefa (Erro) ou qualidade (Acerto). Cite Brookhart.
-                    2. REESCRITA SINAPSE: Crie um descritor "Nível Proficiente" que integre Cognitivo, Práxis e Território.
-                    3. JUSTIFICATIVA: Explique a melhoria pedagógica.
+                    REGRA DE OURO (FÓRMULA DE ESCRITA):
+                    O texto deve ser UM ÚNICO PARÁGRAFO seguindo esta estrutura lógica:
+                    [O ALUNO EXECUTA A TÉCNICA X] + [BASEADO NO CONHECIMENTO TÉCNICO Y] + [PARA GARANTIR O IMPACTO Z NO CONTEXTO REAL].
+                    
+                    PROIBIDO:
+                    - Não use listas ou bullet points.
+                    - Não escreva rótulos como "Cognitivo:", "Práxis:" ou "Território:".
+                    - Não dê explicações pedagógicas. Apenas entregue o texto final pronto para uso.
+                    
+                    FORMATO OBRIGATÓRIO DE RESPOSTA (Separado por '|||'):
+                    DIAGNOSTICO CURTO (O que faltou no rascunho)|||TEXTO DA NOVA RUBRICA (Parágrafo Único)|||JUSTIFICATIVA DO GANHO (1 frase)
                     """
-                    
+
                     chat_completion = client.chat.completions.create(
                         messages=[
-                            {"role": "system", "content": "Você é um assistente pedagógico especializado em Rubricas."},
                             {"role": "user", "content": prompt_sistema}
                         ],
-                        # ATUALIZAÇÃO CRÍTICA DO MODELO:
-                        # Usando a versão recomendada no seu documento 'doc_groq.txt'
-                        model="llama-3.3-70b-versatile", 
-                        temperature=0.3,
-                        max_tokens=1500,
+                        # Llama 3.3 70B Versatile
+                        model="llama-3.3-70b-versatile",
+                        temperature=0.5, # Temperatura controlada
+                        max_tokens=800,
                     )
                     
-                    resposta_ia = chat_completion.choices[0].message.content
+                    # Processamento da resposta crua
+                    resposta_raw = chat_completion.choices[0].message.content
+                    try:
+                        partes = resposta_raw.split("|||")
+                        diagnostico = partes[0].strip()
+                        nova_rubrica = partes[1].strip()
+                        motivo = partes[2].strip() if len(partes) > 2 else "Integração das dimensões SINAPSE."
+                    except:
+                        # Fallback seguro
+                        diagnostico = "Rascunho focado em tarefa."
+                        nova_rubrica = resposta_raw
+                        motivo = "Expansão de competência."
+
+                    # ==========================================================
+                    # VISUALIZAÇÃO
+                    # ==========================================================
+                    st.success("✅ Descritor SINAPSE Gerado!")
                     
-                    # Exibição
-                    if mostrar_teoria:
-                        with st.expander("📜 Ver Contexto Teórico Injetado"):
-                            st.info(f"Tamanho do Contexto: {len(TEORIA_BROOKHART)} caracteres")
-                            st.text(TEORIA_BROOKHART[:2000] + "...")
+                    with st.container():
+                        col_antes, col_arrow, col_depois = st.columns([4, 1, 4])
+                        
+                        with col_antes:
+                            st.markdown("#### ❌ Rascunho (Tarefa)")
+                            st.info(f'"{texto_rascunho}"')
+                            st.caption(f"🚨 **Problema:** {diagnostico}")
+                        
+                        with col_arrow:
+                             st.markdown("<div class='arrow-container'>➔</div>", unsafe_allow_html=True)
+                        
+                        with col_depois:
+                            st.markdown("#### ✅ Rubrica (Competência)")
+                            # Texto pronto para copiar
+                            st.success(f'"{nova_rubrica}"')
+                            st.caption(f"✨ **Ganho:** {motivo}")
+                            
+                            # --- O SEGREDO DO SINAPSE (Raio-X Didático) ---
+                            st.markdown("""
+                            <small>
+                            <span style='color:blue'><b>[Cognitivo]</b></span> Justificativa &nbsp;|&nbsp; 
+                            <span style='color:#d97706'><b>[Práxis]</b></span> Técnica &nbsp;|&nbsp; 
+                            <span style='color:green'><b>[Território]</b></span> Impacto
+                            </small>
+                            """, unsafe_allow_html=True)
+                            
+                    st.markdown("---")
                     
-                    st.success("✅ Auditoria Concluída!")
-                    
-                    col_txt, col_3d = st.columns([1, 1])
-                    with col_txt:
-                        st.subheader("📊 Relatório da Auditoria")
-                        st.markdown(f"<div class='feedback-card'>{resposta_ia}</div>", unsafe_allow_html=True)
-                    
-                    with col_3d:
-                        st.subheader("🧊 O Salto Sináptico")
-                        st.caption("Visualização do ganho de competência.")
-                        fig_3d = plot_salto_sinaptico((1.5, 2.0, 1.0), (5.0, 5.0, 5.0))
+                    # Gráfico 3D Voxel Decomposto
+                    col_3d_center, _ = st.columns([2,1]) 
+                    with col_3d_center:
+                        st.subheader("🧊 Visualização Volumétrica Decomposta")
+                        st.caption("Expansão tridimensional do aprendizado (Hastes = Projeção nos Eixos).")
+                        # Coordenadas fixas para demonstração do salto (De 1.5 para 5.5)
+                        fig_3d = plot_salto_sinaptico((1.5, 1.5, 1.0), (5.5, 5.0, 5.5))
                         st.plotly_chart(fig_3d, use_container_width=True)
-                        st.info("👆 Gire o cubo para ver a expansão.")
 
                 except Exception as e:
-                    st.error(f"Erro na comunicação com a IA: {e}")
+                    st.error(f"Erro técnico: {e}")
 
 st.markdown("---")
 st.caption("Ecossistema SINAPSE-BR IA | TCC Neirivon Elias Cardoso | IFTM 2026")
