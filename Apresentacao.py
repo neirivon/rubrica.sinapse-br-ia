@@ -303,7 +303,7 @@ with col_main:
     if NEIRIVON_IMG.exists():
         st.markdown(tag_html_profile_content(img_circular_b64(NEIRIVON_IMG), "Neirivon Elias Cardoso", "Pós-graduando em Docência para a EPT"), unsafe_allow_html=True)
     if ORIENTADORA_IMG.exists():
-        st.markdown(tag_html_profile_content(img_circular_b64(ORIENTADORA_IMG), "Dra. Thays Martins Vital da Silva", "Orientadora do TCC"), unsafe_allow_html=True)
+        st.markdown(tag_html_profile_content(img_circular_b64(ORIENTADORA_IMG), "Prof.ª Dra. Thays Martins Vital da Silva", "Professora Orientadora do TCC"), unsafe_allow_html=True)
 
     st.divider()
 
