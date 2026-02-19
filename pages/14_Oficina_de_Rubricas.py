@@ -194,7 +194,7 @@ with st.form("form_auditoria"):
         )
     
     with col2:
-        tema = st.text_input("📝 Atividade Específica:", placeholder="Ex: Poda de Café, Soldagem MIG, Algoritmo...")
+        tema = st.text_input("📝 Atividade Específica:", placeholder="Ex: Poda de Café, Soldagem MIG, Algoritmo 3D...")
     
     st.markdown("### Seu Rascunho")
     texto_rascunho = st.text_area(
