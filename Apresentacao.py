@@ -135,7 +135,7 @@ def get_apresentacao_content():
     content.append("---")
     content.append("## 🧑‍🎓 Autoria e Orientação")
     content.append("**Orientando:** Neirivon Elias Cardoso (Pós-graduando em Docência para a EPT)")
-    content.append("**Orientadora:** Profa. Dra. Thays Martins Vital da Silva")
+    content.append("**Orientadora:** Prof.ª Dra. Thays Martins Vital da Silva (Professora Orientadora)")
     content.append("**Instituição:** IFTM - Campus Avançado Uberaba Parque Tecnológico")
     content.append("**Curso:** Pós-Graduação Lato Sensu em Docência para a EPT")
     content.append("---")
@@ -411,12 +411,12 @@ with col_main:
         st.caption("Baseado em Llama 3 e Python/Streamlit.")
 
     st.divider()
-    st.subheader("⬇️ Baixar Apresentação")
+    st.subheader("⬇️ Obter cópia da Apresentação")
     md_content = get_apresentacao_content()
     c1, c2, c3 = st.columns([1, 1, 2])
-    with c1: st.download_button("📄 Baixar DOCX", data=generate_docx(md_content), file_name="SINAPSE_TCC.docx")
+    with c1: st.download_button("📄 Salva no formato DOCX", data=generate_docx(md_content), file_name="SINAPSE_TCC.docx")
     with c2: 
-        try: st.download_button("📑 Baixar PDF", data=generate_pdf(md_content), file_name="SINAPSE_TCC.pdf")
+        try: st.download_button("📑 Salvar no formato PDF", data=generate_pdf(md_content), file_name="SINAPSE_TCC.pdf")
         except: st.error("Erro PDF")
     
     st.caption(f"Sistema rodando a partir de: `{PROJECT_ROOT}`")
