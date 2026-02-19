@@ -1,0 +1,72 @@
+=== RESUMO TÉCNICO: COMO CRIAR E USAR RUBRICAS (BROOKHART, 2013) ===
+FONTE: Brookhart, Susan M. (2013). [cite_start]How to Create and Use Rubrics for Formative Assessment and Grading[cite: 1].
+
+1. DEFINIÇÃO TÉCNICA DE RUBRICA
+Uma rubrica não é uma lista de verificação (checklist) e nem uma escala de classificação (rating scale) genérica.
+[cite_start]Definição: Uma rubrica é um conjunto coerente de critérios para o trabalho dos alunos que inclui descrições de níveis de qualidade de desempenho para esses critérios[cite: 1].
+Componentes Obrigatórios:
+A. Critérios: O que conta (o aspecto a ser avaliado, ex: "Raciocínio Matemático").
+B. Níveis de Desempenho: Como é a qualidade (descrições graduais, ex: "Proficiente: O raciocínio é lógico e detalhado...").
+
+2. O ERRO FUNDAMENTAL: TAREFA VS. APRENDIZAGEM
+[cite_start]O erro mais comum e grave no design de rubricas é confundir a TAREFA (o que o aluno faz) com a APRENDIZAGEM (o que o aluno demonstra)[cite: 1].
+
+A. Rubricas focadas na TAREFA (Errado):
+- Listam requisitos da atividade. Ex: "O cartaz tem 3 cores", "A margem tem 2cm", "Incluiu 5 fatos".
+- Resultado: Avaliam obediência e conformidade (Compliance). [cite_start]O aluno tira nota máxima se seguir regras, mesmo sem aprender nada[cite: 1].
+- Sintoma: Contagem de itens (Countable Criteria). [cite_start]Se a diferença entre a nota A e B é "ter 5 fontes" vs "ter 3 fontes", isso não é uma rubrica, é uma contagem[cite: 1].
+
+B. Rubricas focadas na APRENDIZAGEM (Correto - Modelo SINAPSE):
+- Listam qualidades cognitivas e técnicas. Ex: "A argumentação é sustentada por evidências", "A soldagem apresenta fusão completa sem porosidade".
+- Resultado: Avaliam a proficiência. [cite_start]O aluno só tira nota máxima se demonstrar domínio do conceito[cite: 1].
+- Regra de Ouro: A rubrica deve funcionar mesmo se a tarefa mudar (ex: se em vez de um cartaz, o aluno fizer um vídeo, a rubrica de "Qualidade da Pesquisa" ainda deve servir).
+
+3. DIRETRIZES PARA CRITÉRIOS (ANATOMIA)
+[cite_start]Os critérios devem ser[cite: 1]:
+- Apropriados: Alinhados ao objetivo instrucional/padrão, não à tarefa.
+- Definíveis: Claros para professores e alunos.
+- Observáveis: Descrevem qualidades visíveis no produto ou processo.
+- Distintos: Cada critério avalia um aspecto diferente (sem sobreposição).
+- Completos: O conjunto cobre toda a competência desejada.
+
+4. NÍVEIS DE DESEMPENHO E ESCALAS
+Evite rótulos vagos como "Excelente/Bom/Ruim" sem descrição.
+Use descrições paralelas. [cite_start]Se o Nível 4 diz "Usa evidências detalhadas", o Nível 2 não pode dizer apenas "Faltam evidências"; deve descrever a qualidade da evidência fraca (ex: "Usa evidências superficiais ou não relacionadas")[cite: 1].
+
+Estratégia de Escrita (Top-Down):
+1. Escreva primeiro o nível "Proficiente" (o alvo esperado).
+2. Escreva o nível "Avançado" (o que excede a expectativa: mais inovação, profundidade ou complexidade).
+3. [cite_start]Escreva os níveis inferiores (o que falta ou é equívoco conceitual)[cite: 1].
+
+5. EXEMPLOS DE APLICAÇÃO PRÁTICA
+
+[cite_start]CASO 1: O PÔSTER "MEU ESTADO" (Exemplo de Erro) [cite: 1]
+- Critério Ruim (Tarefa): "Tem 4 fatos sobre o estado".
+- Critério Ruim (Tarefa): "O pôster é colorido e limpo".
+- Diagnóstico: Avalia apenas se o aluno sabe copiar fatos e usar canetinha. Não avalia geografia ou pesquisa.
+- Solução (Aprendizagem):
+  > Critério Novo: "Qualidade da Informação Geográfica".
+  > Descritor: "As informações selecionadas destacam as características econômicas e físicas principais do estado, mostrando relação entre clima e economia."
+
+[cite_start]CASO 2: RESOLUÇÃO DE PROBLEMAS MATEMÁTICOS [cite: 1]
+Dimensões sugeridas:
+1. Conhecimento Matemático (Conceitual/Procedimental).
+2. Conhecimento Estratégico (Uso de diagramas, modelos, planos).
+3. Comunicação (Explicação do raciocínio).
+*Nota: Isso se alinha perfeitamente ao cubo SINAPSE (Cognitivo/Práxis).*
+
+[cite_start]CASO 3: ESCRITA (MODELO 6+1 TRAÇOS) [cite: 1]
+Critérios universais para escrita:
+- Ideias (Clareza, foco, detalhes).
+- Organização (Estrutura interna, transições).
+- Voz (Tom, engajamento).
+- Escolha de Palavras (Vocabulário preciso).
+- Fluência (Ritmo das frases).
+- Convenções (Gramática funcional, não apenas contagem de erros).
+
+6. LÓGICA PARA FEEDBACK FORMATIVO
+A rubrica deve ser usada ANTES, DURANTE e DEPOIS da tarefa.
+- [cite_start]Feedback: O professor usa a rubrica para dizer "Seu trabalho está no Nível 2 em Argumentação porque falta evidência X; para ir ao Nível 3, adicione Y"[cite: 1].
+- Autoavaliação: O aluno usa a rubrica para auditar seu próprio rascunho.
+
+=== FIM DO RESUMO TÉCNICO ===
