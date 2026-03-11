@@ -1,0 +1,23 @@
+"[RESUMO DE AUDITORIA PEDAGÓGICA – ARQUIVO: EIXO_Z_VERDE_TERRITORIAL.TXT] [DOMÍNIO EPISTEMOLÓGICO: GEOFILOSOFIA E EPT BRASILEIRA]
+
+Território Usado: Conceito fundante (Milton Santos) que decreta a indissociabilidade absoluta entre sistemas de objetos (tecnosfera, materialidade, infraestrutura técnica) e sistemas de ações (psicosfera, intencionalidade, vida, trabalho). O espaço recusa a condição de palco inerte e atua como agência híbrida na EPT.
+
+Verticalidades: Forças exógenas e alienantes do "espaço de fluxos". Lógicas corporativas hegemônicas que impõem uma racionalidade puramente instrumental, convertendo o aluno em mero recurso e o trabalho em adestramento utilitário.
+
+Horizontalidades: Forças locais, endógenas e solidárias. O domínio da contiguidade, do cotidiano e das contra-racionalidades onde a comunidade escolar resiste, coopera e constrói sentidos próprios frente à globalização.
+
+Rugosidades: O tempo histórico congelado no espaço (inércia dinâmica). Heranças materiais e socioculturais (ex: o modelo de escola-fazenda) que impõem resistências, mas também servem de alicerce identitário para novas ações pedagógicas.
+
+Geofilosofia: Epistemologia da imanência (Deleuze/Guattari via Paulo Irineu). O reconhecimento de que o pensamento não ocorre no vácuo acadêmico; o saber técnico e cognitivo é forjado na colisão direta entre a mente humana e a topologia do meio.
+
+Desterritorialização: O vetor de ruptura e fuga micropolítica. No contexto da EPT, representa a fratura crítica com o adestramento mecanicista, o abandono da técnica alienada e a recusa aos currículos eurocêntricos desenraizados.
+
+Reterritorialização: O movimento dialético de retorno e síntese. A apropriação consciente do saber científico e da tecnologia diretamente no Chão da escola e do trabalho urbano/rural, convertendo a técnica abstrata em identidade local ativa.
+
+Ética da Hospitalidade: O imperativo de converter a escola e a avaliação técnica na "Casa de Lévinas" (Paulo Irineu). O sistema atua como uma membrana de acolhimento radical à alteridade e às vulnerabilidades do estudante, rejeitando a hostilidade do ranqueamento excludente.
+
+Chão: O substrato material e simbólico da existência ("cheiro de chão"). O espaço biopolítico de acolhimento do sujeito técnico, onde as desigualdades estruturais são filtradas para que a cultura e os saberes populares sejam validados institucionalmente.
+
+Sujeito Integral: O horizonte da Politecnia e da omnilateralidade. O estudante formado na fusão inquebrável entre o pensar (teoria/cognição), o fazer (práxis/técnica) e o pertencer (território), superando a dualidade estrutural histórica da educação burguesa.
+
+Emancipação: O telos (fim definitivo) da matriz avaliativa. O processo pelo qual o Sujeito Integral domina o rigor tecnológico não para servir ao mercado, mas para realizar a leitura crítica do Território Usado, revertendo as desigualdades e transformando sua realidade material.", essa primeira linha do arquivo é necessária?

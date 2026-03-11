@@ -1,0 +1,19 @@
+=== RESUMO TÉCNICO: REALIDADE VIRTUAL E OPERAÇÃO (SILVA, 2020) ===
+FONTE: Silva, Alexandre C. (2020). Uma Solução para Integração de Sistemas de Realidade Virtual e Tradicionais de Operação.
+
+1. INTEGRAÇÃO BIDIRECIONAL
+O sistema de Realidade Virtual (RV) não é apenas visual; ele é interativo. Mudanças no virtual devem refletir no sistema SCADA real.
+- Na Rubrica: O descritor deve avaliar se o aluno consegue transitar entre o modelo mental (teoria) e a execução simulada (técnica).
+
+2. MANIPULAÇÃO DE CAMADAS (LAYER CONTROL)
+A capacidade de isolar informações (rótulos, equipamentos, dados em tempo real) é crucial para a redução da carga cognitiva.
+- Aplicação no SINAPSE: O descritor de Nível 4 deve evidenciar a capacidade do aluno de filtrar informações complexas e tomar decisões precisas.
+
+3. FUNCIONALIDADE E USABILIDADE
+A ferramenta é validada através da eficiência (tempo e precisão) na execução de manobras de subestação.
+- Aplicação no SINAPSE: O Eixo Y (Práxis) deve descrever o desempenho técnico não como um fim em si mesmo, mas como uma evidência de competência funcional.
+
+4. REALISMO E SEGURANÇA
+A simulação VR reduz riscos humanos e patrimoniais em ambientes de alta tensão.
+- Na Rubrica: A avaliação deve considerar o "Saber Ser/Estar" no ambiente de trabalho (Eixo Z), mesmo que esse ambiente seja virtualizado.
+=== FIM DO RESUMO TÉCNICO SILVA ===
