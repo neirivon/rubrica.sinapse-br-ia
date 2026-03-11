@@ -1,4 +1,4 @@
-# /home/neirivon/SINAPSE2.0/sinapsebr_rubrica/scripts/pages/04_Mapa_Fundamentacao_Teorica.py
+# /home/neirivon/SINAPSE2.0/sinapsebr_rubrica/scripts/pages/02_Mapa_Fundamentacao_Teorica.py
 # --------------------------------------------------------------------------------------
 # NOME DO SCRIPT: 04_Mapa_Fundamentacao_Teorica.py
 # DESCRIÇÃO: Mapa interativo de fundamentação teórica conectando eixos e tópicos acadêmicos.
@@ -43,7 +43,7 @@ links = {
     "Eixo Cognitivo": ["Taxonomia de Bloom Revisada", "Taxonomia SOLO", "Metacognicao (Flavell)", "Psicologia cognitiva"],
     "Eixo Afetivo": ["Autorregulacao", "Engajamento e Motivacao", "Neuropsicopedagogia", "Teorias da motivacao"],
     "Eixo Metodologico": ["Metodologias ativas", "Aprendizagem baseada em projetos", "Gamificacao"],
-    "Eixo Neurofuncional": ["Educacao baseada no cerebro MBE", "Plasticidade Cerebral (Cosenza)", "Memoria e Atencao"],
+    "Eixo Neurofuncional": ["Educacao baseada no cerebro MBE", "Plasticidade Cerebral (Cosenza)", "Memoria e Atencao", "Stanislas Dehaene"],
     "Eixo Avaliativo": ["Avaliacao Formativa (Brookhart)", "Meta-Rubrica (Mullinix)", "Feedback de qualidade"],
     "Eixo Tecnologico": ["Agentes Inteligentes (Russell & Norvig)", "Cultura de Dados", "Moodle e Bloom (Duarte Jr.)"],
     "Eixo Territorial": ["Equidade Socio-territorial", "Critica do territorio CTC", "Indicadores INEP/SAEB"],
@@ -134,6 +134,18 @@ details = {
         "**Conceito:** O cérebro muda fisicamente com a experiência (Neuroplasticidade).\n\n"
         "A avaliação é um processo de reforço sináptico: o erro é uma **pista** para o ajuste, não um veredito final."
     ),
+    # === INSIRA ESTE TRECHO AQUI ===
+    "Stanislas Dehaene": (
+        "### 🧬 Stanislas Dehaene: Os Quatro Pilares da Aprendizagem\n\n"
+        "**Referência:** DEHAENE, S. (2022). *É assim que aprendemos*.\n\n"
+        "Sustenta a base neurocientífica da SINAPSE-BR IA através de quatro pilares fundamentais:\n"
+        "1. **Atenção:** Seleção da informação (Filtro do Núcleo).\n"
+        "2. **Engajamento Ativo:** O aluno como gerador de hipóteses (Práxis).\n"
+        "3. **Feedback de Erro:** Comparação entre previsão e realidade (Avaliação).\n"
+        "4. **Consolidação:** Automação do aprendizado (Mútua Possessão)."
+    ),
+    # ===============================
+    
 
     # --- EIXO AVALIATIVO ---
     "Eixo Avaliativo": (
@@ -318,6 +330,12 @@ html_code = f"""
   <div class="wrap">
     <div id="net"></div>
     <div id="panel">
+      <div id="color-indicator" style="display:none;">
+      <div class="color-chip">
+        <span id="color-dot" class="dot"></span>
+        <span id="color-name"></span>
+      </div>
+      </div>
       <h3>📘 Fundamentação Acadêmica</h3>
       <div id="content">
         <p style="color:#64748b; font-style:italic; padding:15px; background:#f8fafc; border-radius:8px;">
@@ -362,12 +380,27 @@ html_code = f"""
         return html || "<em>Conteúdo não disponível.</em>";
     }}
 
+// Localize network.on('selectNode', ...) e substitua por este:
     network.on('selectNode', function(params) {{
-        if (params.nodes.length > 0) {{
-            const nodeId = params.nodes[0].trim();
-            const rawText = details[nodeId] || details[nodeId + ' '] || "<em>Erro: Texto não encontrado para este nó.</em>";
-            document.getElementById('content').innerHTML = parseMarkdown(rawText);
+    if (params.nodes.length > 0) {{
+        const nodeId = params.nodes[0];
+        
+        // Mapeamento de cores (Recupera do objeto JS)
+        const parentId = topicParent[nodeId] || nodeId;
+        const colorData = colorsMap[parentId];
+
+        if(colorData) {{
+            document.getElementById('color-indicator').style.display = 'flex';
+            document.getElementById('color-dot').style.backgroundColor = colorData.hex;
+            document.getElementById('color-name').innerText = "Eixo: " + colorData.nome;
+        }} else {{
+            document.getElementById('color-indicator').style.display = 'none';
         }}
+        
+        // Sua lógica original de parseMarkdown
+        const rawText = details[nodeId] || "<em>Texto não encontrado.</em>";
+        document.getElementById('content').innerHTML = parseMarkdown(rawText);
+       }}
     }});
 
     function copyText() {{
@@ -511,178 +544,111 @@ st.markdown("""
 </table>
 """, unsafe_allow_html=True)
 
-st.info("""
-💡 **Interpretação:** A matriz 8x5 (8 Eixos × 5 Níveis) é a espinha dorsal da rubrica.  
-- **Eixos (Vertical):** Representam os construtos teóricos (Neuro, Social, Técnico) que definem O QUE avaliar.  
-- **Níveis (Horizontal):** Representam a progressão de competência (Vygotsky) e complexidade (Bloom).  
-- **Ponto Focal (3. Proficiente):** É o nível esperado para o aluno ao final da unidade/curso, focando no Aplicar/Desenvolver da Taxonomia de Bloom Revisada.  
-Essa visualização garante que a avaliação seja **multidimensional** e **formativa**, focando na evolução do aluno e não apenas no resultado.  
-✨ *Explore o grafo interativo acima para mergulhar nos fundamentos teóricos de cada dimensão!*  
-""")
-
-# 🎥 SEÇÃO DE VÍDEO EXPLICATIVO (NA PARTE INFERIOR - CONFORME SOLICITAÇÃO)
 st.divider()
 
-# Título do vídeo com estilo aprimorado
+st.markdown("### 🗺️ A Nova Geometria da Avaliação")
+
+col_text, col_formula = st.columns([2, 1])
+
+with col_text:
+    # O texto deve estar estritamente dentro das aspas triplas do st.info
+    st.info("""
+**Interpretação: Do Achatamento ao Volume (V343)**
+
+A Rubrica SINAPSE-BR IA transcende a nota unidimensional e a antiga matriz plana. Ela opera na **Volumetria da Competência**, onde cada eixo representa um pilar fundamental da formação humana integral:
+
+* **🔵 Eixo X – Cognitivo (Azul):** Funções executivas, profundidade e neuroplasticidade (Tese Profa. Thays). Baseado nos pilares de **Stanislas Dehaene**.
+* **🟠 Eixo Y – Práxis/Agir (Laranja):** Maestria operacional, técnica e rigor (Tese Prof. Alexandre).
+* **🟢 Eixo Z – Territorial (Verde):** O 'Geofilosofar' e a Ética da Hospitalidade (Tese Prof. Paulo Irineu).
+    """)
+    
+with col_formula:
+    # Métrica visual do Volume de Emancipação
+    st.metric(label="Capacidade Volumétrica", value="V343", delta="343 Possibilidades")
+    st.caption("Fórmula: V = (X+1) * (Y+1) * (Z+1)")
+
+st.success("""
+**✨ Ponto Focal: Emancipação Tridimensional**
+Diferente da matriz tradicional, aqui o foco é a sinergia. Quando os eixos se expandem, 
+o aluno deixa de ser um 'operário treinado' para se tornar um 'habitante consciente' da Terra de Todos.
+""")
+
 st.markdown("""
-<div style="
-    text-align: center;
-    background: linear-gradient(135deg, rgba(30, 58, 138, 0.08) 0%, rgba(2, 6, 23, 0.08) 100%);
-    border-radius: 16px;
-    padding: 28px;
-    margin: 30px 0;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(59, 130, 246, 0.25);
-">
-    <h2 style="
-        color: #1e40af;
-        margin-bottom: 12px;
-        font-weight: 700;
-        font-size: 1.8rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 12px;
-    ">
-        <span>🎥</span> Arquitetura do Conhecimento SINAPSE-BR IA
-    </h2>
-    <p style="
-        color: #475569;
-        max-width: 850px;
-        margin: 0 auto 20px;
-        line-height: 1.65;
-        font-size: 1.1rem;
-        font-weight: 500;
-    ">
-        Este vídeo materializa a jornada conceitual do nosso artefato pedagógico, transformando teorias densas em uma narrativa visual cinematográfica.
-    </p>
+<div style='background-color: #f0fdf4; padding: 15px; border-radius: 10px; border-left: 5px solid #22c55e; color: #166534;'>
+    <strong>🌟 Insight Pedagógico:</strong> O SINAPSE-BR IA atua como um Auditor de Competência, 
+    garantindo que o descritor final possua <strong>Volume Social e Profundidade Humana</strong>, superando o achatamento da prensa hidráulica.
 </div>
 """, unsafe_allow_html=True)
 
-# Container responsivo para o vídeo com efeito visual sofisticado (na parte inferior)
+# 🎥 SEÇÃO DE VÍDEO EXPLICATIVO
+st.divider()
+
+st.markdown("""
+<div style="text-align: center; background: linear-gradient(135deg, rgba(30, 58, 138, 0.08) 0%, rgba(2, 6, 23, 0.08) 100%); border-radius: 16px; padding: 28px; margin: 30px 0; border: 1px solid rgba(59, 130, 246, 0.25);">
+    <h2 style="color: #1e40af; margin-bottom: 12px; font-weight: 700;">🎥 Arquitetura do Conhecimento SINAPSE-BR IA</h2>
+</div>
+""", unsafe_allow_html=True)
+
 video_iframe = '''
-<div style="
-    display: flex; 
-    justify-content: center; 
-    margin: 25px 0 40px; 
-    padding: 25px;
-    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); 
-    border-radius: 22px; 
-    box-shadow: 0 12px 35px -6px rgba(0, 0, 0, 0.55),
-                0 0 50px rgba(59, 130, 246, 0.25);
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-">
-    <div style="
-        position: absolute; 
-        top: -55%; 
-        left: -55%; 
-        width: 210%; 
-        height: 210%; 
-        background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, rgba(0,0,0,0) 72%);
-        transform: rotate(28deg);
-        z-index: 1;
-    "></div>
-    <div style="
-        position: relative; 
-        z-index: 3; 
-        border-radius: 18px; 
-        overflow: hidden;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.65),
-                    0 0 45px rgba(255, 165, 0, 0.35);
-        transition: transform 0.35s ease, box-shadow 0.35s ease;
-        width: 100%;
-        max-width: 620px;
-    " onmouseover="this.style.transform='scale(1.03)'; this.style.boxShadow='0 10px 40px rgba(0,0,0,0.7), 0 0 55px rgba(255,165,0,0.45)'" 
-       onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 8px 32px rgba(0,0,0,0.65), 0 0 45px rgba(255,165,0,0.35)'">
-        <iframe 
-            width="560" 
-            height="315" 
-            src="https://www.youtube.com/embed/Ay_R1kzGll4?si=g6TsC4yIkXImuT5h" 
-            title="YouTube video player: Arquitetura do Conhecimento SINAPSE-BR IA" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            allowfullscreen
-            style="display: block; border: none; width: 100%; height: 340px;"
-        ></iframe>
-    </div>
+<div style="display: flex; justify-content: center; margin: 25px 0 40px; padding: 25px; background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); border-radius: 22px;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Ay_R1kzGll4" frameborder="0" allowfullscreen></iframe>
 </div>
 '''
-st_html(video_iframe, height=400)
-
-# Variável isolada para HTML complexo das 5 fases (evita erros de sintaxe)
+# 1. DEFINIÇÃO DA VARIÁVEL (Sempre antes de usar no st.markdown)
 jornada_conceitual_html = """
 <div style="background: white; border-radius: 18px; padding: 32px; box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08); border: 1px solid #e2e8f0; margin: 15px 0 45px; position: relative; overflow: hidden; max-width: 100%;">
     <div style="position: absolute; top: 0; left: 0; width: 6px; height: 100%; background: linear-gradient(to bottom, #3b82f6, #1e40af);"></div>
     <h3 style="color: #0f172a; margin-top: 0; font-size: 1.55rem; display: flex; align-items: center; gap: 12px; font-weight: 700; padding-left: 12px;">
         <span style="background: #dbeafe; color: #1e40af; width: 36px; height: 36px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;">5</span>
-        Fases da Jornada Conceitual
+        Fases da Jornada Conceitual SINAPSE-BR
     </h3>
     <div style="margin: 28px 0 20px; padding-left: 8px;">
-        <div style="display: flex; align-items: flex-start; gap: 20px; margin: 22px 0; padding-left: 12px; border-left: 3px solid #bfdbfe; padding-bottom: 8px;">
-            <span style="font-size: 1.7rem; margin-top: 6px; flex-shrink: 0;">🌱</span>
+        <div style="display: flex; align-items: flex-start; gap: 20px; margin: 22px 0; padding-left: 12px; border-left: 3px solid #3b82f6; padding-bottom: 8px;">
+            <span style="font-size: 1.7rem; margin-top: 6px; flex-shrink: 0;">🔵</span>
             <div>
-                <strong style="color: #0f172a; font-size: 1.2rem; display: block; margin-bottom: 6px; font-weight: 600;">Fase 1: As Raízes (Cognição e Afeto)</strong>
+                <strong style="color: #0f172a; font-size: 1.2rem; display: block; margin-bottom: 6px; font-weight: 600;">Fase 1: Eixo X - Cognição (Azul)</strong>
                 <span style="color: #475569; line-height: 1.65; font-size: 1.02rem; display: block;">
-                    A jornada começa no âmago do aprendizado. A Taxonomia de Bloom deixa de ser uma teoria estática em livros antigos para se tornar uma pirâmide holográfica dinâmica. Aqui, as sinapses biológicas encontram o Eixo Afetivo, provando que a motivação é o combustível da neuroplasticidade, unindo o construtivismo clássico de Vygotsky à tecnologia moderna.
+                    Baseado em <strong>Stanislas Dehaene</strong> e na Neuroplasticidade. Foco nos processos de Atenção e Memória de Trabalho para a consolidação do saber.
                 </span>
             </div>
         </div>
-        <div style="display: flex; align-items: flex-start; gap: 20px; margin: 22px 0; padding-left: 12px; border-left: 3px solid #fecaca; padding-bottom: 8px;">
-            <span style="font-size: 1.7rem; margin-top: 6px; flex-shrink: 0;">🧠</span>
+        <div style="display: flex; align-items: flex-start; gap: 20px; margin: 22px 0; padding-left: 12px; border-left: 3px solid #f59e0b; padding-bottom: 8px;">
+            <span style="font-size: 1.7rem; margin-top: 6px; flex-shrink: 0;">🟠</span>
             <div>
-                <strong style="color: #0f172a; font-size: 1.2rem; display: block; margin-bottom: 6px; font-weight: 600;">Fase 2: O Cérebro e o Método (Neurofuncional e Metodológico)</strong>
+                <strong style="color: #0f172a; font-size: 1.2rem; display: block; margin-bottom: 6px; font-weight: 600;">Fase 2: Eixo Y - Práxis (Laranja)</strong>
                 <span style="color: #475569; line-height: 1.65; font-size: 1.02rem; display: block;">
-                    A arquitetura se expande para a plasticidade cerebral. Vemos caminhos neurais se remodelando em tempo real, representando a capacidade adaptativa do aprendiz. As Metodologias Ativas ganham vida através da colaboração e do encaixe de saberes, onde funções executivas como Memória e Atenção são o foco do design pedagógico.
+                    O engajamento ativo e a técnica. É a maestria operacional no Mundo do Trabalho, onde a teoria se transforma em intervenção real.
                 </span>
             </div>
         </div>
-        <div style="display: flex; align-items: flex-start; gap: 20px; margin: 22px 0; padding-left: 12px; border-left: 3px solid #a7f3d0; padding-bottom: 8px;">
-            <span style="font-size: 1.7rem; margin-top: 6px; flex-shrink: 0;">🗺️</span>
+        <div style="display: flex; align-items: flex-start; gap: 20px; margin: 22px 0; padding-left: 12px; border-left: 3px solid #10b981; padding-bottom: 8px;">
+            <span style="font-size: 1.7rem; margin-top: 6px; flex-shrink: 0;">🟢</span>
             <div>
-                <strong style="color: #0f172a; font-size: 1.2rem; display: block; margin-bottom: 6px; font-weight: 600;">Fase 3: Tecnologia e Território (O Diferencial SINAPSE)</strong>
+                <strong style="color: #0f172a; font-size: 1.2rem; display: block; margin-bottom: 6px; font-weight: 600;">Fase 3: Eixo Z - Territorial (Verde)</strong>
                 <span style="color: #475569; line-height: 1.65; font-size: 1.02rem; display: block;">
-                    O SINAPSE-BR IA mergulha na realidade brasileira. Através de fluxos de dados e algoritmos de IA (Agentes Racionais), mapeamos a equidade socioterritorial, focando especificamente no Triângulo Mineiro. É o momento em que a tecnologia deixa de ser abstrata para servir às necessidades reais do contexto local e rural.
+                    A Geofilosofia e a Ética da Hospitalidade. O saber situado no contexto real, garantindo a emancipação social.
                 </span>
             </div>
-        </div>
-        <div style="display: flex; align-items: flex-start; gap: 20px; margin: 22px 0; padding-left: 12px; border-left: 3px solid #fde047; padding-bottom: 8px;">
-            <span style="font-size: 1.7rem; margin-top: 6px; flex-shrink: 0;">📏</span>
-            <div>
-                <strong style="color: #0f172a; font-size: 1.2rem; display: block; margin-bottom: 6px; font-weight: 600;">Fase 4: A Avaliação e a Inclusão (A Régua Humana)</strong>
-                <span style="color: #475569; line-height: 1.65; font-size: 1.02rem; display: block;">
-                    Nesta fase, o prisma do Desenho Universal para a Aprendizagem (DUA) desfragmenta a informação em múltiplos formatos (texto, áudio, vídeo). A avaliação é representada não por uma nota fria, mas por uma régua digital que mede o crescimento orgânico de uma planta, simbolizando a Avaliação Formativa e a inclusão plena.
-                </span>
-            </div>
-        </div>
-        <div style="display: flex; align-items: flex-start; gap: 20px; margin: 22px 0; padding-left: 12px; border-left: 3px solid #fbcfe8; padding-bottom: 8px;">
-            <span style="font-size: 1.7rem; margin-top: 6px; flex-shrink: 0;">💎</span>
-            <div>
-                <strong style="color: #0f172a; font-size: 1.2rem; display: block; margin-bottom: 6px; font-weight: 600;">Fase 5: A Síntese (O Cubo SINAPSE)</strong>
-                <span style="color: #475569; line-height: 1.65; font-size: 1.02rem; display: block;">
-                    No clímax da jornada, todos os eixos teóricos — Bloom, Neurociência, Território e Tecnologia — colidem e se fundem em um único objeto: o Cubo da Rubrica SINAPSE. Um artefato que pulsa como um coração, unindo circuitos digitais a veias orgânicas, consolidando a Inteligência Pedagógica para a EPT.
-                </span>
-            </div>
-        </div>
-    </div>
-    <div style="background: #f0f9ff; border-radius: 14px; padding: 24px; margin-top: 30px; border: 1px solid #bae6fd; position: relative;">
-        <div style="position: absolute; top: -4px; left: 16px; width: 40px; height: 4px; background: #3b82f6; border-radius: 2px;"></div>
-        <h4 style="color: #0c4a6e; margin-top: 12px; display: flex; align-items: center; gap: 10px; font-size: 1.25rem; font-weight: 700;">
-            <span style="background: #dbeafe; width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold;">💡</span> Como utilizar este Mapa?
-        </h4>
-        <ul style="color: #0c4a6e; line-height: 1.8; padding-left: 24px; margin: 18px 0 15px; font-size: 1.03rem; padding-top: 8px;">
-            <li style="margin-bottom: 10px;"><strong>Navegação Dinâmica:</strong> Utilize o grafo interativo acima para clicar nos nós e extrair os resumos fundamentados.</li>
-            <li style="margin-bottom: 10px;"><strong>Referencial Teórico:</strong> Clique no botão "📋 Copiar Texto para o TCC" no painel lateral para obter as citações prontas de autores como Brookhart, Cosenza, Frigotto e Russell.</li>
-            <li><strong>Matriz 8x5:</strong> A tabela acima apresenta a estrutura completa da rubrica, onde cada dimensão encontra seu nível de proficiência.</li>
-        </ul>
-        <div style="font-style: italic; color: #0c4a6e; border-left: 4px solid #3b82f6; padding-left: 18px; margin-top: 16px; font-size: 1.1rem; line-height: 1.5; font-weight: 500;">
-            "A tecnologia no SINAPSE não substitui o docente; ela atua como um amplificador da percepção humana sobre o processo de aprender."
         </div>
     </div>
 </div>
 """
 
-# Renderização segura do HTML isolado
+# 2. RENDERIZAÇÃO DOS COMPONENTES (FORA DE QUALQUER BLOCO DE TEXTO OU INFO)
+
+# Insight Pedagógico
+st.markdown("""
+<div style='background-color: #f0fdf4; padding: 15px; border-radius: 10px; border-left: 5px solid #22c55e; color: #166534; margin-bottom: 20px;'>
+    <strong>🌟 Insight Pedagógico:</strong> O SINAPSE-BR IA atua como um Auditor de Competência, 
+    garantindo que o descritor final possua <strong>Volume Social e Profundidade Humana</strong>.
+</div>
+""", unsafe_allow_html=True)
+
+# Seção de Vídeo Direta
+st.divider()
+st.markdown("<h2 style='text-align: center; color: #1e40af;'>🎥 Arquitetura do Conhecimento SINAPSE-BR IA</h2>", unsafe_allow_html=True)
+st.video("https://www.youtube.com/watch?v=Ay_R1kzGll4")
+st.caption("Vídeo explicativo: A jornada do conhecimento através dos eixos Cognitivo, Práxis e Territorial.")
+
+# Renderização final da jornada das 5 fases
 st.markdown(jornada_conceitual_html, unsafe_allow_html=True)

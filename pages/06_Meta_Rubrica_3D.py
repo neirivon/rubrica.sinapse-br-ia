@@ -1,4 +1,4 @@
-# /home/neirivon/SINAPSE2.0/sinapsebr_rubrica/scripts/pages/05_Meta_Rubrica_3D.py
+# /home/neirivon/SINAPSE2.0/sinapsebr_rubrica/pages/06_Meta_Rubrica_3D.py
 # --------------------------------------------------------------------------------------
 # NOME DO SCRIPT: 05_Meta_Rubrica_3D.py
 # LOCALIZAÇÃO:    /pages/
@@ -18,9 +18,9 @@ import json
 import streamlit as st
 from streamlit.components.v1 import html as st_html
 
-# ──────────────────────────────────────────────────────────────────────────────
+# --------------------------------------------------------------------------------------
 # CONFIG DA PÁGINA
-# ──────────────────────────────────────────────────────────────────────────────
+# --------------------------------------------------------------------------------------
 st.set_page_config(
     page_title="Meta-Rubrica 3D — SINAPSE-BR",
     page_icon="🌌",
@@ -35,9 +35,9 @@ Baseia-se nos princípios de **Mullinix (2003)** e **Brookhart (2013)**.
 
 physics = st.toggle("Ativar Simulação Física (Gravidade)", value=True)
 
-# ──────────────────────────────────────────────────────────────────────────────
+# --------------------------------------------------------------------------------------
 # ESTRUTURA LÓGICA DO GRAFO (DIMENSÕES DE QUALIDADE)
-# ──────────────────────────────────────────────────────────────────────────────
+# --------------------------------------------------------------------------------------
 # As dimensões aqui não são os eixos da rubrica final, mas os critérios de QUALIDADE da rubrica.
 
 dims = [
@@ -56,119 +56,98 @@ links = {
     "Potencial Educativo": ["Feedback Orientador", "Promocao da Autoregulacao", "Foco no Processo"]
 }
 
-# ──────────────────────────────────────────────────────────────────────────────
-# CONTEÚDO RICO (BASEADO EM MULLINIX E BROOKHART)
-# ──────────────────────────────────────────────────────────────────────────────
+# --------------------------------------------------------------------------------------
+# DICIONÁRIO DE DETALHES (CORREÇÃO DO NameError)
+# --------------------------------------------------------------------------------------
+# INICIALIZAÇÃO OBRIGATÓRIA: Define as dimensões principais ANTES do loop de população
 details = {
-    "Meta-Rubrica SINAPSE": {
-        "color": "#7c3aed", # Roxo vibrante
-        "content": (
-            "### 🌌 O que é a Meta-Rubrica?\n\n"
-            "É o **'Rotor'** do sistema SINAPSE. Uma ferramenta metacognitiva que avalia se a rubrica criada pelo professor "
-            "é justa, técnica e útil.\n\n"
-            "**Referência Central:** Mullinix, B. B. (2003). *A Rubric for Rubrics*.\n"
-            "O objetivo não é apenas dar uma nota, mas garantir que a ferramenta de avaliação seja um instrumento de aprendizagem."
-        )
-    },
-    
-    # --- CLAREZA ---
     "Clareza dos Criterios": {
         "color": "#3b82f6",
-        "content": (
-            "### 🔎 Clareza e Transparência\n"
-            "Os critérios devem ser compreensíveis tanto para o especialista (professor) quanto para o aprendiz.\n\n"
-            "**Pergunta-chave:** O aluno consegue ler a rubrica e entender exatamente o que se espera dele sem precisar perguntar ao professor?"
-        )
+        "content": "### Clareza dos Critérios\n\nA rubrica deve usar linguagem unívoca e descritores observáveis."
     },
-    "Linguagem Univoca": {
-        "color": "#3b82f6",
-        "content": "**Definição:** Uso de termos precisos, evitando adjetivos vagos como 'bom', 'adequado' ou 'interessante' sem qualificadores técnicos."
-    },
-    "Descritores Observaveis": {
-        "color": "#3b82f6",
-        "content": "**Definição:** O critério descreve uma evidência tangível (ação, produto, comportamento) e não um estado mental invisível."
-    },
-    "Distincao entre Niveis": {
-        "color": "#3b82f6",
-        "content": "**Definição:** A diferença entre o nível 3 (Esperado) e o nível 4 (Avançado) é qualitativa e clara, não apenas quantitativa."
-    },
-
-    # --- VALIDADE ---
     "Validade de Conteudo": {
-        "color": "#10b981",
-        "content": (
-            "### 🎯 Validade (Construct Validity)\n"
-            "A rubrica mede realmente o que ela diz medir? Ela está alinhada aos objetivos de aprendizagem propostos?\n\n"
-            "**Fundamento:** Se a aula foi sobre 'Pensamento Crítico', a rubrica não pode avaliar apenas 'Formatação do Texto'."
-        )
+        "color": "#f59e0b",
+        "content": "### Validade de Conteúdo\n\nAlinhamento com objetivos de aprendizagem e Taxonomia de Bloom."
     },
-    "Alinhamento a Bloom": {
-        "color": "#10b981",
-        "content": "**Aplicação:** Verifica se o verbo cognitivo exigido na rubrica (ex: Analisar) corresponde ao nível da atividade proposta."
-    },
-    "Cobertura do Objetivo": {
-        "color": "#10b981",
-        "content": "**Definição:** A rubrica cobre todas as dimensões essenciais da habilidade, sem deixar lacunas importantes."
-    },
-
-    # --- CONFIABILIDADE ---
     "Confiabilidade": {
-        "color": "#f59e0b",
-        "content": (
-            "### ⚖️ Confiabilidade (Reliability)\n"
-            "A capacidade da rubrica de gerar resultados consistentes.\n\n"
-            "**Teste:** Se dois professores diferentes usarem esta rubrica para avaliar o mesmo trabalho, eles chegarão à mesma nota?"
-        )
+        "color": "#8b5cf6",
+        "content": "### Confiabilidade\n\nConsistência entre avaliadores e estabilidade da escala."
     },
-    "Consistencia Inter-avaliadores": {
-        "color": "#f59e0b",
-        "content": "**Definição:** Redução da subjetividade individual através de critérios ancorados em evidências."
-    },
-    "Objetividade": {
-        "color": "#f59e0b",
-        "content": "**Definição:** Foco nos fatos apresentados no trabalho, minimizando a influência de preferências pessoais do avaliador."
-    },
-
-    # --- EQUIDADE ---
     "Equidade e DUA": {
-        "color": "#ec4899",
-        "content": (
-            "### ♿ Equidade e Inclusão (DUA)\n"
-            "Garante que a avaliação não penalize alunos por barreiras que não fazem parte do construto avaliado.\n\n"
-            "**Base:** Desenho Universal para a Aprendizagem (CAST)."
-        )
+        "color": "#10b981",
+        "content": "### Equidade e DUA\n\nAusência de vieses e múltiplos formatos de resposta."
     },
-    "Ausencia de Vies Cultural": {
-        "color": "#ec4899",
-        "content": "**Definição:** Os exemplos e temas da rubrica consideram a diversidade territorial e cultural do TMAP, evitando elitismos."
-    },
-    "Multiformato (Permite Audio/Video)": {
-        "color": "#ec4899",
-        "content": "**Aplicação:** A rubrica permite que o aluno demonstre competência por diferentes meios (texto, áudio, vídeo), conforme princípios do DUA."
-    },
-
-    # --- POTENCIAL EDUCATIVO ---
     "Potencial Educativo": {
         "color": "#ef4444",
-        "content": (
-            "### 🚀 Potencial Educativo (Instructional Impact)\n"
-            "A rubrica serve para ensinar ou apenas para julgar?\n\n"
-            "**Meta:** A rubrica deve funcionar como um roteiro de estudos para o aluno, antecipando o sucesso."
-        )
-    },
-    "Feedback Orientador": {
-        "color": "#ef4444",
-        "content": "**Definição:** Os descritores de níveis inferiores explicam o que falta para chegar ao próximo nível (Feedforward)."
-    },
-    "Promocao da Autoregulacao": {
-        "color": "#ef4444",
-        "content": "**Definição:** A linguagem convida o aluno a usar a rubrica para se autoavaliar antes da entrega final."
+        "content": "### Potencial Educativo\n\nFeedback orientador e promoção da autorregulação."
     }
 }
 
-# ──────────────────────────────────────────────────────────────────────────────
-# POPULAR NÓS VAZIOS
-# ──────────────────────────────────────────────────────────────────────────────
+# --------------------------------------------------------------------------------------
+# VÍDEO E ROTEIRO DE EMANCIPAÇÃO (ESTRUTURA DE CONTEÚDO RICO)
+# --------------------------------------------------------------------------------------
+roteiro_emancipacao = {
+    "A Semente (O Cubo)": {
+        "color": "#3b82f6",
+        "content": (
+            "### 🧊 A Semente: O Cubo Analógico\n\n"
+            "Representa a transição do conceito abstrato para a materialidade. "
+            "Veja como as dimensões neuropsicopedagógicas ganham volume e cor através do objeto tátil.\n\n"
+            "**Foco:** Transformar teorias em ferramentas visíveis e compreensíveis para o estudante."
+        )
+    },
+    "O Salto Sinaptico": {
+        "color": "#f59e0b",
+        "content": (
+            "### ⚡ O Salto Sináptico\n\n"
+            "É o momento da 'Manobra Sináptica'. A passagem do uso passivo da tecnologia para a "
+            "**Hospitalidade Técnica** e o Geofilosofar.\n\n"
+            "**Conceito:** A tecnologia deixa de ser uma barreira e passa a ser uma lente de ampliação da consciência."
+        )
+    },
+    "A Conquista do Territorio": {
+        "color": "#10b981",
+        "content": (
+            "### 🌍 A Conquista do Território\n\n"
+            "Onde a autoavaliação encontra a vida real. Reflete a melhoria da vida no bairro, "
+            "no campus e na comunidade local (TMAP).\n\n"
+            "**Resultado:** O aluno reconhece seu impacto social e torna-se um habitante consciente da 'Terra de Todos'."
+        )
+    },
+    "A Lente SINAPSE": {
+        "color": "#ef4444",
+        "content": (
+            "### 🎯 A Lente da Percepção\n\n"
+            "> *'A tecnologia não te substitui; ela é a lente que amplia a sua consciência sobre o ato de aprender.'*\n\n"
+            "**Dica de Ouro:** Não tente ser 'Platinum' em tudo hoje. Escolha uma dimensão e planeje seu próximo passo."
+        )
+    }
+}
+
+# --------------------------------------------------------------------------------------
+# RENDERIZAÇÃO NA INTERFACE
+# --------------------------------------------------------------------------------------
+st.divider()
+st.subheader("🎬 Materialização: Do Cubo Analógico ao Digital")
+st.video("https://www.youtube.com/watch?v=Ay_R1kzGll4")
+st.markdown("---")
+
+for titulo, info in roteiro_emancipacao.items():
+    st.markdown(
+        f"""
+        <div style="padding:15px; border-radius:10px; border-left:5px solid {info['color']}; 
+                    background-color:#f8fafc; margin-bottom:15px;">
+            {info['content']}
+        </div>
+        """, 
+        unsafe_allow_html=True
+    )
+
+st.caption("Ecossistema SINAPSE-BR IA | TCC Neirivon Elias Cardoso | IFTM 2026")
+
+# --------------------------------------------------------------------------------------
+# POPULAR NÓS VAZIOS (AGORA FUNCIONA COM 'details' DEFINIDO)
+# --------------------------------------------------------------------------------------
 for parent, topics in links.items():
     for topic in topics:
         if topic not in details:
@@ -177,9 +156,9 @@ for parent, topics in links.items():
                 "content": f"### {topic}\n\n**Indicador de Qualidade:** Subcomponente da dimensão **{parent}**."
             }
 
-# ──────────────────────────────────────────────────────────────────────────────
+# --------------------------------------------------------------------------------------
 # CONSTRUÇÃO DO GRAFO
-# ──────────────────────────────────────────────────────────────────────────────
+# --------------------------------------------------------------------------------------
 nodes, edges = [], []
 
 # Nó Central
@@ -239,9 +218,9 @@ options = {
     "layout": {"improvedLayout": True}
 }
 
-# ──────────────────────────────────────────────────────────────────────────────
-# HTML/JS (Mantido idêntico ao padrão funcional da Pag 04)
-# ──────────────────────────────────────────────────────────────────────────────
+# --------------------------------------------------------------------------------------
+# HTML/JS
+# --------------------------------------------------------------------------------------
 html_code = f'''
 <!doctype html>
 <html>
@@ -344,16 +323,10 @@ html_code = f'''
 
 st_html(html_code, height=800, scrolling=False)
 
-# ──────────────────────────────────────────────────────────────────────────────
-# VÍDEO E JORNADA CONCEITUAL (INSERÇÃO ADITIVA - UI/UX DESIGN)
-# ──────────────────────────────────────────────────────────────────────────────
-st.divider()
-st.subheader("🎬 Audiovisual: O Rotor de Auditoria SINAPSE")
+# --------------------------------------------------------------------------------------
+# VÍDEO E JORNADA CONCEITUAL
+# --------------------------------------------------------------------------------------
 
-# Embed Responsivo do YouTube
-st.video("https://www.youtube.com/watch?v=Mj2a9K5Tb4U")
-
-# Variável HTML isolada para proteger o restante do script de erros de aspas
 jornada_meta_html = """
 <div style="background: white; border-radius: 18px; padding: 32px; box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08); border: 1px solid #e2e8f0; margin: 15px 0 45px; position: relative; overflow: hidden; max-width: 100%;">
     <div style="position: absolute; top: 0; left: 0; width: 6px; height: 100%; background: linear-gradient(to bottom, #7c3aed, #4c1d95);"></div>
@@ -404,13 +377,14 @@ st.markdown(jornada_meta_html, unsafe_allow_html=True)
 with st.sidebar:
     st.page_link("Apresentacao.py", label="🏠 Apresentação")
     st.markdown("---")
-    st.page_link("pages/01_TMAP_2010.py", label="⏳ TMAP Histórico")
-    st.page_link("pages/02_TMAP_2017_2024.py", label="🌐 TMAP 2024 (Equidade)")
-    st.page_link("pages/03_Mapa_Geral_Rubrica.py", label="🧠 Mapa da Rubrica")
-    st.page_link("pages/04_Mapa_Fundamentacao_Teorica.py", label="📚 Fundamentação")
-    st.page_link("pages/05_Meta_Rubrica_3D.py", label="🌌 Meta-Rubrica 3D")
+    st.page_link("pages/02_Mapa_Fundamentacao_Teorica.py", label="📚 Fundamentação")
+    st.page_link("pages/03_TMAP_2010.py", label="🟢 TMAP Histórico (Territorial)")
+    st.page_link("pages/04_TMAP_2017_2024.py", label="🌐 TMAP 2024 (Equidade)")
+    st.page_link("pages/05_Mapa_Geral_Rubrica.py", label="🧠 Mapa da Rubrica")
+
+    st.page_link("pages/06_Meta_Rubrica_3D.py", label="🌌 Meta-Rubrica 3D")
     st.markdown("---")
-    st.page_link("pages/06_Rubrica_Docente_3D.py", label="👩‍🏫 Rubrica Docente 3D")
-    st.page_link("pages/07_Rubrica_Autoavaliativa_3D.py", label="🎓 Autoavaliação 3D")
-    st.page_link("pages/08_Transparencia_Avaliativa.py", label="🐆 Transparência (Avaliação)")
+    st.page_link("pages/07_Rubrica_Docente_3D.py", label="👩‍🏫 Rubrica Docente 3D")
+    st.page_link("pages/08_Rubrica_Autoavaliativa_3D.py", label="🎓 Autoavaliação 3D")
+    st.page_link("pages/09_Transparencia_Avaliativa.py", label="🐆 Transparência (Avaliação)")
     st.page_link("pages/99_Referencias.py", label="📚 Referências")

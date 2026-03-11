@@ -373,7 +373,7 @@ with col_main:
         with c1: 
             st.info("**EPT e Trabalho**\n\nSaviani, Frigotto e Ciavatta.\n*Politecnia e Trabalho como Princípio Educativo.*")
         with c2: 
-            st.info("**Neuropsicopedagogia**\n\nCosenza, Guerra e Taxonomias (Bloom/SOLO).\n*Funções Executivas e Níveis Cognitivos.*")
+            st.info("**Neuropsicopedagogia**\n\nCosenza, Dehaene, Guerra e Taxonomias (Bloom/SOLO).\n*Funções Executivas e Níveis Cognitivos.*")
         with c3:
             st.info("**Geofilosofia**\n\nMilton Santos e Paulo Irineu.\n*Território Usado e Identidade Local.*")
     

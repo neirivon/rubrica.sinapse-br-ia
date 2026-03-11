@@ -90,7 +90,7 @@ st.sidebar.header("🎛️ Configuração da Interseção")
 selected_x = st.sidebar.select_slider("Eixo X: Progressão", options=eixo_x_niveis, value="Nível 4 (Transformador)")
 selected_y_base = st.sidebar.select_slider("Eixo Y: Contexto", options=eixo_y_contextos, value="Território (TMAP)")
 selected_z = st.sidebar.selectbox("Eixo Z: Dimensões", options=eixo_z_dimensoes, index=5)
-specific_context = st.sidebar.text_input("Contexto Específico", value="Iturama")
+specific_context = st.sidebar.text_input("Contexto Específico", value="Uberlândia (Sobradinho)")
 
 ix, iy, iz = eixo_x_niveis.index(selected_x), eixo_y_contextos.index(selected_y_base), eixo_z_dimensoes.index(selected_z)
 display_context = f"{selected_y_base}: {specific_context}" if specific_context else selected_y_base
@@ -245,7 +245,7 @@ with aba_analogico:
     
     with col_b:
         st.markdown(f"**🟠 Eixo Y – Contexto Territorial**")
-        st.caption("Simboliza a territorialização (TMAP). A avaliação ocorre em um 'chão' geográfico e social específico, conforme a necessidade de compreender os arranjos locais (SANTOS, 2006).")
+        st.caption("Simboliza a territorialização (Uberlândia/TMAP). A avaliação ocorre no 'chão' de Sobradinho, integrando o sistema de objetos e ações locais (SANTOS, 2006).")
     
     with col_c:
         st.markdown(f"**🔴 Eixo Z – Dimensões Neuropsicopedagógicas**")

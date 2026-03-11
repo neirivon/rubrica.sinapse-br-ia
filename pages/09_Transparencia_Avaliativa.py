@@ -1,4 +1,4 @@
-# /home/neirivon/SINAPSE2.0/sinapsebr_rubrica/scripts/pages/08_Transparencia_Avaliativa.py
+# /home/neirivon/SINAPSE2.0/sinapsebr_rubrica/scripts/pages/09_Transparencia_Avaliativa.py
 # --------------------------------------------------------------------------------------
 # NOME DO SCRIPT: 08_Transparencia_Avaliativa.py
 # DESCRIÇÃO: Página de Meta-Avaliação do artefato SINAPSE-BR IA.

@@ -1,16 +1,17 @@
-# /home/neirivon/SINAPSE2.0/sinapsebr_rubrica/pages/02_TMAP_2017_2024.py
+# /home/neirivon/SINAPSE2.0/sinapsebr_rubrica/pages/04_TMAP_2017_2024.py
 # --------------------------------------------------------------------------------------
 # NOME DO SCRIPT: 02_TMAP_2017_2024.py
 # DESCRIÇÃO: Visualização interativa da Rede EPT no Território (TMAP) utilizando
 #            Teoria dos Grafos e Georreferenciamento Pedagógico.
 # FUNCIONALIDADES:
 #   1. Visualização em Grafo (Nós = Escolas/Cidades, Arestas = Conexões).
-#   2. Interatividade Mouseover (Hover): Tooltips HTML com atraso (debounce) para estabilidade.
+#   2. Interatividade Mouseover (Hover): Tooltips HTML com atraso (debounce).
 #   3. Interatividade Click: Zoom e destaque hierárquico.
-#   4. Indicadores de Equidade: Cores (SAEB/Qualidade) e Tamanho (INSE/Vulnerabilidade).
-# AUTOR: Neirivon Elias Cardoso (Adaptado por Gemini)
+#   4. Indicadores de Equidade: Cores (SAEB) e Tamanho (INSE).
+#   5. Nota Geográfica com Tooltips CSS Avançados (UX/UI).
+# AUTOR: Neirivon Elias Cardoso
 # PROJETO: Rubrica SINAPSE-BR IA
-# DATA: 12/01/2026 (Atualizado com otimização de UX/Hover e correção de Path)
+# DATA: 20/02/2026 
 # --------------------------------------------------------------------------------------
 
 import streamlit as st
@@ -24,14 +25,67 @@ st.set_page_config(page_title="TMAP • Rede EPT", page_icon="🌐", layout="wid
 # Bloqueia tradução automática do Chrome
 st.markdown('<meta name="google" content="notranslate">', unsafe_allow_html=True)
 
+# CSS Customizado para os Tooltips Geográficos
+st.markdown("""
+<style>
+    /* Container do Tooltip Geográfico */
+    .geo-tooltip {
+        position: relative;
+        display: inline-block;
+        cursor: help;
+        border-bottom: 2px dotted #7c3aed;
+        color: #1e293b;
+        font-weight: 600;
+    }
+    
+    /* Texto flutuante do Tooltip */
+    .geo-tooltip .geo-tooltiptext {
+        visibility: hidden;
+        width: 280px;
+        background-color: #1e293b;
+        color: #f8fafc;
+        text-align: center;
+        border-radius: 8px;
+        padding: 12px;
+        position: absolute;
+        z-index: 9999;
+        bottom: 130%;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity 0.3s, visibility 0.3s;
+        font-size: 0.85rem;
+        font-weight: 400;
+        line-height: 1.5;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Setinha do Tooltip */
+    .geo-tooltip .geo-tooltiptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -6px;
+        border-width: 6px;
+        border-style: solid;
+        border-color: #1e293b transparent transparent transparent;
+    }
+    
+    /* Efeito ao passar o mouse */
+    .geo-tooltip:hover .geo-tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 # ----------------------------------------------------------------------
-# CORREÇÃO CRÍTICA DE CAMINHO (Aqui estava o erro)
+# CORREÇÃO CRÍTICA DE CAMINHO
 # ----------------------------------------------------------------------
 THIS = Path(__file__).resolve()
 
 # Como o script agora está na pasta 'pages' (na raiz), ele sobe apenas 1 nível.
-# parents[0] = pasta 'pages'
-# parents[1] = pasta raiz do projeto ('sinapsebr_rubrica')
 ROOT_DIR = THIS.parents[1]
 JSON_FILE = ROOT_DIR / "data" / "tmap_2024_completo.json"
 
@@ -39,7 +93,6 @@ JSON_FILE = ROOT_DIR / "data" / "tmap_2024_completo.json"
 @st.cache_data
 def load_data():
     if not JSON_FILE.exists():
-        # Retorna None para tratar o erro fora da função cacheada
         return None
     with open(JSON_FILE, "r", encoding="utf-8") as f:
         return json.load(f)
@@ -55,30 +108,27 @@ if data is None:
 
 # --- FUNÇÃO DE ESTILO ---
 def get_node_style(escola):
-    # Tamanho base (aumenta se for vulnerável)
     inse = escola.get('INSE_Class', 'N/A')
     if 'Nível I' in str(inse) or 'Nível II' in str(inse): size = 25
     elif 'Nível III' in str(inse) or 'Nível IV' in str(inse): size = 20
     else: size = 15
 
-    # Cor (SAEB)
     saeb = escola.get('SAEB')
     if saeb:
         try:
             val = float(saeb)
-            if val >= 275: color = "#22c55e" # Verde
-            elif val >= 250: color = "#84cc16" # Verde Claro
-            elif val >= 225: color = "#facc15" # Amarelo
-            else: color = "#ef4444" # Vermelho
+            if val >= 275: color = "#22c55e"
+            elif val >= 250: color = "#84cc16"
+            elif val >= 225: color = "#facc15"
+            else: color = "#ef4444"
         except: color = "#94a3b8"
     else:
-        color = "#94a3b8" # Cinza
+        color = "#94a3b8"
 
     return color, size
 
 # --- SIDEBAR ---
 with st.sidebar:
-    # Ajuste: Como Apresentacao.py está na raiz, o link direto funciona
     st.page_link("Apresentacao.py", label="🏠 Apresentação")
     st.divider()
     st.markdown("### 🎯 Filtros")
@@ -93,9 +143,7 @@ with st.sidebar:
         🟢 **Verde:** >= 275 (Excelente)
         🟡 **Amarelo:** 225 a 274 (Médio)
         🔴 **Vermelho:** < 225 (Atenção)
-        ⚪ **Cinza (N/A):** Dado não disponível no INEP.
-        
-        *Nota:* O status **N/A** indica escolas que não participaram do SAEB ou não atingiram o quórum mínimo de alunos.
+        ⚪ **Cinza (N/A):** Dado não disponível.
         
         **Tamanho (Vulnerabilidade - INSE):**
         Quanto **maior** o nó, **menor** o nível socioeconômico da escola.
@@ -106,7 +154,6 @@ nodes = []
 edges = []
 
 if data:
-    # Nó Raiz
     nodes.append({
         "id": "ROOT", "label": "TMAP 2024\nRede EPT", 
         "color": "#1e40af", "shape": "box", "size": 40, 
@@ -120,12 +167,10 @@ if data:
         total_mat = int(float(muni.get('Total_Matriculas', 0)))
         inse_muni = muni.get('INSE_Medio_Municipal')
         
-        # Cálculo rápido de estatísticas do município
         total_escolas = len(muni.get('Escolas', []))
         rurais = sum(1 for e in muni.get('Escolas', []) if 'Rural' in str(e.get('Zona', '')))
         pct_rural = (rurais / total_escolas * 100) if total_escolas > 0 else 0
         
-        # TOOLTIP DO MUNICÍPIO
         muni_tooltip = f"""
         <div style='padding:5px;'>
             <h3 style='margin:0; color:#f97316; font-size:16px;'>📍 {muni_name}</h3>
@@ -137,13 +182,10 @@ if data:
         </div>
         """
 
-        # Nó Município
         nodes.append({
             "id": muni_name, "label": muni_name, 
             "color": "#f97316", "shape": "ellipse", "value": total_mat,
-            "group": "city",
-            "info_html": muni_tooltip,
-            "font": {"size": 16}
+            "group": "city", "info_html": muni_tooltip, "font": {"size": 16}
         })
         edges.append({"from": "ROOT", "to": muni_name, "color": "#cbd5e1"})
 
@@ -151,13 +193,11 @@ if data:
             e_id = f"{muni_name}_{esc['Nome']}"
             color, size = get_node_style(esc)
             
-            # Ícones DUA
             infra = esc.get('Infra', {})
             i_acc = "♿" if infra.get('Acessibilidade') else "❌"
             i_net = "📶" if infra.get('Internet') else "❌"
             i_lab = "💻" if infra.get('Lab_Info') else "❌"
             
-            # Lista de Cursos
             cursos_html = ""
             if esc.get('Cursos'):
                 for c in esc['Cursos']:
@@ -165,7 +205,6 @@ if data:
             else:
                 cursos_html = "<li><i>Sem cursos registrados</i></li>"
 
-            # CONTEÚDO DO TOOLTIP DA ESCOLA
             painel_html = f"""
             <div style='padding:5px;'>
                 <h3 style='margin:0; color:{color}; font-size:16px;'>{esc['Nome']}</h3>
@@ -190,24 +229,18 @@ if data:
             """
 
             nodes.append({
-                "id": e_id, 
-                "label": esc['Nome'],
-                "color": color, 
-                "size": size, 
-                "shape": "dot",
-                "info_html": painel_html,
-                "font": {"size": 0}
+                "id": e_id, "label": esc['Nome'], "color": color, 
+                "size": size, "shape": "dot", "info_html": painel_html, "font": {"size": 0}
             })
             edges.append({"from": muni_name, "to": e_id, "color": color})
 
-# --- RENDERIZAÇÃO ---
+# --- RENDERIZAÇÃO DO GRAFO ---
 st.title("🌐 Rede EPT no TMAP (2024): Equidade e Infraestrutura")
 st.caption("Visualização baseada nos Microdados do Censo 2024, SAEB 2023 e INSE 2021. Clique para interagir.")
 
 if not nodes:
     st.warning("⚠️ Nenhum dado carregado.")
 else:
-    # Configuração do Vis.js
     options = {
         "physics": {"enabled": True, "stabilization": {"enabled": True}},
         "layout": {"improvedLayout": True},
@@ -223,18 +256,10 @@ else:
       <style>
         #net {{ width: 100%; height: 700px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; }}
         #info-panel {{
-            position: absolute;
-            display: none;
-            width: 320px;
-            background: white;
-            border: 1px solid #cbd5e1;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            padding: 10px;
-            font-family: 'Segoe UI', sans-serif;
-            z-index: 1000;
-            pointer-events: none;
-            transition: opacity 0.2s ease-in-out;
+            position: absolute; display: none; width: 320px; background: white;
+            border: 1px solid #cbd5e1; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-radius: 8px; padding: 10px; font-family: 'Segoe UI', sans-serif;
+            z-index: 1000; pointer-events: none; transition: opacity 0.2s ease-in-out;
         }}
       </style>
     </head>
@@ -253,11 +278,7 @@ else:
       var hideTimeout;
 
       network.on("hoverNode", function (params) {{
-          if (hideTimeout) {{
-              clearTimeout(hideTimeout);
-              hideTimeout = null;
-          }}
-
+          if (hideTimeout) {{ clearTimeout(hideTimeout); hideTimeout = null; }}
           var nodeId = params.node;
           var node = nodesData.get(nodeId);
           if (node.info_html) {{
@@ -273,9 +294,7 @@ else:
       network.on("blurNode", function (params) {{
           hideTimeout = setTimeout(function() {{
               panel.style.opacity = '0';
-              setTimeout(function(){{ 
-                  if(panel.style.opacity === '0') panel.style.display = 'none'; 
-              }}, 200);
+              setTimeout(function(){{ if(panel.style.opacity === '0') panel.style.display = 'none'; }}, 200);
           }}, 200);
       }});
 
@@ -295,24 +314,74 @@ else:
       network.on("deselectNode", function (params) {{
           var updates = [];
           nodesData.forEach(function(node) {{
-              if (node.id !== "ROOT" && !node.group) {{
-                  updates.push({{id: node.id, shape: 'dot', font: {{size: 0}}}});
-              }}
+              if (node.id !== "ROOT" && !node.group) {{ updates.push({{id: node.id, shape: 'dot', font: {{size: 0}}}}); }}
           }});
           nodesData.update(updates);
           network.fit({{ animation: {{ duration: 800, easingFunction: 'easeInOutQuad' }} }});
       }});
 
-      network.on("stabilizationIterationsDone", function () {{
-          network.setOptions( {{ physics: false }} );
-      }});
+      network.on("stabilizationIterationsDone", function () {{ network.setOptions( {{ physics: false }} ); }});
     </script>
     </body>
     </html>
     """
     st_html(html_code, height=720)
 
+# ==============================================================================
+# NOTA HISTÓRICO-GEOGRÁFICA (CSS TOOLTIPS)
+# ==============================================================================
+st.markdown("---")
+st.markdown("### 🗺️ Nota Geográfica: A Evolução Territorial do TMAP (1989 vs. Atual)")
+
+with st.expander("Entenda a nomenclatura geográfica utilizada neste projeto", expanded=False):
+    st.info("A sigla **TMAP** refere-se à antiga **Mesorregião do Triângulo Mineiro e Alto Paranaíba**, classificação oficial utilizada pelo IBGE de 1989 até 2017. Para fins de pesquisa demográfica e educacional longitudinal, mantemos este polígono territorial histórico de 66 municípios.")
+    st.caption("🔍 **Dica interativa:** Passe o mouse sobre as Regiões Imediatas sublinhadas para ver a lista completa de municípios.")
+
+    colA, colB, colC = st.columns(3)
+
+    # Função auxiliar para não poluir o código com HTML
+    def tooltip_html(titulo, texto_hover):
+        return f'<div class="geo-tooltip">{titulo}<span class="geo-tooltiptext">{texto_hover}</span></div>'
+
+    with colA:
+        st.markdown("#### 📍 RGInt de Uberlândia")
+        st.markdown(f"""
+        Absorveu a maior concentração populacional. Subdividida em 3 Regiões:
+        - {tooltip_html("Uberlândia (11 municípios)", "Araguari, Araporã, Campina Verde, Canápolis, Cascalho Rico, Centralina, Indianópolis, Monte Alegre de Minas, Prata, Tupaciguara e Uberlândia.")}
+        - {tooltip_html("Ituiutaba (6 municípios)", "Cachoeira Dourada, Capinópolis, Gurinhatã, Ipiaçu, Ituiutaba e Santa Vitória.")}
+        - {tooltip_html("Monte Carmelo (7 municípios)", "Abadia dos Dourados, Douradoquara, Estrela do Sul, Grupiara, Iraí de Minas, Monte Carmelo e Romaria.")}
+        <br><br>*(Total: 24 municípios)*
+        """, unsafe_allow_html=True)
+
+    with colB:
+        st.markdown("#### 📍 RGInt de Uberaba")
+        st.markdown(f"""
+        Agrupou áreas de Uberaba, Araxá e Frutal. Subdividida em 4 Regiões:
+        - {tooltip_html("Uberaba (10 municípios)", "Água Comprida, Campo Florido, Conceição das Alagoas, Conquista, Delta, Nova Ponte, Sacramento, Santa Juliana, Uberaba e Veríssimo.")}
+        - {tooltip_html("Araxá (8 municípios)", "Araxá, Campos Altos, Ibiá, Pedrinópolis, Perdizes, Pratinha, Santa Rosa da Serra e Tapira.")}
+        - {tooltip_html("Frutal (6 municípios)", "Comendador Gomes, Fronteira, Frutal, Itapagipe, Pirajuba e Planura.")}
+        - {tooltip_html("Iturama (5 municípios)", "Carneirinho, Iturama, Limeira do Oeste, São Francisco de Sales e União de Minas.")}
+        <br>*(Total: 29 municípios)*
+        """, unsafe_allow_html=True)
+
+    with colC:
+        st.markdown("#### 📍 RGInt de Patos de Minas")
+        st.markdown(f"""
+        Fundiu o Alto Paranaíba com o Noroeste de Minas. Subdividida em 3 Regiões:
+        - {tooltip_html("Patrocínio (5 mun.)", "Apenas cidades do antigo TMAP: Coromandel, Cruzeiro da Fortaleza, Guimarânia, Patrocínio e Serra do Salitre.")}
+        - {tooltip_html("Patos de Minas (Mista)", "12 do TMAP (Patos, Rio Paranaíba, S. Gotardo, etc) + 6 do Noroeste (João Pinheiro, Paracatu, Vazante, etc).")}
+        - {tooltip_html("Unaí (Apenas Noroeste)", "11 municípios remanescentes da antiga mesorregião do Noroeste de Minas Gerais.")}
+        """, unsafe_allow_html=True)
+
+    st.markdown("""
+    <div style='background-color: #f8fafc; border-left: 4px solid #64748b; padding: 15px; margin-top: 20px; border-radius: 4px; font-size: 0.95rem; color: #334155;'>
+        <strong>📌 Nota explicativa da mudança (IBGE, 2017):</strong><br>
+        <i>"O território de análise neste ecossistema corresponde à antiga Mesorregião do Triângulo Mineiro e Alto Paranaíba (IBGE, 1990), área que foi atualizada e hoje se encontra desmembrada, abrigada majoritariamente nas novas Regiões Geográficas Intermediárias de Uberlândia, Uberaba e Patos de Minas (IBGE, 2017)."</i>
+    </div>
+    """, unsafe_allow_html=True)
+
 # --- TABELA DE DADOS ---
+st.markdown("---")
 with st.expander("📂 Ver Tabela de Dados Brutos"):
     rows = []
     for m in data:

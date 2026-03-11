@@ -1,4 +1,4 @@
-# /home/neirivon/SINAPSE2.0/sinapsebr_rubrica/scripts/pages/09_Linha_Tempo_Imersiva.py
+# /home/neirivon/SINAPSE2.0/sinapsebr_rubrica/scripts/pages/01_Linha_Tempo_Imersiva.py
 # --------------------------------------------------------------------------------------
 # NOME DO SCRIPT: 09_Linha_Tempo_Imersiva.py
 # DESCRIÇÃO: Implementação de uma Linha do Tempo Interativa (Timeline) utilizando
@@ -163,7 +163,7 @@ eventos_timeline = [
         "id": 8,
         "ano": "2008",
         "titulo": "Criação dos Institutos Federais",
-        "categoria": "macro",
+        "categoria": "micro",
         "resumo": "Lei 11.892: A Revolução da Rede Federal.",
         "detalhe": """
             <h3>Omnilateralidade e Formação Integral</h3>

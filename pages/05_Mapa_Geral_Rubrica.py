@@ -1,4 +1,4 @@
-# /home/neirivon/SINAPSE2.0/sinapsebr_rubrica/scripts/pages/03_Mapa_Geral_Rubrica.py
+# /home/neirivon/SINAPSE2.0/sinapsebr_rubrica/scripts/pages/05_Mapa_Geral_Rubrica.py
 # --------------------------------------------------------------------------------------
 # NOME DO SCRIPT: 03_Mapa_Geral_Rubrica.py
 # DESCRIÇÃO: Visualização sistêmica e interativa da arquitetura da Rubrica SINAPSE-BR IA.

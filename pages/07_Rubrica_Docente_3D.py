@@ -1,4 +1,4 @@
-# /home/neirivon/SINAPSE2.0/sinapsebr_rubrica/scripts/pages/06_Rubrica_Docente_3D.py
+# /home/neirivon/SINAPSE2.0/sinapsebr_rubrica/scripts/pages/07_Rubrica_Docente_3D.py
 # --------------------------------------------------------------------------------------
 # NOME DO SCRIPT: 06_Rubrica_Docente_3D.py
 # DESCRIÇÃO: Implementação da Rubrica Docente SINAPSE-BR IA com visualização 3D
@@ -376,7 +376,7 @@ with col_video_center:
     st.markdown(
         """
         <div style="display: flex; justify-content: center; margin-bottom: 20px;">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/Hqk4f4xNxng" 
+            <iframe width="960" height="540" src="https://www.youtube.com/embed/Hqk4f4xNxng" 
             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
             encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
             allowfullscreen style="border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.2);"></iframe>
@@ -391,17 +391,29 @@ st.markdown(
     <div style="font-size: 1.15rem !important; line-height: 1.65; color: #1e293b; background-color: #ffffff; 
                 padding: 35px; border-radius: 16px; border: 1px solid #e2e8f0; 
                 box-shadow: 0 12px 20px -4px rgba(0, 0, 0, 0.08); font-family: sans-serif; margin-top: 10px;">
-        <h2 style="color: #1e40af; font-size: 1.8rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">🎯 Guia Estratégico da Defesa</h2>
-        <p>Este vídeo sintetiza a jornada do TCC <strong>SINAPSE-BR IA</strong>. Abaixo, os marcos temporais para facilitar sua navegação:</p>
-        <ul style="margin-left: 20px; color: #334155;">
-            <li style="margin-bottom: 10px;"><strong>0:45 - 1:45:</strong> Exposição do Problema e a necessidade de equidade socio-territorial no Triângulo Mineiro (TMAP).</li>
-            <li style="margin-bottom: 10px;"><strong>2:45 - 4:45:</strong> Fundamentação Teórica: O encontro entre Neuropsicopedagogia, DUA e Territorialização.</li>
-            <li style="margin-bottom: 10px;"><strong>6:00 - 8:30:</strong> Demonstração Prática: Navegação pelas rubricas docente e autoavaliativa 3D.</li>
-            <li style="margin-bottom: 10px;"><strong>9:30 - 11:00:</strong> Relevância Social e o futuro da avaliação na Educação Profissional.</li>
-        </ul>
-        <p style="text-align: center; font-style: italic; margin-top: 30px; color: #1e40af; font-weight: 600;">
-            "A tecnologia no SINAPSE não substitui o docente; ela atua como um amplificador da percepção humana sobre o aprender."
-        </p>
+        <h2 style="color: #1e40af; font-size: 1.8rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">🎯 Voxel de Emancipação V343</h2>
+        <p>Bem-vindo à <strong>Rubrica Docente SINAPSE-BR IA</strong>. Este não é apenas um guia, é o seu <strong>Voxel de Emancipação V343</strong>, projetado para romper com o achatamento da 'prensa hidráulica' avaliativa. Oito dimensões orbitam a docência em três eixos de Práxis:</p>
+
+<ul style="margin-left: 20px; color: #334155;">
+    <li style="margin-bottom: 10px;">
+        <strong>🔵 Eixo X – Cognitivo (Azul):</strong> 
+        Onde as funções executivas, a atenção e a memória (Dehaene) processam o saber. Representa a base do pensamento mobilizado para a aprendizagem.
+    </li>
+    <li style="margin-bottom: 10px;">
+        <strong>🟠 Eixo Y – Práxis/Agir (Laranja):</strong> 
+        A transposição da ciência para a prática e o <strong>Mundo do Trabalho</strong>. Representa a maestria técnica e o protagonismo do fazer na EPT.
+    </li>
+    <li style="margin-bottom: 10px;">
+        <strong>🟢 Eixo Z – Territorial (Verde):</strong> 
+        O enraizamento no <strong>Território Usado</strong> do Triângulo Mineiro e a Geofilosofia. Representa o volume social, a hospitalidade e o contexto real do sujeito.
+    </li>
+</ul>
+
+<p>Do nível Inicial à <strong>Referência Platinum</strong>, o SINAPSE não classifica; ele cartografa o seu crescimento rumo à <strong>Omnilateralidade</strong>. Explore as dimensões, ative suas sinapses e transforme a tecnologia em um ato de humanidade no chão da escola.</p>
+
+<p style="text-align: center; font-style: italic; margin-top: 30px; color: #1e40af; font-weight: 600;">
+    "A tecnologia no SINAPSE-BR IA não é um fim, mas um ato de hospitalidade técnica que transforma o operário em um habitante consciente do seu território."
+</p>
     </div>
     """, 
     unsafe_allow_html=True
@@ -412,7 +424,7 @@ st.warning("💡 **Dica Final:** Utilize este guia para revisitar os pontos chav
 # SIDEBAR (Mantendo a funcionalidade original)
 with st.sidebar:
     st.page_link("Apresentacao.py", label="🏠 Início")
-    st.page_link("pages/03_Mapa_Geral_Rubrica.py", label="🧠 Mapa Geral")
-    st.page_link("pages/07_Rubrica_Autoavaliativa_3D.py", label="🎓 Autoavaliação")
+    st.page_link("pages/05_Mapa_Geral_Rubrica.py", label="🔵 Mapa Geral (Cognitivo)")
+    st.page_link("pages/08_Rubrica_Autoavaliativa_3D.py", label="🔄 Autoavaliação (Metacognição)")
     st.markdown("---")
     st.caption("SINAPSE-BR IA v2.0")

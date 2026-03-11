@@ -1,4 +1,4 @@
-# /home/neirivon/SINAPSE2.0/sinapsebr_rubrica/scripts/pages/07_Rubrica_Autoavaliativa_3D.py
+# /home/neirivon/SINAPSE2.0/sinapsebr_rubrica/scripts/pages/08_Rubrica_Autoavaliativa_3D.py
 # --------------------------------------------------------------------------------------
 # NOME DO SCRIPT: 07_Rubrica_Autoavaliativa_3D.py
 # DESCRIÇÃO: Implementação da Rubrica Autoavaliativa (Discente) do ecossistema SINAPSE,
@@ -7,7 +7,6 @@
 #   1. Foco no Aluno Protagonista com cards didáticos sobre metacognição.
 #   2. Painel 3D (Cubos) representando as 8 dimensões da aprendizagem.
 #   3. Integração com dados regionais (TMAP) para contextualização.
-#   4. [CORRIGIDO] Integração de Vídeos (Jornada e Pitch de Defesa).
 # AUTOR: Neirivon Elias Cardoso
 # DATA: 07/02/2026
 # --------------------------------------------------------------------------------------
@@ -182,40 +181,7 @@ st.info("""
 Este vídeo materializa o **Cubo SINAPSE-BR IA**, narrando a evolução de um estudante do Triângulo Mineiro: do uso passivo da tecnologia à transformação do seu território (Nível 4 - Expert).
 """)
 
-# ==================================================================
-#  PITCH DE DEFESA E RODAPÉ (PROTEGIDO E FUNCIONAL)
-# ==================================================================
-st.divider()
-st.subheader("🎤 Pitch de Defesa: SINAPSE-BR IA em 10 Minutos")
 
-# Use o link do modo 'watch' em vez do código de incorporação (embed)
-st.video("https://www.youtube.com/watch?v=Hqk4f4xNxng")
-
-# Variável HTML isolada para o texto didático (Protege o script)
-guia_pitch_html = """
-<div style="background: white; border-radius: 18px; padding: 32px; box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08); border: 1px solid #e2e8f0; margin: 15px 0 45px; position: relative; overflow: hidden; max-width: 100%;">
-    <div style="position: absolute; top: 0; left: 0; width: 6px; height: 100%; background: linear-gradient(to bottom, #10b981, #064e3b);"></div>
-    <h3 style="color: #0f172a; margin-top: 0; font-size: 1.4rem; display: flex; align-items: center; gap: 12px; font-weight: 700; font-family: sans-serif;">
-        <span style="background: #d1fae5; color: #065f46; width: 36px; height: 36px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;">🎯</span>
-        Guia da Apresentação
-    </h3>
-    <div style="margin: 20px 0; font-family: sans-serif;">
-        <div style="margin: 10px 0; border-left: 3px solid #bfdbfe; padding-left: 12px;">
-            <strong style="color: #1e40af;">0:45:</strong> O Problema e a lacuna na EPT.
-        </div>
-        <div style="margin: 10px 0; border-left: 3px solid #c7d2fe; padding-left: 12px;">
-            <strong style="color: #3730a3;">2:45:</strong> Fundamentação (Neuro, DUA, Território).
-        </div>
-        <div style="margin: 10px 0; border-left: 3px solid #d1fae5; padding-left: 12px;">
-            <strong style="color: #065f46;">6:00:</strong> Demonstração do Protótipo Streamlit.
-        </div>
-    </div>
-    <p style="font-style: italic; color: #475569; border-top: 1px solid #eee; padding-top: 15px; margin-top: 15px; font-family: sans-serif;">
-        "A tecnologia no SINAPSE amplia a percepção humana sobre o processo de aprender."
-    </p>
-</div>
-"""
 # Renderiza o texto didático logo abaixo do vídeo
-st.markdown(guia_pitch_html, unsafe_allow_html=True)
 
 st.warning("💡 **Dica de Autorregulação:** Comece escolhendo **uma** dimensão para focar hoje e celebre seu progresso!")

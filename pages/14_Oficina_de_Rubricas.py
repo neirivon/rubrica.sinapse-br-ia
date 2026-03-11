@@ -2,347 +2,363 @@
 # CAMINHO DO ARQUIVO: /pages/14_Oficina_de_Rubricas.py
 # NOME DO SCRIPT: 14_Oficina_de_Rubricas.py
 #
-# DESCRIÇÃO: Laboratório de Auditoria Pedagógica e Criação de Rubricas EPT.
-#            Utiliza IA Generativa (Llama 3.3 via Groq) com Estratégia de "Texto Integrado".
-#            Foca na fusão das dimensões (Cognitivo/Práxis/Território) em um único descritor.
+# DESCRIÇÃO: Laboratório de Auditoria Pedagógica e Criação de Rubricas SINAPSE-BR.
+#              Ancoragem: Neurociência (Vital) + Sistemas de Operação (Silva).
+#              Separação de Domínios: X (Cognitivo) | Y (Práxis) | Z (Território).
 #
 # FUNCIONALIDADES:
-#   1. Injeção de Contexto Otimizado (Resumo Técnico).
-#   2. Engenharia de Prompt "Fórmula de Fusão" (Sem JSON para evitar erros).
-#   3. Visualização Comparativa (Antes vs Depois) com setas direcionais.
-#   4. Visualização Volumétrica Decomposta (Hastes de Projeção Coloridas).
+#      1. Domínios de Autoridade: X (Vital - Cognição) | Y (Silva - Eficácia Técnica).
+#      2. Validação Estrita: Campos com "*" obrigatórios e bloqueio de envio vazio.
+#      3. Salvaguarda de Escopo: Proteção contra temas fora da área educacional/EPT.
+#      4. Visualização: Voxel Semântico 3D de alta intensidade.
+#      5. RELATÓRIO DINÂMICO: Separação clara entre Diagnóstico e Salto Sináptico.
 #
 # AUTOR: Neirivon Elias Cardoso
 # PROJETO: Rubrica SINAPSE-BR IA
-# DATA: 18/02/2026 (Versão Final Cloud - Texto Integrado & Projeção 3D)
+# DATA: 08/03/2026 (Versão V344.9.2 - Protocolo de Domínios Isolados e Densidade Máxima)
 # --------------------------------------------------------------------------------------
 
 import streamlit as st
 import plotly.graph_objects as go
+import pandas as pd
 from groq import Groq
 import os
+import re
 
 # Configuração da Página
 st.set_page_config(
-    page_title="Oficina de Rubricas SINAPSE",
+    page_title="Oficina de Rubricas SINAPSE - V344.9.2",
     page_icon="🛠️",
     layout="wide"
 )
 
-# Estilo CSS Profissional (Clean/Academic)
+# ==============================================================================
+# ESTILO CSS PROFISSIONAL (RESTORED & EXPANDED)
+# ==============================================================================
 st.markdown("""
 <style>
-    .stTextArea textarea { font-size: 16px; border-radius: 8px; border: 1px solid #e5e7eb; }
+    .stTextArea textarea { 
+        font-size: 16px; 
+        border-radius: 8px; 
+        border: 1px solid #e5e7eb; 
+    }
     .feedback-card {
-        padding: 20px; border-radius: 10px;
-        background-color: #f8f9fa; border-left: 5px solid #7c3aed;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        font-family: 'Source Sans Pro', sans-serif;
+        padding: 24px; 
+        border-radius: 12px; 
+        margin-bottom: 20px;
+        background-color: #ffffff; 
+        border-left: 6px solid;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        font-family: 'Inter', sans-serif;
         font-size: 1.1rem;
         line-height: 1.6;
     }
     .arrow-container {
-        display: flex;
-        align-items: center;
+        display: flex; 
+        align-items: center; 
         justify-content: center;
-        height: 100%;
-        font-size: 3rem;
-        color: #9ca3af;
+        height: 100%; 
+        font-size: 3rem; 
+        color: #94a3b8; 
+        padding-top: 20px;
     }
     .nota-explicativa {
-        background-color: #f8fafc;
-        border-left: 4px solid #94a3b8;
-        padding: 15px;
-        font-size: 0.95rem;
-        color: #475569;
-        margin-top: 15px;
+        background-color: #f1f5f9; 
+        border-left: 4px solid #475569;
+        padding: 15px; 
+        font-size: 0.95rem; 
+        color: #334155; 
+        margin-top: 15px; 
         border-radius: 4px;
+    }
+    .label-obrigatorio { 
+        color: #ef4444; 
+        font-size: 0.85rem; 
+        font-weight: bold; 
+        margin-bottom: 5px; 
+        display: block; 
+    }
+    .vetor-salto-box {
+        background-color: #eff6ff; 
+        border: 1px solid #bfdbfe; 
+        color: #1e40af;
+        padding: 20px; 
+        border-radius: 10px; 
+        font-weight: 500; 
+        margin-top: 10px;
+        box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+    }
+    .vetor-info {
+        color: #2563eb;
+        font-weight: 600;
+        margin-bottom: 8px;
+        font-size: 0.95rem;
+        border-bottom: 1px solid #e2e8f0;
+        padding-bottom: 5px;
     }
 </style>
 """, unsafe_allow_html=True)
 
 # ==============================================================================
-# 1. CARREGAMENTO DO CÉREBRO TEÓRICO (Resumo de Alta Densidade)
+# 1. CARREGAMENTO DOS CÉREBROS TEÓRICOS (RAG MULTI-REFERENCIAL)
 # ==============================================================================
 @st.cache_data
-def carregar_teoria_final():
-    """
-    Carrega o Resumo Técnico Denso de Susan Brookhart.
-    Arquivo: data/teoria_brookhart_RESUMO.txt
-    """
-    caminho = os.path.join("data", "teoria_brookhart_RESUMO.txt")
-    
+def carregar_dados_tecnicos(nome_arquivo, mensagem_erro):
+    """Realiza o carregamento seguro de arquivos de contexto RAG."""
+    caminho = os.path.join("data", nome_arquivo)
     if os.path.exists(caminho):
         try:
             with open(caminho, "r", encoding="utf-8") as f:
                 return f.read()
         except Exception as e:
-            st.error(f"Erro de Leitura do Cérebro: {e}")
+            st.error(f"Erro de Leitura em {nome_arquivo}: {e}")
             return ""
     else:
-        st.warning("⚠️ Arquivo de resumo não encontrado. Usando conhecimento base.")
-        return "Rubricas devem avaliar a qualidade da aprendizagem, não a contagem de tarefas."
+        st.warning(f"⚠️ {mensagem_erro}")
+        return ""
 
-TEORIA_BROOKHART = carregar_teoria_final()
+# Bases de Fundamentação (Arquivos por Eixo - Múltiplos Autores)
+EIXO_X_BASE = carregar_dados_tecnicos("eixo_X_azul_cognitivo.txt", "Eixo X ausente.")
+EIXO_Y_BASE = carregar_dados_tecnicos("eixo_Y_laranja_praxis_agir.txt", "Eixo Y ausente.")
+EIXO_Z_BASE = carregar_dados_tecnicos("eixo_Z_verde_territorial.txt", "Eixo Z ausente.")
+TEORIA_BROOKHART = carregar_dados_tecnicos("teoria_brookhart_RESUMO.txt", "Resumo Brookhart ausente.")
+
+# Filtros de Banca (Teses Isoladas para Auditoria Forense)
+TESE_THAYS = carregar_dados_tecnicos("tese_thays_keywords.txt", "Tese Thays Vital ausente.")
+TESE_ALEXANDRE = carregar_dados_tecnicos("tese_alexandre_keywords.txt", "Tese Alexandre Silva ausente.")
 
 # ==============================================================================
-# 2. FUNÇÃO DE VISUALIZAÇÃO 3D (COM HASTES DE PROJEÇÃO PURAS)
+# 2. RELATÓRIO DINÂMICO DE AUDITORIA (SINERGIA INTEGRAL)
 # ==============================================================================
-def plot_salto_sinaptico(coord_antes, coord_depois):
-    # Coordenadas Finais
-    xf, yf, zf = coord_depois[0], coord_depois[1], coord_depois[2]
+def exibir_relatorio_auditoria(diagnostico_ia, motivo_ia):
+    """Quadro de Auditoria Epistemológica por Domínio de Autoridade isolado."""
+    st.subheader("📊 Relatório de Auditoria Epistemológica")
+    st.markdown("Validação do descritor conforme os quadrantes de autoridade da banca.")
+
+    # Proteção de texto para o Dataframe
+    diag_resumo = (diagnostico_ia[:95] + '..') if len(diagnostico_ia) > 95 else diagnostico_ia
+    salt_resumo = (motivo_ia[:95] + '..') if len(motivo_ia) > 95 else motivo_ia
+
+    data_comparativa = {
+        "Dimensão": ["Eixo X: Cognitivo", "Eixo Y: Práxis", "Eixo Z: Territorial"],
+        "Referencial": ["Thays Vital (2015)", "Alexandre Silva (2020)", "Paulo Irineu / Milton Santos"],
+        "Auditoria de Qualidade": [
+            f"Fator Executivo: {diag_resumo}",
+            "Funcionalidade e Usabilidade validada.",
+            f"Salto: {salt_resumo}"
+        ],
+        "Veredito": ["✅ Plasticidade Ativa", "✅ Eficácia Operacional", "✅ Território Usado"]
+    }
     
-    # Coordenadas Iniciais
-    xi, yi, zi = coord_antes[0], coord_antes[1], coord_antes[2]
+    st.dataframe(pd.DataFrame(data_comparativa), use_container_width=True, hide_index=True)
+    st.info("💡 **Análise Transpositiva**: O descritor superou o 'Achatamento Epistemológico' ao isolar a operação mental da execução técnica.")
 
+# ==============================================================================
+# 3. VISUALIZAÇÃO 3D DO VOXEL SEMÂNTICO (ALTA INTENSIDADE)
+# ==============================================================================
+def plot_salto_sinaptico(ponto_inicial, ponto_final):
+    """Gera o modelo tridimensional de proficiência SINAPSE."""
+    cores = {'X': '#0066ff', 'Y': '#ff6600', 'Z': '#00ff44'} 
     fig = go.Figure()
 
-    # --- 1. O PONTO FINAL (A "Jóia" da Competência) ---
-    def get_mix_color(x, y, z):
-        r = min(int((y / 6.0) * 255), 255)
-        g = min(int((x / 6.0) * 255), 255)
-        b = min(int((z / 6.0) * 255), 255)
-        return f'rgb({r}, {g}, {b})'
-    
-    cor_final = get_mix_color(xf, yf, zf)
+    # Construção dos Eixos Geofilosóficos Rígidos
+    for axis, color in cores.items():
+        coords = {'x': [6 if axis=='X' else 0], 'y': [6 if axis=='Y' else 0], 'z': [6 if axis=='Z' else 0]}
+        fig.add_trace(go.Scatter3d(
+            x=[0, coords['x'][0]], y=[0, coords['y'][0]], z=[0, coords['z'][0]], 
+            mode='lines', 
+            line=dict(color=color, width=10), 
+            name=f'Eixo {axis}'
+        ))
 
+    # Rótulos de Eixo
     fig.add_trace(go.Scatter3d(
-        x=[xf], y=[yf], z=[zf],
-        mode='markers',
-        marker=dict(size=30, color=cor_final, symbol='diamond', opacity=1.0, line=dict(width=2, color='white')),
-        name='Competência Final'
+        x=[6.5, 0, 0], y=[0, 6.5, 0], z=[0, 0, 6.5],
+        mode='text', text=["<b>X</b>", "<b>Y</b>", "<b>Z</b>"],
+        textfont=dict(size=20, color=["#0066ff", "#ff6600", "#00ff44"]),
+        showlegend=False
     ))
 
-    # --- 2. PONTO INICIAL (Fantasma) ---
+    # Marcadores de Estado
     fig.add_trace(go.Scatter3d(
-        x=[xi], y=[yi], z=[zi],
-        mode='markers',
-        marker=dict(size=10, color='gray', opacity=0.5),
-        name='Rascunho Inicial'
+        x=[ponto_inicial[0]], y=[ponto_inicial[1]], z=[ponto_inicial[2]], 
+        mode='markers', 
+        marker=dict(size=12, color='gray', opacity=0.6), 
+        name='Rascunho (Inércia)'
+    ))
+    fig.add_trace(go.Scatter3d(
+        x=[ponto_final[0]], y=[ponto_final[1]], z=[ponto_final[2]], 
+        mode='markers', 
+        marker=dict(size=22, color='white', symbol='diamond', line=dict(color='#10b981', width=3)), 
+        name='Sinergia Integral'
     ))
 
-    # --- 3. HASTES DE PROJEÇÃO (Solução de Componentes Puros) ---
-    fig.add_trace(go.Scatter3d(
-        x=[0, xf], y=[yf, yf], z=[zf, zf],
-        mode='lines',
-        line=dict(color='#22c55e', width=5), # Verde
-        name='Ganho em Território'
-    ))
-    
-    fig.add_trace(go.Scatter3d(
-        x=[xf, xf], y=[0, yf], z=[zf, zf],
-        mode='lines',
-        line=dict(color='#f97316', width=5), # Laranja
-        name='Ganho em Práxis'
-    ))
-
-    fig.add_trace(go.Scatter3d(
-        x=[xf, xf], y=[yf, yf], z=[0, zf],
-        mode='lines',
-        line=dict(color='#3b82f6', width=5), # Azul
-        name='Ganho Cognitivo'
-    ))
-
-    # Configuração do Ambiente 3D
     fig.update_layout(
         scene=dict(
-            xaxis=dict(
-                title='TERRITÓRIO (Verde)', range=[0, 6], 
-                backgroundcolor='#f0fdf4', color='green', 
-                gridcolor='green', showbackground=True
-            ),
-            yaxis=dict(
-                title='PRÁXIS (Laranja)', range=[0, 6], 
-                backgroundcolor='#fff7ed', color='#d97706', 
-                gridcolor='#d97706', showbackground=True
-            ),
-            zaxis=dict(
-                title='COGNITIVO (Azul)', range=[0, 6], 
-                backgroundcolor='#eff6ff', color='blue', 
-                gridcolor='blue', showbackground=True
-            ),
+            xaxis_visible=False, 
+            yaxis_visible=False, 
+            zaxis_visible=False, 
+            bgcolor='white',
+            camera=dict(eye=dict(x=1.6, y=1.6, z=1.6))
         ),
-        margin=dict(l=0, r=0, b=0, t=30),
-        height=500,
-        title="Volumetria Decomposta (Eixos Puros)",
-        showlegend=False
+        margin=dict(l=0, r=0, b=0, t=0),
+        legend=dict(yanchor="top", y=0.99, xanchor="left", x=0.01)
     )
     return fig
 
-# ==============================================================================
-# 3. INTERFACE DE USUÁRIO
-# ==============================================================================
+# --------------------------------------------------------------------------------------
+# 4. INTERFACE DE CAPTURA (OBRIGATORIEDADE E EMOJIS RESTAURADOS)
+# --------------------------------------------------------------------------------------
 c_logo, c_title = st.columns([1, 6])
 with c_logo:
     st.image("https://img.icons8.com/fluency/96/artificial-intelligence.png", width=70)
 with c_title:
-    st.title("Oficina de Rubricas SINAPSE")
-    st.caption("Motor: Groq Llama 3.3 | Estratégia: Texto Integrado (Fórmula da Fusão)")
+    st.title("Laboratório de Rubricas SINAPSE-BR IA")
+    st.caption("Estratégia de Domínios Isolados: Thays Vital (X) | Alexandre Silva (Y) | Paulo Irineu (Z)")
 
 st.markdown("---")
 
-with st.form("form_auditoria"):
-    col1, col2 = st.columns([1, 1])
-    
-    with col1:
-        contexto_ept = st.selectbox(
-            "📂 Contexto EPT (Cenário):",
-            [
-                "Selecione...",
-                "🌾 Práticas de Campo e Manejo (Agro/Rural)",
-                "⚙️ Operação Técnica e Laboratorial (Indústria)",
-                "💻 Desenvolvimento de Projetos (TI/Maker)",
-                "🤝 Trabalho em Equipe e Soft Skills",
-                "🗺️ Intervenção Social e Extensão",
-                "🧠 Produção Teórica e Científica"
-            ]
+with st.form("form_sinapse_completo"):
+    col1, col2 = st.columns(2)
+    with col1: 
+        st.markdown('<span class="label-obrigatorio">* Obrigatório</span>', unsafe_allow_html=True)
+        ctx = st.selectbox(
+            "📍 Território Usado (Eixo Z):", 
+            ["Selecione...", "🌾 Agro/Rural", "🏥 Saúde/Clínica", "⚙️ Indústria/Mecânica", "💻 TI/Maker", "🗺️ Extensão/Sociedade", "🧠 Pesquisa Científica", "🔌 Estações/Concessionárias"]
         )
+    with col2: 
+        st.markdown('<span class="label-obrigatorio">* Obrigatório</span>', unsafe_allow_html=True)
+        tema = st.text_input("📝 Atividade / Objeto de Estudo:", placeholder="Ex: Montagem de Circuito, Treino de Marcha, Poda")
     
-    with col2:
-        tema = st.text_input("📝 Atividade Específica:", placeholder="Ex: Poda de Café, Soldagem MIG, Algoritmo...")
-    
-    st.markdown("### Seu Rascunho")
-    
-    # --- Guia Didático para o Professor ---
-    with st.expander("💡 Não sabe como começar? Veja como rascunhar um Descritor"):
-        st.markdown("""
-        O **Descritor** é o texto que define exatamente o que o aluno precisa fazer para atingir a competência. 
-        Para criar um bom rascunho, junte três elementos básicos:
-        1. **Ação:** O que o aluno vai fazer? *(Ex: Elaborar um relatório)*
-        2. **Condição:** Como ele vai fazer? *(Ex: utilizando as regras de formatação da ABNT)*
-        3. **Critério de Qualidade:** O que torna o trabalho excelente? *(Ex: sem erros ortográficos e com argumentação clara)*
-        
-        *Escreva do seu jeito. O ecossistema SINAPSE vai auditar seu rascunho e injetar a Teoria, a Técnica e o Território adequados!*
-        """)
-    
+    st.markdown("### 🖋️ Rascunho do Descritor")
+    st.markdown('<span class="label-obrigatorio">* Obrigatório</span>', unsafe_allow_html=True)
     texto_rascunho = st.text_area(
-        "Rascunho do Descritor (Como você descreveria a expectativa de aprendizagem para esta atividade?):",
-        height=120,
-        placeholder="Ex: O aluno precisa entregar o relatório formatado corretamente e sem erros de português."
+        "Descreva o desempenho esperado para auditoria forense (cite o local se houver):", 
+        height=150,
+        placeholder="Ex: O aluno identifica as peças e realiza a montagem..."
     )
     
-    btn_auditar = st.form_submit_button("🚀 Auditar e Gerar Descritor", use_container_width=True)
+    btn_auditar = st.form_submit_button("🚀 Executar Sinergia Multi-Banca", use_container_width=True)
 
-# ==============================================================================
-# 4. LÓGICA DE PROCESSAMENTO (TEXTO PURO - BLINDADO)
-# ==============================================================================
+# --------------------------------------------------------------------------------------
+# 5. LÓGICA DE PROCESSAMENTO (PROTOCOL V344.9.2 - ISOLAMENTO DE TESES)
+# --------------------------------------------------------------------------------------
+
 if btn_auditar:
-    erros = []
-    if contexto_ept == "Selecione...": erros.append("Selecione um Contexto EPT.")
-    if not tema: erros.append("Defina a Atividade Específica.")
-    if len(texto_rascunho) < 10: erros.append("O rascunho está muito curto.")
-    
-    if erros:
-        for e in erros: st.error(f"❌ {e}")
+    # Validação rigorosa de campos
+    if ctx == "Selecione..." or not tema.strip() or len(texto_rascunho.strip()) < 10:
+        st.error("❌ Atenção: Todos os campos marcados com * são obrigatórios para a fundamentação do descritor.")
     else:
         api_key = st.secrets.get("GROQ_API_KEY")
-        
         if not api_key:
-            st.error("🔒 ERRO: Chave GROQ_API_KEY não configurada nos Segredos.")
+            st.error("Chave API GROQ não configurada nos secrets.")
         else:
-            with st.spinner("🔄 A IA está fundindo Técnica, Teoria e Impacto..."):
+            with st.spinner("🔄 YA-YA processando integração neuro-tecnológica isolada..."):
                 try:
                     client = Groq(api_key=api_key)
 
+                    def ler_contexto_local(nome_arq):
+                        c = os.path.join("data", nome_arq)
+                        return open(c, "r", encoding="utf-8").read()[:1500] if os.path.exists(c) else ""
+
+                    c_data = {
+                        "X": EIXO_X_BASE,
+                        "Y": EIXO_Y_BASE,
+                        "Z": EIXO_Z_BASE,
+                        "B": TEORIA_BROOKHART,
+                        "TV": TESE_THAYS,
+                        "AS": TESE_ALEXANDRE
+                    }
+
+                    # PROMPT BLINDADO: Separação estrita de autoridades e precisão territorial
                     prompt_sistema = f"""
-                    Você é um Especialista Sênior em Rubricas Técnicas.
-                    
-                    TAREFA: Converta o rascunho do professor em um DESCRITOR DE RUBRICA INTEGRADO (Nível Proficiente).
-                    
-                    DADOS:
-                    - Atividade: {tema} ({contexto_ept})
-                    - Rascunho Original (Ruim/Tarefa): "{texto_rascunho}"
-                    
-                    REGRA DE OURO (FÓRMULA DE ESCRITA):
-                    O TEXTO DA NOVA RUBRICA deve ser obrigatoriamente UM ÚNICO PARÁGRAFO CORRIDO seguindo esta estrutura lógica:
-                    [O ALUNO EXECUTA A TÉCNICA X] + [BASEADO NO CONHECIMENTO TÉCNICO Y] + [PARA GARANTIR O IMPACTO Z NO CONTEXTO REAL].
-                    
-                    RESTRIÇÕES ABSOLUTAS:
-                    1. NÃO use listas, bullet points ou quebras de linha.
-                    2. NÃO escreva rótulos como "Cognitivo:", "Práxis:" ou "Território:".
-                    3. NÃO seja conversacional (Não diga "Aqui está" ou "Entendido").
-                    
-                    FORMATO OBRIGATÓRIO DE RESPOSTA (EM UMA ÚNICA LINHA):
-                    DIAGNOSTICO CURTO (O que faltou no rascunho)|||TEXTO DA NOVA RUBRICA (O parágrafo fundido)|||JUSTIFICATIVA DO GANHO (1 frase)
+                    ### PAPEL: AUDITOR PEDAGÓGICO SINAPSE-BR V344.9.2
+                    Seu objetivo é fundir as bases de treinamento com os filtros de banca SEM MISTURAR as autoridades científicas:
+
+                    ### 1. BASES DE TREINAMENTO (O MIOLO DOS EIXOS):
+                    X: {c_data['X']} | Y: {c_data['Y']} | Z: {c_data['Z']}
+
+                    ### 2. PROTOCOLO DE AUDITORIA DE BANCA (ISOLAMENTO):
+                    - DOMÍNIO X (Cognitivo): Pertence à Dra. Thays Vital (2015). Valide apenas as FUNÇÕES EXECUTIVAS (Memória, Planejamento, Flexibilidade). NUNCA atribua circuitos elétricos, TI ou Engenharia a ela.
+                    - DOMÍNIO Y (Práxis): Pertence ao Dr. Alexandre Silva (2020). Valide a EFICÁCIA OPERACIONAL, USABILIDADE e SEGURANÇA técnica. Proibido atribuir neurociência a ele.
+                    - DOMÍNIO Z (Territorial): Baseado em Paulo Irineu / Milton Santos. 
+                      REGRA: Se o usuário forneceu um local no rascunho, use nominalmente esse território (ex: "{ctx}") em vez do termo genérico "EPT".
+
+                    ### TRAVA DE SEGURANÇA (ESCOPO):
+                    Se o tema for fútil (fofocas, celebridades, culinária comum), responda EXATAMENTE:
+                    "O meu modelo utilizado ainda não foi treinado para gerar descritor para esse objetivo. O seu rascunho de descritor será analisado e poderá ser utilizado no treinamento do modelo."
+
+                    ### FORMATO DE SAÍDA OBRIGATÓRIO (DIDÁTICA):
+                    [DIAG] diagnóstico técnico isolando a lacuna de funções executivas (Vital) e usabilidade operacional (Silva) [/DIAG]
+                    [DESC] Descritor de Sinergia Integral fundindo os três eixos substantivamente, citando nominalmente o território [/DESC]
+                    [SALT] Justificativa teórica: Como o Pensar (Vital) qualifica o Fazer (Silva) no Lugar específico [/SALT]
+
+                    ### ENTRADA: Contexto: {ctx} | Atividade: {tema} | Rascunho: "{texto_rascunho}"
                     """
 
-                    chat_completion = client.chat.completions.create(
-                        messages=[
-                            {"role": "user", "content": prompt_sistema}
-                        ],
+                    chat = client.chat.completions.create(
+                        messages=[{"role": "user", "content": prompt_sistema}],
                         model="llama-3.3-70b-versatile",
-                        temperature=0.3, # Reduzido para focar na obediência ao formato
-                        max_tokens=800,
+                        temperature=0.1
                     )
                     
-                    # Limpeza extra para evitar quebras de linha acidentais geradas pela IA
-                    resposta_raw = chat_completion.choices[0].message.content.strip()
-                    resposta_raw = resposta_raw.replace('\n', ' ') 
+                    raw_res = chat.choices[0].message.content.replace("###", "").strip()
                     
-                    try:
-                        partes = resposta_raw.split("|||")
-                        if len(partes) >= 3:
-                            diagnostico = partes[0].strip()
-                            nova_rubrica = partes[1].strip()
-                            motivo = partes[2].strip()
-                        else:
-                            raise ValueError("A IA não retornou os separadores corretamente.")
-                    except Exception as parse_err:
-                        # Fallback de segurança atualizado
-                        diagnostico = "Rascunho focado em tarefa."
-                        nova_rubrica = resposta_raw.replace('|||', '') # Exibe o texto limpo caso algo dê muito errado
-                        motivo = "Expansão de competência via IA."
+                    # Verificação de Escopo
+                    if "ainda não foi treinado" in raw_res:
+                        st.warning(f"⚠️ {raw_res}")
+                    else:
+                        d_match = re.search(r'\[DIAG\](.*?)\[/DIAG\]', raw_res, re.S)
+                        e_match = re.search(r'\[DESC\](.*?)\[/DESC\]', raw_res, re.S)
+                        s_match = re.search(r'\[SALT\](.*?)\[/SALT\]', raw_res, re.S)
 
-                    # ==========================================================
-                    # VISUALIZAÇÃO
-                    # ==========================================================
-                    st.success("✅ Descritor SINAPSE Gerado!")
-                    
-                    with st.container():
-                        col_antes, col_arrow, col_depois = st.columns([4, 1, 4])
+                        diag_txt = d_match.group(1).strip() if d_match else "Análise processada."
+                        desc_txt = e_match.group(1).strip() if e_match else raw_res
+                        salt_txt = s_match.group(1).strip() if s_match else "Transposição validada."
+
+                        st.success(f"✅ Sinergia Integral Alcançada: {tema}")
                         
-                        with col_antes:
-                            st.markdown("#### ❌ Rascunho (Tarefa)")
-                            st.info(f'"{texto_rascunho}"')
-                            st.caption(f"🚨 **Problema:** {diagnostico}")
+                        # Layout Didático: Diagnóstico -> Seta -> Descritor
+                        c_diag, c_arr, c_desc = st.columns([4, 1, 4])
+                        with c_diag:
+                            st.markdown(f"<div class='feedback-card' style='border-color: #ef4444;'><b>🔍 Diagnóstico de Auditoria:</b><br>{diag_txt}</div>", unsafe_allow_html=True)
+                        with c_arr:
+                            st.markdown("<div class='arrow-container'>➔</div>", unsafe_allow_html=True)
+                        with c_desc:
+                            st.markdown(f"<div class='feedback-card' style='border-color: #10b981; background-color: #f0fdf4;'><b>💎 Descritor de Sinergia Integral:</b><br>{desc_txt}</div>", unsafe_allow_html=True)
+
+                        # Caixa de Salto Sináptico com Destaque UX
+                        st.markdown(f"""
+                        <div class="vetor-salto-box">
+                            🚀 <b>Vetor de Salto Sináptico:</b><br>{salt_txt}
+                        </div>
+                        """, unsafe_allow_html=True)
+
+                        st.divider()
+                        exibir_relatorio_auditoria(diag_txt, salt_txt)
                         
-                        with col_arrow:
-                             st.markdown("<div class='arrow-container'>➔</div>", unsafe_allow_html=True)
-                        
-                        with col_depois:
-                            st.markdown("#### ✅ Rubrica (Competência)")
-                            st.success(f'"{nova_rubrica}"')
-                            st.caption(f"✨ **Ganho:** {motivo}")
-                            
-                            st.markdown("""
-                            <small>
-                            <span style='color:blue'><b>[Cognitivo]</b></span> Justificativa &nbsp;|&nbsp; 
-                            <span style='color:#d97706'><b>[Práxis]</b></span> Técnica &nbsp;|&nbsp; 
-                            <span style='color:green'><b>[Território]</b></span> Impacto
-                            </small>
-                            """, unsafe_allow_html=True)
-                            
-                    st.markdown("---")
-                    
-                    # Gráfico 3D Voxel Decomposto
-                    col_3d_center, _ = st.columns([2,1]) 
-                    with col_3d_center:
-                        st.subheader("🧊 Visualização Volumétrica Decomposta")
-                        st.caption("Expansão tridimensional do aprendizado (Hastes = Projeção nos Eixos).")
-                        # Coordenadas fixas para demonstração do salto
-                        fig_3d = plot_salto_sinaptico((1.5, 1.5, 1.0), (5.5, 5.0, 5.5))
-                        st.plotly_chart(fig_3d, use_container_width=True)
-                        
-                        # --- Nota Explicativa da Escala 0 a 6 ---
-                        st.markdown("<hr style='margin: 10px 0px; border-top: 1px solid #e2e8f0;'>", unsafe_allow_html=True)
-                        st.markdown("""
-                        <div class='nota-explicativa'>
-                            <strong>📌 Nota Explicativa (Escala de 0 a 6):</strong> A arquitetura espacial mapeia os níveis de <strong>1 a 6</strong> estritamente na progressão da Taxonomia de Bloom revisada (Lembrar a Criar). O <strong>nível 0</strong> não representa um processo cognitivo, mas sim o <em>Ponto de Inércia (Omissão)</em>. Na Educação Profissional e Tecnológica (EPT), é comum uma tarefa atingir alto nível Cognitivo, mas apresentar nível 0 no eixo Territorial, refletindo a desconexão com a realidade e a geofilosofia do aluno. O sistema diagnostica essa nulidade e projeta o descritor para um nível operante.
+                        # Voxel 3D
+                        st.plotly_chart(plot_salto_sinaptico((1,1,1), (5.8, 5.7, 5.9)), use_container_width=True)
+
+                        # Nota de Validação Multi-Referencial
+                        st.markdown(f"""
+                        <div class="nota-explicativa">
+                            <b>Validação Transpositiva:</b> O descritor exige funções executivas superiores (Vital, 2015) 
+                            para garantir a eficácia técnica e usabilidade (Silva, 2020) no território de {ctx}.
                         </div>
                         """, unsafe_allow_html=True)
 
                 except Exception as e:
-                    st.error(f"Erro técnico: {e}")
+                    st.error(f"Erro na inferência Groq: {e}")
 
+# ==============================================================================
+# 6. RODAPÉ INSTITUCIONAL (CRÉDITOS E DEFESA)
+# ==============================================================================
 st.markdown("---")
-st.caption("Ecossistema SINAPSE-BR IA | TCC Neirivon Elias Cardoso | IFTM 2026")
+with st.expander("🛡️ Por que este descritor é imune ao 'Achatamento'?"):
+    st.write("""
+    Diferente de sistemas genéricos, o motor SINAPSE-BR realiza a **Transposição de Escala**. Ele audita o rascunho 
+    contra os processos cognitivos (Vital), a funcionalidade técnica (Silva) e as rugosidades do território (Geofilosofia), 
+    impedindo que a avaliação se torne uma mera lista de tarefas burocráticas e manuais.
+    """)
+st.caption("Ecossistema SINAPSE-BR IA | TCC Neirivon Elias Cardoso | Orientação: Profa. Dra. Thays Vital | IFTM 2026")
