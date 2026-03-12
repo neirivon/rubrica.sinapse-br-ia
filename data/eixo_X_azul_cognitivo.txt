@@ -1,20 +1,21 @@
 [RESUMO DE AUDITORIA PEDAGÓGICA – ARQUIVO: EIXO_X_AZUL_COGNITIVO.TXT] [DOMÍNIO: NEUROCIÊNCIA E TAXONOMIAS]
-Régua Neurobiológica da Aprendizagem (Stanislas Dehaene): A avaliação não mede um dom estático, mas o processamento cerebral fundamentado em quatro pilares estruturais.
-Atenção (Filtro de Sinais): Avalia a capacidade executiva do aluno de selecionar estímulos relevantes e inibir distratores. Na auditoria, mede-se a eficiência na gestão da Carga Cognitiva, garantindo que o cérebro foque estritamente no objetivo pedagógico sem saturação.
-Engajamento Ativo (Geração de Hipóteses): Mede a postura investigativa. Organismos passivos não geram aprendizado profundo. A rubrica deve auditar a Flexibilidade Cognitiva do estudante ao formular predições, testar soluções e manter o atrito intelectual frente a situações-problema.
-Feedback de Erro (Ajuste de Modelos): A avaliação encara o erro como um diferencial entre predição e realidade, não como demérito. Mede-se a capacidade do aluno de utilizar o retorno corretivo rápido para reajustar seus modelos mentais, exercitando ativamente a Metacognição.
-Consolidação (Automatização): Avalia a transferência da habilidade consciente e lenta para o processamento inconsciente e rápido. O domínio de competências básicas libera a Memória de Trabalho, um gargalo biológico, permitindo que o cérebro opere funções complexas. Este pilar valida o sono e o espaçamento como métricas biológicas vitais.
-Régua de Processamento Cognitivo (Taxonomia de Bloom Revisada): A auditoria mapeia a progressão intelectual através de uma hierarquia de complexidade mensurável.
-Lembrar e Entender: O estrato básico de avaliação. O sistema audita se o aluno consegue recuperar fatos na memória de longo prazo e interpretar significados básicos.
-Aplicar e Analisar: O estrato intermediário. Mede a transposição da teoria para o procedimento prático e a capacidade de fragmentar o conhecimento, identificando relações causais e estruturais.
-Avaliar e Criar: O estrato de excelência. Para que o aluno alcance o nível 'Platinum' (Sinergia Integral) no sistema SINAPSE-BR, é obrigatória a ativação do Pensamento de Ordem Superior. A régua exige que o aluno faça julgamentos baseados em critérios ou reorganize elementos para construir produtos originais.
-Régua de Complexidade Estrutural (Taxonomia SOLO - Biggs): Avalia a arquitetura e a qualidade do resultado final da aprendizagem (o produto observável).
-Pré-estrutural: Avaliação de nível raso. O aluno apresenta respostas caóticas, fragmentadas ou irrelevantes, não conectadas ao núcleo do problema.
-Uniestrutural: Mede a aquisição focal. O aluno domina ou reproduz apenas um único aspecto da competência exigida.
-Multiestrutural: O aluno lista vários conceitos corretos, mas o sistema os identifica como isolados. Falta a costura lógica entre as partes.
-Relacional: Mede a integração plena. O aluno finalmente conecta a teoria, a técnica e a prática, compreendendo o conceito como um sistema orgânico e coerente.
-Abstrato Estendido: O alvo definitivo da Sinergia Cognitiva no Ecossistema SINAPSE-BR. A auditoria reconhece a maestria absoluta quando o aluno transcende o conteúdo lecionado, abstrai o princípio geral e transfere sua aplicação para novos contextos, inovando em seu próprio território.
-Diretrizes para a IA de Auditoria (Métrica Híbrida):
-O Eixo X (Azul) não mede "quantidade de acertos", mas a profundidade do trânsito neural.
-A IA deve rastrear os verbos de ação para classificar o aluno. Se a resposta exige apenas "Lembrar/Uniestrutural", a pontuação deve refletir um estágio de dependência de mediação.
-A pontuação máxima (Voxel Pleno) só é liberada quando há comprovação de autonomia: o estudante automatizou a base técnica, autogerencia seus erros e projeta abstrações para resolver dilemas complexos do mundo real.
+1. Régua Neurobiológica da Aprendizagem (Stanislas Dehaene): 
+Atenção (Filtro de Sinais): Avalia a capacidade executiva de selecionar estímulos relevantes e inibir distratores, gerindo a Carga Cognitiva sem saturação. 
+Engajamento Ativo (Geração de Hipóteses): A rubrica deve auditar a Flexibilidade Cognitiva ao formular predições e manter o atrito intelectual. 
+Feedback de Erro (Ajuste de Modelos): Mede a capacidade de usar retornos corretivos para reajustar modelos mentais e exercitar a Metacognição. 
+Consolidação (Automatização): Avalia a transferência para o processamento inconsciente, liberando a Memória de Trabalho para funções complexas. 
+2. Protocolo de Rigor Neurocientífico (Diretrizes de Auditoria):
+Independência do Objeto: O objeto é o meio; o fim é a ativação das Funções Executivas.
+Taxonomia Executiva: A IA deve validar obrigatoriamente Memória de Trabalho, Flexibilidade Cognitiva e Controle Inibitório.
+Biomarcadores: O descritor deve evidenciar "Crescimento de Complexidade" (Plasticidade).
+3. Régua de Processamento Cognitivo (Bloom Revisada): 
+Lembrar e Entender: Estrato básico; recuperação de fatos e interpretações simples. 
+Aplicar e Analisar: Estrato intermediário; transposição da teoria para a prática e identificação de relações causais. 
+Avaliar e Criar: Estrato Platinum; exige Pensamento de Ordem Superior, julgamentos baseados em critérios e construção de produtos originais. 
+4. Régua de Complexidade Estrutural (Taxonomia SOLO): 
+Pré-estrutural a Multiestrutural: Respostas fragmentadas ou listas de conceitos sem costura lógica. 
+Relacional: Integração plena entre teoria, técnica e prática como um sistema orgânico. 
+Abstrato Estendido: Maestria absoluta; o aluno transcende o conteúdo e transfere o princípio para novos contextos e territórios. 
+5. Diretrizes para a IA de Auditoria (Métrica Híbrida): 
+O Eixo X mede a profundidade do trânsito neural, não a quantidade de acertos. 
+A pontuação máxima só é liberada com comprovação de Autonomia (Equilíbrio Técnico de Vital): o estudante automatizou a base, autogerencia erros e projeta abstrações.

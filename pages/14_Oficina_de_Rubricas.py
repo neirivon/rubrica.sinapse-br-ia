@@ -3,11 +3,11 @@
 # NOME DO SCRIPT: 14_Oficina_de_Rubricas.py
 #
 # DESCRIÇÃO: Laboratório de Auditoria Pedagógica e Criação de Rubricas SINAPSE-BR.
-#              Ancoragem: Neurociência (Vital) + Sistemas de Operação (Silva).
+#              Ancoragem Integrada: Neurociência (Vital) + Sistemas de Operação (Silva).
 #              Separação de Domínios: X (Cognitivo) | Y (Práxis) | Z (Território).
 #
 # FUNCIONALIDADES:
-#      1. Domínios de Autoridade: X (Vital - Cognição) | Y (Silva - Eficácia Técnica).
+#      1. Domínios de Autoridade: X (Vital/Dehaene) | Y (Silva/Peirce/DUA).
 #      2. Validação Estrita: Campos com "*" obrigatórios e bloqueio de envio vazio.
 #      3. Salvaguarda de Escopo: Proteção contra temas fora da área educacional/EPT.
 #      4. Visualização: Voxel Semântico 3D de alta intensidade.
@@ -15,7 +15,7 @@
 #
 # AUTOR: Neirivon Elias Cardoso
 # PROJETO: Rubrica SINAPSE-BR IA
-# DATA: 08/03/2026 (Versão V344.9.2 - Protocolo de Domínios Isolados e Densidade Máxima)
+# DATA: 11/03/2026 (Versão V345.0 - Protocolo de Eixos Integrados e Densidade Máxima)
 # --------------------------------------------------------------------------------------
 
 import streamlit as st
@@ -27,13 +27,13 @@ import re
 
 # Configuração da Página
 st.set_page_config(
-    page_title="Oficina de Rubricas SINAPSE - V344.9.2",
+    page_title="Oficina de Rubricas SINAPSE - V345.0",
     page_icon="🛠️",
     layout="wide"
 )
 
 # ==============================================================================
-# ESTILO CSS PROFISSIONAL (RESTORED & EXPANDED)
+# ESTILO CSS PROFISSIONAL (PRESERVADO INTEGRALMENTE)
 # ==============================================================================
 st.markdown("""
 <style>
@@ -100,7 +100,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ==============================================================================
-# 1. CARREGAMENTO DOS CÉREBROS TEÓRICOS (RAG MULTI-REFERENCIAL)
+# 1. CARREGAMENTO DOS CÉREBROS TEÓRICOS (EIXOS INTEGRADOS)
 # ==============================================================================
 @st.cache_data
 def carregar_dados_tecnicos(nome_arquivo, mensagem_erro):
@@ -117,21 +117,17 @@ def carregar_dados_tecnicos(nome_arquivo, mensagem_erro):
         st.warning(f"⚠️ {mensagem_erro}")
         return ""
 
-# Bases de Fundamentação (Arquivos por Eixo - Múltiplos Autores)
+# Bases de Fundamentação (Agora as teses Vital e Silva estão dentro dos arquivos de eixo)
 EIXO_X_BASE = carregar_dados_tecnicos("eixo_X_azul_cognitivo.txt", "Eixo X ausente.")
 EIXO_Y_BASE = carregar_dados_tecnicos("eixo_Y_laranja_praxis_agir.txt", "Eixo Y ausente.")
 EIXO_Z_BASE = carregar_dados_tecnicos("eixo_Z_verde_territorial.txt", "Eixo Z ausente.")
 TEORIA_BROOKHART = carregar_dados_tecnicos("teoria_brookhart_RESUMO.txt", "Resumo Brookhart ausente.")
 
-# Filtros de Banca (Teses Isoladas para Auditoria Forense)
-TESE_THAYS = carregar_dados_tecnicos("tese_thays_keywords.txt", "Tese Thays Vital ausente.")
-TESE_ALEXANDRE = carregar_dados_tecnicos("tese_alexandre_keywords.txt", "Tese Alexandre Silva ausente.")
-
 # ==============================================================================
 # 2. RELATÓRIO DINÂMICO DE AUDITORIA (SINERGIA INTEGRAL)
 # ==============================================================================
 def exibir_relatorio_auditoria(diagnostico_ia, motivo_ia):
-    """Quadro de Auditoria Epistemológica por Domínio de Autoridade isolado."""
+    """Quadro de Auditoria Epistemológica por Domínio de Autoridade Integrado."""
     st.subheader("📊 Relatório de Auditoria Epistemológica")
     st.markdown("Validação do descritor conforme os quadrantes de autoridade da banca.")
 
@@ -141,7 +137,7 @@ def exibir_relatorio_auditoria(diagnostico_ia, motivo_ia):
 
     data_comparativa = {
         "Dimensão": ["Eixo X: Cognitivo", "Eixo Y: Práxis", "Eixo Z: Territorial"],
-        "Referencial": ["Thays Vital (2015)", "Alexandre Silva (2020)", "Paulo Irineu / Milton Santos"],
+        "Referencial": ["Dehaene", "Charles Peirce", "Paulo Irineu / Milton Santos"],
         "Auditoria de Qualidade": [
             f"Fator Executivo: {diag_resumo}",
             "Funcionalidade e Usabilidade validada.",
@@ -151,10 +147,10 @@ def exibir_relatorio_auditoria(diagnostico_ia, motivo_ia):
     }
     
     st.dataframe(pd.DataFrame(data_comparativa), use_container_width=True, hide_index=True)
-    st.info("💡 **Análise Transpositiva**: O descritor superou o 'Achatamento Epistemológico' ao isolar a operação mental da execução técnica.")
+    st.info("💡 **Análise Transpositiva**: O descritor superou o 'Achatamento Epistemológico' utilizando referenciais integrados por eixo.")
 
 # ==============================================================================
-# 3. VISUALIZAÇÃO 3D DO VOXEL SEMÂNTICO (ALTA INTENSIDADE)
+# 3. VISUALIZAÇÃO 3D DO VOXEL SEMÂNTICO (PRESERVADO)
 # ==============================================================================
 def plot_salto_sinaptico(ponto_inicial, ponto_final):
     """Gera o modelo tridimensional de proficiência SINAPSE."""
@@ -188,7 +184,6 @@ def plot_salto_sinaptico(ponto_inicial, ponto_final):
     ))
     fig.add_trace(go.Scatter3d(
         x=[ponto_final[0]], y=[ponto_final[1]], z=[ponto_final[2]], 
-        mode='markers', 
         marker=dict(size=22, color='white', symbol='diamond', line=dict(color='#10b981', width=3)), 
         name='Sinergia Integral'
     ))
@@ -207,14 +202,14 @@ def plot_salto_sinaptico(ponto_inicial, ponto_final):
     return fig
 
 # --------------------------------------------------------------------------------------
-# 4. INTERFACE DE CAPTURA (OBRIGATORIEDADE E EMOJIS RESTAURADOS)
+# 4. INTERFACE DE CAPTURA (PRESERVADA)
 # --------------------------------------------------------------------------------------
 c_logo, c_title = st.columns([1, 6])
 with c_logo:
     st.image("https://img.icons8.com/fluency/96/artificial-intelligence.png", width=70)
 with c_title:
     st.title("Laboratório de Rubricas SINAPSE-BR IA")
-    st.caption("Estratégia de Domínios Isolados: Thays Vital (X) | Alexandre Silva (Y) | Paulo Irineu (Z)")
+    st.caption("Estratégia de Eixos Integrados: X (Cognição/Vital) | Y (Práxis/Silva) | Z (Território/Irineu)")
 
 st.markdown("---")
 
@@ -241,7 +236,7 @@ with st.form("form_sinapse_completo"):
     btn_auditar = st.form_submit_button("🚀 Executar Sinergia Multi-Banca", use_container_width=True)
 
 # --------------------------------------------------------------------------------------
-# 5. LÓGICA DE PROCESSAMENTO (PROTOCOL V344.9.2 - ISOLAMENTO DE TESES)
+# 5. LÓGICA DE PROCESSAMENTO (PROTOCOL V345.0 - EIXOS INTEGRADOS)
 # --------------------------------------------------------------------------------------
 
 if btn_auditar:
@@ -253,45 +248,36 @@ if btn_auditar:
         if not api_key:
             st.error("Chave API GROQ não configurada nos secrets.")
         else:
-            with st.spinner("🔄 YA-YA processando integração neuro-tecnológica isolada..."):
+            with st.spinner("🔄 YA-YA processando integração neuro-tecnológica integrada..."):
                 try:
                     client = Groq(api_key=api_key)
 
-                    def ler_contexto_local(nome_arq):
-                        c = os.path.join("data", nome_arq)
-                        return open(c, "r", encoding="utf-8").read()[:1500] if os.path.exists(c) else ""
-
+                    # Dicionário de Contexto (Focado nos Eixos Fundamentais)
                     c_data = {
                         "X": EIXO_X_BASE,
                         "Y": EIXO_Y_BASE,
                         "Z": EIXO_Z_BASE,
-                        "B": TEORIA_BROOKHART,
-                        "TV": TESE_THAYS,
-                        "AS": TESE_ALEXANDRE
+                        "B": TEORIA_BROOKHART
                     }
 
-                    # PROMPT BLINDADO: Separação estrita de autoridades e precisão territorial
+                    # PROMPT BLINDADO V345.0: Foco no processamento cognitivo e operacional intrínseco
                     prompt_sistema = f"""
-                    ### PAPEL: AUDITOR PEDAGÓGICO SINAPSE-BR V344.9.2
-                    Seu objetivo é fundir as bases de treinamento com os filtros de banca SEM MISTURAR as autoridades científicas:
+                    ### PAPEL: AUDITOR PEDAGÓGICO SINAPSE-BR V345.0
+                    Seu objetivo é auditar e fundamentar o descritor utilizando os domínios de especialidade abaixo:
 
-                    ### 1. BASES DE TREINAMENTO (O MIOLO DOS EIXOS):
-                    X: {c_data['X']} | Y: {c_data['Y']} | Z: {c_data['Z']}
-
-                    ### 2. PROTOCOLO DE AUDITORIA DE BANCA (ISOLAMENTO):
-                    - DOMÍNIO X (Cognitivo): Pertence à Dra. Thays Vital (2015). Valide apenas as FUNÇÕES EXECUTIVAS (Memória, Planejamento, Flexibilidade). NUNCA atribua circuitos elétricos, TI ou Engenharia a ela.
-                    - DOMÍNIO Y (Práxis): Pertence ao Dr. Alexandre Silva (2020). Valide a EFICÁCIA OPERACIONAL, USABILIDADE e SEGURANÇA técnica. Proibido atribuir neurociência a ele.
-                    - DOMÍNIO Z (Territorial): Baseado em Paulo Irineu / Milton Santos. 
-                      REGRA: Se o usuário forneceu um local no rascunho, use nominalmente esse território (ex: "{ctx}") em vez do termo genérico "EPT".
+                    ### 1. FUNDAMENTAÇÃO TEÓRICA POR EIXO:
+                    - EIXO X (Cognitivo): {c_data['X']}
+                    - EIXO Y (Práxis): {c_data['Y']}
+                    - EIXO Z (Territorial): {c_data['Z']}
 
                     ### TRAVA DE SEGURANÇA (ESCOPO):
                     Se o tema for fútil (fofocas, celebridades, culinária comum), responda EXATAMENTE:
                     "O meu modelo utilizado ainda não foi treinado para gerar descritor para esse objetivo. O seu rascunho de descritor será analisado e poderá ser utilizado no treinamento do modelo."
 
                     ### FORMATO DE SAÍDA OBRIGATÓRIO (DIDÁTICA):
-                    [DIAG] diagnóstico técnico isolando a lacuna de funções executivas (Vital) e usabilidade operacional (Silva) [/DIAG]
-                    [DESC] Descritor de Sinergia Integral fundindo os três eixos substantivamente, citando nominalmente o território [/DESC]
-                    [SALT] Justificativa teórica: Como o Pensar (Vital) qualifica o Fazer (Silva) no Lugar específico [/SALT]
+                    [DIAG] diagnóstico técnico isolando a lacuna de funções executivas e usabilidade operacional [/DIAG]
+                    [DESC] Descritor de Sinergia Integral fundindo os três eixos substantivamente no território {ctx} [/DESC]
+                    [SALT] Justificativa teórica: Como a operação mental qualifica a execução técnica no lugar específico [/SALT]
 
                     ### ENTRADA: Contexto: {ctx} | Atividade: {tema} | Rascunho: "{texto_rascunho}"
                     """
@@ -343,8 +329,8 @@ if btn_auditar:
                         # Nota de Validação Multi-Referencial
                         st.markdown(f"""
                         <div class="nota-explicativa">
-                            <b>Validação Transpositiva:</b> O descritor exige funções executivas superiores (Vital, 2015) 
-                            para garantir a eficácia técnica e usabilidade (Silva, 2020) no território de {ctx}.
+                            <b>Validação Transpositiva:</b> O descritor exige funções executivas superiores 
+                            para garantir a eficácia técnica e usabilidade no território de {ctx}.
                         </div>
                         """, unsafe_allow_html=True)
 
@@ -358,7 +344,7 @@ st.markdown("---")
 with st.expander("🛡️ Por que este descritor é imune ao 'Achatamento'?"):
     st.write("""
     Diferente de sistemas genéricos, o motor SINAPSE-BR realiza a **Transposição de Escala**. Ele audita o rascunho 
-    contra os processos cognitivos (Vital), a funcionalidade técnica (Silva) e as rugosidades do território (Geofilosofia), 
+    contra os processos cognitivos, a funcionalidade técnica e as rugosidades do território (Geofilosofia), 
     impedindo que a avaliação se torne uma mera lista de tarefas burocráticas e manuais.
     """)
 st.caption("Ecossistema SINAPSE-BR IA | TCC Neirivon Elias Cardoso | Orientação: Profa. Dra. Thays Vital | IFTM 2026")
