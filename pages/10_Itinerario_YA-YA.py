@@ -48,16 +48,22 @@ FALLBACK_PADRAO = "https://img.icons8.com/color/96/bus.png"
 
 @st.cache_data
 def carregar_imagem_local(caminho_absoluto, fallback_url):
+    # 1. Tenta carregar localmente
     if os.path.exists(caminho_absoluto):
         try:
             with open(caminho_absoluto, "rb") as image_file:
                 encoded = base64.b64encode(image_file.read()).decode()
-            return f"data:image/png;base64,{encoded}", True 
-        except: return fallback_url, False
+            return f"data:image/png;base64,{encoded}", True
+        except Exception as e:
+            print(f"Erro ao ler imagem local: {e}")
+            return fallback_url, False
+    
+    # 2. Se não existir, usa o fallback (URL externa)
     return fallback_url, False
 
-PATH_VERDE = "/home/neirivon/SINAPSE2.0/sinapsebr_rubrica/assets/logos/Onibus_Verde_Google_Maps.png"
-PATH_VERMELHO = "/home/neirivon/SINAPSE2.0/sinapsebr_rubrica/assets/logos/Onibus_Vermelho_Google_Maps.png"
+# Verifique se este caminho está correto no seu servidor
+PATH_VERDE = os.path.abspath("assets/logos/Onibus_Verde_Google_Maps.png")
+PATH_VERMELHO = os.path.abspath("assets/logos/Onibus_Vermelho_Google_Maps.png")
 
 URL_BUS_VERDE, status_verde = carregar_imagem_local(PATH_VERDE, FALLBACK_VERDE)
 URL_BUS_VERMELHO, status_vermelho = carregar_imagem_local(PATH_VERMELHO, FALLBACK_VERMELHO)
