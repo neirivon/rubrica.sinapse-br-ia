@@ -206,14 +206,14 @@ referencias_db = [
 with st.sidebar:
     st.page_link("Apresentacao.py", label="🏠 Apresentação")
     st.markdown("---")
-    st.page_link("pages/01_TMAP_2010.py", label="⏳ TMAP Histórico")
-    st.page_link("pages/02_TMAP_2017_2024.py", label="🌐 TMAP 2024 (Equidade)")
-    st.page_link("pages/03_Mapa_Geral_Rubrica.py", label="🧠 Mapa da Rubrica")
-    st.page_link("pages/04_Mapa_Fundamentacao_Teorica.py", label="📚 Fundamentação")
-    st.page_link("pages/05_Meta_Rubrica_3D.py", label="🌌 Meta-Rubrica 3D")
-    st.page_link("pages/06_Rubrica_Docente_3D.py", label="👩‍🏫 Rubrica Docente 3D")
-    st.page_link("pages/07_Rubrica_Autoavaliativa_3D.py", label="🎓 Autoavaliação 3D")
-    st.page_link("pages/08_Transparencia_Avaliativa.py", label="🐆 Transparência (Avaliação)")
+    st.page_link("pages/02_Mapa_Fundamentacao_Teorica.py", label="📚 Fundamentação")
+    st.page_link("pages/03_TMAP_2010.py", label="⏳ TMAP Histórico")
+    st.page_link("pages/04_TMAP_2017_2024.py", label="🌐 TMAP 2024 (Equidade)")
+    st.page_link("pages/05_Mapa_Geral_Rubrica.py", label="🧠 Mapa da Rubrica")
+    st.page_link("pages/06_Meta_Rubrica_3D.py", label="🌌 Meta-Rubrica 3D")
+    st.page_link("pages/07_Rubrica_Docente_3D.py", label="👩‍🏫 Rubrica Docente 3D")
+    st.page_link("pages/08_Rubrica_Autoavaliativa_3D.py", label="🎓 Autoavaliação 3D")
+    st.page_link("pages/09_Transparencia_Avaliativa.py", label="🐆 Transparência (Avaliação)")
     st.page_link("pages/99_Referencias.py", label="📚 Referências")
 
 # --- CORPO PRINCIPAL ---
