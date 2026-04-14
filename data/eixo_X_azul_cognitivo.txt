@@ -1,21 +1,22 @@
-[RESUMO DE AUDITORIA PEDAGÓGICA – ARQUIVO: EIXO_X_AZUL_COGNITIVO.TXT] [DOMÍNIO: NEUROCIÊNCIA E TAXONOMIAS]
-1. Régua Neurobiológica da Aprendizagem (Stanislas Dehaene): 
-Atenção (Filtro de Sinais): Avalia a capacidade executiva de selecionar estímulos relevantes e inibir distratores, gerindo a Carga Cognitiva sem saturação. 
-Engajamento Ativo (Geração de Hipóteses): A rubrica deve auditar a Flexibilidade Cognitiva ao formular predições e manter o atrito intelectual. 
-Feedback de Erro (Ajuste de Modelos): Mede a capacidade de usar retornos corretivos para reajustar modelos mentais e exercitar a Metacognição. 
-Consolidação (Automatização): Avalia a transferência para o processamento inconsciente, liberando a Memória de Trabalho para funções complexas. 
-2. Protocolo de Rigor Neurocientífico (Diretrizes de Auditoria):
-Independência do Objeto: O objeto é o meio; o fim é a ativação das Funções Executivas.
-Taxonomia Executiva: A IA deve validar obrigatoriamente Memória de Trabalho, Flexibilidade Cognitiva e Controle Inibitório.
-Biomarcadores: O descritor deve evidenciar "Crescimento de Complexidade" (Plasticidade).
-3. Régua de Processamento Cognitivo (Bloom Revisada): 
-Lembrar e Entender: Estrato básico; recuperação de fatos e interpretações simples. 
-Aplicar e Analisar: Estrato intermediário; transposição da teoria para a prática e identificação de relações causais. 
-Avaliar e Criar: Estrato Platinum; exige Pensamento de Ordem Superior, julgamentos baseados em critérios e construção de produtos originais. 
-4. Régua de Complexidade Estrutural (Taxonomia SOLO): 
-Pré-estrutural a Multiestrutural: Respostas fragmentadas ou listas de conceitos sem costura lógica. 
-Relacional: Integração plena entre teoria, técnica e prática como um sistema orgânico. 
-Abstrato Estendido: Maestria absoluta; o aluno transcende o conteúdo e transfere o princípio para novos contextos e territórios. 
-5. Diretrizes para a IA de Auditoria (Métrica Híbrida): 
-O Eixo X mede a profundidade do trânsito neural, não a quantidade de acertos. 
-A pontuação máxima só é liberada com comprovação de Autonomia (Equilíbrio Técnico de Vital): o estudante automatizou a base, autogerencia erros e projeta abstrações.
+[RESUMO DE AUDITORIA PEDAGÓGICA – ARQUIVO: EIXO_X_AZUL_COGNITIVO.TXT]
+[DOMÍNIO: NEUROCIÊNCIA, NEUROPSICOPEDAGOGIA E TAXONOMIAS]
+1. Régua Neurobiológica da Aprendizagem (Stanislas Dehaene):
+Atenção (Filtro de Sinais): Avalia a capacidade executiva de selecionar estímulos relevantes e inibir distratores.
+Engajamento Ativo (Geração de Hipóteses): Audita a Flexibilidade Cognitiva ao formular predições.
+Feedback de Erro (Ajuste de Modelos): Mede a capacidade de reajustar modelos mentais (Metacognição).
+Consolidação (Automatização): Avalia a transferência para o processamento inconsciente, liberando a Memória de Trabalho.
+2. Matriz Neuropsicopedagógica (Rita Russo):
+Dimensão Institucional: A IA deve auditar se a rubrica considera o ambiente e os estímulos do território (Escola/Sobradinho) como mediadores da aprendizagem. A avaliação não é isolada; ela é contextualizada no sistema escolar.
+Dimensão Clínica e Funcional: O sistema rastreia o desenvolvimento das funções motoras, perceptivas e simbólicas. A IA valida se o descritor identifica barreiras de aprendizagem e propõe caminhos para a superação de dificuldades cognitivas.
+Intervenção Pedagógica: Verifica se a rubrica oferece elementos para a "reabilitação" do processo de aprender, transformando a falha em um dado para a intervenção docente pormenorizada.
+3. Protocolo de Rigor Neurocientífico (Diretrizes de Auditoria):
+Independência do Objeto: O objeto é o meio; o fim é a ativação das Funções Executivas e a integração biopsicossocial.
+Taxonomia Executiva: Validação obrigatória de Memória de Trabalho, Flexibilidade Cognitiva e Controle Inibitório.
+Biomarcadores de Aprendizagem: O descritor deve evidenciar o "Crescimento de Complexidade" e a Plasticidade Cerebral.
+4. Régua de Processamento Cognitivo (Bloom Revisada):
+(Permanecem os níveis: Lembrar/Entender, Aplicar/Analisar, Avaliar/Criar).
+5. Régua de Complexidade Estrutural (Taxonomia SOLO):
+(Permanecem os níveis: Pré-estrutural, Relacional, Abstrato Estendido).
+6. Diretrizes para a IA de Auditoria (Métrica Híbrida - Protocolo Russo-Dehaene):
+O Eixo X mede a profundidade do trânsito neural e a eficácia da mediação neuropsicopedagógica.
+A pontuação máxima exige Autonomia e Autorregulação: o estudante automatizou a base e, conforme Russo, demonstra prontidão para o aprendizado complexo e autogerido.

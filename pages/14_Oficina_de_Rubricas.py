@@ -132,12 +132,15 @@ def exibir_relatorio_auditoria(diagnostico_ia, motivo_ia):
     st.markdown("Validação do descritor conforme os quadrantes de autoridade da banca.")
 
     # Proteção de texto para o Dataframe
-    diag_resumo = (diagnostico_ia[:95] + '..') if len(diagnostico_ia) > 95 else diagnostico_ia
-    salt_resumo = (motivo_ia[:95] + '..') if len(motivo_ia) > 95 else motivo_ia
+    #diag_resumo = (diagnostico_ia[:95] + '..') if len(diagnostico_ia) > 95 else diagnostico_ia
+    #salt_resumo = (motivo_ia[:95] + '..') if len(motivo_ia) > 95 else motivo_ia
+    # Usar o texto completo para garantir a profundidade da auditoria na banca
+    diag_resumo = diagnostico_ia
+    salt_resumo = motivo_ia
 
     data_comparativa = {
         "Dimensão": ["Eixo X: Cognitivo", "Eixo Y: Práxis", "Eixo Z: Territorial"],
-        "Referencial": ["Dehaene", "Charles Peirce", "Paulo Irineu / Milton Santos"],
+        "Referencial": ["Dehaene / Russo", "Charles Peirce", "Paulo Irineu / Milton Santos"],
         "Auditoria de Qualidade": [
             f"Fator Executivo: {diag_resumo}",
             "Funcionalidade e Usabilidade validada.",
@@ -209,7 +212,7 @@ with c_logo:
     st.image("https://img.icons8.com/fluency/96/artificial-intelligence.png", width=70)
 with c_title:
     st.title("Laboratório de Rubricas SINAPSE-BR IA")
-    st.caption("Estratégia de Eixos Integrados: X (Cognição/Vital) | Y (Práxis/Silva) | Z (Território/Irineu)")
+    st.caption("Estratégia de Eixos Integrados: X (Cognição/Dehaene e Russo) | Y (Práxis/Frigotto e Ramos) | Z (Território/Fernandes e Santos)")
 
 st.markdown("---")
 
@@ -233,7 +236,7 @@ with st.form("form_sinapse_completo"):
         placeholder="Ex: O aluno identifica as peças e realiza a montagem..."
     )
     
-    btn_auditar = st.form_submit_button("🚀 Executar Sinergia Multi-Banca", use_container_width=True)
+    btn_auditar = st.form_submit_button("🚀 Refinar Descritor com IA", use_container_width=True)
 
 # --------------------------------------------------------------------------------------
 # 5. LÓGICA DE PROCESSAMENTO (PROTOCOL V345.0 - EIXOS INTEGRADOS)
