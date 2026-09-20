@@ -68,7 +68,7 @@ pip install -r requirements.txt
 └── main.py             # Ponto de entrada da aplicação
 
 🎓 Referências Acadêmicas (TCC)
-Este software é o artefato prático do Trabalho de Conclusão de Curso focado em Educação Profissional e Tecnológica (EPT). A Rubrica SINAPSE-BR IA atua como ferramenta de mediação neuropsicopedagógica, validada por análises estatísticas e territoriais.
+O Produto Técnico-Tecnológico (PTT) não é o obrigatório para obtenção do diploma, conforme consta no link do PPC da pós-graduação: https://iftm.edu.br/cursos/uraparquetecnologico/especializacao/docencia-para-a-educacao-profissional-e-tecnologica-ead. Este software é o artefato prático do Trabalho de Conclusão de Curso focado em Educação Profissional e Tecnológica (EPT). N. A Rubrica SINAPSE-BR IA atua como ferramenta de mediação neuropsicopedagógica, validada por análises estatísticas e territoriais.
 
 "A sinergia entre dados do IBGE e indicadores do SISTEC permite que a Rubrica SINAPSE-BR identifique gargalos de aprendizagem em escala regional, propondo intervenções pedagógicas personalizadas."
 
